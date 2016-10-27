@@ -8,7 +8,7 @@ body {
 
 .profile-pic {
     position: relative;
-    margin-bottom: -96px;
+    margin-bottom: calc(-192px/2);
     width: 192px;
     height: 192px;
     border-radius: 50%;
@@ -54,14 +54,20 @@ p#email {
     color: #008076;
 }
 p#social {
-    margin-top: 16px;
+    margin-top: 32px;
     color: #008076;
 }
 
 header .hero {
     height: 512px;
     width: 100vw;
-    background-color: #00FFEB;
+    background: linear-gradient(
+      rgba(0, 255, 235, 0.45),
+      rgba(0, 255, 235, 0.45)
+    ), url(hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-img {
@@ -85,6 +91,7 @@ header .hero {
     .profile-pic {
         width: 60vw;
         height: 60vw;
+        margin-bottom: -30vw;
     }
 }
 
