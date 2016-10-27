@@ -20,7 +20,7 @@
 		"outputAbbreviatedPath": "\/res\/hero.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/res\/profile.jpg": {
 		"fileType": 16384,
@@ -31,7 +31,7 @@
 		"outputAbbreviatedPath": "\/res\/profile.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/res\/style.css": {
 		"fileType": 16,
