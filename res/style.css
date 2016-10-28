@@ -59,7 +59,7 @@ p#social {
 }
 
 header .hero {
-    height: 512px;
+    height: 384px;
     width: 100vw;
     background: linear-gradient(
       rgba(0, 255, 235, 0.45),
