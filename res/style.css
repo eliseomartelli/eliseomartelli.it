@@ -63,25 +63,25 @@ p#social {
 header .hero {
     height: 484px;
     width: 100vw;
-    background: url(snow.png), linear-gradient(
+    background: url(snow.png), url(snow1.png), linear-gradient(
       rgba(183, 28, 28, 0.8),
       rgba(183, 28, 28, 0.8)
     ),  url(hero.jpg);
-    background-repeat: repeat, no-repeat;
-    background-size: auto, cover, cover;
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto, auto, cover, cover;
     background-position: center;
     animation: snowfall 6s linear infinite;
 }
 
 @keyframes snowfall {
     0% {
-      background-position: 0px 0px, center, center;
+      background-position: 0px 0px, 0px 0px, center, center;
     }
     50% {
-      background-position:  256px 512px, center, center;
+      background-position:  256px 512px, 128px 256px,center, center;
     }
     100% {
-      background-position:  512px 1024px, center, center;
+      background-position:  512px 1024px, 256px 512px, center, center;
     }
 }
 
