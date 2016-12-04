@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 body {
     margin: 0;
     padding: 0;
@@ -51,23 +53,36 @@ p#job {
     color: #505050;
 }
 p#email {
-    color: #008076;
+    color: #FF1744;
 }
 p#social {
     margin-top: 32px;
-    color: #008076;
+    color: #FF1744;
 }
 
 header .hero {
     height: 512px;
     width: 100vw;
-    background: linear-gradient(
-      rgba(0, 255, 235, 0.45),
-      rgba(0, 255, 235, 0.45)
-    ), url(hero.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(snow.png), linear-gradient(
+      rgba(183, 28, 28, 0.8),
+      rgba(183, 28, 28, 0.8)
+    ),  url(hero.jpg);
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover, cover;
     background-position: center;
+    animation: snowfall 6s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+      background-position: 0px 0px, center, center;
+    }
+    50% {
+      background-position:  256px 512px, center, center;
+    }
+    100% {
+      background-position:  512px 1024px, center, center;
+    }
 }
 
 .hero-img {
@@ -78,12 +93,26 @@ header .hero {
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
+.merrychristmas {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  transform: perspective(1px) translateX(-50%) translateY(calc(-50% - 512px/4.4)) rotate(-6deg);
+  font-size: 4rem;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px rgba(255,255,255, 0.2);
+}
+
 @media screen and (max-width: 832px) {
     .container {
         width: 100%;
     }
     header .hero {
         height: 384px;
+    }
+    .merrychristmas {
+      font-size: 1.5rem;
     }
 }
 
@@ -93,6 +122,7 @@ header .hero {
         height: 60vw;
         margin-bottom: -30vw;
     }
+
 }
 
 @media screen and (max-height: 512px) {
@@ -120,4 +150,8 @@ footer {
 
 .icon-a:hover {
     color: #212121;
+}
+
+header {
+  transform-style: preserve-3d;
 }
