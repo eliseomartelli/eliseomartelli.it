@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+<?php
+    header("Content-type: text/css; charset: UTF-8");
+    $json_object = @file_get_contents( "https://api.instagram.com/v1/users/30820750/media/recent/?access_token=30820750.1677ed0.0af9f0c987944ff89753db1b2d1942c0&count=1");
+    $indata = json_decode($json_object);
+?>
 
 body {
     margin: 0;
@@ -53,55 +57,23 @@ p#job {
     color: #505050;
 }
 p#email {
-    color: #FF1744;
+    color: #0091EA;
 }
 p#social {
     margin-top: 32px;
-    color: #FF1744;
+    color: #0091EA;
 }
 
 header .hero {
     height: 484px;
     width: 100vw;
-    background: url(snow.png), url(snow1.png), linear-gradient(
-      rgba(183, 28, 28, 0.8),
-      rgba(183, 28, 28, 0.8)
-    ),  url(hero.jpg);
-    background-repeat: repeat, repeat, no-repeat;
-    background-size: auto, auto, cover, cover;
+    background: linear-gradient(
+      rgba(13, 59, 95, 0.8),
+      rgba(13, 59, 95, 0.8)
+    ),  url(<?php echo $indata->data[0]->images->standard_resolution->url; ?>);
+    background-repeat: no-repeat;
+    background-size: cover, cover;
     background-position: center;
-    animation: snowfall 6s linear infinite;
-}
-
-@keyframes snowfall {
-    0% {
-      background-position: 0px 0px, 0px 0px, center, center;
-    }
-    50% {
-      background-position:  256px 512px, 128px 256px,center, center;
-    }
-    100% {
-      background-position:  512px 1024px, 256px 512px, center, center;
-    }
-}
-
-.hero-img {
-    object-fit: cover;
-    width: inherit;
-    height: inherit;
-    opacity: 0.6;
-    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
-}
-
-.merrychristmas {
-  position: absolute;
-  color: #fff;
-  left: 50%;
-  top: 50%;
-  transform: perspective(1px) translateX(-50%) translateY(calc(-50% - 512px/5)) rotate(-6deg);
-  font-size: 4rem;
-  font-family: 'Pacifico', cursive;
-  text-shadow: 2px 2px rgba(255,255,255, 0.2);
 }
 
 @media screen and (max-width: 832px) {
@@ -141,7 +113,6 @@ header .hero {
 
 @media screen and (max-height: 512px) {
     .merrychristmas {
-        padding-top: 2rem;
         font-size: 1.5rem;
     }
     header .hero {

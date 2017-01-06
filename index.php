@@ -3,22 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>Eliseo Martelli</title>
-        <meta name="theme-color" content="#B43838">
-        <link rel="stylesheet" href="res/style.css" media="screen" title="no title">
+        <meta name="theme-color" content="#2196f3">
+        <link rel="stylesheet" href="res/style.php" media="screen" title="no title">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://use.fontawesome.com/a62165eaa4.js"></script>
     </head>
     <body>
         <header>
-          <div class="merrychristmas">
-              Merry Christmas!
-          </div>
           <div class="hero"></div>
         </header>
         <main>
             <div id="main-container" class="container">
-                <img class="profile-pic" src="https://twitter.com/eliseomartelli/profile_image?size=original" alt="Eliseo Martelli" />
+
+                <img class="profile-pic" src="https://pbs.twimg.com/profile_images/802815721306816512/ulg-IvVK.jpg" alt="Eliseo Martelli" />
                 <div class="card">
                     <p id="name">
                         Eliseo Martelli
