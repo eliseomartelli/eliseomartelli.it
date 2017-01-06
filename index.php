@@ -45,9 +45,13 @@
                         <a class="icon-a" href="https://www.snapchat.com/add/eliseomartelli/" target="_blank">
                             <i class="fa fa-2x fa-snapchat-ghost" aria-hidden="true"></i>
                         </a>
+                        <a class="icon-a" href="https://t.me/EliseoMartelli" target="_blank">
+                            <i class="fa fa-2x fa-telegram" aria-hidden="true"></i>
+                        </a>
                         <a class="icon-a" href="https://github.com/eliseomartelli" target="_blank">
                             <i class="fa fa-2x fa-github" aria-hidden="true"></i>
                         </a>
+
 
                     </p>
 
