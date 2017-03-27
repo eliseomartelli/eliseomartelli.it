@@ -36,8 +36,8 @@
 
 header {
     background: linear-gradient(to bottom right,
-        hsla(193, 88%, 86%, 0.7),
-        hsla(240, 100%, 27%, 0.7)), url("herobg.jpg");
+        hsla(193, 88%, 86%, 0.8),
+        hsla(240, 100%, 27%, 0.8)), url("herobg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,7 +70,7 @@ header {
 }
 
 .section.section-bis {
-    background: #DAECF2;
+    background: #e6f7fc;
 }
 
 .section h2 {
@@ -83,7 +83,8 @@ header {
     margin: 8px;
     padding-top: 16px;
     padding-bottom: 16px;
-    min-width: 268px;
+    width: calc(100% / 3 - 6 * 8px);
+    min-width: calc(960px / 3 - 6 * 8px);
 }
 
 .grid {
@@ -98,7 +99,7 @@ header {
 }
 .card.container img {
     margin-top: 16px;
-    width: 128px;
+    width: 40%;
 }
 
 #social {
@@ -108,6 +109,10 @@ header {
     color: #1BB0DB;
     text-decoration: none;
     margin: 4px;
+    transition: color 0.4s;
+}
+.icon-a:hover {
+    color: #1bdba6;
 }
 .or {
     font-weight: 300;
@@ -116,9 +121,10 @@ header {
 }
 @media (max-width: 380px) {
     .card {
-        width: calc(88vw);
+        width: 100%;
         margin-left: 0;
         margin-right: 0;
+        min-width: 0px;
     }
     .grid {
         padding-left: 16px;
@@ -126,5 +132,21 @@ header {
     }
     .desc {
         font-size: 22px;
+    }
+}
+
+@media (max-width: 200px) {
+    .card h4 {
+        font-size: .8rem;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: .8rem;
+    }
+    .profile {
+        width: 45%;
+        height: auto;
     }
 }
