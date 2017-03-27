@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.container {
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+.center-content {
+    text-align: center;
+}
+
+.toolbar {
+    position:fixed;
+    background: #fff;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.toolbar .logo {
+    font-size: 20px;
+    color: #555555;
+    font-weight: 300;
+}
+
+.toolbar .logo span {
+    font-weight: 700;
+}
+
+header {
+    background: linear-gradient(to bottom right,
+        hsla(193, 88%, 86%, 0.7),
+        hsla(240, 100%, 27%, 0.7)), url("herobg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 512px;
+}
+
+.desc {
+    color: #fff;
+    font-weight: 300;
+    font-size: 32px;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    color: #555555;
+}
+.profile {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin-bottom: 32px;
+}
+
+.section.section-bis {
+    background: #DAECF2;
+}
+
+.section h2 {
+    font-weight: 300;
+}
+
+.card {
+    display: inline-block;
+    background: #fff;
+    margin: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    min-width: 268px;
+}
+
+.grid {
+    max-width: 968px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0 auto;
+}
+
+.section-bis .grid {
+    margin-top: 64px;
+}
+.card.container img {
+    margin-top: 16px;
+    width: 128px;
+}
+
+#social {
+    margin-top: 32px;
+}
+.icon-a {
+    color: #1BB0DB;
+    text-decoration: none;
+    margin: 4px;
+}
+.or {
+    font-weight: 300;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+@media (max-width: 380px) {
+    .card {
+        width: calc(88vw);
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .grid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .desc {
+        font-size: 22px;
+    }
+}
