@@ -15,20 +15,18 @@
             </div>
         </div>
         <header class="full-width container center-content">
-
-                <p class="desc grid">
-                    I make, break and fix things.
-                </p>
-
+            <p class="desc grid">
+                I make, break and fix things.
+            </p>
         </header>
         <main>
-            <div class="container full-width center-content section">
+            <div class="full-width center-content section">
                 <div class="grid">
                     <img class="profile container" src="res/profile.jpg" alt="">
                     <p>I’m Eliseo Martelli.<br>I’m an Android and Web developer but I’m also into creative stuffs.</p>
                 </div>
             </div>
-            <div class="container full-width center-content section section-bis">
+            <div class="full-width center-content section section-bis">
                 <h2>Check out my projects</h2>
                 <div class="grid">
                     <div class="card container">
@@ -48,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container full-width center-content section">
+            <div class="full-width center-content section">
                 <h2>Get in touch</h2>
                 <p style="font-weight: 300;">I love connecting with people :)</p>
                 <div class="grid">
@@ -76,6 +74,7 @@
                         </a>
                     </p>
                     <p class="or">- or -</p>
+                    <p style="font-weight: 300;">email me:</p>
                     <a class="icon-a email" href="mailto:me@eliseomartelli.it">me@eliseomartelli.it</a>
                 </div>
 
