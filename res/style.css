@@ -22,15 +22,28 @@
     background: #fff;
     padding-top: 14px;
     padding-bottom: 14px;
+    z-index: 200;
+}
+
+footer {
+    background: #555555;
+    color: #fff;
+    font-weight: 300;
+    font-size: .8rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .toolbar .logo {
     font-size: 20px;
     color: #555555;
+}
+
+.logo {
     font-weight: 300;
 }
 
-.toolbar .logo span {
+.logo span {
     font-weight: 700;
 }
 
