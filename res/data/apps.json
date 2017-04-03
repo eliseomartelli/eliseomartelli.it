@@ -1,0 +1,17 @@
+[
+    {
+        "name" : "Citazioni",
+        "icon" : "/res/appicons/citazioni.png",
+        "url" : "https://play.google.com/store/apps/details?id=eliseo.citazioni"
+    },
+    {
+        "name" : "NightMode",
+        "icon" : "/res/appicons/nightmode.png",
+        "url" : "https://play.google.com/store/apps/details?id=eliseo.nightmode"
+    },
+    {
+        "name" : "WatchStatus",
+        "icon" : "/res/appicons/watchstatus.png",
+        "url" : "https://play.google.com/store/apps/details?id=it.eliseomartelli.watchstatus"
+    }
+]

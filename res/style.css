@@ -20,6 +20,8 @@
 .toolbar {
     position:fixed;
     background: #fff;
+    top: 0;
+    left: 0;
     padding-top: 14px;
     padding-bottom: 14px;
     z-index: 200;
@@ -48,6 +50,7 @@ footer {
 }
 
 header {
+    margin-top: 52px;
     background: linear-gradient(to bottom right,
         hsla(193, 88%, 86%, 0.8),
         hsla(240, 100%, 27%, 0.8)), url("herobg.jpg");
