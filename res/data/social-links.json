@@ -1,0 +1,30 @@
+[
+    {
+        "url" : "https://www.facebook.com/eliseomartelli",
+        "icon" : "facebook-official"
+    },
+    {
+        "url" : "http://instagram.com/eliseomartelli",
+        "icon" : "instagram"
+    },
+    {
+        "url" : "https://www.snapchat.com/add/eliseomartelli/",
+        "icon" : "snapchat-ghost"
+    },
+    {
+        "url" : "https://twitter.com/EliseoMartelli",
+        "icon" : "twitter"
+    },
+    {
+        "url" : "https://t.me/eliseomartelli",
+        "icon" : "telegram"
+    },
+    {
+        "url" : "https://github.com/eliseomartelli",
+        "icon" : "github"
+    },
+    {
+        "url" : "http://codepen.io/eliseomartelli/",
+        "icon" : "codepen"
+    }
+]

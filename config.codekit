@@ -44,6 +44,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
+	"\/res\/data\/apps.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/res\/data\/apps.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/res\/data\/apps-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/res\/data\/social-links.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/res\/data\/social-links.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/res\/data\/social-links-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/res\/herobg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

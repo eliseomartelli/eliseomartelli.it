@@ -9,8 +9,10 @@
         <script src="https://use.fontawesome.com/a62165eaa4.js"></script><link href="https://use.fontawesome.com/a62165eaa4.css" media="all" rel="stylesheet">
     </head>
     <body>
-        <?php include 'res/layouts/toolbar.php' ?>
+
         <?php include 'res/layouts/home-header.php' ?>
+        <?php include 'res/layouts/toolbar.php' ?>
+
         <main>
             <?php include 'res/layouts/home-presentation.php' ?>
             <?php include 'res/layouts/home-projects.php' ?>
