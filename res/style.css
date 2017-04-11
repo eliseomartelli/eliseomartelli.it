@@ -135,7 +135,7 @@ header {
     margin-top: 32px;
     margin-bottom: 32px;
 }
-@media (max-width: 380px) {
+@media screen and (max-width: 380px) {
     .card {
         width: 100%;
         margin-left: 0;
@@ -151,7 +151,7 @@ header {
     }
 }
 
-@media (max-width: 200px) {
+@media screen and (max-width: 200px) {
     .card h4 {
         font-size: .8rem;
     }
@@ -164,5 +164,11 @@ header {
     .profile {
         width: 45%;
         height: auto;
+    }
+}
+
+@media screen and (max-height: 512px) {
+    header {
+        height: 70vh;
     }
 }
