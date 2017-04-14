@@ -17,6 +17,7 @@
     text-align: center;
 }
 
+
 .toolbar {
     position:fixed;
     background: #fff;
@@ -48,6 +49,11 @@ footer {
 .logo span {
     font-weight: 700;
 }
+
+.main {
+    margin-top: 52px;
+}
+
 
 header {
     margin-top: 52px;
