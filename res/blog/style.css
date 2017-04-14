@@ -99,6 +99,7 @@ header {
     padding-bottom: 16px;
     width: calc(100% / 3 - 6 * 8px);
     min-width: calc(960px / 3 - 6 * 8px);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
 
 .card {
