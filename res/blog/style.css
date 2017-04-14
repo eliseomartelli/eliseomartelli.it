@@ -28,15 +28,6 @@
     z-index: 200;
 }
 
-footer {
-    background: #555555;
-    color: #fff;
-    font-weight: 300;
-    font-size: .8rem;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
 .toolbar .logo {
     font-size: 20px;
     color: #555555;
@@ -50,7 +41,7 @@ footer {
     font-weight: 700;
 }
 
-.main {
+main {
     margin-top: 52px;
 }
 
