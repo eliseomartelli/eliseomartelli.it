@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
 
@@ -12,7 +11,7 @@
 
         <link rel="apple-touch-icon" href="{PortraitURL-128}"></link>
 
-        <link rel="stylesheet" href="https://rawgit.com/eliseomartelli/personal-site/master/blog/style.css">
+        <link rel="stylesheet" href="https://rawgit.com/eliseomartelli/personal-site/master/res/blog/style.css">
 
     </head>
 
@@ -24,19 +23,6 @@
         </div>
 
         <main>
-            {block:SearchPage}
-                <article>
-                    {block:SearchResults}
-                        <div id="searchresults">{lang:SearchResultCount results for SearchQuery 2}</div>
-                    {/block:SearchResults}
-
-                    {block:NoSearchResults}
-                        <div id="searchresults">{lang:No search results for SearchQuery 2}</div>
-                    {/block:NoSearchResults}
-                </article>
-
-            {/block:SearchPage}
-
             {block:Posts}
 
 
@@ -48,7 +34,8 @@
 
             				{block:Source}<p>&mdash; {Source}</p>{/block:Source}
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             		</div>
 
@@ -81,7 +68,8 @@
             			{/block:Caption}
 
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             		</div>
 
@@ -101,7 +89,8 @@
             				<div class="caption">{Caption}</div>
             			{/block:Caption}
 
-            	    	<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            	    	<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             	    </div>
 
@@ -122,7 +111,8 @@
             				<div class="caption">{Caption}</div>
             			{/block:Caption}
 
-            	    	<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            	    	<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             	    </div>
 
@@ -144,7 +134,8 @@
             				<div class="caption">{Caption}</div>
             			{/block:Caption}
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             		</div>
 
@@ -165,7 +156,8 @@
             				<p>{Description}</p>
             			{/block:Description}
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             		</div>
 
@@ -195,7 +187,8 @@
             				{/block:Lines}
             			</ul>
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             		</div>
 
@@ -216,7 +209,8 @@
 
                         {Body}
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
                     </div>
 
@@ -241,7 +235,8 @@
             				<p><a href="{ExternalAudioURL}">{lang:Download}</a></p>
             			{/block:ExternalAudio}
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             		</div>
 
@@ -260,7 +255,8 @@
 
             			<div class="answer-text">{Answer}</div>
 
-            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
+            			<div class="postmeta">{block:Date}<a href="{Permalink}" class="date">{TimeAgo}</a>{/block:Date}<br>
+                        <a href="{Permalink}" class="notes">{lang:Notes} ({NoteCount})</a>{LikeButton color="grey" size="13"}{ReblogButton color="grey" size="13"}</div>
 
             		</div>
 
