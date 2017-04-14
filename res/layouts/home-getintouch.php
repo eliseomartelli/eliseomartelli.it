@@ -1,5 +1,5 @@
 <?php
-$socials = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . '/res/data/social-links.json'));
+$socials = json_decode(file_get_contents("https://cdn.rawgit.com/eliseomartelli/personal-site__data/master/social-links.json"));
 ?>
 <div class="full-width center-content section">
     <h2>Get in touch</h2>
