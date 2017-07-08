@@ -17,6 +17,7 @@
             <?php include 'res/layouts/home-presentation.php' ?>
             <?php include 'res/layouts/home-projects.php' ?>
             <?php include 'res/layouts/home-getintouch.php' ?>
+            <?php include 'res/layouts/home-donate.php' ?>
         </main>
         <?php include 'res/layouts/footer.php' ?>
     </body>
