@@ -62,7 +62,7 @@ body {
   height: 100vh;
   position: fixed;
   overflow-y: scroll;
-  top: 0; right: 0; bottom: 0; left: 0; 
+  top: 0; right: 0; bottom: 0; left: 0;
   z-index: 100;
   font-size: 32px;
   color: white;
@@ -134,4 +134,11 @@ footer {
   width: 90%;
   display: block;
   margin: 0 auto;
+}
+
+code {
+  background: #EEE;
+  border-radius: 4px;
+  display: block;
+  padding: 16px;
 }
