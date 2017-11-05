@@ -1,0 +1,11 @@
+---
+layout: page
+---
+
+<ul>
+  {% for app in site.data.apps %}
+    <li>
+      <a href="{{app.url}}">{{app.name}}</a>
+    </li>
+    {% endfor %}
+</ul>
