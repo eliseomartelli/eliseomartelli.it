@@ -1,8 +1,11 @@
 - name: Citazioni
   url: https://play.google.com/store/apps/details?id=eliseo.citazioni
+  icon: https://lh3.googleusercontent.com/ZnSGNMg0FkQkA4rHGXmdcFsd_3AdPltDqRg-RxSE4SATv3yZXrrmwlnhKaEeMFoQKWK-=w300-rw
 
 - name: Night Mode
   url: https://play.google.com/store/apps/details?id=eliseo.nightmode
+  icon: https://lh3.googleusercontent.com/4eFRjb85FDj4OS8WwpD6EMXaD4yOO8tTHzM5rOvW9PUaQjA1AN09srPCGvSBUBPLNfTm=w300-rw
 
 - name: WatchStatus
   url: https://play.google.com/store/apps/details?id=it.eliseomartelli.watchstatus
+  icon: https://lh3.googleusercontent.com/w91Gz7ytSsiVE11Jwvasn-inTpimistbhDTKvQq4yDKVB5MsHF6SLpG5nGjQpvPBtA=w300-rw

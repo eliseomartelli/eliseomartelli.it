@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.full-wide {
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  background: white;
+  padding: 14px;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.toolbar .logo {
+  margin-left: 32px;
+  display: inline-block;
+  color: #555;
+}
+
+.logo {
+    font-weight: 300;
+}
+
+.logo span {
+    font-weight: 700;
+}
+
+.content {
+  max-width: 960px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 51px;
+  padding: 16px 16px;
+}
+
+.toolbar .content {
+  margin-top: 0;
+  padding: 0;
+}
+
+.overlay .content {
+  position: relative;
+  height: 100%;
+  margin-top: 0;
+  padding: 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0; right: 0; bottom: 0; left: 0; 
+  z-index: 100;
+  font-size: 32px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0,0,0,0.9);
+  transition: opacity 0.25s linear;
+}
+
+.overlay ul li a {
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-decoration: none;
+  color: white;
+  opacity: 0.5;
+  transition: opacity 0.2s linear;
+}
+
+.overlay ul li a.current {
+  opacity: 1;
+}
+
+.overlay ul li a:hover {
+  opacity: 0.8;
+}
+
+.overlay ul {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  list-style-type: none;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+span.menuicon {
+  font-size: 20px;
+  color: #555;
+  display: inline-block;
+  position: absolute;
+}
+
+.overlay span.menuicon {
+  margin-left: 14px;
+  margin-top: 14px;
+  color: #fff;
+}
+
+footer {
+    background: #555555;
+    color: #fff;
+    font-weight: 300;
+    font-size: .8rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.center-content {
+  text-align: center;
+}
+
+.post {
+  padding: 16px;
+}
+.post img {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
