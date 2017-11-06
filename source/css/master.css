@@ -15,18 +15,26 @@ body {
 }
 
 .toolbar {
+  height: 24px;
   position: fixed;
   top: 0;
   background: white;
-  padding: 14px;
+  padding: 14px 0px;
   font-size: 20px;
   z-index: 10;
 }
 
 .toolbar .logo {
-  margin-left: 32px;
+  margin: 0 auto;
   display: inline-block;
   color: #555;
+}
+
+.toolbar .logo__container {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo {
@@ -83,6 +91,7 @@ body {
 
 .overlay ul li a.current {
   opacity: 1;
+  font-weight: bolder;
 }
 
 .overlay ul li a:hover {
@@ -106,10 +115,10 @@ span.menuicon {
   color: #555;
   display: inline-block;
   position: absolute;
+  margin-left: 14px;
 }
 
 .overlay span.menuicon {
-  margin-left: 14px;
   margin-top: 14px;
   color: #fff;
 }

@@ -1,5 +1,5 @@
 <div id="nav" class="overlay">
-  <div class="content">
+  <div class="content" onclick="closeNav()">
     <span class="menuicon" onclick="closeNav()"><i class="material-icons">close</i></span>
     <ul>
       {% for item in site.menus.header %}
@@ -18,7 +18,7 @@
 <div class="shadow full-wide toolbar">
   <div class="content">
     <span class="menuicon" onclick="openNav()"><i class="material-icons">menu</i></span>
-    <a href="/">
+    <a class="logo__container" href="/">
       <div class="logo">
           eliseo<span>martelli</span>
       </div>

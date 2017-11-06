@@ -2,3 +2,4 @@ _site
 .sass-cache
 .jekyll-metadata
 Site
+prepros-6.config
