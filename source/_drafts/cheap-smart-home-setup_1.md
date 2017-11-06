@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Cheap Smart Home Setup"
+title: "My Cheap Smart Home Setup - Intro"
 categories: iot automation
 ---
 
