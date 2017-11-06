@@ -157,6 +157,27 @@ code {
 }
 
 .post-list li {
-  margin-bottom: 64px;
+  margin-bottom: 24px;
   margin-left: -40px;
+}
+
+.readmore {
+  display: inline-block;
+  text-align: center;
+  padding: 16px;
+  background-color: #5A539E;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bolder;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.readmore:hover {
+  background: #4A679E;
+  margin-right: 8px;
+}
+
+.post-item {
+  padding: 16px;
 }
