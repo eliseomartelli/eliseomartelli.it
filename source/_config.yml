@@ -26,7 +26,7 @@ plugins:
   - jekyll-feed
 
 disqus:
-  shortname: elisemartelli
+  shortname: eliseomartelli
 
 defaults:
   - scope:
