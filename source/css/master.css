@@ -50,7 +50,7 @@ body {
   position: relative;
   margin: 0 auto;
   margin-top: 51px;
-  padding: 16px 16px;
+  padding: 16px;
 }
 
 .toolbar .content {
@@ -150,4 +150,13 @@ code {
   border-radius: 4px;
   display: block;
   padding: 16px;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  margin-bottom: 64px;
+  margin-left: -40px;
 }
