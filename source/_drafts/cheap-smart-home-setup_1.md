@@ -54,6 +54,6 @@ If you wrap your head around it you can build a lot of great things with it.
 
 After figuring out the software we need it's time to install it.
 
-Since I want to run other things on my Raspberry Pi I decided to take the [Hassbian](https://home-assistant.io/docs/installation/hassbian/).
+Since I want to run other things on my Raspberry Pi I decided to take the [Hassbian](https://home-assistant.io/docs/installation/hassbian/) route.
 
 Hassbian is a special flavor of Raspbian that's already configured and optimized to run Home Assistant.
