@@ -20,3 +20,10 @@ If you don't know me here's a little list:
 - Technology;
 
 *In public I talk about technology, tho...*
+
+My journey in smart home technologies started a while ago but since I moved to a new apartment (_#UniversityLife_), I had to re-do and re-think a lot of things.
+
+My new setup should be:
+- Portable;
+- Unintrusive;
+- Cheap.
