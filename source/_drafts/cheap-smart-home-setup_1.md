@@ -39,3 +39,21 @@ As you can see the RPi Zero W is a great little device and its ports are a godse
 
 After years of [OpenHab](https://www.openhab.org), I finally decided to switch platform.  
 My new platform of choice is [Home Assistant](http://home-assistant.io).
+
+#### What's Home Assistant?
+Home Assistant is an open-source smart home platform written in Python.
+It's a really cool piece of software and you can extend it endlessly.
+
+It's Raspberry Pi - Friendly and it has a great material-design inspired web interface.
+
+The only downside is that it's "configuration-files heavy" and it's not so beginner friendly.
+
+If you wrap your head around it you can build a lot of great things with it.
+
+#### Installation
+
+After figuring out the software we need it's time to install it.
+
+Since I want to run other things on my Raspberry Pi I decided to take the [Hassbian](https://home-assistant.io/docs/installation/hassbian/).
+
+Hassbian is a special flavor of Raspbian that's already configured and optimized to run Home Assistant.
