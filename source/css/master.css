@@ -150,6 +150,7 @@ code {
   border-radius: 4px;
   display: block;
   padding: 16px;
+  overflow: scroll;
 }
 
 .post-list {
