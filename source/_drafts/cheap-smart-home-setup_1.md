@@ -19,6 +19,8 @@ I've decided to use a hardly - constrained hardware platform. A Raspberry Pi Zer
 The Raspberry Pi Zero W isn't what I define a "power-house".
 It's a great little device and it has great potentialities for its price.
 
+<img src="https://c2.staticflickr.com/4/3735/33209069075_99e08d84ec_b.jpg" style="max-width: 400px"/>
+
 If you aren't familiar with its specs the list below should help you understand its capabilities.
 - 1GHz, single-core CPU;
 - 512MB RAM;
@@ -57,3 +59,38 @@ After figuring out the software we need it's time to install it.
 Since I want to run other things on my Raspberry Pi I decided to take the [Hassbian](https://home-assistant.io/docs/installation/hassbian/) route.
 
 Hassbian is a special flavor of Raspbian that's already configured and optimized to run Home Assistant.
+
+_This guide is valid for November 2017, please reefer to the [official guide](https://home-assistant.io/docs/installation/hassbian/installation/)._
+
+To install Hassbian you need:
+- A Raspberry Pi;
+- A Computer (I'm using a Linux machine);
+- A Micro SD Card (>= 4Gb).
+
+So here are the steps to follow:
+
+1. Download the Raspbian image from the Home Assistant site. [[Direct Link]](https://github.com/home-assistant/pi-gen/releases/latest);
+2. Connect the Micro SD card to your computer;
+3. Write the Image to the Micro SD card.
+  - On a Mac/Linux you can use dd as follows:
+  ```
+  dd if=<raspbian_img_file> of=<your_device> bs=4M
+  ```
+  - On Windows you can use Win32DiskImager or Etcher. Follow the official guide.
+4. Now you've to decide how to connect your RPi to the network.
+  - If you wanna take the ethernet way just plug your cable.
+  - If you wanna take the Wi-Fi way you have to:
+    - Mount your Micro SD card "boot" partition on your machine;
+    - Create a new _wpa_supplicant.conf_ file and put in it:
+      ```
+      country=<YOUR_COUNTRY_CODE>
+      ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+      update_config=1
+
+      network={
+        ssid="YOUR_SSID"
+        psk="YOUR_PASSWORD"
+      }
+      ```
+    - Save the file;
+    - Put the Micro SD in your PI.
