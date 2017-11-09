@@ -24,6 +24,7 @@ author: Eliseo Martelli
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 disqus:
   shortname: eliseomartelli
