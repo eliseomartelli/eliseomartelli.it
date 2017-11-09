@@ -1,23 +1,21 @@
-<div id="nav" class="overlay">
-  <div class="content" onclick="closeNav()">
-    <span class="menuicon" onclick="closeNav()"><i class="material-icons">close</i></span>
-    <ul>
-      {% for item in site.menus.header %}
-        {% assign current = nil %}
-        {% if item.url == page.url or item.layout == page.layout %}
-          {% assign current = 'current' %}
-        {% endif %}
-        <li>
-          <a class="{{ current }}" href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+<div id="nav" class="sidemenu shadow">
+  <span class="menuicon" onclick="closeNav()"><i class="material-icons">close</i></span>
+  <ul>
+    {% for item in site.menus.header %}
+      {% assign current = nil %}
+      {% if item.url == page.url or item.layout == page.layout %}
+        {% assign current = 'current' %}
+      {% endif %}
+      <li>
+        <a class="{{ current }}" href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <div class="shadow full-wide toolbar">
+  <span class="menuicon" onclick="openNav()"><i class="material-icons">menu</i></span>
   <div class="content">
-    <span class="menuicon" onclick="openNav()"><i class="material-icons">menu</i></span>
     <a class="logo__container" href="/">
       <div class="logo">
           eliseo<span>martelli</span>
@@ -28,13 +26,10 @@
 
 <script type="text/javascript">
   function openNav() {
-    document.getElementById("nav").style.opacity = "1";
-    document.getElementById("nav").style.visibility = "visible";
-
+    document.getElementById("nav").style.left = "0";
   }
 
   function closeNav() {
-    document.getElementById("nav").style.opacity = "0";
-    document.getElementById("nav").style.visibility = "hidden";
+    document.getElementById("nav").style.left = "-100%";
   }
 </script>
