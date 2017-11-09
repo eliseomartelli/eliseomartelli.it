@@ -97,7 +97,7 @@ header {
 }
 
 @media screen and (max-width: 200px) {
-    .card h4 {
+    .card h3 {
         font-size: .8rem;
     }
     h2 {
@@ -116,4 +116,8 @@ header {
     header {
         height: 70vh;
     }
+}
+
+.card h3 {
+  margin: 0;
 }
