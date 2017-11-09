@@ -58,69 +58,12 @@ body {
   padding: 0;
 }
 
-.overlay .content {
-  position: relative;
-  height: 100%;
-  margin-top: 0;
-  padding: 0;
-}
-
-.overlay {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  overflow-y: scroll;
-  top: 0; right: 0; bottom: 0; left: 0;
-  z-index: 100;
-  font-size: 32px;
-  color: white;
-  opacity: 0;
-  visibility: hidden;
-  background: rgba(0,0,0,0.9);
-  transition: opacity 0.25s linear;
-}
-
-.overlay ul li a {
-  text-transform: uppercase;
-  font-weight: lighter;
-  text-decoration: none;
-  color: white;
-  opacity: 0.5;
-  transition: opacity 0.2s linear;
-}
-
-.overlay ul li a.current {
-  opacity: 1;
-  font-weight: bolder;
-}
-
-.overlay ul li a:hover {
-  opacity: 0.8;
-}
-
-.overlay ul {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  list-style: none;
-  list-style-type: none;
-  list-style-position: inside;
-  padding-left: 0;
-}
-
-span.menuicon {
+.menuicon {
   font-size: 20px;
   color: #555;
-  display: inline-block;
+  display: block;
   position: absolute;
   margin-left: 14px;
-}
-
-.overlay span.menuicon {
-  margin-top: 14px;
-  color: #fff;
 }
 
 footer {
@@ -181,4 +124,49 @@ code {
 
 .post-item {
   padding: 16px;
+}
+
+.sidemenu {
+  position: fixed;
+  top: 0;
+  max-width: 500px;
+  width: 70%;
+  height: 100%;
+  background: #fff;
+  z-index: 10000;
+  left: -100%;
+  transition: left 0.5s ease-in-out;
+}
+
+.sidemenu ul {
+  transform: translateY(52px);
+  padding: 0;
+  margin: 0;
+}
+
+.sidemenu ul li {
+  list-style: none;
+  text-align: center;
+}
+
+.sidemenu ul li:hover {
+  background: #DDD;
+}
+
+.sidemenu ul li a {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 22px;
+  padding: 16px;
+  color: #212121;
+  text-decoration: none;
+  display: block;
+}
+
+.sidemenu .current {
+  background: #eFeFeF;
+}
+
+.sidemenu .menuicon {
+  margin-top: 14px;
 }
