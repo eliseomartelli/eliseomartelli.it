@@ -22,10 +22,24 @@ header {
             transform: translate(-50%, -50%);
 }
 
+
+
+body {
+  --section-color: #555;
+  --section-bis-background: #e6f7fc;
+  --card-background-color: #fff;
+}
+
+.nightmode {
+    --section-color: #ddd;
+    --section-bis-background: #0a4050;
+    --card-background-color: #212121;
+}
+
 .section {
     padding-top: 64px;
     padding-bottom: 64px;
-    color: #555555;
+    color: var(--section-color);
 }
 .profile {
     width: 128px;
@@ -35,12 +49,12 @@ header {
 }
 
 .section.section-bis {
-    background: #e6f7fc;
+    background: var(--section-bis-background);
 }
 
 .card {
     display: inline-block;
-    background: #fff;
+    background: var(--card-background-color);
     margin: 8px;
     padding-top: 16px;
     padding-bottom: 16px;
