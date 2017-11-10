@@ -11,6 +11,7 @@
       </li>
     {% endfor %}
   </ul>
+  <span class="darkmode" onclick="toggleNightmode()">Dark Mode</span>
 </div>
 
 <div class="shadow full-wide toolbar">
@@ -25,11 +26,39 @@
 </div>
 
 <script type="text/javascript">
+  function setCookie(name, val) {
+    document.cookie = name+"="+val+";"
+  }
+  function getCookie(name) {
+    var cname = name+"=";
+    var decodeCookie = decodeURIComponent(document.cookie);
+    var ca = decodeCookie.split(";");
+    for (var i = 0; i<ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(cname) == 0) {
+          return c.substring(cname.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  if (getCookie("nightmode") == "YES") {
+    toggleNightmode();
+  }
+
   function openNav() {
     document.getElementById("nav").style.left = "0";
   }
 
   function closeNav() {
     document.getElementById("nav").style.left = "-100%";
+  }
+  function toggleNightmode() {
+    setCookie("nightmode", (getCookie("nightmode") == "YES") ? "NO" : "YES");
+    document.body.classList.toggle("nightmode");
+    closeNav();
   }
 </script>
