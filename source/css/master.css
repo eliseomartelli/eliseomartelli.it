@@ -139,7 +139,7 @@ code {
   border-radius: 4px;
   display: block;
   padding: 16px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .post-list {

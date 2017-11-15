@@ -41,3 +41,44 @@ Here're the steps to install AppDaemon:
   ```
   $ sudo pip3 install appdaemon
   ```
+- Now we need to create a file called _appdaemon.yaml_  somewhere.  
+  I decided to put it in my Home Assistant Configuration directory.
+  ```
+  cd /path/to/homeassistant/dir
+  mkdir appdaemon
+  cd appdaemon
+  touch appdaemon.yaml
+  ```
+- Then we need to edit the appdaemon Configuration file.  
+  ```
+  nano appdaemon.yaml
+  ```  
+  The minimal configuration is something like that:
+  ```
+  AppDaemon:
+    threads: 10
+  HASS:
+    ha_key: YOUR_HOMEASSISTANT_PASSWORD
+    ha_url: YOUR_HOMEASSISTANT_URL
+  ```
+  You can copy-paste it and change the values accordingly to your needs.
+
+Now that we have AppDaemon installed we need to daemonize it.
+
+To daemonize it you need to:
+
+//TODO: Here
+
+Now we need to install HADashboard.
+
+HADashboard will be the heart of our wall mounted panel.
+
+To install it you need to:
+
+- Edit the _appdaemon.yaml_ configuration file.
+   Open it with the text editor of your choice.  
+   Now we need to append to that file the HADashboard configuration.
+   ```
+   HADashboard:
+     dash_url: http://YOUR_HA_IP:5050
+   ```
