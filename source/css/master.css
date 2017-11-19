@@ -18,6 +18,7 @@ body {
   --shadow-color: rgba(0,0,0,0.16);
   --anchor-color: #212121;
   --code-background: #eee;
+  --readmore-background-color-hover: blue;
   background-color: var(--background-color);
   color: var(--text-color);
   --darkmode-background: #eee;
@@ -180,8 +181,8 @@ code {
   height: 100%;
   background: var(--background-color);
   z-index: 10000;
-  left: -100%;
-  transition: left 0.5s ease-in-out;
+  left: -500px;
+  transition: left 0.25s ease;
 }
 
 .sidemenu ul {
