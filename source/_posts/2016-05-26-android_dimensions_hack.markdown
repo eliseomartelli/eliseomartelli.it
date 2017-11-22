@@ -1,8 +1,8 @@
 ---
-layout: post
 title:  "A Little Hack For Android Dimensions"
 date:   2016-05-26 12:46:35 +0100
 categories: android development
+permalink: /android/development/2016/05/26/android_dimensions_hack.html
 ---
 
 If you write a lot of **UI** layouts for **Android** and your goal is making a [responsive Android App](https://medium.com/google-developers/building-a-responsive-ui-in-android-7dc7e4efcbb3), you surely faced the need of having something like “match_parent” or “wrap_content” in your Android Dimension Resources.

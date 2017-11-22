@@ -1,8 +1,8 @@
 ---
-layout: post
 title:  "Linux Day IoT Talk"
 date:   2017-10-28 12:46:35 +0100
 categories: linux iot
+permalink: /linux/iot/2017/10/28/linux_day_iot.html
 ---
 
 This was my first [**Linux Day**](http://linuxdaytorino.org/2017/) in Turin, and I was _late_, like _very late_ (as always 😂  ).

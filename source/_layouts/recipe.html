@@ -1,0 +1,35 @@
+{% include head.html %}
+<link rel="stylesheet" href="/css/recipe.css">
+<body>
+  {% include toolbar.html %}
+  <div class="hero_recipe shadow" style="background: url({{ page.hero_img }}); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="title__container">
+      <h1 class="post-title post content" itemprop="name headline">{{ page.title | escape }}</h1>
+    </div>
+  </div>
+  <article class="content post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <p class="post-meta">
+        {% if page.author %}
+          • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+        {% endif %}</p>
+    </header>
+    <div class="post-content">
+      <b>Difficulty: </b>{{ page.data.difficulty }}<br>
+      <b>Cost: </b>{{ page.data.cost }}<br>
+      <b>Time: </b>{{ page.data.time }}<br>
+      <b>Servings: </b>{{ page.data.servings }}<br>
+    </div>
+    <div class="post-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    <div class="addthis_inline_share_toolbox"></div>
+
+    {% if site.disqus.shortname %}
+      {% include disqus_comments.html %}
+    {% endif %}
+  </article>
+  {% include footer.html %}
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59ff69e5abacaf0b"></script>
+</body>

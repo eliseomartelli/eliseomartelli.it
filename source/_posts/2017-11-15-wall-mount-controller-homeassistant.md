@@ -1,7 +1,7 @@
 ---
-layout: post
 title: My Cheap Smart Home Setup - Wall Mounted Controller
 categories: iot automation diy
+permalink: /iot/automation/diy/2017/11/15/wall-mount-controller-homeassistant.html
 ---
 **Smart Homes** (or bedrooms) are a **great conversation starters**, that's true only if **you're the one that controls them.**
 When your **guests** aren't able to use your smart home setup **it ain't fun for them.**
