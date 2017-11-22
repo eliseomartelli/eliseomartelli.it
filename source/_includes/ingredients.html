@@ -1,0 +1,37 @@
+<h2>Ingredients</h2>
+<ul id="ingredientList">
+</ul>
+<script>
+  var ingredients = [
+    {% for ingredient in page.ingredients %}
+      {
+        "name": "{{ ingredient.name }}",
+        "noscale" : "{{ingredient.noscale}}",
+        "quantity" : "{{ingredient.quantity}}",
+        "unit" : "{{ ingredient.unit }}"
+      }
+      {% if forloop.last == false %}
+        ,
+      {% endif %}
+    {% endfor %}
+  ];
+
+  function generateIngredients(ingredients, scale) {
+    var list = document.getElementById("ingredientList");
+    list.innerHTML = "";
+    for (var i in ingredients) {
+      var item = document.createElement('li');
+      item.innerHTML = "<b>" + ingredients[i]["name"] + "</b> → ";
+      if (ingredients[i]["noscale"] == "true") {
+        item.innerHTML += (ingredients[i]["quantity"]) + " ";
+      } else {
+        item.innerHTML += (ingredients[i]["quantity"] * scale) + " ";
+      }
+      item.innerHTML += ingredients[i]["unit"];
+      list.appendChild(item);
+    }
+  }
+
+  generateIngredients(ingredients, 1);
+</script>
+Servings: <input type="number" name="servings"  min="1" value="1" onchange="generateIngredients(ingredients, this.value);">

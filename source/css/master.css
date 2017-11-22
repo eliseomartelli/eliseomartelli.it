@@ -221,3 +221,10 @@ code {
 a {
   color: var(--anchor-color);
 }
+
+.recipe_img {
+  position: relative;
+  max-width: 200px;
+  display: inline-block;
+  margin: 0;
+}
