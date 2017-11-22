@@ -1,6 +1,6 @@
 ---
 title: Test Recipe
-hero_img: http://www.seriouseats.com/recipes/assets_c/2016/08/20160827-cherry-tomato-pasta-13-thumb-1500xauto-433876.jpg
+hero_img: https://upload.wikimedia.org/wikipedia/commons/1/14/Eggless-jaggery-shortbread-recipe.jpg
 
 data:
   difficulty: Easy

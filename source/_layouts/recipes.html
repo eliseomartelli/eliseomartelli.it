@@ -8,8 +8,7 @@
       {% for post in site.recipes %}
         <li class="shadow post-item">
           {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-
+          <img src="{{ post.hero_img }}" alt="">
           <h2>
             <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
           </h2>
@@ -25,3 +24,14 @@
   </div>
   {% include footer.html %}
 </body>
+
+<style media="screen">
+    .post-item img {
+      width: calc(100% + 32px);
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      margin: -16px;
+      margin-bottom: 4px;
+    }
+</style>
