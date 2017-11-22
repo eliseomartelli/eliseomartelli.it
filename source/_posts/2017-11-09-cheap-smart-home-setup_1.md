@@ -1,7 +1,7 @@
 ---
-layout: post
 title: "My Cheap Smart Home Setup - Intro & Installation"
 categories: iot automation
+permalink: /iot/automation/2017/11/09/cheap-smart-home-setup_1.html
 ---
 Oh, Hi! Welcome!  
 This is my first **_"real"_** article after a long time.  

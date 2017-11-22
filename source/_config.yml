@@ -29,12 +29,23 @@ plugins:
 disqus:
   shortname: eliseomartelli
 
+permalink: /:collection/:categories/:year/:month/:day/:title/
+
+collections:
+  recipes:
+    output: true
+
 defaults:
   - scope:
       path: ""
+      type: posts
     values:
       layout: "post"
-
+      permalink: /blog/:categories/:year/:month/:day/:title/
+  - scope:
+      type: recipes
+    values:
+      layout: "recipe"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

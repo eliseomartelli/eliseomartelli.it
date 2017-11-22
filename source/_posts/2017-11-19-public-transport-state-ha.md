@@ -1,7 +1,7 @@
 ---
-layout: post
 title: My Cheap Smart Home Setup - How do I get the public transport status?
 categories: iot automation diy
+permalink: /iot/automation/diy/2017/11/19/public-transport-state-ha.html
 ---
 
 Turin is a **great city** and I'm enjoying it.  
