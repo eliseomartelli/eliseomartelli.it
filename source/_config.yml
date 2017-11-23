@@ -29,11 +29,11 @@ plugins:
 disqus:
   shortname: eliseomartelli
 
-permalink: /:collection/:categories/:year/:month/:day/:title/
-
 collections:
   recipes:
     output: true
+
+permalink: /recipes/:categories/:year/:month/:day/:title/
 
 defaults:
   - scope:
@@ -46,6 +46,8 @@ defaults:
       type: recipes
     values:
       layout: "recipe"
+      permalink: /recipes/:categories/:year/:month/:day/:title/
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

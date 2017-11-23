@@ -1,6 +1,7 @@
 ---
 title: Orecchiette con cime di rapa
 hero_img: https://i.imgur.com/uWUzoV7.jpg
+permalink: /recipes/orecchiette_cime_di_rapa/
 
 data:
   difficulty: Easy
