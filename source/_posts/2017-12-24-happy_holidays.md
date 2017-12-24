@@ -34,7 +34,7 @@ In this post I will **highlight** the best things of this 2017.
 
 Let's begin with something important:
 
-**I've met the most beautiful girl of the universe** and yep, she's now my partner and I hope our relationship will last forever.
+**I've met the most beautiful girl of the universe** and yep, she's now my girlfriend and I hope our relationship will last forever.
 
 I've **started** the _#UniversityLife_ and I **moved** from a little town to a big city.
 
