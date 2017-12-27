@@ -32,8 +32,8 @@ disqus:
 collections:
   recipes:
     output: true
-
-permalink: /recipes/:categories/:year/:month/:day/:title/
+  thoughts:
+    output: true
 
 defaults:
   - scope:
@@ -47,6 +47,11 @@ defaults:
     values:
       layout: "recipe"
       permalink: /recipes/:categories/:year/:month/:day/:title/
+  - scope:
+      type: thoughts
+    values:
+      layout: "post"
+      permalink: /thoughts/:title/
 
 
 # Exclude from processing.
