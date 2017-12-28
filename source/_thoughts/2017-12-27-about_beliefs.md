@@ -1,5 +1,5 @@
 ---
-title: About Beliefs.
+title: "About: Beliefs."
 ---
 
 Beliefs. That's what we stand upon. That's what I stand upon.
