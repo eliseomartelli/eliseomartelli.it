@@ -4,11 +4,11 @@
   <div class="content">
     {{ content }}
     <h1 class="page-heading">{{ page.title }}</h1>
-    {% assign postlist = site.posts %}
+    {% assign postlist = site.posts  | sort: 'date' | reverse %}
     {% if page.items == "recipes"  %}
-      {% assign postlist = site.recipes %}
+      {% assign postlist = site.recipes | sort: 'date' | reverse %}
     {% elsif page.items == "thoughts" %}
-      {% assign postlist = site.thoughts %}
+      {% assign postlist = site.thoughts | sort: 'date' | reverse %}
     {% endif %}
     <ul class="post-list">
       {% for post in postlist %}

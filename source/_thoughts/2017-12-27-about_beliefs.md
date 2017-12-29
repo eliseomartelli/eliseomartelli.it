@@ -1,5 +1,7 @@
 ---
 title: "About: Beliefs."
+
+date:   2017-12-27 12:46:35 +010
 ---
 
 Beliefs. That's what we stand upon. That's what I stand upon.

@@ -1,5 +1,7 @@
 ---
 title: "About: Life."
+
+date:   2017-12-28 12:46:35 +010
 ---
 
 Is the life something material?  
