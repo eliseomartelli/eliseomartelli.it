@@ -1,6 +1,6 @@
 ---
 title: "About: First Try."
-date:   2017-12-29 9:00:00 +010
+date:   2017-12-30 9:00:00 +010
 ---
 
 First Try. It can be good or it can be bad.  
