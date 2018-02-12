@@ -1,64 +1,7 @@
-<div id="nav" class="sidemenu shadow">
-  <span class="menuicon" onclick="closeNav()"><i class="material-icons">close</i></span>
-  <ul>
-    {% for item in site.menus.header %}
-      {% assign current = nil %}
-      {% if item.url == page.url or item.layout == page.layout %}
-        {% assign current = 'current' %}
-      {% endif %}
-      <li>
-        <a class="{{ current }}" href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-  <span class="darkmode" onclick="toggleNightmode()">Dark Mode</span>
-</div>
-
-<div class="shadow full-wide toolbar">
-  <span class="menuicon" onclick="openNav()"><i class="material-icons">menu</i></span>
+<div id="toolbar" class="toolbar shadow">
   <div class="content">
-    <a class="logo__container" href="/">
-      <div class="logo">
-          eliseo<span>martelli</span>
-      </div>
-    </a>
+    <div class="logo">
+      eliseo<span>martelli</span>
+    </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  function setCookie(name, val) {
-    document.cookie = name+"="+val+";"
-  }
-  function getCookie(name) {
-    var cname = name+"=";
-    var decodeCookie = decodeURIComponent(document.cookie);
-    var ca = decodeCookie.split(";");
-    for (var i = 0; i<ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == " ") {
-        c = c.substring(1);
-      }
-      if (c.indexOf(cname) == 0) {
-          return c.substring(cname.length, c.length);
-      }
-    }
-    return "";
-  }
-
-  if (getCookie("nightmode") == "YES") {
-    toggleNightmode();
-  }
-
-  function openNav() {
-    document.getElementById("nav").style.left = "0";
-  }
-
-  function closeNav() {
-    document.getElementById("nav").style.left = "-500px";
-  }
-  function toggleNightmode() {
-    setCookie("nightmode", (getCookie("nightmode") == "YES") ? "NO" : "YES");
-    document.body.classList.toggle("nightmode");
-    closeNav();
-  }
-</script>
