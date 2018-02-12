@@ -24,5 +24,23 @@
 }
 
 .section {
-  padding: 24px 0;
+  padding: 64px 0;
+  text-align: center;
+}
+
+.section-bis {
+  background: #e6f7fc;
+}
+
+.profile-img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  margin-bottom: 32px;
+}
+
+@media screen and (max-height: 400px), screen and (max-width: 500px) {
+  .hero .motto {
+    font-size: 2rem;
+  }
 }

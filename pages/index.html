@@ -19,25 +19,49 @@ permalink: /
 
 <div class="section">
   <div class="content">
+    <img class="profile-img shadow" src="assets/profile.jpg" alt=""><br>
     Hi! It's Eliseo Martelli.<br>I’m an Android and Web developer but I’m also into creative stuff.
   </div>
 </div>
 
-<div class="section">
+<div class="section section-bis">
   <div class="content">
-    Check out my projects
+    <h2>Check out my projects</h2>
+    <div class="grid">
+      {% for app in site.data.apps %}
+          <div class="card container shadow">
+            <h3>{{ app.name }}</h3>
+            <img src="{{ app.icon }}"></img><br>
+            <a href={{ app.url }}>
+              <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+          </div>
+        {% endfor %}
+      </div>
   </div>
 </div>
 
 <div class="section">
   <div class="content">
-    Get in touch
+    <h2>Get in touch</h2>
+    <p>I love connecting with people :)</p>
+    <div class="grid">
+      <p id="social">
+        {% for social in site.data.socials %}
+          <a class="icon-a" href="{{ social.url }}" target="_blank">
+            <i class="fa fa-2x fa-{{ social.icon }}" aria-hidden="true"></i>
+          </a>
+        {% endfor %}
+      </p>
+      <p class="or">- or -</p>
+      <p style="font-weight: 300;">email me:</p>
+      <a class="icon-a email" href="mailto:me@eliseomartelli.it">me@eliseomartelli.it</a>
+    </div>
   </div>
 </div>
 
-<div class="section">
+<div class="section section-bis">
   <div class="content">
-    Do you like my work?
+    <h2>Do you like my work?</h2>
   </div>
 </div>
 
