@@ -1,0 +1,22 @@
+
+
+#canvas {
+  display: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+.hero .motto {
+  font-size: 75px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
