@@ -30,13 +30,13 @@ function init() {
 }
 
 var position1 = {
-  x: 0,
-  y: 0
+  x: Math.random() * window.innerWidth,
+  y: Math.random() * window.innerHeight
 };
 
 var position2 = {
-  x: window.innerWidth,
-  y: window.innerHeight,
+  x: Math.random() * window.innerWidth,
+  y: Math.random() * window.innerHeight
 };
 
 var delta1 = {

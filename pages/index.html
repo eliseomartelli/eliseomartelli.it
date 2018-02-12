@@ -8,7 +8,7 @@ permalink: /
 ---
 <link rel="stylesheet" href="assets/css/home.css">
 <div class="hero shadow">
-  <canvas id="canvas" class="shadow">
+  <canvas id="canvas">
   </canvas>
   <p class="motto">
     make,<br>
@@ -16,7 +16,6 @@ permalink: /
     fix.
   </p>
 </div>
-
 <div class="section">
   <div class="content">
     <img class="profile-img shadow" src="assets/profile.jpg" alt=""><br>
@@ -27,16 +26,17 @@ permalink: /
 <div class="section section-bis">
   <div class="content">
     <h2>Check out my projects</h2>
-    <div class="grid">
+    <br><br>
+    <div>
       {% for app in site.data.apps %}
-          <div class="card container shadow">
-            <h3>{{ app.name }}</h3>
-            <img src="{{ app.icon }}"></img><br>
-            <a href={{ app.url }}>
-              <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
-          </div>
-        {% endfor %}
-      </div>
+        <div class="card app shadow">
+          <h3>{{ app.name }}</h3>
+          <img src="{{ app.icon }}"></img><br><br>
+          <a href={{ app.url }}>
+            <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -44,7 +44,8 @@ permalink: /
   <div class="content">
     <h2>Get in touch</h2>
     <p>I love connecting with people :)</p>
-    <div class="grid">
+    <br>
+    <div>
       <p id="social">
         {% for social in site.data.socials %}
           <a class="icon-a" href="{{ social.url }}" target="_blank">
