@@ -13,10 +13,16 @@
 }
 
 .hero .motto {
-  font-size: 75px;
+  margin: 0;
+  padding: 0;
+  font-size: 64px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 0 2px 4px rgba(0,0,0,.2);
+  text-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+
+.section {
+  padding: 24px 0;
 }
