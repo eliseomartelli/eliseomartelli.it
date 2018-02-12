@@ -6,3 +6,18 @@
     </div>
   </div>
 </div>
+
+<div class="side-menu shadow">
+  <span class="menuicon" onclick="closeNav()"><i class="material-icons">close</i></span>
+  <ul>
+    {% for item in site.menus.header %}
+      {% assign current = nil %}
+      {% if item.url == page.url or item.layout == page.layout %}
+        {% assign current = 'current' %}
+      {% endif %}
+      <li>
+        <a class="{{ current }}" href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
