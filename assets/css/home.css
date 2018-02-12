@@ -39,6 +39,24 @@
   margin-bottom: 32px;
 }
 
+.card.app {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  width: calc(100% / 3 - 6 * 16px);
+  display: inline-block;
+  min-width: 128px;
+}
+
+.card.app h3 {
+  margin-top: 0;
+}
+
+.card.app img {
+  width: 66%;
+  max-width: 128px;
+}
+
 @media screen and (max-height: 400px), screen and (max-width: 500px) {
   .hero .motto {
     font-size: 2rem;

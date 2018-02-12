@@ -67,6 +67,7 @@ footer {
 }
 
 .side-menu {
+  left: -100%;
   position: fixed;
   z-index: 1000;
   max-width: 300px;
