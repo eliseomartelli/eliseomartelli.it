@@ -61,7 +61,7 @@
   max-width: 128px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 370px) {
   .card.app:nth-child(2) {
     margin-left: 0px;
     margin-right: 0px;
