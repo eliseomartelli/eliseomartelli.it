@@ -39,7 +39,6 @@ permalink: /
     </div>
   </div>
 </div>
-
 <div class="section">
   <div class="content">
     <h2>Get in touch</h2>
@@ -48,7 +47,7 @@ permalink: /
     <div>
       <p id="social">
         {% for social in site.data.socials %}
-          <a class="icon-a" href="{{ social.url }}" target="_blank">
+          <a class="icon" href="{{ social.url }}" target="_blank">
             <i class="fa fa-2x fa-{{ social.icon }}" aria-hidden="true"></i>
           </a>
         {% endfor %}
@@ -59,11 +58,13 @@ permalink: /
     </div>
   </div>
 </div>
-
 <div class="section section-bis">
   <div class="content">
     <h2>Do you like my work?</h2>
+    <p>You can donate to support development</p><br><br>
+    <a href="http://paypal.me/eliseomartelli">
+      <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-60px.png" alt="PayPal">
+    </a>
   </div>
 </div>
-
-<script src="assets/js/home.js" charset="utf-8"></script>
+<script src="/assets/js/home.js" charset="utf-8"></script>
