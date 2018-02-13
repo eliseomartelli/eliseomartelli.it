@@ -1,14 +1,9 @@
-
-
 #canvas {
   display: absolute;
-  width: 100vw;
-  height: 100vh;
 }
 
 .hero {
   width: 100vw;
-  height: 100vh;
   display: block;
 }
 
@@ -24,8 +19,14 @@
 }
 
 .section {
-  padding: 64px 0;
+  padding-top: 64px;
+  padding-bottom: 64px;
   text-align: center;
+}
+
+.section h2 {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .section-bis {
@@ -40,12 +41,15 @@
 }
 
 .card.app {
-  margin-left: 8px;
-  margin-right: 8px;
   margin-bottom: 16px;
-  width: calc(100% / 3 - 6 * 16px);
+  width: calc((100% - 32px) / 3 - 6 * 8px);
   display: inline-block;
   min-width: 128px;
+}
+
+.card.app:nth-child(2) {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .card.app h3 {
@@ -55,6 +59,29 @@
 .card.app img {
   width: 66%;
   max-width: 128px;
+}
+
+@media screen and (max-width: 500px) {
+  .card.app:nth-child(2) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+a {
+  color: #1BB0DB;
+}
+a.icon {
+  text-decoration: none;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+a:hover {
+  color: #1bdba6;
+}
+
+h1 {
+  margin: 0;
 }
 
 @media screen and (max-height: 400px), screen and (max-width: 500px) {
