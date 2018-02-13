@@ -53,29 +53,23 @@ function draw() {
 
   context.globalCompositeOperation = 'color-dodge';
 
-  context.save();
-  context.beginPath();
-  context.arc(position1.x, position1.y, 192, 0, 2 * Math.PI, false);
-  context.fillStyle = colors[0];
-  context.fill();
-
-  context.save();
-  context.beginPath();
-  context.arc(position2.x, position2.y, 192, 0, 2 * Math.PI, false);
-  context.fillStyle = colors[1];
-  context.fill();
-
-  if (position1.x<0 || position1.x>window.innerWidth) delta1.x = -delta1.x;
-  if (position1.y<0 || position1.y>window.innerHeight) delta1.y = -delta1.y;
-  position1.x += delta1.x;
-  position1.y += delta1.y;
-
-  if (position2.x<0 || position2.x>window.innerWidth) delta2.x = -delta2.x;
-  if (position2.y<0 || position2.y>window.innerHeight) delta2.y = -delta2.y;
-  position2.x += delta2.x;
-  position2.y += delta2.y;
+  drawCircle(192, position1, delta1, colors[0]);
+  drawCircle(192, position2, delta2, colors[1]);
 
   window.requestAnimationFrame(draw);
+}
+
+function drawCircle(radius, position, delta, color) {
+  context.save();
+  context.beginPath();
+  context.arc(position.x, position.y, radius, 0, 2 * Math.PI, false);
+  context.fillStyle = color;
+  context.fill();
+
+  if (position.x<0 || position.x>window.innerWidth) delta.x = -delta.x;
+  if (position.y<0 || position.y>window.innerHeight) delta.y = -delta.y;
+  position.x += delta.x;
+  position.y += delta.y;
 }
 
 init();

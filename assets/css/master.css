@@ -68,11 +68,69 @@ footer {
 
 .side-menu {
   left: -100%;
-  position: fixed;
-  z-index: 1000;
-  max-width: 300px;
-  width: 60%;
-  background: #fff;
+  position: absolute;
+  max-width: 400px;
+  width: 66.6%;
   height: 100vh;
   display: block;
+  background: #fff;
+  transition: all .25s ease;
+  pointer-events: all;
+}
+
+.side-menu__open {
+  left: 0;
+}
+
+.sidemenu__container {
+  width: 100vw;
+  height: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.side-menu i {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.side-menu__open::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  left: 0%;
+  z-index: -1;
+  background: rgba(0,0,0,.5);
+}
+
+.side-menu ul {
+  list-style: none;
+  margin-left: -40px;
+}
+
+.side-menu ul li {
+  text-align: center;
+  margin-left: -40px;
+}
+
+.side-menu ul li a {
+  color: #212121;
+  width: 100%;
+  padding: 16px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.side-menu ul li:hover {
+  background: #ccc;
+}
+.side-menu ul li.current {
+  background: #aaa;
 }
