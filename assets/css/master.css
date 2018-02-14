@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
@@ -97,18 +96,6 @@ footer {
   margin-left: 16px;
 }
 
-.side-menu__open::before {
-  content: "";
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  pointer-events: none;
-  left: 0%;
-  z-index: -1;
-  background: rgba(0,0,0,.5);
-}
-
 .side-menu ul {
   list-style: none;
   margin-left: -40px;
@@ -133,4 +120,38 @@ footer {
 }
 .side-menu ul li.current {
   background: #aaa;
+}
+
+/* Used by postlist */
+.page-heading {
+  padding-top: 80px;
+}
+
+ul.post-list {
+  padding: 0;
+  list-style: none;
+}
+
+ul.post-list li {
+  margin-bottom: 32px;
+}
+
+ul.post-list li img {
+  width: calc(100% + 32px);
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  margin: -16px;
+  margin-bottom: 4px;
+}
+
+ul.post-list li .readmore {
+  padding: 16px;
+  background: #1022CA;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  float: right;
+  display: inline-block;
 }
