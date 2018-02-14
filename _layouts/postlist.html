@@ -12,24 +12,12 @@
     {% endif %}
     <ul class="post-list">
       {% for post in postlist %}
-        <li class="shadow post-item">
+        <li class="shadow card">
           {% assign date_format = "%b %-d, %Y" %}
-          {% if page.items != "recipes" %}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-          {% elsif page.items == "recipes" %}
-            <img src="{{ post.hero_img }}" alt="">
-
-            <style media="screen">
-                .post-item img {
-                  width: calc(100% + 32px);
-                  height: 200px;
-                  object-fit: cover;
-                  object-position: center;
-                  margin: -16px;
-                  margin-bottom: 4px;
-                }
-            </style>
-
+            {% if page.items != "recipes" %}
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+            {% elsif page.items == "recipes" %}
+              <img src="{{ post.hero_img }}" alt="">
           {% endif %}
           <h2>
             <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
@@ -37,9 +25,7 @@
           <p>
             {{ post.content | strip_html | truncatewords: 40 }}
           </p>
-          <div style="text-align: right">
-            <a class="readmore shadow" href="{{ post.url | relative_url }}">Read More</a>
-          </div>
+          <a class="readmore shadow" href="{{ post.url | relative_url }}">Read More</a>
         </li>
       {% endfor %}
     </ul>
