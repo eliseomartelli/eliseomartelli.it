@@ -149,9 +149,16 @@ ul.post-list li .readmore {
   padding: 16px;
   background: #1022CA;
   color: #fff;
+  width: 96px;
+  margin-left: auto;
+  margin-right: 0;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bolder;
-  float: right;
-  display: inline-block;
+  display: block;
+  transition: margin-right .25s ease-in-out;
+}
+
+ul.post-list li .readmore:hover {
+  margin-right: 8px;
 }
