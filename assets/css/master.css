@@ -162,3 +162,9 @@ ul.post-list li .readmore {
 ul.post-list li .readmore:hover {
   margin-right: 8px;
 }
+
+article img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
