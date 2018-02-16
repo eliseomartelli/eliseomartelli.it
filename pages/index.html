@@ -53,7 +53,7 @@ permalink: /
           </a>
         {% endfor %}
       </p>
-      <p class="or">- or -</p>
+      <p>- or -</p>
       <p style="font-weight: 300;">email me:</p>
       <a class="icon-a email" href="mailto:me@eliseomartelli.it">me@eliseomartelli.it</a>
     </div>
@@ -62,10 +62,17 @@ permalink: /
 <div class="section section-bis">
   <div class="content">
     <h2>Do you like my work?</h2>
-    <p>You can donate to support development</p><br><br>
-    <a href="http://paypal.me/eliseomartelli">
-      <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-60px.png" alt="PayPal">
-    </a>
+    <p>You can donate to support development<br><br>
+      <a href="http://paypal.me/eliseomartelli">
+        <img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-pill-paypal-60px.png" alt="PayPal">
+      </a>
+    </p>
+    <p>- or -</p>
+    <p>
+      {%- for code in site.data.crypto -%}
+        <b>{{code.name}}: </b>{{code.code}}<br>
+      {%- endfor -%}
+    </p>
   </div>
 </div>
 <script src="/assets/js/home.js" charset="utf-8"></script>
