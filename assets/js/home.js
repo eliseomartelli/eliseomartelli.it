@@ -3,22 +3,6 @@ var colors = ["#95FFCA", "#95FFFF"];
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 window.addEventListener('resize', resizeCanvas, false);
-window.addEventListener('scroll', changeToolbar, false);
-var toolbar = document.getElementById("toolbar");
-toolbar.classList.add("toolbar-transparent");
-toolbar.classList.remove("shadow");
-
-function changeToolbar() {
-
-  if (window.pageYOffset >= 20){
-    toolbar.classList.add("shadow");
-    toolbar.classList.remove("toolbar-transparent");
-
-  } else {
-    toolbar.classList.remove("shadow");
-    toolbar.classList.add("toolbar-transparent");
-  }
-}
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
