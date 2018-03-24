@@ -57,3 +57,5 @@ function drawCircle(radius, position, delta, color) {
 }
 
 init();
+
+
