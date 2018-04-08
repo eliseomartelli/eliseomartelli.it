@@ -6,6 +6,9 @@
   width: 100vw;
   display: block;
 }
+.motto {
+	text-align: center;
+}
 
 .hero .motto {
   margin: 0;
@@ -41,33 +44,70 @@
 }
 
 .card.app {
-  margin-bottom: 16px;
-  width: calc((100% - 32px) / 3 - 6 * 8px);
-  display: inline-block;
-  min-width: 128px;
+flex: 0 0 auto;
+  margin: 8px;
+  min-width: 160px;
 }
-
-.card.app:nth-child(2) {
-  margin-left: 16px;
-  margin-right: 16px;
+.card.app:first-child {
+	margin-left: 24px;
+}
+.card__container .card.app.last {
+	margin-right: 32px;
 }
 
 .card.app h3 {
   margin-top: 0;
 }
 
+.card.app img.icon {
+  width: 10vw;
+  height: 10vw;
+  min-width: 96px;
+  max-width: 128px;
+  min-height: 96px;
+  max-height: 128px;
+}
+
 .card.app img {
-  width: 66%;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 10vw;
+  min-width: 96px;
   max-width: 128px;
 }
-
-@media screen and (max-width: 370px) {
-  .card.app:nth-child(2) {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
+.ghostdiv {
+	flex: 0 0 auto;
+	width: 16px;
 }
 
+.card__container {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+}
+
+.card__container::-webkit-scrollbar {
+	display: none;
+}
+
+.visitme {
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	width: 10vw;      	
+	display: block;
+	background: #000;
+	min-width: 96px;
+	margin: 0 auto;
+	border-radius: 4px;
+	margin-top: 6px;
+	color: #fff;
+}
+a.visitme {
+	text-decoration: none;
+}
+max-width: 128px;
 a {
   color: #1BB0DB;
 }
