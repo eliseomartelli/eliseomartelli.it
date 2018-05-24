@@ -1,0 +1,20 @@
+a {
+  display: inline;
+  padding-bottom: 16px;
+  column-break-inside: avoid;
+  transition: opacity .4s ease-in-out;
+}
+
+a img {
+  display: inline;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  margin-bottom: 16px;
+}
+
+
+.post-content {
+  padding-top: 16px;
+  column-width: 320px;
+	column-gap: 16px;
+	margin: 0 auto;
+}

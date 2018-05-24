@@ -9,6 +9,8 @@
       {% assign postlist = site.recipes | sort: 'date' | reverse %}
     {% elsif page.items == "thoughts" %}
       {% assign postlist = site.thoughts | sort: 'date' | reverse %}
+    {% elsif page.items == "photos" %}
+      {% assign postlist = site.photos | sort: 'date' | reverse %}
     {% endif %}
     <ul class="post-list">
       {% for post in postlist %}

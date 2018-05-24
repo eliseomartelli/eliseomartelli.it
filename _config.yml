@@ -19,6 +19,8 @@ collections:
     output: true
   thoughts:
     output: true
+  photos:
+    output: true
 
 defaults:
   - scope:
@@ -27,12 +29,20 @@ defaults:
     values:
       layout: "post"
       permalink: /blog/:categories/:year/:month/:day/:title/
+
   - scope:
       type: recipes
     values:
       layout: "recipe"
       scrollable: true
       permalink: /recipes/:categories/:year/:month/:day/:title/
+
+  - scope:
+      type: photos
+    values:
+      layout: "post"
+      permalink: /photos/:year/:month/:day/:title/
+
   - scope:
       type: thoughts
     values:
