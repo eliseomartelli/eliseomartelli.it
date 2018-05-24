@@ -1,8 +1,7 @@
 ---
 title: Mille Miglia and Alfa Romeo Museum
-hero_img:
+is_photo: true
 ---
-
 <a href="https://ibb.co/cV5TMT">
   <img src="https://preview.ibb.co/e3g2gT/IMG_2339.jpg" alt="IMG_2339" border="0">
 </a>
