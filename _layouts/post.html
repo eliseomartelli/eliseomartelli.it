@@ -4,6 +4,7 @@
 
   {% if page.is_photo == true %}
     <link rel="stylesheet" href="/assets/css/photos.css">
+    {% assign photo = "photo" %}
   {% endif %}
   <article class="content post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -21,8 +22,12 @@
 
     <div class="addthis_inline_share_toolbox"></div>
 
-    <div class="post-content" itemprop="articleBody">
-      {{ content }}
+    <div class="post-content {{ photo }}" itemprop="articleBody">
+      {% if page.is_photo == true %}
+        {{ content | remove: '<p>' | remove: '</p>' }}
+      {% else %}
+        {{ content }}
+      {% endif %}
     </div>
 
     {% if site.disqus.shortname %}
