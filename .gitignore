@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 Site
 prepros-6.config
+vendor
+.bundle
