@@ -5,6 +5,7 @@ url: "http://eliseomartelli.it" # the base hostname & protocol for your site, e.
 twitter_username: eliseomartelli
 author: Eliseo Martelli
 # Build settings
+
 markdown: kramdown
 plugins:
   - jekyll-feed
