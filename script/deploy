@@ -4,5 +4,5 @@ set -e
 if  [[ $TRAVIS_PULL_REQUEST = "false" ]]
 then
     echo "Deploying" 
-    ncftpput -R -F -v -u "$USERNAME" -p "$PASSWORD" $HOST /htdocs _site/*
+    ncftpput -R -v -u "$USERNAME" -p "$PASSWORD" $HOST /htdocs _site/*
 fi
