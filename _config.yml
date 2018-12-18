@@ -6,6 +6,9 @@ twitter_username: eliseomartelli
 author: Eliseo Martelli
 # Build settings
 
+exclude: [vendor]
+
+
 markdown: kramdown
 plugins:
   - jekyll-feed
