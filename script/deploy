@@ -3,5 +3,6 @@
 if  [[ $TRAVIS_PULL_REQUEST = "false" ]]
 then
     cd _site
+    echo "Inside _site"
     ncftpput -R -v -u "$USERNAME" -p "$PASSWORD" $HOST /htdocs .
 fi
