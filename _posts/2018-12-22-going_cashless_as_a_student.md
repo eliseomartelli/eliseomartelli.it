@@ -60,6 +60,22 @@ Cleanest solution? Rolling back to cash.
 It takes an extra step, but it's not that bad. I **plan my expenses** in advance to **minimize** the amount of spare cash left in the wallet so I'm almost cashless 😂.
 
 ### What's in my wallet?
+One of the most asked questions to me is: "Hey, Eliseo, what's in your wallet?".
+As someone that declares to be for the most part cashless, I've seen a _growing interest_ in my wallet from third parties.  
+So here it is!
+
+#### My wallet
+- Credit card(s);
+- University badge;
+- A bottle opener;
+- A paper cutter;
+- A USB stick (yep, still a thing);
+- Driving license;
+
+It's *simple*, part of my daily check **triple pat** (Wallet, phone and keys) and if I'm not going to drive I can _leave it_ behind at home.
+
+### Managing my expenses
+
 ___ 
 
 Do you want to talk to me about projects, fun stuff and other things that might be interesting?
