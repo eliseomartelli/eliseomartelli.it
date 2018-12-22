@@ -55,7 +55,7 @@ Paying for tickets can be done by going to a tobacconist (and using cash) or you
 
 #### Farmer's Market
 As someone who loves cooking and knows that the freshness of the ingredients is one of the most important things, Farmer's Markets are a **must**.  
-The problem? Stands *aren't too keen on accepting credit cards.*
+The problem? Stands *aren't too happy with accepting credit cards, especially for small payments*.
 Cleanest solution? Rolling back to cash.  
 It takes an extra step, but it's not that bad. I **plan my expenses** in advance to **minimize** the amount of spare cash left in the wallet so I'm almost cashless 😂.
 
