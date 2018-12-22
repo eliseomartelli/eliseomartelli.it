@@ -72,7 +72,7 @@ So here it is!
 - A USB stick (yep, still a thing);
 - Driving license;
 
-It's *simple*, part of my daily check **triple pat** (Wallet, phone and keys) and if I'm not going to drive I can _leave it_ behind at home.
+It's *simple*, it's a part of my daily check **triple patting** (Wallet, phone and keys) and if I'm not going to drive, I can _leave it_ behind at home.
 
 ### Managing my expenses
 You can argue that using cashless payment methods can alienate yourself from your own spending, and yeah, I'm with you on this one.  
