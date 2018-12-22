@@ -75,7 +75,7 @@ So here it is!
 It's *simple*, part of my daily check **triple pat** (Wallet, phone and keys) and if I'm not going to drive I can _leave it_ behind at home.
 
 ### Managing my expenses
-
+You can argue that using cashless payment methods can 
 ___ 
 
 Do you want to talk to me about projects, fun stuff and other things that might be interesting?
