@@ -1,6 +1,7 @@
 ---
-title: "Going Cashless As A Student [Turin 2018]"
+title: 'Going Cashless As A Student [Turin 2018]'
 categories: finance
+published: true
 ---
 <!--![](/assets/static/posts/2018-12-22-going_cashless_as_a_student/paymentshero.jpg)-->
 
@@ -47,11 +48,10 @@ While using mostly credit/debit cards, if the expense is recurring, I'll use **w
 
 ### Worst cases (and how I fix them)
 Public transport tickets here in Turin can be a bit cumbersome for new-comers.  
-You need to have a [BipCard](https://bip.piemonte.it/carta-bip-cose-e-come-funziona/) or some sort of smartcard issued by your University (or workplace) then you can add bus tickets on that card.  
-Paying for tickets can be done by going to a tobacconist (and using cash) or you can use the [GttToMove](https://play.google.com/store/apps/details?id=it.to.gtt.tomove) and pay online.
+You need to have a [BipCard](https://bip.piemonte.it/carta-bip-cose-e-come-funziona/) or some sorts of smartcard issued by your University (or workplace) then you can add bus tickets on that card.  
+Paying for tickets can be done by going to a tobacconist (and using cash) or you can use the [GttToMove](https://play.google.com/store/apps/details?id=it.to.gtt.tomove) and pay online (my preferred solution).
 
-
-_b__
+___
 
 Do you want to talk to me about projects, fun stuff and other things that might be interesting?
 
