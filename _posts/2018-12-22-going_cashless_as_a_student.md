@@ -47,11 +47,20 @@ For bigger payments I use a mix of techniques.
 While using mostly credit/debit cards, if the expense is recurring, I'll use **wire transfers.**
 
 ### Worst cases (and how I fix them)
+
+#### Public Transportation
 Public transport tickets here in Turin can be a bit cumbersome for new-comers.  
 You need to have a [BipCard](https://bip.piemonte.it/carta-bip-cose-e-come-funziona/) or some sorts of smartcard issued by your University (or workplace) then you can add bus tickets on that card.  
 Paying for tickets can be done by going to a tobacconist (and using cash) or you can use the [GttToMove](https://play.google.com/store/apps/details?id=it.to.gtt.tomove) and pay online (my preferred solution).
 
-___
+#### Farmer's Market
+As someone who loves cooking and knows that the freshness of the ingredients is one of the most important things, Farmer's Markets are a **must**.  
+The problem? Stands *aren't too keen on accepting credit cards.*
+Cleanest solution? Rolling back to cash.  
+It takes an extra step, but it's not that bad. I **plan my expenses** in advance to **minimize** the amount of spare cash left in the wallet so I'm almost cashless 😂.
+
+### What's in my wallet?
+___ 
 
 Do you want to talk to me about projects, fun stuff and other things that might be interesting?
 
