@@ -1,9 +1,8 @@
 ---
 title: 'Going Cashless As A Student [Turin 2018]'
 categories: finance
-published: false
+published: true
 ---
-<!--![](/assets/static/posts/2018-12-22-going_cashless_as_a_student/paymentshero.jpg)-->
 
 <div style="background-image: url(/assets/static/posts/2018-12-22-going_cashless_as_a_student/paymentshero.jpg); background-size: cover; background-position: center; width: 100vw;
 position: relative;
@@ -13,7 +12,7 @@ right: 50%;
 margin-left: -50vw;
 margin-right: -50vw;"></div>
 
-Before we start talking about the benefits of _going cashless_ we need to talk about the reason behind this choice.  
+Before we start talking about _going cashless_ we need to talk about the reason behind this choice.  
 Going _(almost)_ completely cashless ain't __easy__ and requires at least one rollback solution if something goes wrong (and yep, it __happens__).
 
 As someone who loves tech but has a _love-hate_ relationship with money (especially with cash), going cashless means worrying less about the things you've in your pocket.
@@ -75,7 +74,11 @@ So here it is!
 It's *simple*, part of my daily check **triple pat** (Wallet, phone and keys) and if I'm not going to drive I can _leave it_ behind at home.
 
 ### Managing my expenses
-You can argue that using cashless payment methods can 
+You can argue that using cashless payment methods can alienate yourself from your own spending, and yeah, I'm with you on this one.  
+You need to have a method to track what are you spending (and how) and after months of using a Google Drive Spreadsheet I've graduated to [Firefly III](https://firefly-iii.org/), a self-hosted money tracking solution.
+
+Going cashless is **possible**, is convenient and less stressful (at least for me).
+Thank you for your time and **#GoCashless**!
 ___ 
 
 Do you want to talk to me about projects, fun stuff and other things that might be interesting?
