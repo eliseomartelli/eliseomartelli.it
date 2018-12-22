@@ -43,7 +43,8 @@ Since the widespread adoption of NFC point of sales is **continuously rising**, 
 
 #### Big Payments (100€+)
 For bigger payments I use a mix of techniques.  
-While using mostly credit/debit cards, if the expense is recurring, I'll use **wire transfers.**
+While using mostly credit/debit cards for my day to day payments, I've taken a different approach if the expense is recurring.
+**Wire transfers.**, as old as they are, can still be used for this kind of things.
 
 ### Worst cases (and how I fix them)
 
