@@ -26,6 +26,10 @@ collections:
   photos:
     output: true
 
+feed:
+  collections:
+    - thoughts
+
 defaults:
   - scope:
       path: ""
