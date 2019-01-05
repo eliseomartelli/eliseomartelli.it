@@ -4,16 +4,27 @@ menus:
   header:
     weight: 1
 layout: page
-scrollable: true
 permalink: /
+scrollable: true
 ---
+<script>
+window.addEventListener('scroll', changeToolbar, false);
+
+var logo = document.getElementById("toolbar__logo");
+logo.classList.add("big");
+
+function changeToolbar() {
+
+  if (window.pageYOffset >= 30){
+    logo.classList.remove("big");
+
+  } else {
+    logo.classList.add("big");
+  }
+}
+</script>
 <link rel="stylesheet" href="assets/css/home.css">
-<div class="hero shadow">
-  <canvas id="canvas">
-  </canvas>
-  <p class="motto">do what you can't</p>
-</div>
-<div class="section">
+<div class="section" style="padding-top: 96px">
   <div class="content">
     <img class="profile-img shadow" src="assets/profile.jpg" alt=""><br>
     Hi, I'm <b>Eliseo Martelli</b>.<br>I make <b>Android apps</b>, <b>web apps</b> and <b>websites.</b><br><br>
@@ -76,4 +87,3 @@ permalink: /
     </p>
   </div>
 </div>
-<script src="/assets/js/home.js" charset="utf-8"></script>
