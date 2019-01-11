@@ -8,7 +8,6 @@ author: Eliseo Martelli
 
 exclude: [vendor]
 
-
 markdown: kramdown
 plugins:
   - jekyll-feed
