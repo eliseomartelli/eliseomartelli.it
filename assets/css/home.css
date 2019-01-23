@@ -90,7 +90,8 @@ flex: 0 0 auto;
 .card__container {
 	display: flex;
 	flex-wrap: nowrap;
-	overflow-x: auto;
+  overflow-x: auto;
+  justify-content: center;
 }
 
 .card__container::-webkit-scrollbar {
@@ -128,6 +129,12 @@ a:hover {
 
 h1 {
   margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .card__container {
+    justify-content: left;
+  }
 }
 
 @media screen and (max-height: 400px), screen and (max-width: 500px) {
