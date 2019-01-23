@@ -1,6 +1,6 @@
 backend:
   name: github
-  branch: eliseomartelli/personal-site
+  repo: eliseomartelli/personal-site
 
 media_folder: "assets/images"
 
