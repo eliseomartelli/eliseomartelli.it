@@ -5,3 +5,4 @@ Site
 prepros-6.config
 vendor
 .bundle
+.DS_Store
