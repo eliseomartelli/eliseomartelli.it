@@ -11,10 +11,13 @@
 }
 
 .toolbar .content .logo {
-  transition: all 100ms ease-in-out;
+  padding-top: 0px;
+  transition: font-size 100ms ease-in-out;
 }
 .toolbar .content .logo.big {
   font-size: 2em;
+  position: relative;
+  top: 156px;
 }
 
 .hero .motto {
@@ -141,4 +144,9 @@ h1 {
   .hero .motto {
     font-size: 2rem;
   }
+}
+
+.toolbar > .content#toolbar__logo.big {
+  background: red;
+  position: relative;
 }
