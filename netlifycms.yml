@@ -14,6 +14,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Categories", name: "categories", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published?", name: "published", widget: "boolean"}
   - name: "thoughts"
     label: "Thoughts"
     folder: "_thoughts"
