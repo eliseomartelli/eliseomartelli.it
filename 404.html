@@ -3,20 +3,25 @@ layout: page
 ---
 
 <div class="container post">
-  <div class="error">
-    <h1>404</h1>
-    <p><strong>Page not found :(</strong></p>
-    <p>The requested page could not be found.</p>
+  <div class="error content">
+    <div>
+        <h1>404</h1>
+        <p><strong>Page not found :(</strong></p>
+        <p>The requested page could not be found.</p>
+    </div>
   </div>
 </div>
 
 <style media="screen">
   .error {
-    padding-top: 120px;
-    padding-bottom: 120px;
-    padding-left: 16px;
-    padding-right: 16px;
+    display: flex;
     max-width: 320px;
-    margin: 0 auto;
+    height: 100vh;
   }
+  .error div {
+    max-width: 320px;
+    display: flexbox;
+    align-self: center;
+  }
+
 </style>
