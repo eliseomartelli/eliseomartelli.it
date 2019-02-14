@@ -1,37 +1,23 @@
-{% include head.html %}
-<body>
-  {% include toolbar.html %}
-  <div class="content">
-    {{ content }}
-    <h1 class="page-heading">{{ page.title }}</h1>
-    {% assign postlist = site.posts  | sort: 'date' | reverse %}
-    {% if page.items == "recipes"  %}
-      {% assign postlist = site.recipes | sort: 'date' | reverse %}
-    {% elsif page.items == "thoughts" %}
-      {% assign postlist = site.thoughts | sort: 'date' | reverse %}
-    {% elsif page.items == "photos" %}
-      {% assign postlist = site.photos | sort: 'date' | reverse %}
-    {% endif %}
-    <ul class="post-list">
-      {% for post in postlist %}
-        <li class="shadow card">
-          {% assign date_format = "%b %-d, %Y" %}
-            {% if page.items != "recipes" %}
-              <span class="post-meta">{{ post.date | date: date_format }}</span>
-            {% elsif page.items == "recipes" %}
-              <img src="{{ post.hero_img }}" alt="">
-          {% endif %}
-          <h2>
-            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </h2>
-          <p>
-            {{ post.content | strip_html | truncatewords: 40 }}
-          </p>
-          <a class="readmore shadow" href="{{ post.url | relative_url }}">Read More</a>
-        </li>
-      {% endfor %}
-    </ul>
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  </div>
-  {% include footer.html %}
-</body>
+---
+layout: content
+---
+<h1 class="page-heading">{{ page.title }}</h1>
+<ul class="post-list">
+  {% assign date_format = "%b %-d, %Y" %}
+  {% assign collection = site[page.collection] | sort: 'date' | reverse %}
+  {% for post in collection %}
+    <li class="shadow card">
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h2>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h2>
+      <p>
+        {{ post.content | strip_html | truncatewords: 40 }}
+      </p>
+      <a class="readmore shadow" href="{{ post.url | relative_url }}">Read More</a>
+    </li>
+  {% endfor %}
+</ul>
+<p class="rss-subscribe">subscribe
+  <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
+</p>

@@ -22,5 +22,6 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published?", name: "published", widget: "boolean"}
 
 display_url: https://eliseomartelli.it
