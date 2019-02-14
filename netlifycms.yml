@@ -14,6 +14,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Categories", name: "categories", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published?", name: "published", widget: "boolean", default: true}
   - name: "thoughts"
     label: "Thoughts"
     folder: "_thoughts"
@@ -22,5 +23,6 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published?", name: "published", widget: "boolean", default: true}
 
 display_url: https://eliseomartelli.it
