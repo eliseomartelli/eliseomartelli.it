@@ -18,8 +18,8 @@ disqus:
   shortname: eliseomartelli
 
 collections:
-  recipes:
-    output: true
+  # recipes:
+  #   output: true
   thoughts:
     output: true
   photos:
