@@ -37,12 +37,12 @@ defaults:
       layout: "post"
       permalink: /blog/:categories/:year/:month/:day/:title/
 
-  - scope:
-      type: recipes
-    values:
-      layout: "recipe"
-      scrollable: true
-      permalink: /recipes/:categories/:year/:month/:day/:title/
+  # - scope:
+  #     type: recipes
+  #   values:
+  #     layout: "recipe"
+  #     scrollable: true
+  #     permalink: /recipes/:categories/:year/:month/:day/:title/
 
   - scope:
       type: photos
