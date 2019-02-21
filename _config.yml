@@ -13,9 +13,12 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-menus
+  - jekyll-minifier
 
 disqus:
   shortname: eliseomartelli
+
+jekyll-minifier:
 
 collections:
   # recipes:
