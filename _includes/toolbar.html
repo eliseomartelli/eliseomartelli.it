@@ -1,26 +1,22 @@
 <div id="toolbar" class="toolbar shadow">
   <div class="content">
-    <i onclick="toggleNav()" class="material-icons">menu</i>
     <div class="logo" id="toolbar__logo" onclick="window.location = '/';">
       eliseo<span>martelli</span>
     </div>
   </div>
 </div>
 <div class="sidemenu__container">
-  <div id="sidemenu" class="side-menu shadow">
-    <i onclick="toggleNav()" class="material-icons">close</i>
-    <ul>
-      {% for item in site.menus.header %}
-        {% assign current = nil %}
-        {% if item.url == page.url or item.layout == page.layout %}
-          {% assign current = 'current' %}
-        {% endif %}
-        <li class="{{ current }}">
-          <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+  <ul>
+    {% for item in site.menus.header %}
+      {% assign current = nil %}
+      {% if item.url == page.url or item.layout == page.layout %}
+        {% assign current = 'current' %}
+      {% endif %}
+      <li class="{{ current }}">
+        <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <script type="text/javascript">

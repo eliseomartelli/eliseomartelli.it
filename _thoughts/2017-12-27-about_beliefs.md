@@ -1,6 +1,5 @@
 ---
 title: "About: Beliefs."
-
 date:   2017-12-27 12:46:35 +010
 ---
 
