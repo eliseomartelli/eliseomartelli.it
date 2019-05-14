@@ -140,6 +140,7 @@ input#navigation__checkbox:checked ~ nav {
     pointer-events: all;
 }
 
+
 input#navigation__checkbox:checked ~ #navigation__check_indicator {
     color: #fff;
     z-index: 3001;
@@ -147,4 +148,15 @@ input#navigation__checkbox:checked ~ #navigation__check_indicator {
 
 input#navigation__checkbox:checked ~ #navigation__check_indicator::before {
     content: 'close';
+}
+img {
+    width: 100%;
+}
+code {
+    display: block;
+    overflow: scroll;
+    width: auto;
+    background: #eee;
+    border-radius: 4px;
+    padding: 16px;
 }
