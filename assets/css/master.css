@@ -17,6 +17,7 @@ body {
     width: 100%;
     position: fixed;
     background: #FFFFFF;
+    z-index: 1000;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
 }
 
@@ -154,4 +155,15 @@ code {
     background: #eee;
     border-radius: 4px;
     padding: 16px;
+}
+
+ul.post-list {
+  list-style-type: none;  
+  margin: 0;
+  padding: 0;
+}
+
+ul.post-list li {
+    margin: 32px 0;
+    display: block;
 }
