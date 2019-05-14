@@ -9,6 +9,9 @@ body {
     margin: 0 auto;
     padding: 16px;
 }
+.content.main {
+    padding-top: 56px;
+}
 
 .toolbar {
     width: 100%;
@@ -16,9 +19,15 @@ body {
     background: #FFFFFF;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
 }
+
+.toolbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .toolbar .logo {
     font-size: 24px;
-    display: inline-block;
 }
 
 .logo {
@@ -35,4 +44,104 @@ body {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+}
+
+nav {
+    margin: -20px;
+    padding: 16px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #888;
+    border-radius: 4px;
+    padding: 16px 12px;
+}
+nav ul li a:hover {
+    background: #eee;
+}
+nav ul li.current a {
+    color: black;
+}
+#navigation__check_indicator {
+    position: absolute;
+    right: 16px;
+}
+#navigation__check_indicator::before {
+    content: 'menu';
+    z-index: 3000;
+}
+
+@media screen and (max-width: 698px) {
+    nav {
+        z-index: 2000;
+        background: rgba(0, 0, 0, .9);
+        position: fixed;
+        opacity: 0;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        right: 0;
+        transition: opacity 0.2s linear;
+        pointer-events: none;
+    }
+    nav ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    nav ul li {
+        display: block;
+        padding: 24px;
+    }
+    nav ul li.current a {
+        color: #fff;
+    }
+}
+
+
+@media screen and (min-width: 698px) {
+    input#navigation__checkbox {
+        display: none;
+    }
+    #navigation__check_indicator {
+        display: none;
+    }
+}
+
+
+input#navigation__checkbox {
+    z-index: 3002;
+    position: absolute;
+    right: 16px;
+    padding: 16px;
+    opacity: 0;
+}
+
+input#navigation__checkbox:checked ~ nav {
+    opacity: 1;
+    pointer-events: all;
+}
+
+input#navigation__checkbox:checked ~ #navigation__check_indicator {
+    color: #fff;
+    z-index: 3001;
+}
+
+input#navigation__checkbox:checked ~ #navigation__check_indicator::before {
+    content: 'close';
 }
