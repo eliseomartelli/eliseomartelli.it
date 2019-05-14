@@ -167,3 +167,19 @@ ul.post-list li {
     margin: 32px 0;
     display: block;
 }
+
+.full_width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+
+footer {
+    background: #777;
+    color: #fff;
+}
+
