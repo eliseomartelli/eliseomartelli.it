@@ -7,26 +7,29 @@ layout: page
 permalink: /
 scrollable: true
 ---
-<div class="full_width">
+<div id="header" class="full_width">
   <div id="triangle"></div>
-  <div id="presentation" class="content">
-    <img id="profile_picture" src="/assets/profile.jpg" alt="">
-  </div>
+</div>
+<div id="presentation" class="content">
+  <img id="profile_picture" src="/assets/profile.jpg" alt="">
 </div>
 
 <style>
-  #triangle {
+  #header {
     height: 192px;
+    overflow: hidden;
+  }
+  #triangle {
     width: 100vw;
-    position: relative;
-    display: block;
+    height: 100%;
     background: linear-gradient(45deg, #00ff80, #60ffff);
-    transform: skewY(-6deg);
+    transform: skewY(-3deg);
     transform-origin: top left;
   }
   #presentation {
+    overflow: hidden;
+    top: -96px;
     position: relative;
-    top: -128px;
   }
   #profile_picture {
     margin: 0 auto;
