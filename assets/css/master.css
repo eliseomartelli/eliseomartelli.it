@@ -77,7 +77,8 @@ nav ul li.current a {
 }
 #navigation__check_indicator {
     position: absolute;
-    right: 16px;
+    right: 0;
+    padding: 16px;
 }
 #navigation__check_indicator::before {
     content: 'menu';
@@ -123,13 +124,15 @@ nav ul li.current a {
     }
 }
 
-
 input#navigation__checkbox {
     z-index: 3002;
+    display: block;
     position: absolute;
-    right: 16px;
-    padding: 16px;
+    right: 0;
     opacity: 0;
+    box-sizing: unset;
+    width: 48px;
+    height: 48px;
 }
 
 input#navigation__checkbox:checked ~ nav {
