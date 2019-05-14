@@ -37,17 +37,10 @@ body {
     font-weight: 700;
 }
 
-.full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
 nav {
-    transition: opacity 0.2s linear;
+    display: block;
+    width: auto;
+    height: auto;
     margin: -20px;
     padding: 16px;
 }
@@ -88,6 +81,7 @@ nav ul li.current a {
 
 @media screen and (max-width: 698px) {
     nav {
+        display: block;
         z-index: 2000;
         background: rgba(0, 0, 0, .9);
         position: fixed;
@@ -97,6 +91,7 @@ nav ul li.current a {
         top: 0;
         right: 0;
         pointer-events: none;
+        transition: opacity 0.2s linear;
     }
     nav ul {
         position: absolute;
