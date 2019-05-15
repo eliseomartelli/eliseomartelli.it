@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lato', sans-serif;
 }
 
 .content {
-    max-width: 960px;
+    max-width: 896px;
     margin: 0 auto;
     padding: 16px;
 }
+
 .content.main {
     padding-top: 56px;
 }
@@ -18,7 +25,6 @@ body {
     position: fixed;
     background: #FFFFFF;
     z-index: 1000;
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
 }
 
 .toolbar .content {
@@ -27,10 +33,13 @@ body {
     justify-content: space-between;
 }
 
+.shadow {
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
+}
+
 .toolbar .logo {
     font-size: 24px;
 }
-
 .logo {
     font-family: 'Lato', sans-serif;
 }
@@ -182,4 +191,3 @@ footer {
     background: #777;
     color: #fff;
 }
-

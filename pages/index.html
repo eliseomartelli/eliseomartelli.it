@@ -8,36 +8,46 @@ permalink: /
 scrollable: true
 ---
 <div id="header" class="full_width">
-  <div id="triangle"></div>
+    <div id="triangle"></div>
 </div>
-<div id="presentation" class="content">
-  <img id="profile_picture" src="/assets/profile.jpg" alt="">
-  
+<div id="presentation">
+    <img class="shadow" id="mypic" src="{{ site.data.presentation.image }}" alt="">
+    <h1>{{ site.data.presentation.title }}</h1>
+    <p>{{ site.data.presentation.description }}</p>
 </div>
-
+<div id="socials">
+    <h1>{{ site.data.socials.title }}</h1>
+    <p>{{ site.data.socials.description }}</p>
+    {% for social in site.data.socials.list %}
+        <h3>{{ social.icon }}</h3>
+    {% endfor %}
+    <p>- or -</p>
+    <a href="mailto:{{site.data.socials.email}}">{{site.data.socials.email}}</a>
+</div>
 <style>
-  #header {
-    height: 192px;
-    overflow: hidden;
-  }
-  #triangle {
-    width: 100vw;
-    height: 100%;
-    background: linear-gradient(45deg, #ffc164, #ff8724);
-    transform: skewY(-3deg);
-    transform-origin: top left;
-  }
-  #presentation {
-    overflow: hidden;
-    top: -96px;
-    position: relative;
-  }
-  #profile_picture {
-    margin: 0 auto;
-    display: block;
-    width: 128px;
-    height: 128px;
-    border-radius: 64px;
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
-  }
+    #header {
+        height: 256px;
+    }
+    #header #triangle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(#ff9d2f, #ff6126);
+        transform: skewY(-3deg);
+        transform-origin: top left;
+    }
+    #mypic {
+        width: 128px;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+    #presentation {
+        position: relative;
+        margin-top: -96px;
+    }
 </style>

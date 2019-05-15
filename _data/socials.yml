@@ -1,14 +1,18 @@
-- url: http://instagram.com/eliseomartelli
-  icon: instagram
+title: Get in touch
+description: Follow me to hear what's next or just say hi!<br>I'd love to talk to you.
+email: me@eliseomartelli.it
+list:
+  - url: http://instagram.com/eliseomartelli
+    icon: instagram
 
-- url: http://twitter.com/eliseomartelli
-  icon: twitter
+  - url: http://twitter.com/eliseomartelli
+    icon: twitter
 
-- url: http://t.me/eliseomartelli
-  icon: telegram
+  - url: http://t.me/eliseomartelli
+    icon: telegram
 
-- url: http://github.com/eliseomartelli
-  icon: github
+  - url: http://github.com/eliseomartelli
+    icon: github
 
-- url: http://codepen.io/eliseomartelli
-  icon: codepen
+  - url: http://codepen.io/eliseomartelli
+    icon: codepen
