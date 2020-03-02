@@ -15,9 +15,9 @@ You also need a Telegram bot, you can create one using Telegram's [@botfather](h
 
 ## Counting in Home Assistant
 
-Home Assistant has a built-in way of counting _things_: the [```counter```](https://www.home-assistant.io/integrations/counter/) integration.  
+Home Assistant has a built-in way of counting _things_: the [counter](https://www.home-assistant.io/integrations/counter/) integration.  
 This integration offers a way of storing an integer number and changing its value.  
-We're going to setup this integration in our ```configuration.yaml``` file (situated in the root of our Home Assistant configuration folder).  
+We're going to setup this integration in our configuration.yaml file (situated in the root of our Home Assistant configuration folder).  
 
 ```yaml
 counter:
@@ -42,6 +42,7 @@ Automations, in a nutshell, are _pieces of code_ that will run when something tr
 Automations, in an home automation system, are the glue that can tie all of our devices together.  
 Today we'll use them to create a recurring task that will take care of incrementing our newly added counters.
 
+{% raw %}
 ```yaml
 automation:
  - alias: Increment Counter
@@ -58,6 +59,7 @@ automation:
          - counter.netflix_user_1
          - counter.netflix_user_2
 ```
+{% endraw %}
 
 As for the above example, our automation will be composed by three distinct parts:  
 
@@ -75,7 +77,7 @@ I consider myself lucky that our "sharing group" is on Telegram, widely supporte
 
 So, you might have guessed it, we're using **Telegram** today.
 
-To configure this integration you have to put the following inside your ```configuration.yaml```:
+To configure this integration you have to put the following inside your configuration.yaml:
 
 ```yaml
 telegram_bot:
@@ -99,6 +101,7 @@ After the setup of the Telegram platform we need to find a way to send notificat
 Let's assume we decide to send a message to our group every time we increment the counters.  
 To do so we just need to **edit** our previous automation and add the following **action**:
 
+{% raw %}
 ```yaml
 - service: notify.netflix_group
   data_template:
@@ -111,6 +114,7 @@ To do so we just need to **edit** our previous automation and add the following 
         
         {{ states.counter.netflix_user_2.name }}: € {{ states.counter.netflix_user_2.state }}
 ```
+{% endraw %} 
 
 We're using **templates** so we can **dynamically** generate the message.
 
@@ -139,6 +143,7 @@ data:
 
 The **resulting action** will look something like that:
 
+{% raw %}
 ```yaml
 - service: notify.netflix_group
   data_template:
@@ -156,6 +161,7 @@ The **resulting action** will look something like that:
         - "User1:/dec1"
         - "User2:/dec2"
 ```
+{% endraw %}
 
 ### Reacting to Telegram callbacks
 
@@ -165,6 +171,7 @@ We have to **react** to their callbacks, according to the [official documentatio
 
 Our automation is gonna look like this one:
 
+{% raw %}
 ```yaml
 alias: Other Netflix Decrement Counter
 trigger:
@@ -182,6 +189,7 @@ action:
       entity_id: >
         counter.netflix_user_{{ trigger.event.data.command | replace("/dec", "") }}
 ```
+{% endraw %}
 
 The **condition** is there to **check** if the command that we received contains the string: "/dec".  
 In the action we see another **template**, this one is used to get the right counter based on the button that got pressed. 
@@ -192,25 +200,27 @@ A possible solution to notify of the decrement is to send another message, I'm n
 Since Telegram supports **editing of messages**, I've opted to use this solution. 
 We just need to add another action to the previous automation.
 
+{% raw %}
 ```yaml
-  - service: telegram_bot.edit_message
-    data_template:
-      message_id: '{{ trigger.event.data.message.message_id }}'
-      chat_id: '{{ trigger.event.data.chat_id }}'
-      title: '*Message edit*'
-      message: >
-        ⚠️ Status:  
+- service: telegram_bot.edit_message
+  data_template:
+    message_id: '{{ trigger.event.data.message.message_id }}'
+    chat_id: '{{ trigger.event.data.chat_id }}'
+    title: '*Message edit*'
+    message: >
+      ⚠️ Status:  
 
-        {{ states.counter.netflix_user_0.name }}: € {{ states.counter.netflix_user_0.state }}  
+      {{ states.counter.netflix_user_0.name }}: € {{ states.counter.netflix_user_0.state }}  
 
-        {{ states.counter.netflix_user_1.name }}: € {{ states.counter.netflix_user_1.state }}  
-        
-        {{ states.counter.netflix_user_2.name }}: € {{ states.counter.netflix_user_2.state }}
-      inline_keyboard: 
-          - "User0:/dec0"
-          - "User1:/dec1"
-          - "User2:/dec2"
+      {{ states.counter.netflix_user_1.name }}: € {{ states.counter.netflix_user_1.state }}  
+      
+      {{ states.counter.netflix_user_2.name }}: € {{ states.counter.netflix_user_2.state }}
+    inline_keyboard: 
+        - "User0:/dec0"
+        - "User1:/dec1"
+        - "User2:/dec2"
 ```
+{% endraw %}
 
 ## Final Steps
 
