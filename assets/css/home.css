@@ -142,3 +142,17 @@ h1 {
     font-size: 2rem;
   }
 }
+
+.header {
+  position: absolute;
+  z-index: -10;
+  width: 100vw;
+  height: 192px;
+  background-image: linear-gradient(#1BB0DB, #9596E8);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 4vw)
+  );
+}
