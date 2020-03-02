@@ -5,12 +5,12 @@ published: true
 ---
 
 Today's project aims at tracking the _invoices_ of a shared account thanks to [Home Assistant](https://home-assistant.io).  
-For those of you that don't know what Home Assistant is, well, Home Assistant is an home automation software that's versatile and  can integrate a lot of different devices. It's starting to become an essential part of my living areas thanks to its possibilities.  
+For those of you that don't know what Home Assistant is, well, Home Assistant is a versatile home automation software that can integrate a lot of different devices. It's starting to become an essential part of my living areas thanks to its possibilities.  
 And sometimes you _just_ wish that you could use it to automate people (just kiddin').  
 
 ## Prerequisites
 
-If you're reading this, probably it's too late and you've already got your feet wet with Home Assistant. Otherwise, you need an installation of Home Assistant. You can install it following the official documentation [here](https://www.home-assistant.io/getting-started/).  
+If you're reading this, it's probably too late and you've already got your feet wet with Home Assistant. Otherwise, you need an installation of Home Assistant. You can install it following the official documentation [here](https://www.home-assistant.io/getting-started/).  
 You also need a Telegram bot, you can create one using Telegram's [@botfather](https://telegram.me/BotFather).
 
 ## Counting in Home Assistant
@@ -37,10 +37,11 @@ counter:
 
 ## Scheduling counter's increments
 
-Home Assistant's preferred way of _making things happen_ is automations.  
-Automations, in a nutshell, are _pieces of code_ that will run when something triggers it and/or some conditions are met.  
-Automations, in an home automation system, are the glue that can tie all of our devices together.  
-Today we'll use them to create a recurring task that will take care of incrementing our newly added counters.
+In a _nutshell_, Home Assistant makes things happen though automations.
+Automations are _pieces of code_ that will run when something triggers it and/or some conditions are met.  
+In a home automation system, they are the glue that can tie all of our devices together.  
+Today we’ll use them to create a recurring task dedicated to incrementing our newly added counters.
+
 
 {% raw %}
 ```yaml
@@ -72,7 +73,7 @@ This automation will **check** every day at 10:00 am if the current day is the 2
 ## Notify the people in the sharing group
 
 An important part of this project is **notifying** your friends if there's a change on their _"debts"_.
-This part is tied to the messaging service you and your friends use.  
+This part is tied to the messaging service of your choice.  
 I consider myself lucky that our "sharing group" is on Telegram, widely supported by the official Home Assistant [integration](https://www.home-assistant.io/integrations/telegram/).  
 
 So, you might have guessed it, we're using **Telegram** today.
@@ -118,7 +119,7 @@ To do so we just need to **edit** our previous automation and add the following 
 
 We're using **templates** so we can **dynamically** generate the message.
 
-Reached this point we can _call it a day_ and the basics of our system are now working. But at the moment we have no way to track _"automatically"_ if a user paid its _debt_. 
+Reached this point, we can _call it a day_ and the basics of our system are now working. But at the moment we have no way to track _"automatically"_ if a user paid its _debt_. 
 
 ## User input from Telegram inline keyboard
 
@@ -166,8 +167,8 @@ The **resulting action** will look something like that:
 ### Reacting to Telegram callbacks
 
 **We're almost there!** We have counters, buttons, automations and messages.  
-Now we should let our friends notify our system with the after mentioned buttons.  
-We have to **react** to their callbacks, according to the [official documentation](https://www.home-assistant.io/integrations/telegram_bot#sample-automations-with-callback-queries-and-inline-keyboards) we need another automation to react to the callbacks. 
+Now we should let our friends notify our system with the buttons mentioned above.  
+We have to **react** to their callbacks: according to the [official documentation](https://www.home-assistant.io/integrations/telegram_bot#sample-automations-with-callback-queries-and-inline-keyboards), we need another automation to react to the callbacks. 
 
 Our automation is gonna look like this one:
 
@@ -196,7 +197,7 @@ In the action we see another **template**, this one is used to get the right cou
 
 ### Updating the message
 
-A possible solution to notify of the decrement is to send another message, I'm not using this solution because it appears quite _"chatty"_ to me and I don't want to annoy my friends.  
+A possible solution to notify of the decrement is to send another message, but I'm not using this solution because it appears quite _"chatty"_ to me and I don't want to annoy my friends.  
 Since Telegram supports **editing of messages**, I've opted to use this solution. 
 We just need to add another action to the previous automation.
 
@@ -226,7 +227,7 @@ We just need to add another action to the previous automation.
 
 We're ready to deploy!  
 Add your _new, and fresh baked_ Telegram bot to your sharing group.  
-Your friend will be grateful for this simple and effective reminder 😇.
+Your friends will be grateful for this simple and effective reminder 😇.
 
 ___ 
 
