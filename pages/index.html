@@ -24,40 +24,16 @@ function changeToolbar() {
 }
 </script>
 <link rel="stylesheet" href="assets/css/home.css">
+
+<div class="header"></div>
 <div class="section" style="padding-top: 96px">
   <div class="content">
     <img class="profile-img shadow" src="assets/profile.jpg" alt=""><br>
-    Hi, I'm <b>Eliseo Martelli</b>.<br>I make <b>Android apps</b>, <b>web apps</b> and <b>websites.</b><br><br>
-    We can dream together of the next big thing and then I'll help you build it.
+    Hi, I'm <b>Eliseo Martelli</b>.<br><br>I'm an IoT aficionado, home automation entusiast, a developer and a tinkerer.<br>
+    Join my journey through networks, small and big machines and some blinking lights.
   </div>
 </div>
 
-<div class="section section-bis">
-  <div class="content">
-    <h2>Check out my projects</h2>
-    <br><br>
-   </div>
-    <div class="card__container">
-      {% for app in site.data.apps %}
-      		<div class="card app shadow">
-          <h3>{{ app.name }}</h3>
-	  <img class="icon" src="{{ app.icon }}"></img><br><br>
-	  {% if app.gplay %}
-		<a href={{ app.url }}>
-        	    <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-		</a>
-	  {% else %}
-	  <a class="visitme" href="{{ app.url }}">Visit Me</a> 
-	  {% endif %}
-                  </div>
-	{% if forloop.last == true %}
-		<div class="app ghostdiv">
-		</div>
-	{% endif %}
-
-      {% endfor %}
-    </div>
-</div>
 <div class="section">
   <div class="content">
     <h2>Get in touch</h2>
