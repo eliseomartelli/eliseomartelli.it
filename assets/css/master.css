@@ -181,6 +181,14 @@ code {
   border-radius: 4px;
 }
 
+code .s {
+  color: darkorange;
+}
+
+code .na {
+  color: darkblue;
+}
+
 .a2a_kit {
   margin-bottom: 16px;
 }
