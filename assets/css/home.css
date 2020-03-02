@@ -148,7 +148,7 @@ h1 {
   z-index: -10;
   width: 100vw;
   height: 192px;
-  background-image: linear-gradient(#E9D799, #E8A895);
+  background-image: linear-gradient(#80F5FF, #D1D5FF);
   clip-path: polygon(
     0 0,
     100% 0,
