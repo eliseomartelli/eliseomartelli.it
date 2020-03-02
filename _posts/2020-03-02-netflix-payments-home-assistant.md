@@ -37,7 +37,7 @@ counter:
 
 ## Scheduling counter's increments
 
-In a _nutshell_, Home Assistant makes things happen though automations.
+In a _nutshell_, Home Assistant makes things happen through automations.
 Automations are _pieces of code_ that will run when something triggers it and/or some conditions are met.  
 In a home automation system, they are the glue that can tie all of our devices together.  
 Today we’ll use them to create a recurring task dedicated to incrementing our newly added counters.
@@ -72,7 +72,7 @@ This automation will **check** every day at 10:00 am if the current day is the 2
 
 ## Notify the people in the sharing group
 
-An important part of this project is **notifying** your friends if there's a change on their _"debts"_.
+An important part of this project is **notifying** your friends if there's a change on their "debts".
 This part is tied to the messaging service of your choice.  
 I consider myself lucky that our "sharing group" is on Telegram, widely supported by the official Home Assistant [integration](https://www.home-assistant.io/integrations/telegram/).  
 
