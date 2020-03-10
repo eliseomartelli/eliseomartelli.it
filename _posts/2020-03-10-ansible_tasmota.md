@@ -10,7 +10,7 @@ For those of you who don't know what [**Ansible**](https://www.ansible.com/) is,
 ## Getting our feet wet with Ansible
 
 Ansible revolves around the concept of [_Infrastructure as Code_](https://en.wikipedia.org/wiki/Infrastructure_as_code) and provides a set of tools to manage said infrastructure.  
-One advantage of pursuing to keep our configurations within Ansible is the ability to reproduce builds(configurations in our case).
+One advantage of pursuing to keep our configurations within Ansible is the ability to reproduce builds (configurations, in our case).
 
 ## Ansible's basic concepts
 
@@ -42,7 +42,56 @@ After this little introduction, let's get to it!
 
 ## Prerequisites
 
+To follow this tutorial you need at least one device with [**Tasmota**](https://tasmota.github.io/) already connected to our WiFi network (preferably with a fixed IP address).  
+You also need a computer with **Python** and **git** installed. 
 
+
+## Installing Ansible
+
+Installing Ansible is quite easy, many Linux distributions have it inside their repositories, you can also use **pip**, and type this tiny command:
+
+```bash
+pip install ansible
+```
+
+## Creating an inventory
+
+To create an inventory you should create an `inventory` file and then edit it with your preferred file editor.
+
+An example file will look something like that:
+```
+[plugs]
+192.168.0.10
+
+[lights]
+192.168.0.11
+```
+
+As you can see we use square brackets to define host groups.
+
+### Using the inventory to store variables
+
+Another great feature of the inventory is the ability to store variables that can be used inside tasks.  
+
+```
+[plugs]
+192.168.0.10    friendly_name="Bathroom Fan"
+
+[lights]
+192.168.0.11    friendly_name="Kitchen Downlight"
+```
+
+## Setup the Tasmota integration
+
+Since Tasmota is not the typical use of Ansible we need to install a custom role to use the two systems together. 
+
+The role we're going to use today is Tobias Richter's ["Tasmota"](https://galaxy.ansible.com/tobias_richter/tasmota).
+
+The command to install this role is:
+
+```bash
+ansible-galaxy install tobias_richter.tasmota
+```
 
 ___ 
 
