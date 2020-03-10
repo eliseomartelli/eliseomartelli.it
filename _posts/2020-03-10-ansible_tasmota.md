@@ -56,7 +56,7 @@ pip install ansible
 
 ## Creating an inventory
 
-To create an inventory you should create an `inventory` file and then edit it with your preferred file editor.
+To create an inventory you should create an _inventory_ file and then edit it with your preferred file editor.
 
 An example file will look something like that:
 ```
@@ -96,10 +96,10 @@ ansible-galaxy install tobias_richter.tasmota
 ## Writing the playbook
 
 Now it's time to write the playbook!  
-Create a new file named `playbook.yaml` and then open it with your file editor.  
+Create a new file named _playbook.yaml_ and then open it with your file editor.  
 Now we have to create our first *play.*
 
-We start by defining the group of hosts we want to target and then we have to disable the `gather_facts` function, as for the [documentation](https://github.com/tobias-richter/ansible-tasmota#fact-gathering) of the custom role.
+We start by defining the group of hosts we want to target and then we have to disable the _gather_facts_ function, as for the [documentation](https://github.com/tobias-richter/ansible-tasmota#fact-gathering) of the custom role.
 
 ```yaml
 - hosts: all
@@ -113,7 +113,7 @@ We can now create our first task and give it a name:
     - name: Ensure device reports status
 ```
 
-Next, we have to define what module we're going to use. For this custom role, we have to use the `include_role` module.  
+Next, we have to define what module we're going to use. For this custom role, we have to use the _include_role_ module.  
 Our task will become something like that:
 
 ```yaml
@@ -135,7 +135,7 @@ Edit your task as follows:
           - command: Status
 ```
 
-The resulting `playbook.yaml` will look like this: 
+The resulting _playbook.yaml_ will look like this: 
 
 ```yaml
 - hosts: all
