@@ -6,7 +6,7 @@ published: true
 
 Today's post aims at helping people that are working/studying from home and don't have a stable internet conection.  
 Since me and my family are currently _staying at home_ we are __taxing our ADSL2+__ connection very hard with multiple simultaneous video conferences, so I had to find a way to keep all my family online.  
-The way I've chosen to do that is by using __multiple WANs__, one of them being over __LTE__.
+The way I've chosen to do that is using __multiple WANs__, one of them being over __LTE__.
 
 ## Prerequisites
 
