@@ -39,7 +39,8 @@ We have to **create a multi-gateway** that we'll later use to route our traffic 
 
 <a href="https://ibb.co/0VXCMSH"><img src="https://i.ibb.co/yBR6y1H/Screenshot-2020-04-05-at-21-38-53.png" alt="Screenshot-2020-04-05-at-21-38-53" border="0"></a>
 
-We need to set a network tier, remember that a **lower** number is **preferred**, if both interfaces share the same network tier, pfSense will balance packets on both of them.  
+We need to set a network tier, remember that a **lower** number is **preferred**.  
+If both interfaces share the same network tier, pfSense will balance packets on both of them.  
 Remember to change the "Trigger Level" to "Packet Loss or High Latency" so you will always use the best connection. 
 
 ### Configure the firewall to use the multi-gateway
@@ -59,7 +60,7 @@ Destination: Any
 
 <a href="https://ibb.co/fdqV7kv"><img src="https://i.ibb.co/4RKwx8d/Screenshot-2020-04-05-at-21-40-58.png" alt="Screenshot-2020-04-05-at-21-40-58" border="0"></a>
 
-The last thing to do is now go to the **advanced** section of our firewall rule and set the **gateway** to the previously created gateway group.
+The last thing to do is going to the **advanced** section of our firewall rule and set the **gateway** to the previously created gateway group.
 
 <a href="https://ibb.co/Jy7SPvd"><img src="https://i.ibb.co/Hxz9Qt2/Screenshot-2020-04-05-at-21-41-14.png" alt="Screenshot-2020-04-05-at-21-41-14" border="0"></a>
 
