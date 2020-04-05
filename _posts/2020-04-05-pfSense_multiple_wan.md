@@ -65,6 +65,7 @@ The last thing to do is now go to the **advanced** section of our firewall rule 
 
 We're finally done!  
 You can now go and test your load balanced network!
+
 ___ 
 
 Do you want to talk to me about projects, fun stuff and other things that might be interesting?
