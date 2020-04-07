@@ -1,0 +1,29 @@
+---
+layout: page
+---
+<div class="full-width">
+  <div class="hero">
+    <div class="content">
+      <h2>This is a test</h2>
+    </div>
+  </div>
+</div>
+<ul class="post-list">
+  {% assign date_format = "%b %-d, %Y" %}
+  {% assign collection = site[page.collection] | sort: 'date' | reverse %}
+  {% for post in collection %}
+    <li class="card"> 
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h2>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h2>
+      <p>
+        {{ post.content | strip_html | truncatewords: 40 }}
+      </p>
+      <a class="readmore shadow" href="{{ post.url | relative_url }}">Read More</a>
+    </li>
+  {% endfor %}
+</ul>
+<p class="rss-subscribe">subscribe
+  <a href="{{ '/feed.xml' | relative_url }}">via RSS</a>
+</p>
