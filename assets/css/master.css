@@ -55,10 +55,21 @@ html {
   text-align: center;
   font-size: 21px;
   font-weight: lighter;
+  color: #212121;
 }
 
 .logo span {
   font-weight: bolder;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar .logo .txt {
+  padding-left: 16px;
 }
 
 .card {
