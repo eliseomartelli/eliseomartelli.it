@@ -1,9 +1,9 @@
 {% if page.comments != false %}
 <hr>
 <h2>Comments</h2>
-
-  <div class="darkmode-ignore" id="disqus_thread"></div>
-
+  <span class="darkmode-ignore">
+  <div id="disqus_thread"></div>
+  </span>
   <script>
     var disqus_config = function () {
       this.page.url = '{{ page.url | absolute_url }}';
