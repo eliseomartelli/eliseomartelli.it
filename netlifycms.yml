@@ -1,8 +1,9 @@
 backend:
   name: github
-  repo: eliseomartelli/personal-site
+  repo: eliseomartelli/eliseomartelli.it
 
 media_folder: "assets/images"
+publish_mode: editorial_workflow
 
 collections:
   - name: "posts"
