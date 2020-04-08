@@ -13,9 +13,6 @@
 .toolbar .content .logo {
   transition: all 100ms ease-in-out;
 }
-.toolbar .content .logo.big {
-  font-size: 2em;
-}
 
 .hero .motto {
   margin: 0;
