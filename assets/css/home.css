@@ -149,3 +149,10 @@ h1 {
   width: 100vw;
   height: 192px;
 }
+
+.darkmode--activated a {
+  filter: hue-rotate(0deg);
+}
+.darkmode--activated a:hover {
+  filter: hue-rotate(0deg);
+}
