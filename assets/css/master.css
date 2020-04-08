@@ -255,10 +255,10 @@ code .na {
   z-index: 100000;
 }
 
-.darkmode--activated a {
+.darkmode--activated a :not(#post-link) {
   filter: hue-rotate(0deg);
 }
-.darkmode--activated a:hover {
+.darkmode--activated a:hover :not(#post-link) {
   filter: hue-rotate(0deg);
 }
 .darkmode--activated #disqus_thread img {
