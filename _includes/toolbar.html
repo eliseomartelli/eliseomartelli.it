@@ -28,24 +28,4 @@
   function toggleNav() {
     document.getElementById("sidemenu").classList.toggle("side-menu__open");
   }
-  {% if page.scrollable == true %}
-    window.addEventListener('scroll', changeToolbar, false);
-
-    var toolbar = document.getElementById("toolbar");
-    toolbar.classList.add("toolbar-transparent");
-    toolbar.classList.remove("shadow");
-
-    function changeToolbar() {
-
-      if (window.pageYOffset >= 20){
-        toolbar.classList.add("shadow");
-        toolbar.classList.remove("toolbar-transparent");
-
-      } else {
-        toolbar.classList.remove("shadow");
-        toolbar.classList.add("toolbar-transparent");
-      }
-    }
-  {% endif %}
-
 </script>

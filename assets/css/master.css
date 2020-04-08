@@ -254,3 +254,21 @@ code .na {
 .darkmode-toggle {
   z-index: 100000;
 }
+
+.darkmode--activated a {
+  filter: hue-rotate(0deg);
+}
+.darkmode--activated a:hover {
+  filter: hue-rotate(0deg);
+}
+.darkmode--activated #disqus_thread img {
+  filter: hue-rotate(0deg);
+}
+
+.darkmode--activated #disqus_thread {
+  filter: hue-rotate(0deg);
+}
+
+.darkmode--activated #disqus_thread * {
+  color: #fff;
+}
