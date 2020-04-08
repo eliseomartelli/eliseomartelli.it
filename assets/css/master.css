@@ -11,6 +11,10 @@ body {
   padding-bottom: 128px;
 }
 
+a {
+  color: #a11c32;
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -136,6 +140,7 @@ footer {
   color: #212121;
   width: 100%;
   padding: 16px;
+  padding-left: 48px;
   display: block;
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -162,6 +167,11 @@ ul.post-list li {
   margin-bottom: 32px;
 }
 
+ul.post-list li a{
+  color: inherit;
+  text-decoration: none;
+}
+
 ul.post-list li img {
   width: calc(100% + 32px);
   height: 200px;
@@ -172,10 +182,11 @@ ul.post-list li img {
 }
 
 ul.post-list li .readmore {
+  justify-self: end;
   padding: 16px;
-  background: #1022CA;
+  background: #da1e3e;
   color: #fff;
-  width: 96px;
+  width: fit-content;
   margin-left: auto;
   margin-right: 0;
   text-decoration: none;
