@@ -21,6 +21,9 @@ If you get a "**yes**" as a response, you can set-up your cache server via this 
 $ sudo AssetCacheManagerUtil activate
 ```
 
+Your devices will now discover this cache server automatically after a **reboot**.
+
+\
 You can find more information about this macOS feature [here](https://support.apple.com/guide/mac-help/manage-content-caching-command-line-mac-mchla6d4541e/mac).
 
 - - -
