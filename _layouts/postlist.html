@@ -5,7 +5,7 @@ layout: content
 <ul class="post-list">
   {% assign date_format = "%b %-d, %Y" %}
   {% assign collection = site[page.collection] | sort: 'date' | reverse %}
-  {% for post in collection %}
+  {% for post in paginator.posts %}
     <li class="shadow card">
       <span class="post-meta">{{ post.date | date: date_format }}</span>
       <h2>
@@ -18,6 +18,20 @@ layout: content
     </li>
   {% endfor %}
 </ul>
+{% if paginator.total_pages > 1 %}
+<ul>
+  {% if paginator.previous_page %}
+  <li>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
 <p class="rss-subscribe">subscribe
   <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
 </p>
