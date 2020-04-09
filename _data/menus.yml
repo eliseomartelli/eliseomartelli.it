@@ -1,0 +1,4 @@
+header:
+  - url: /blog
+    title: Blog
+    weight: 2

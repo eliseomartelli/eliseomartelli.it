@@ -19,18 +19,12 @@ layout: content
   {% endfor %}
 </ul>
 {% if paginator.total_pages > 1 %}
-<ul>
-  {% if paginator.previous_page %}
-  <li>
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li>
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-  </li>
-  {% endif %}
-</ul>
+{% if paginator.previous_page %}
+<a class="page-btn" id="next" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+{% endif %}
+{% if paginator.next_page %}
+<a class="page-btn" id="prev" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+{% endif %}
 {% endif %}
 <p class="rss-subscribe">subscribe
   <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>

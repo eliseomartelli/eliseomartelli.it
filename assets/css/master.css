@@ -272,3 +272,15 @@ code .na {
 .darkmode--activated #disqus_thread * {
   color: #fff;
 }
+
+.page-btn {
+  background: #da1e3e;
+  color: #fff;
+  padding: 16px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.page-btn#prev {
+  margin-right: 0;
+}
