@@ -8,6 +8,8 @@ Today's post aims at helping people that are working/studying from home and don'
 Since me and my family are currently _staying at home_ we are __taxing our ADSL2+__ connection very hard with multiple simultaneous video conferences, so I had to find a way to keep all my family online.  
 The way I've chosen to do that is using __multiple WANs__, one of them being over __LTE__.
 
+<a href="https://ibb.co/DWQNfqz"><img src="https://i.ibb.co/LR1MdGY/Untitled-Artwork.png" alt="Untitled-Artwork" border="0"></a>
+
 ## Prerequisites
 
 1. A pfSense box with __3+ network interfaces__;
