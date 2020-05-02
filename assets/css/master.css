@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:300,400,700&display=swap');
-
 body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
@@ -42,6 +39,7 @@ html {
 
 .toolbar {
   z-index: 100;
+  top: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   position: fixed;
@@ -231,7 +229,7 @@ code .na {
 }
 
 .a2a_kit {
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .darkmode--activated .toolbar, .darkmode--activated .toolbar .logo {
