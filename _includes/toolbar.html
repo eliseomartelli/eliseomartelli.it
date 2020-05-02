@@ -1,4 +1,4 @@
-<div id="toolbar" class="toolbar shadow">
+<div id="toolbar" class="toolbar">
   <div class="content">
     <i onclick="toggleNav()" class="material-icons">menu</i>
     <div class="logo" id="toolbar__logo" onclick="window.location = '/';">
@@ -28,4 +28,14 @@
   function toggleNav() {
     document.getElementById("sidemenu").classList.toggle("side-menu__open");
   }
+
+  function fadeNav() {
+    if (window.pageYOffset > 16) {
+      document.getElementById("toolbar").classList.add("shadow");
+    } else {
+      document.getElementById("toolbar").classList.remove("shadow");
+    }
+  }
+
+  window.onscroll = fadeNav;
 </script>
