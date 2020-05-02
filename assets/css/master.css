@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:300,400,700&display=swap');
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
   padding: 0;
   color: #212121;
@@ -11,6 +12,9 @@ body {
   padding-bottom: 128px;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato';
+}
 a {
   color: #a11c32;
   isolation: isolate;
@@ -30,7 +34,7 @@ html {
 }
 
 .content {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
@@ -68,6 +72,7 @@ html {
 }
 
 .logo {
+  font-family: 'Lato', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
