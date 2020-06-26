@@ -6,24 +6,33 @@ layout: content
   {% assign date_format = "%b %-d, %Y" %}
   {% assign collection = site[page.collection] | sort: 'date' | reverse %}
   {% for post in paginator.posts %}
+  <a class="post-link" href="{{ post.url | relative_url }}">
     <li class="shadow card">
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
       <h2>
-        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        {{ post.title | escape }}
       </h2>
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
       <p>
         {{ post.content | strip_html | truncatewords: 40 }}
       </p>
-      <a class="readmore shadow" href="{{ post.url | relative_url }}">Read More</a>
     </li>
+  </a>
   {% endfor %}
 </ul>
 {% if paginator.total_pages > 1 %}
-{% if paginator.previous_page %}
-<a class="page-btn shadow" id="next" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-{% endif %}
 {% if paginator.next_page %}
-<a class="page-btn shadow" id="prev" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+<a class="page-btn" id="prev" href="{{ paginator.next_page_path | prepend: site.baseurl }}">
+  <span class="material-icons">
+    chevron_left
+  </span>
+</a>
+{% endif %}
+{% if paginator.previous_page %}
+<a class="page-btn" id="next" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
+  <span class="material-icons">
+    chevron_right
+  </span>
+</a>
 {% endif %}
 {% endif %}
 <p class="rss-subscribe">subscribe

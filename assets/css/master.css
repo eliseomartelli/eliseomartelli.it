@@ -81,7 +81,7 @@ html {
 }
 
 .card {
-  padding: 16px;
+  padding: 2px 16px;
   background: #fff;
   border-radius: 12px;
 }
@@ -230,6 +230,11 @@ code .na {
   color: darkblue;
 }
 
+.post-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .darkmode--activated .toolbar, .darkmode--activated .toolbar .logo {
   background: #111;
   color: #fff;
@@ -257,10 +262,10 @@ code .na {
   z-index: 100000;
 }
 
-.darkmode--activated a :not(#post-link) {
+.darkmode--activated a {
   filter: hue-rotate(0deg);
 }
-.darkmode--activated a:hover :not(#post-link) {
+.darkmode--activated a:hover {
   filter: hue-rotate(0deg);
 }
 .darkmode--activated #disqus_thread img {
@@ -276,16 +281,5 @@ code .na {
 }
 
 .page-btn {
-  background: #da1e3e;
-  color: #fff;
-  padding: 16px;
   text-decoration: none;
-  display: inline-block;
-  border-radius: 12px;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-.page-btn#prev {
-  margin-right: 0;
 }
