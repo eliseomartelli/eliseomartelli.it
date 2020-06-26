@@ -13,7 +13,7 @@
     <ul>
       {% for item in site.menus.header %}
         {% assign current = nil %}
-        {% if item.url == page.url or item.layout == page.layout %}
+        {% if item.url == page.url %}
           {% assign current = 'current' %}
         {% endif %}
         <li class="{{ current }}">

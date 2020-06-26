@@ -20,10 +20,10 @@ layout: content
 </ul>
 {% if paginator.total_pages > 1 %}
 {% if paginator.previous_page %}
-<a class="page-btn" id="next" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+<a class="page-btn shadow" id="next" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
 {% endif %}
 {% if paginator.next_page %}
-<a class="page-btn" id="prev" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+<a class="page-btn shadow" id="prev" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
 {% endif %}
 {% endif %}
 <p class="rss-subscribe">subscribe

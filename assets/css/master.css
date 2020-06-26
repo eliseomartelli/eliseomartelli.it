@@ -83,7 +83,7 @@ html {
 .card {
   padding: 16px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 footer {
@@ -132,29 +132,30 @@ footer {
 
 .side-menu ul {
   list-style: none;
-  margin-left: -40px;
 }
 
 .side-menu ul li {
-  text-align: center;
-  margin-left: -40px;
+  margin-left: -24px;
+  margin-right: 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
 }
 
 .side-menu ul li a {
-  color: #212121;
+  color: inherit;
   width: 100%;
   padding: 16px;
-  padding-left: 48px;
   display: block;
-  text-transform: uppercase;
   font-size: 1.2rem;
   text-decoration: none;
+  font-weight: bold;
 }
 .side-menu ul li:hover {
   background: #ccc;
 }
 .side-menu ul li.current {
-  background: #aaa;
+  background: #a11c32;
+  color: #fff;
 }
 
 /* Used by postlist */
@@ -198,6 +199,7 @@ ul.post-list li .readmore {
   font-weight: bolder;
   display: block;
   transition: margin-right .25s ease-in-out;
+  border-radius: 12px;
 }
 
 ul.post-list li .readmore:hover {
@@ -279,6 +281,9 @@ code .na {
   padding: 16px;
   text-decoration: none;
   display: inline-block;
+  border-radius: 12px;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .page-btn#prev {
