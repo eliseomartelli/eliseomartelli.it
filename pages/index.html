@@ -7,30 +7,12 @@ layout: page
 permalink: /
 scrollable: true
 ---
-<script>
-window.addEventListener('scroll', changeToolbar, false);
-
-var logo = document.getElementById("toolbar__logo");
-logo.classList.add("big");
-
-function changeToolbar() {
-
-  if (window.pageYOffset >= 50){
-    logo.classList.remove("big");
-
-  } else {
-    logo.classList.add("big");
-  }
-}
-</script>
 <link rel="stylesheet" href="assets/css/home.css">
 
-<div class="header"></div>
 <div class="section" style="padding-top: 96px">
   <div class="content">
-    <img class="profile-img shadow" src="assets/profile.jpg" alt=""><br>
-    Hi, I'm <b>Eliseo Martelli</b>.<br><br>I'm an IoT aficionado, home automation entusiast, a developer and a tinkerer.<br>
-    Join my journey through networks, small and big machines and some blinking lights.
+    <h1>Hello there!</h1>
+    Hi, I'm <b>Eliseo</b>. I'm a Computer Science student in Italy.<br>When I'm not studying you can find me working on personal projects, taking pictures or jamming to music.<br>Join my journey through networks, small and big machines and some blinking lights.
   </div>
 </div>
 
@@ -38,7 +20,6 @@ function changeToolbar() {
   <div class="content">
     <h2>Get in touch</h2>
     <p>Follow me to hear what's next or just say hi!<br>I'd love to talk to you!</p>
-    <br>
     <div>
       <p id="social">
         {% for social in site.data.socials %}
@@ -47,8 +28,7 @@ function changeToolbar() {
           </a>
         {% endfor %}
       </p>
-      <p>- or -</p>
-      <p style="font-weight: 300;">email me:</p>
+      <p style="font-weight: 300;">send me an email:</p>
       <a class="icon-a email" href="mailto:me@eliseomartelli.it">me@eliseomartelli.it</a>
     </div>
   </div>

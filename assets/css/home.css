@@ -6,9 +6,6 @@
   width: 100vw;
   display: block;
 }
-.motto {
-	text-align: center;
-}
 
 .toolbar .content .logo {
   transition: all 100ms ease-in-out;
@@ -23,21 +20,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 0 2px 6px rgba(0,0,0,.2);
-}
-
-.section {
-  padding-top: 64px;
-  padding-bottom: 64px;
-  text-align: center;
-}
-
-.section h2 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.section-bis {
-  background: #e6f7fc;
 }
 
 .profile-img {
@@ -122,10 +104,6 @@ a.icon {
 }
 a:hover {
   color: #a11c32;
-}
-
-h1 {
-  margin: 0;
 }
 
 @media screen and (max-width: 900px) {
