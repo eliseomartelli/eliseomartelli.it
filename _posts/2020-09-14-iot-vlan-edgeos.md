@@ -23,7 +23,7 @@ The steps you need to take care of are the following:
 
 ## EdgeOS specific configuration
 
-To configure the EdgeRouter we are going to use the CLI. We are going to **start** a configuration session by typing `configure` into the shell.
+To configure the EdgeRouter we are going to use the CLI. We are going to **start** a configuration session by typing "configure" into the shell.
 
 1. **Create** a network group that targets [**RFC1918**](https://tools.ietf.org/html/rfc1918) networks:
 
@@ -113,7 +113,7 @@ To configure the EdgeRouter we are going to use the CLI. We are going to **start
     set service mdns repeater interface eth1.32
     ```
 
-8. **Save** your configuration with `commit` and then `save`.
+8. **Save** your configuration with "commit" and then "save".
 
 At this point you should now have a new VLAN that cannot see your other networks but can still access the internet.
 
