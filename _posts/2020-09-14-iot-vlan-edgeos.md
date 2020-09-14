@@ -51,7 +51,7 @@ To configure the EdgeRouter we are going to use the CLI. We are going to **start
     set firewall name IOT_IN_LOCAL rule 10 state related enable
     ```
 
-    2.2 We don't have to forget to allow **DHCP** requests so that our devices can get an IP address. 
+    2.2 We can't forget to allow **DHCP** requests so that our devices can get an IP address. 
     It might be useful to allow **DNS** requests originating from our IOT VLAN too.
 
     ```bash
