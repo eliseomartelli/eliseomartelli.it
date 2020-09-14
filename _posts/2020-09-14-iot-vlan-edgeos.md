@@ -83,7 +83,7 @@ To configure the EdgeRouter we are going to use the CLI. We are going to **start
     set interfaces ethernet eht1 vif 32 mtu 1500
     ```
 
-4. **Assign** the firewall ruleset to the in and local sides of the firewall.
+4. **Assign** the firewall ruleset to the *in* and *local* sides of the firewall.
 
     ```bash
     set interfaces ethernet eth1 vif 32 firewall in name IOT_IN_LOCAL
@@ -106,7 +106,7 @@ To configure the EdgeRouter we are going to use the CLI. We are going to **start
     set service dns forwarding listen-on eth1.32
     ```
 
-7. Configure the **mDNS repeater** ot enable mDNS resolution from our other networks (useful for devices like the Chromecast).
+7. Configure the **mDNS repeater** to enable mDNS resolution from our other networks (useful for devices like the Chromecast).
 
     ```bash
     set service mdns repeater interface eth1
