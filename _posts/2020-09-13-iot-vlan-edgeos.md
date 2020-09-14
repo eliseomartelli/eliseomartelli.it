@@ -4,6 +4,8 @@ categories: networking
 published: true
 ---
 
+![Network Equipment](https://p0.pikist.com/photos/309/174/network-equipment-hardware-internet-data-server-communication-connection-datacenter.jpg)
+
 Having a good firewall in place when building a home network is something that now is more important than ever. Traditionally, home firewalls were made to protect the internal local network from connection that could originate from the internet (That's what you expect from an ISP provided modem/router combo). In this day and age, thanks to the fast rise of smart home gadgets, our home networks are becoming more and more occupied by little computers usually running firmware that is not possible to check or manage. A firewall can help us mitigate the [potential issues](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=upnp) that can occur by using this kind of devices.
 
 The intent of this article is to provide a sensible baseline configuration that you can expand to suit your own needs. These concepts can be applied on a variety of SOHO routers (check for VLAN tagging support and firewall capabilities between different networs).
@@ -25,90 +27,90 @@ To configure the EdgeRouter we are going to use the CLI. We are going to start a
 
 1. Create a network group that targets [RFC1918](https://tools.ietf.org/html/rfc1918) networks:
 
-```
-set firewall group network-group RFC1918 description 'RFC1918 ranges'
-set firewall group network-group RFC1918 network 192.168.0.0/16
-set firewall group network-group RFC1918 network 172.16.0.0/12
-set firewall group network-group RFC1918 network 10.0.0.0/8
-```
+    ```bash
+    set firewall group network-group RFC1918 description 'RFC1918 ranges'
+    set firewall group network-group RFC1918 network 192.168.0.0/16
+    set firewall group network-group RFC1918 network 172.16.0.0/12
+    set firewall group network-group RFC1918 network 10.0.0.0/8
+    ```
 
 2. Setup the firewall to block RFC1918 but allow DNS and DHCP:
 
-```
-set firewall name IOT_IN_LOCAL default-action accept
-set firewall name IOT_IN_LOCAL description 'IOT In and Local ruleset.'
-```
+    ```bash
+    set firewall name IOT_IN_LOCAL default-action accept
+    set firewall name IOT_IN_LOCAL description 'IOT In and Local ruleset.'
+    ```
 
-We are going to allow established and related network traffic.
+    2.1 We are going to allow established and related network traffic.
 
-```
-set firewall name IOT_IN_LOCAL rule 10 action accept
-set firewall name IOT_IN_LOCAL rule 10 description 'allow established/related'
-set firewall name IOT_IN_LOCAL rule 10 protocol all
-set firewall name IOT_IN_LOCAL rule 10 state established enable
-set firewall name IOT_IN_LOCAL rule 10 state related enable
-```
+    ```bash
+    set firewall name IOT_IN_LOCAL rule 10 action accept
+    set firewall name IOT_IN_LOCAL rule 10 description 'allow established/related'
+    set firewall name IOT_IN_LOCAL rule 10 protocol all
+    set firewall name IOT_IN_LOCAL rule 10 state established enable
+    set firewall name IOT_IN_LOCAL rule 10 state related enable
+    ```
 
-We don't have to forget to allow DHCP and DNS requests originating from our IOT VLAN.
+    2.2 We don't have to forget to allow DHCP and DNS requests originating from our IOT VLAN.
 
-```
-set firewall name IOT_IN_LOCAL rule 20 action accept
-set firewall name IOT_IN_LOCAL rule 20 description 'Allow DNS'
-set firewall name IOT_IN_LOCAL rule 20 destination port 53
-set firewall name IOT_IN_LOCAL rule 20 protocol tcp_udp
+    ```bash
+    set firewall name IOT_IN_LOCAL rule 20 action accept
+    set firewall name IOT_IN_LOCAL rule 20 description 'Allow DNS'
+    set firewall name IOT_IN_LOCAL rule 20 destination port 53
+    set firewall name IOT_IN_LOCAL rule 20 protocol tcp_udp
 
-set firewall name IOT_IN_LOCAL rule 30 action accept
-set firewall name IOT_IN_LOCAL rule 30 description 'Allow DHCP'
-set firewall name IOT_IN_LOCAL rule 30 destination port 67
-set firewall name IOT_IN_LOCAL rule 30 protocol udp
-```
+    set firewall name IOT_IN_LOCAL rule 30 action accept
+    set firewall name IOT_IN_LOCAL rule 30 description 'Allow DHCP'
+    set firewall name IOT_IN_LOCAL rule 30 destination port 67
+    set firewall name IOT_IN_LOCAL rule 30 protocol udp
+    ```
 
-The last firewall rule we are going to setup is the one that blocks traffic going to our other network(s).
+    2.3 The last firewall rule we are going to setup is the one that blocks traffic going to our other network(s).
 
-```
-set firewall name IOT_IN_LOCAL rule 40 action drop
-set firewall name IOT_IN_LOCAL rule 40 description 'Drop RFC1918'
-set firewall name IOT_IN_LOCAL rule 40 destination group network-group RFC1918
-set firewall name IOT_IN_LOCAL rule 40 protocol all
-```
+    ```bash
+    set firewall name IOT_IN_LOCAL rule 40 action drop
+    set firewall name IOT_IN_LOCAL rule 40 description 'Drop RFC1918'
+    set firewall name IOT_IN_LOCAL rule 40 destination group network-group RFC1918
+    set firewall name IOT_IN_LOCAL rule 40 protocol all
+    ```
 
 3. Create a virtual interface for our new VLAN:
 
-```
-set interfaces ethernet eth1 vif 32 address 10.0.32.1/24
-set interfaces ethernet eth1 vif 32 description IOT_VLAN
-set interfaces ethernet eht1 vif 32 mtu 1500
-```
+    ```bash
+    set interfaces ethernet eth1 vif 32 address 10.0.32.1/24
+    set interfaces ethernet eth1 vif 32 description IOT_VLAN
+    set interfaces ethernet eht1 vif 32 mtu 1500
+    ```
 
 4. Assing the previously defined rules to this interface:
 
-```
-set interfaces ethernet eth1 vif 32 firewall in name IOT_IN_LOCAL
-set interfaces ethernet eth1 vif 32 firewall local name IOT_IN_LOCAL
-```
+    ```bash
+    set interfaces ethernet eth1 vif 32 firewall in name IOT_IN_LOCAL
+    set interfaces ethernet eth1 vif 32 firewall local name IOT_IN_LOCAL
+    ```
 
 5. Setup the DHCP server for the new VLAN:
 
-```
-set service dhcp-server shared-network-name IOT_VLAN authoritative disable
-set service dhcp-server shared-network-name IOT_VLAN subnet 10.0.32.0/24 default-router 10.0.32.1
-set service dhcp-server shared-network-name IOT_VLAN subnet 10.0.32.0/24 dns-server 10.0.32.1
-set service dhcp-server shared-network-name IOT_VLAN subnet 10.0.32.0/24 lease 86499
-set service dhcp-server shared-network-name IOT_VLAN start 10.0.32.10 stop 10.0.32.100
-```
+    ```bash
+    set service dhcp-server shared-network-name IOT_VLAN authoritative disable
+    set service dhcp-server shared-network-name IOT_VLAN subnet 10.0.32.0/24 default-router 10.0.32.1
+    set service dhcp-server shared-network-name IOT_VLAN subnet 10.0.32.0/24 dns-server 10.0.32.1
+    set service dhcp-server shared-network-name IOT_VLAN subnet 10.0.32.0/24 lease 86499
+    set service dhcp-server shared-network-name IOT_VLAN start 10.0.32.10 stop 10.0.32.100
+    ```
 
 6. Setup the DNS forwarder to listen on this virtual interface:
 
-```
-set service dns forwarding listen-on eth1.32
-```
+    ```bash
+    set service dns forwarding listen-on eth1.32
+    ```
 
 7. Configure the mdns repeater:
 
-```
-set service mdns repeater interface eth1
-set service mdns repeater interface eth1.32
-```
+    ```bash
+    set service mdns repeater interface eth1
+    set service mdns repeater interface eth1.32
+    ```
 
 8. Save your configuration with `commit` and then `save`.
 
