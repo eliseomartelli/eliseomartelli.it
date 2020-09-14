@@ -1,5 +1,5 @@
 ---
-title: How to segregate internet of things devices using an ubnt edgerouter.
+title: IoT device segregation on EdgeOS
 categories: networking
 published: true
 ---
