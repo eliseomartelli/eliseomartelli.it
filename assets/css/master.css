@@ -103,9 +103,8 @@ footer {
 .side-menu {
   left: -100%;
   position: absolute;
-  width: 66%;
-  max-width: 600px;
   height: 100vh;
+  width: calc((100vw - 800px)/2 + 450px);
   display: block;
   background: #fff;
   transition: all .25s ease;
