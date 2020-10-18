@@ -1,6 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+import '../components/blogPost.css'
+
 
 export default function Template({
   data
@@ -11,6 +15,8 @@ export default function Template({
   const { title } = markdownRemark.frontmatter;
   return (
     <Layout>
+      <SEO
+        title={title} />
       <div>
         <h1>{title}</h1>
         <p>{date}</p>

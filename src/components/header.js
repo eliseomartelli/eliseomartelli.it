@@ -35,6 +35,9 @@ export default class Header extends React.Component {
           style={{
             margin: `0 auto`,
             maxWidth: 600,
+            display: 'flex',
+            flexBasis: '0',
+            alignItems: 'center',
             padding: '1.45rem 16px'
           }}>
           <h1 style={{ margin: 0 }}>
