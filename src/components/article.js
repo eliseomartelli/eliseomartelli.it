@@ -4,13 +4,12 @@ import { Link } from "gatsby"
 
 const Article = (
     {
-        articleName,
+        articleName, 
         articleExcerpt,
         articleDate,
         articleTime,
         articleSlug
     }) => {
-        const time = (articleTime == 1) ?"minute" : "minutes"
         return (
             <Link
                 to={articleSlug}
@@ -21,7 +20,11 @@ const Article = (
                 }}>
                 <div>
                     <h1>{articleName}</h1>
-                    <p>{articleDate} - 🕒 <i>{articleTime} {time} read</i></p>
+                    <p>{articleDate} - 🕒
+                        <i>
+                            {articleTime} minute{(articleTime == 1) ? "" : "s"} read
+                        </i>
+                    </p>
                     <p>{articleExcerpt}</p>
                 </div>
             </Link>

@@ -7,12 +7,14 @@ export default function Template({
 }) {
   const { markdownRemark } = data;
   const { html } = markdownRemark;
-  const { date } = markdownRemark.fields.date;
-  const { title } = markdownRemark.frontmatter.title;
+  const { date } = markdownRemark.fields;
+  const { title } = markdownRemark.frontmatter;
   return (
     <Layout>
-      <h1>{title}</h1>
-      <p>{date}</p>
+      <div>
+        <h1>{title}</h1>
+        <p>{date}</p>
+      </div>
       <div dangerouslySetInnerHTML={{__html: html}}></div>
     </Layout>
   );

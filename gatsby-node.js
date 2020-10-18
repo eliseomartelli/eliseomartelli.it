@@ -19,8 +19,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     if (isBlogPostFileName(filePath)) {
       let metadata = extractMetadataFromFilename(filePath);
       date = metadata.date;
-      categories = node.frontmatter.categories;
-      slug = `${categories || ""}/${metadata.slug}`;
+      categories = node.frontmatter.categories.split(" ").join("/") || "";
+      slug = `${categories}/${metadata.slug}`;
       createNodeField({node, name: 'date', value: date});
     } else {
       slug = filePath.substring(1);

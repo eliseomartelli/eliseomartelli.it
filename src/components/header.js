@@ -52,12 +52,3 @@ export default class Header extends React.Component {
     )
   }
 }
-
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}

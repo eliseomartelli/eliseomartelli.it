@@ -11,20 +11,19 @@ const IndexPage = ({
       allMarkdownRemark: { edges },
     },
   }) => {
-    const Posts = edges.map(edge => (
-        <Article 
-          articleName={edge.node.frontmatter.title} 
-          articleExcerpt={edge.node.excerpt} 
-          articleDate={edge.node.fields.date || ""}
-          articleTime={edge.node.timeToRead}
-          articleSlug={edge.node.fields.slug} 
-          />
-      )
-    )
     return (
       <Layout>
         <SEO title="Home" />
-        {Posts}
+        {
+          edges.map(edge => (
+            <Article 
+              articleName={edge.node.frontmatter.title}
+              articleExcerpt={edge.node.excerpt}
+              articleDate={edge.node.fields.date}
+              articleTime={edge.node.timeToRead}
+              articleSlug={edge.node.fields.slug}/>
+          ))
+        }
       </Layout>
    )
 }
