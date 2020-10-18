@@ -1,10 +1,11 @@
-import { Link } from "gatsby"
+import { Link, Img } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 
 export default class Header extends React.Component {
-
+ 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
   }
@@ -24,7 +25,7 @@ export default class Header extends React.Component {
   }
 
   render() {
-    return (
+   return (
       <header
         id="header"
         style={{
@@ -33,10 +34,10 @@ export default class Header extends React.Component {
         <div
           style={{
             margin: `0 auto`,
-            maxWidth: 960,
-            padding: `1.45rem 1.0875rem`,
+            maxWidth: 600,
+            padding: '1.45rem 16px'
           }}>
-          <h2 style={{ margin: 0 }}>
+          <h1 style={{ margin: 0 }}>
             <Link
               to="/"
               style={{
@@ -45,7 +46,7 @@ export default class Header extends React.Component {
               }}>
                 {this.props.siteTitle}
             </Link>
-          </h2>
+          </h1>
         </div>
       </header>
     )

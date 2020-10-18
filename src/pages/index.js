@@ -15,8 +15,10 @@ const IndexPage = ({
         <Article 
           articleName={edge.node.frontmatter.title} 
           articleExcerpt={edge.node.excerpt} 
-          articleDate={edge.node.fields.date} 
-          articleTime={edge.node.timeToRead} />
+          articleDate={edge.node.fields.date || ""}
+          articleTime={edge.node.timeToRead}
+          articleSlug={edge.node.fields.slug} 
+          />
       )
     )
     return (
