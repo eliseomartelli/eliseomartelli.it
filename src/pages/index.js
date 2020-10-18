@@ -1,17 +1,51 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Article from "../components/article"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Article articleName="Test Article" articleDate="Sep 12, 2020" articleExcerpt="lorem ipsum dolor sit amet" />
-    <Article articleName="Lorem Ipsum? Dolor sit amet." articleDate="Sep 12, 2020" articleExcerpt="lorem ipsum dolor sit amet" />
-  </Layout>
-)
+const IndexPage = ({
+    data: {
+      allMarkdownRemark: { edges },
+    },
+  }) => {
+    const Posts = edges.map(edge => (
+        <Article 
+          articleName={edge.node.frontmatter.title} 
+          articleExcerpt={edge.node.excerpt} 
+          articleDate={edge.node.fields.date} 
+          articleTime={edge.node.timeToRead} />
+      )
+    )
+    return (
+      <Layout>
+        <SEO title="Home" />
+        {Posts}
+      </Layout>
+   )
+}
+
+export const pageQuery = graphql`
+  {
+    allMarkdownRemark(sort: { order: DESC, fields: [fields___date] }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+          }
+          timeToRead
+          excerpt
+          fields {
+            date(formatString: "MMMM D, YYYY")
+            slug
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
