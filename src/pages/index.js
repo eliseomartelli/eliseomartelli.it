@@ -14,7 +14,9 @@ const IndexPage = ({
   }) => {
     return (
       <Layout>
-        <SEO title="Home" />
+        <SEO 
+          title="Home"
+          description="I'm Eliseo, a CS student in Italy. Join my journey through networks and computers." />
         <Bio/>
         {
           edges.map(edge => (
