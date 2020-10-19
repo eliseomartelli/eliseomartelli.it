@@ -3,6 +3,7 @@
 :root {
   --background: #fff;
   --text-color: #000;
+  --card-background: #fafafa;
 }
 
 html, body {
@@ -23,8 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   padding: 16px;
   padding-top: 4px;
-  border-radius: 16px;
-  background: var(--background);
+  border-radius: 4x;
+  background: var(--card-background);
 }
 
 header.shrink .profilePic {
