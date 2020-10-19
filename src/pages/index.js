@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Article from "../components/article"
+import Bio from "../components/bio"
 
 const IndexPage = ({
     data: {
@@ -14,6 +15,7 @@ const IndexPage = ({
     return (
       <Layout>
         <SEO title="Home" />
+        <Bio/>
         {
           edges.map(edge => (
             <Article 

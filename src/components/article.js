@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Time from "../components/time"
 
 const Article = (
     {
@@ -25,8 +25,7 @@ const Article = (
                     }}>
                     {articleName}
                 </h2>
-                <p>{articleDate} - 🕒 <i>
-                    {articleTime} minute{(articleTime == 1) ? "" : "s"} read</i>
+                <p>{articleDate} - <Time time={articleTime} />
                 </p>
                 <p>{articleExcerpt}</p>
             </div>

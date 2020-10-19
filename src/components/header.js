@@ -1,7 +1,5 @@
-import { Link, Img } from "gatsby"
-import PropTypes from "prop-types"
+import { Link } from "gatsby"
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
 
 export default class Header extends React.Component {
@@ -30,6 +28,7 @@ export default class Header extends React.Component {
         id="header"
         style={{
           marginBottom: `1rem`,
+          zIndex: 999,
         }}>
         <div
           style={{
