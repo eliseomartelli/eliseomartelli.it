@@ -28,14 +28,13 @@ const Bio = () => {
   `)
 
   return (
-      <div style={{
-          display: 'flex',
-          margin: '2.5rem 0',
-          backgroundColor: "#FaFaFa",
-          borderRadius: 4,
-          padding: 16,
-          justifyContent: 'center',
-      }}>
+      <div 
+        style={{
+            display: 'flex',
+            margin: '2.5rem 0',
+            justifyContent: 'center',
+        }}
+        className="card">
         <Img 
             fluid={data.placeholderImage.childImageSharp.fluid}
             style={{
@@ -47,7 +46,8 @@ const Bio = () => {
                 alignSelf: 'center'
             }} />
         <p style={{}}>
-            I'm <Link 
+            I'm <Link
+                    rel="noopener"
                     target="_blank" 
                     to="https://twitter.com/eliseomartelli"
                     style={{color: 'inherit'}}>
