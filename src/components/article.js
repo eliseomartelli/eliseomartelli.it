@@ -21,11 +21,17 @@ const Article = (
             <div>
                 <h2
                     style={{
-                        color: '#ff384e'
+                        color: '#ff384e',
+                        paddingBottom: 0,
+                        marginBottom: 0
                     }}>
                     {articleName}
                 </h2>
-                <p>{articleDate} - <Time time={articleTime} />
+                <p style={{
+                    paddinTop: 0,
+                    maringTop: 0,
+                    fontSize: `.75rem`
+                }}>{articleDate} - <Time time={articleTime} />
                 </p>
                 <p>{articleExcerpt}</p>
             </div>
