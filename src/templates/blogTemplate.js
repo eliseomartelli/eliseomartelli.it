@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Time from "../components/time"
+import TimeToRead from "../components/PostEntry/TimeToRead"
 import '../components/blogPost.css'
 
 
@@ -20,7 +20,7 @@ export default function Template({
       <div>
         <h1>{title}</h1>
         <p>{date}</p>
-        <Time time={timeToRead} />
+        <TimeToRead timeToRead={timeToRead} />
       </div>
       <div dangerouslySetInnerHTML={{__html: html}}></div>
     </Layout>
