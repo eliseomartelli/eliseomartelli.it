@@ -4,30 +4,30 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Article from "../components/article"
 import Bio from "../components/bio"
+import PostList from "../components/PostList"
 
 const IndexPage = ({
     data: {
       allMarkdownRemark: { edges },
     },
   }) => {
+    const posts = edges.map(edge => (
+      {
+        title: edge.node.frontmatter.title,
+        excerpt: edge.node.excerpt,
+        date: edge.node.fields.date,
+        timeToRead: edge.node.timeToRead,
+        slug: edge.node.fields.slug,
+      }
+    ))
     return (
       <Layout>
         <SEO 
           title="Home"
           description="I'm Eliseo, a CS student in Italy. Join my journey through networks and computers." />
         <Bio/>
-        {
-          edges.map(edge => (
-            <Article 
-              articleName={edge.node.frontmatter.title}
-              articleExcerpt={edge.node.excerpt}
-              articleDate={edge.node.fields.date}
-              articleTime={edge.node.timeToRead}
-              articleSlug={edge.node.fields.slug}/>
-          ))
-        }
+        <PostList posts={posts} />
       </Layout>
    )
 }

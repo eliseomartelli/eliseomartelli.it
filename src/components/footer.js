@@ -1,12 +1,14 @@
-import React from "react"
+import React, { Component } from 'react'
 
-const Footer = () => (
-    <footer
-        style={{
+export default class Footer extends Component {
+    render() {
+        const footerStyle = {
             padding: '16px 0'
-        }}>
-        © {new Date().getFullYear()}, Eliseo Martelli
-    </footer>
-)
-
-export default Footer;
+        }
+        return (
+            <footer style={footerStyle}>
+                © {new Date().getFullYear()}, Eliseo Martelli
+            </footer>
+        )
+    }
+}
