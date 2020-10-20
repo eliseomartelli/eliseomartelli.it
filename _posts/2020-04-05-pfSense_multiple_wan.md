@@ -5,14 +5,14 @@ published: true
 ---
 
 Today's post aims at helping people that are working/studying from home and don't have a stable internet conection.  
-Since me and my family are currently _staying at home_ we are __taxing our ADSL2+__ connection very hard with multiple simultaneous video conferences, so I had to find a way to keep all my family online.  
-The way I've chosen to do that is using __multiple WANs__, one of them being over __LTE__.
+Since me and my family are currently _staying at home_ we are **taxing our ADSL2+** connection very hard with multiple simultaneous video conferences, so I had to find a way to keep all my family online.  
+The way I've chosen to do that is using **multiple WANs**, one of them being over **LTE**.
 
 <a href="https://ibb.co/DWQNfqz"><img src="https://i.ibb.co/LR1MdGY/Untitled-Artwork.png" alt="Untitled-Artwork" border="0"></a>
 
 ## Prerequisites
 
-1. A pfSense box with __3+ network interfaces__;
+1. A pfSense box with **3+ network interfaces**;
 2. A WAN and a LAN interface already configured inside pfSense;
 3. A **4G/LTE modem** that connects over ethernet.
 
@@ -37,17 +37,17 @@ At the bottom of the page I checked block private and bogus networks, then you c
 ## Setup a multi-gateway
 
 We're almost there!  
-We have to **create a multi-gateway** that we'll later use to route our traffic through.  
+We have to **create a multi-gateway** that we'll later use to route our traffic through.
 
 <a href="https://ibb.co/0VXCMSH"><img src="https://i.ibb.co/yBR6y1H/Screenshot-2020-04-05-at-21-38-53.png" alt="Screenshot-2020-04-05-at-21-38-53" border="0"></a>
 
 We need to set a network tier, remember that a **lower** number is **preferred**.  
 If both interfaces share the same network tier, pfSense will balance packets on both of them.  
-Remember to change the "Trigger Level" to "Packet Loss or High Latency" so you will always use the best connection. 
+Remember to change the "Trigger Level" to "Packet Loss or High Latency" so you will always use the best connection.
 
 ### Configure the firewall to use the multi-gateway
 
-That's our **last step**! 
+That's our **last step**!
 The last thing to do is to configure our LAN firewall to **route** connections to our new _gateway group_.  
 We need to open the **Rules** page of our firewall, select our **LAN** interface.
 
@@ -68,10 +68,3 @@ The last thing to do is going to the **advanced** section of our firewall rule a
 
 We're finally done!  
 You can now go and test your load balanced network!
-
-___ 
-
-Do you want to talk to me about projects, fun stuff and other things that might be interesting?
-
-Hit me up on [**Twitter**](http://twitter.com/eliseomartelli).
-
