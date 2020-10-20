@@ -39,7 +39,7 @@ export default class Header extends React.Component {
             alignItems: 'center',
             padding: '1.45rem 16px'
           }}>
-          <h1 style={{ margin: 0 }}>
+          <h2 style={{ margin: 0 }}>
             <Link
               to="/"
               style={{
@@ -48,7 +48,7 @@ export default class Header extends React.Component {
               }}>
                 {this.props.siteTitle}
             </Link>
-          </h1>
+          </h2>
         </div>
       </header>
     )
