@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Link from "gatsby-link"
 
+import style from "./Bio.module.css"
+
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -29,30 +31,14 @@ const Bio = () => {
 
   return (
       <div 
-        style={{
-            display: 'flex',
-            margin: '2.5rem 0',
-            justifyContent: 'center',
-        }}
-        className="card">
+        className={`card ${style.bio}`}>
         <Img 
             fluid={data.placeholderImage.childImageSharp.fluid}
-            style={{
-                boxSizing: 'border-box',
-                minWidth: 64,
-                minHeight: 64,
-                borderRadius: "50%",
-                marginRight: 16,
-                alignSelf: 'center'
-            }} />
-        <p style={{}}>
-            I'm <Link
-                    rel="noopener"
-                    target="_blank" 
-                    to="https://twitter.com/eliseomartelli"
-                    style={{color: 'inherit'}}>
+            className={style.profilePic}/>
+        <p>
+            I'm <a href="twitter.com/eliseomartelli" rel="noopener" target="_blank" style={{color: 'inherit'}}>
                         <b>Eliseo</b>
-            </Link>, a CS student in Italy.
+            </a>, a CS student in Italy.
             <br></br>Join my journey through networks and computers.
         </p>
       </div>
