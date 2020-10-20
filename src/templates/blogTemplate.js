@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import TimeToRead from "../components/PostEntry/TimeToRead"
 import '../components/blogPost.css'
 
+import { DiscussionEmbed } from 'disqus-react';
 
 export default function Template({
   data
@@ -23,6 +24,7 @@ export default function Template({
         <TimeToRead timeToRead={timeToRead} />
       </div>
       <div dangerouslySetInnerHTML={{__html: html}}></div>
+      <DiscussionEmbed />
     </Layout>
   );
 }
