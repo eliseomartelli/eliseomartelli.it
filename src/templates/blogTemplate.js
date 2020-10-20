@@ -22,12 +22,12 @@ export default function Template({
         <h1 style={{ marginBottom: 0}}>{title}</h1>
         <p style={{marginTop: 0, fontSize: '0.75rem'}}>{date} - <TimeToRead timeToRead={timeToRead} /></p>
       </div>
-      <div 
+      <article
         style={{
           marginTop: 16,
           marginBottom: 16
         }}
-        dangerouslySetInnerHTML={{__html: html}}></div>
+        dangerouslySetInnerHTML={{__html: html}}></article>
       <DiscussionEmbed />
     </Layout>
   );
