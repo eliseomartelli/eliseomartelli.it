@@ -5,6 +5,8 @@ import { Link } from "gatsby"
 
 import TimeToRead from "./TimeToRead"
 
+import style from "./PostEntry.module.css"
+
 export default class PostEntry extends Component {
     static propTypes = {
         title: PropTypes.string,
@@ -15,26 +17,12 @@ export default class PostEntry extends Component {
     }
 
     render() {
-        const titleStyle = {
-            color: '#FF384E',
-            paddingBottom: 0,
-            marginBottom: 0,
-        }
-        const dateStyle = {
-            marginTop: 0,
-            fontSize: '0.75rem'
-        }
-        const linkStyle = {
-            textDecoration: 'none',
-            color: 'inherit',
-            marginBottom: 16
-        }
         return (
             <Link
-                style={linkStyle} 
+                className={style.link} 
                 to={this.props.slug}>
-                <h2 style={titleStyle}>{this.props.title}</h2>
-                <p style={dateStyle}>
+                <h2 className={style.title}>{this.props.title}</h2>
+                <p className={style.date}>
                     {this.props.date} - {" "}
                     <TimeToRead timeToRead={this.props.timeToRead} />
                 </p>
