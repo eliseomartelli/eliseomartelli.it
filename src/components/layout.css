@@ -50,3 +50,13 @@ header h2 {
 header.shrink h2 {
   font-size: 1em;
 }
+
+pre {
+  margin: 0 -16px !important;
+}
+
+@media only screen and (min-width: 600px) {
+  pre {
+    border-radius: 4px;
+  }
+}
