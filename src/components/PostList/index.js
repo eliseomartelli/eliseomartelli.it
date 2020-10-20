@@ -10,7 +10,7 @@ export default class PostList extends Component {
 
     render() {
         return (
-            <>{this.props.posts.map(post => (<PostEntry {...post} />))}</>
+            <>{this.props.posts.map(post => (<PostEntry key={post.slug} {...post} />))}</>
         )
     }
 }
