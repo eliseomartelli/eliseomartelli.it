@@ -2,7 +2,7 @@ article img {
     display: block;
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;    
+    margin: 32px auto;
 }
 
 article a {
