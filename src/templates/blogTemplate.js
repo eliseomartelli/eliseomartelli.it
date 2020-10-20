@@ -19,11 +19,15 @@ export default function Template({
       <SEO
         title={title} />
       <div>
-        <h1>{title}</h1>
-        <p>{date}</p>
-        <TimeToRead timeToRead={timeToRead} />
+        <h1 style={{ marginBottom: 0}}>{title}</h1>
+        <p style={{marginTop: 0, fontSize: '0.75rem'}}>{date} - <TimeToRead timeToRead={timeToRead} /></p>
       </div>
-      <div dangerouslySetInnerHTML={{__html: html}}></div>
+      <div 
+        style={{
+          marginTop: 16,
+          marginBottom: 16
+        }}
+        dangerouslySetInnerHTML={{__html: html}}></div>
       <DiscussionEmbed />
     </Layout>
   );
