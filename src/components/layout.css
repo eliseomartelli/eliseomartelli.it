@@ -11,6 +11,7 @@ html, body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background: var(--background);
+  color: var(--text-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,4 +50,12 @@ header h2 {
 
 header.shrink h2 {
   font-size: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000;
+    --text-color: #fff;
+    --card-background: #080808;
+  }
 }

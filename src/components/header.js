@@ -44,7 +44,7 @@ export default class Header extends React.Component {
               to="/"
               style={{
                 textDecoration: `none`,
-                color: 'black'
+                color: 'inherit'
               }}>
                 {this.props.siteTitle}
             </Link>

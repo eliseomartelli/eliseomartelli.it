@@ -21,12 +21,14 @@ export default class PostEntry extends Component {
             <Link
                 className={style.link} 
                 to={this.props.slug}>
-                <h2 className={style.title}>{this.props.title}</h2>
-                <p className={style.date}>
-                    {this.props.date} - {" "}
-                    <TimeToRead timeToRead={this.props.timeToRead} />
-                </p>
-                <p>{this.props.excerpt}</p>
+                <article>
+                    <h2 className={style.title}>{this.props.title}</h2>
+                    <p className={style.date}>
+                        {this.props.date} - {" "}
+                        <TimeToRead timeToRead={this.props.timeToRead} />
+                    </p>
+                    <p>{this.props.excerpt}</p>
+                </article>
             </Link>
         )
     }
