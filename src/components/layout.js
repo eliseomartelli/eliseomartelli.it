@@ -11,7 +11,20 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-import "./layout.css"
+
+import {Content} from "./Content"
+
+import ThemeContext from "../context/ThemeContext"
+
+import {ThemeProvider, createGlobalStyle} from "styled-components"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: sans-serif;
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.text}
+  }
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,26 +38,29 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 600,
-          padding: '0 16px'
-        }}>
-        <main
-          style={{
-            display: `flex`,
-            flexDirection: `column`,
-            minHeight: `100vh`,
-            marginTop: `96px`
-          }}>
-          {children}
-        </main>
-        <Footer />
-      </div>
-    </>
+    <ThemeContext.Consumer>
+      {theme => (
+        <ThemeProvider
+          theme={theme.darkTheme ? themes.dark : themes.light}>
+            <GlobalStyle /> 
+            <Header siteTitle={data.site.siteMetadata?.title} />
+            <Content>
+              <main
+                style={
+                  {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100vh',
+                    marginTop: '96px'
+                  }
+                }>
+                {children}
+                <Footer />
+              </main>
+            </Content>
+        </ThemeProvider>
+      )}
+    </ThemeContext.Consumer>
   )
 }
 
@@ -53,3 +69,20 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const themes = {
+  dark: {
+      primary: '#FF384D',
+      secondary: '#EB001A',
+      text: '#FFFFFF',
+      background: '#2B242C',
+      secondaryBackground: '#221C24',        
+  },
+  light: {
+      primary: '#457B85',
+      secondary: '#13a89c',
+      text: '#000000',
+      background: '#FFFFFF',
+      secondaryBackground: '#FAFAFA',
+  }
+}

@@ -1,6 +1,10 @@
 import { Link } from "gatsby"
 import React from "react"
 
+import DarkModeToggle from "./DarkModeToggle"
+
+
+import {Content} from "./Content"
 
 export default class Header extends React.Component {
  
@@ -29,15 +33,17 @@ export default class Header extends React.Component {
         style={{
           marginBottom: `1rem`,
           zIndex: 999,
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          background: 'purple'
         }}>
-        <div
+        <Content
           style={{
-            margin: `0 auto`,
-            maxWidth: 600,
             display: 'flex',
-            flexBasis: '0',
-            alignItems: 'center',
-            padding: '1.45rem 16px'
+            justifyContent: 'space-between',
+            padding: '16px 0'
           }}>
           <h2 style={{ margin: 0 }}>
             <Link
@@ -49,7 +55,8 @@ export default class Header extends React.Component {
                 {this.props.siteTitle}
             </Link>
           </h2>
-        </div>
+          <DarkModeToggle />
+        </Content>
       </header>
     )
   }
