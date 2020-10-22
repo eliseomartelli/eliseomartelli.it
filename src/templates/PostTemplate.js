@@ -7,7 +7,7 @@ import { ArticleTitle } from "../components/ArticleTitle"
 
 export default function PostTemplate({ data }) {
   const { markdownRemark } = data
-  const { html, timeToRead, excerpt } = markdownRemark
+  const { html, timeToRead } = markdownRemark
   const { date } = markdownRemark.fields
   const { title } = markdownRemark.frontmatter
   return (
@@ -15,7 +15,6 @@ export default function PostTemplate({ data }) {
       <article>
         <ArticleTitle>{title}</ArticleTitle>
         <ArticleDate date={date} timeToRead={timeToRead} />
-        {/* <ArticleDate date={date} timeToRead={timeToRead} /> */}
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
     </App>
