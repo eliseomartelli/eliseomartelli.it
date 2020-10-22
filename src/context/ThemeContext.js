@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 
 const defaultState = {
   darkTheme: false,
@@ -7,15 +7,12 @@ const defaultState = {
 
 const ThemeContext = React.createContext(defaultState)
 
-const isSystemDarkMode = () =>
-  window.matchMedia("(prefers-color-scheme: dark)").matches
-
-class ThemeProvider extends React.Component {
+export class ThemeProvider extends Component {
   state = {
     darkTheme: false,
   }
 
-  toggleDarkTheme = () => {
+  toggleDarkTheme() {
     let newState = !this.state.darkTheme
     localStorage.setItem("darkTheme", JSON.stringify(newState))
     this.setState({ darkTheme: newState })
@@ -25,23 +22,23 @@ class ThemeProvider extends React.Component {
     const isDarkTheme = JSON.parse(localStorage.getItem("darkTheme"))
     if (isDarkTheme !== null) {
       this.setState({ darkTheme: isDarkTheme })
-    } else if (isSystemDarkMode()) {
+    } else {
       this.setState({ darkTheme: true })
     }
   }
 
   render() {
-    const { children } = this.props
-    const { darkTheme } = this.state
     return (
       <ThemeContext.Provider
-        value={{ darkTheme, toggleDarkTheme: this.toggleDarkTheme }}
+        value={{
+          darkTheme: this.state.darkTheme,
+          toggleDarkTheme: this.toggleDarkTheme,
+        }}
       >
-        {children}
+        {this.props.children}
       </ThemeContext.Provider>
     )
   }
 }
 
 export default ThemeContext
-export { ThemeProvider }

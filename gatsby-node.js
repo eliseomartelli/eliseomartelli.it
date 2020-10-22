@@ -10,7 +10,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const {
   extractMetadataFromFilename,
   isBlogPostFileName,
-} = require("./src/util")
+} = require("./src/utils/FileUtils")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -35,7 +35,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
+  const blogPostTemplate = require.resolve(`./src/templates/PostTemplate.js`)
 
   const result = await graphql(`
     {

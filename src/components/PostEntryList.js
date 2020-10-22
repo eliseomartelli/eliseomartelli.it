@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import PostEntry from "./PostEntry"
 
-import PostEntry from "../PostEntry"
-
-export default class PostList extends Component {
+export default class PostEntryList extends Component {
   static propTypes = {
     posts: PropTypes.arrayOf(PropTypes.object),
   }
@@ -12,7 +11,7 @@ export default class PostList extends Component {
     return (
       <>
         {this.props.posts.map(post => (
-          <PostEntry key={post.slug} {...post} />
+          <PostEntry {...post} />
         ))}
       </>
     )
