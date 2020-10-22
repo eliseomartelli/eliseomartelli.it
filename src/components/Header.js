@@ -22,6 +22,7 @@ export default class Header extends Component {
           top: 0,
           left: 0,
           width: "100vw",
+          zIndex: 999,
         }}
       >
         <Content>
