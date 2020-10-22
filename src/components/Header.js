@@ -26,11 +26,15 @@ export default class Header extends Component {
         }}
       >
         <Content>
-          <Link to="/">
-            <h2>{this.props.siteTitle}</h2>
+          <Link style={{ textDecoration: "none" }} to="/">
+            <Logo>{this.props.siteTitle}</Logo>
           </Link>
         </Content>
       </Toolbar>
     )
   }
 }
+
+const Logo = styled.h2`
+  color: ${props => props.theme.text};
+`
