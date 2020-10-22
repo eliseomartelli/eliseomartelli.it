@@ -5,8 +5,7 @@ import DarkModeToggle from "./DarkModeToggle"
 
 import { Content } from "./Content"
 
-import styled, {createGlobalStyle} from "styled-components";
-
+import styled, { createGlobalStyle } from "styled-components"
 
 const HeaderC = styled.header`
   z-index: 999;
@@ -15,7 +14,7 @@ const HeaderC = styled.header`
   left: 0;
   width: 100vw;
   background: ${props => props.theme.background};
-`;
+`
 
 const HeaderStyle = createGlobalStyle`
   header h2 {
@@ -24,7 +23,7 @@ const HeaderStyle = createGlobalStyle`
   header.shrink h2 {
     font-size: 1em;
   }
-`;
+`
 
 export default class Header extends React.Component {
   componentDidMount() {

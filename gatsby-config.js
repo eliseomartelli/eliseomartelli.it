@@ -34,22 +34,22 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/_posts`,
-        name: `markdown-pages`
+        name: `markdown-pages`,
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-            {
-                resolve: 'gatsby-remark-autolink-headers',
-                options: {
-                    offsetY: '100',
-                }
+          {
+            resolve: "gatsby-remark-autolink-headers",
+            options: {
+              offsetY: "100",
             },
-            'gatsby-remark-prismjs',
-        ]
-      }
-    }
+          },
+          "gatsby-remark-prismjs",
+        ],
+      },
+    },
   ],
 }

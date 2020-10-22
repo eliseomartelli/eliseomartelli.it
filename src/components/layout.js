@@ -12,13 +12,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 
-import {Content} from "./Content"
+import { Content } from "./Content"
 
 import ThemeContext from "../context/ThemeContext"
 
-import {ThemeProvider, createGlobalStyle} from "styled-components"
+import { ThemeProvider, createGlobalStyle } from "styled-components"
 
-import { Themes } from '../Themes'
+import { Themes } from "../Themes"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
   .shadow {
     box-shadow: 0 0px 12px rgba(0,0,0,.2);
   }
-`;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -51,24 +51,22 @@ const Layout = ({ children }) => {
   return (
     <ThemeContext.Consumer>
       {theme => (
-        <ThemeProvider
-          theme={theme.darkTheme ? Themes.dark : Themes.light}>
-            <GlobalStyle /> 
-            <Header siteTitle={data.site.siteMetadata?.title} />
-            <Content>
-              <main
-                style={
-                  {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    minHeight: '100vh',
-                    marginTop: '96px'
-                  }
-                }>
-                {children}
-                <Footer />
-              </main>
-            </Content>
+        <ThemeProvider theme={theme.darkTheme ? Themes.dark : Themes.light}>
+          <GlobalStyle />
+          <Header siteTitle={data.site.siteMetadata?.title} />
+          <Content>
+            <main
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                minHeight: "100vh",
+                marginTop: "96px",
+              }}
+            >
+              {children}
+              <Footer />
+            </main>
+          </Content>
         </ThemeProvider>
       )}
     </ThemeContext.Consumer>
