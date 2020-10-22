@@ -18,11 +18,22 @@ import ThemeContext from "../context/ThemeContext"
 
 import {ThemeProvider, createGlobalStyle} from "styled-components"
 
+import { Themes } from '../Themes'
+
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: sans-serif;
     background: ${props => props.theme.background};
-    color: ${props => props.theme.text}
+    color: ${props => props.theme.text};
+    transition: all 0.5s ease-in-out;
+  }
+
+  a {
+    color: ${props => props.theme.secondary};
+  }
+
+  .shadow {
+    box-shadow: 0 0px 12px rgba(0,0,0,.2);
   }
 `;
 
@@ -41,7 +52,7 @@ const Layout = ({ children }) => {
     <ThemeContext.Consumer>
       {theme => (
         <ThemeProvider
-          theme={theme.darkTheme ? themes.dark : themes.light}>
+          theme={theme.darkTheme ? Themes.dark : Themes.light}>
             <GlobalStyle /> 
             <Header siteTitle={data.site.siteMetadata?.title} />
             <Content>
@@ -69,20 +80,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-const themes = {
-  dark: {
-      primary: '#FF384D',
-      secondary: '#EB001A',
-      text: '#FFFFFF',
-      background: '#2B242C',
-      secondaryBackground: '#221C24',        
-  },
-  light: {
-      primary: '#457B85',
-      secondary: '#13a89c',
-      text: '#000000',
-      background: '#FFFFFF',
-      secondaryBackground: '#FAFAFA',
-  }
-}
