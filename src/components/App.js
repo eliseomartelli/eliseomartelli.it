@@ -38,7 +38,7 @@ export default class App extends Component {
                   display: "flex",
                   flexDirection: "column",
                   minHeight: "100vh",
-                  marginTop: "96px",
+                  marginTop: "64px",
                 }}
               >
                 {this.props.children}
