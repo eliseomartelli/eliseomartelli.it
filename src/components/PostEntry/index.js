@@ -5,7 +5,13 @@ import { Link } from "gatsby"
 
 import TimeToRead from "./TimeToRead"
 
-import style from "./PostEntry.module.css"
+import styled from "styled-components"
+
+const Title = styled.h1`
+  color: ${props => props.theme.primary};
+  padding-bottom: 0;
+  margin-bottom: 0;
+`
 
 export default class PostEntry extends Component {
   static propTypes = {
@@ -18,10 +24,18 @@ export default class PostEntry extends Component {
 
   render() {
     return (
-      <Link className={style.link} to={this.props.slug}>
+      <Link to={this.props.slug}
+        style={{
+          textDecoration: 'none',
+          color: 'inherit',
+          marginBottom: 16
+        }}>
         <article>
-          <h2 className={style.title}>{this.props.title}</h2>
-          <p className={style.date}>
+          <Title>{this.props.title}</Title>
+          <p style={{
+            marginTop: 0,
+            fontSize: '0.75rem'
+          }}>
             {this.props.date} -{" "}
             <TimeToRead timeToRead={this.props.timeToRead} />
           </p>

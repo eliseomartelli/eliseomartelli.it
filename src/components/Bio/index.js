@@ -2,8 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import style from "./Bio.module.css"
-
 import styled from "styled-components"
 
 /*
