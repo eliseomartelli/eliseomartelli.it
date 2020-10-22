@@ -39,7 +39,6 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            date
           }
           timeToRead
           excerpt
