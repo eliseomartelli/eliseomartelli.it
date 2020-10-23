@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Content from "./Content"
+import DarkModeToggle from "./DarkModeToggle"
 
 const Toolbar = styled.header`
   background: ${props => props.theme.background};
@@ -26,9 +27,15 @@ export default class Header extends Component {
         }}
       >
         <Content>
-          <Link style={{ textDecoration: "none" }} to="/">
-            <Logo>{this.props.siteTitle}</Logo>
-          </Link>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Link
+              style={{ textDecoration: "none", display: "inline-block" }}
+              to="/"
+            >
+              <Logo>{this.props.siteTitle}</Logo>
+            </Link>
+            <DarkModeToggle />
+          </div>
         </Content>
       </Toolbar>
     )
