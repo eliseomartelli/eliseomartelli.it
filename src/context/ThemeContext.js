@@ -12,7 +12,11 @@ export class ThemeProvider extends Component {
     darkTheme: false,
   }
 
-  toggleDarkTheme() {
+  isSystemDarkMode() {
+    return window.matchMedia("(prefers-color-scheme: dark)")
+  }
+
+  toggleDarkTheme = () => {
     let newState = !this.state.darkTheme
     localStorage.setItem("darkTheme", JSON.stringify(newState))
     this.setState({ darkTheme: newState })
@@ -22,7 +26,7 @@ export class ThemeProvider extends Component {
     const isDarkTheme = JSON.parse(localStorage.getItem("darkTheme"))
     if (isDarkTheme !== null) {
       this.setState({ darkTheme: isDarkTheme })
-    } else {
+    } else if (this.isSystemDarkMode()) {
       this.setState({ darkTheme: true })
     }
   }
