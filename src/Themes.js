@@ -3,14 +3,14 @@ export const Themes = {
     primary: "#FF384D",
     secondary: "#EB001A",
     text: "#FFFFFF",
-    background: "#2B242C",
+    background: "#171117",
     secondaryBackground: "#221C24",
   },
   light: {
     primary: "#457B85",
     secondary: "#13a89c",
     text: "#000000",
-    background: "#FFFFFF",
+    background: "#fffefd",
     secondaryBackground: "#FAFAFA",
   },
 }
