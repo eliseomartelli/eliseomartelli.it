@@ -3,11 +3,13 @@ import React, { Component } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import App from "../components/App"
 import PostEntryList from "../components/PostEntryList"
+import Bio from "../components/Bio"
 
 export default class Index extends Component {
   render() {
     return (
       <App>
+        <Bio />
         <StaticQuery
           query={graphql`
             {
