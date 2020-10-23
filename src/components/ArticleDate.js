@@ -8,7 +8,7 @@ export default class ArticleDate extends Component {
   }
   render() {
     return (
-      <p style={{ marginTop: 0, fontSize: "0.75rem" }}>
+      <p style={{ marginTop: 0 }}>
         {this.props.date} - <TimeToRead timeToRead={this.props.timeToRead} />
       </p>
     )
@@ -23,7 +23,10 @@ class TimeToRead extends Component {
   render() {
     return (
       <>
-        🕒 {this.props.timeToRead} {this.getTimeUnit()} read
+        🕒{" "}
+        <i>
+          {this.props.timeToRead} {this.getTimeUnit()} read
+        </i>
       </>
     )
   }

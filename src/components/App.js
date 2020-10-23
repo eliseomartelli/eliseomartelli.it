@@ -11,6 +11,8 @@ import Footer from "./Footer"
 import Header from "./Header"
 import { GlobalStyle } from "./GlobalStyle"
 
+import { rhythm } from "../utils/typography"
+
 export default class App extends Component {
   render() {
     return (
@@ -38,7 +40,7 @@ export default class App extends Component {
                   display: "flex",
                   flexDirection: "column",
                   minHeight: "100vh",
-                  marginTop: "64px",
+                  marginTop: rhythm(3),
                 }}
               >
                 {this.props.children}
