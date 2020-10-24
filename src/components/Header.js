@@ -64,7 +64,14 @@ export default class Header extends Component {
         }}
       >
         <Content>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexFlow: "row",
+            }}
+          >
             <Link
               style={{ textDecoration: "none", display: "inline-block" }}
               to="/"
