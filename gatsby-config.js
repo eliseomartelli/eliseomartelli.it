@@ -48,6 +48,10 @@ module.exports = {
             },
           },
           "gatsby-remark-prismjs",
+          {
+            resolve: "gatsby-remark-images-anywhere",
+            options: { backgroundColor: "#00000000" },
+          },
         ],
       },
     },
