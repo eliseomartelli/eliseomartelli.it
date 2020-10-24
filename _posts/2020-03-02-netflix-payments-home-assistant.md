@@ -42,8 +42,6 @@ Automations are *pieces of code* that will run when something triggers it and/
 In a home automation system, they are the glue that can tie all of our devices together.  
 Today we’ll use them to create a recurring task dedicated to incrementing our newly added counters.
 
-{% raw %}
-
 ```yaml
 automation:
   - alias: Increment Counter
@@ -60,8 +58,6 @@ automation:
           - counter.netflix_user_1
           - counter.netflix_user_2
 ```
-
-{% endraw %}
 
 As for the above example, our automation will be composed by three distinct parts:
 
@@ -103,8 +99,6 @@ After the setup of the Telegram platform we need to find a way to send notificat
 Let's assume we decide to send a message to our group every time we increment the counters.  
 To do so we just need to **edit** our previous automation and add the following **action**:
 
-{% raw %}
-
 ```yaml
 - service: notify.netflix_group
   data_template:
@@ -117,8 +111,6 @@ To do so we just need to **edit** our previous automation and add the following 
 
       {{ states.counter.netflix_user_2.name }}: € {{ states.counter.netflix_user_2.state }}
 ```
-
-{% endraw %}
 
 We're using **templates** so we can **dynamically** generate the message.
 
@@ -147,8 +139,6 @@ data:
 
 The **resulting action** will look something like that:
 
-{% raw %}
-
 ```yaml
 - service: notify.netflix_group
   data_template:
@@ -167,8 +157,6 @@ The **resulting action** will look something like that:
         - "User2:/dec2"
 ```
 
-{% endraw %}
-
 ### Reacting to Telegram callbacks
 
 **We're almost there!** We have counters, buttons, automations and messages.  
@@ -176,8 +164,6 @@ Now we should let our friends notify our system with the buttons mentioned above
 We have to **react** to their callbacks: according to the [official documentation](https://www.home-assistant.io/integrations/telegram_bot#sample-automations-with-callback-queries-and-inline-keyboards), we need another automation to react to the callbacks.
 
 Our automation is gonna look like this one:
-
-{% raw %}
 
 ```yaml
 alias: Other Netflix Decrement Counter
@@ -197,8 +183,6 @@ action:
         counter.netflix_user_{{ trigger.event.data.command | replace("/dec", "") }}
 ```
 
-{% endraw %}
-
 The **condition** is there to **check** if the command that we received contains the string: "/dec".  
 In the action we see another **template**, this one is used to get the right counter based on the button that got pressed.
 
@@ -207,8 +191,6 @@ In the action we see another **template**, this one is used to get the right cou
 A possible solution to notify of the decrement is to send another message, but I'm not using this solution because it appears quite _"chatty"_ to me and I don't want to annoy my friends.  
 Since Telegram supports **editing of messages**, I've opted to use this solution.
 We just need to add another action to the previous automation.
-
-{% raw %}
 
 ```yaml
 - service: telegram_bot.edit_message
@@ -229,8 +211,6 @@ We just need to add another action to the previous automation.
       - "User1:/dec1"
       - "User2:/dec2"
 ```
-
-{% endraw %}
 
 ## Final Steps
 
