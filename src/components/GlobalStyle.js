@@ -9,6 +9,9 @@ export const GlobalStyle = createGlobalStyle`
         --secondaryBackground: ${props => props.theme.secondaryBackground};
         
     }
+    * {
+        transition: background 0.125s ease-in-out;
+    }
     body {
         margin: 0;
         background: ${props => props.theme.background};

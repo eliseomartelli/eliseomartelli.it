@@ -60,7 +60,7 @@ export default class Header extends Component {
           paddingBottom: `${this.state.marginBottom}`,
           boxShadow: `${this.state.boxShadow}`,
           transition:
-            "padding 0.125s ease-in-out, box-shadow 0.125s ease-in-out",
+            "inherit, padding 0.125s ease-in-out, box-shadow 0.125s ease-in-out",
         }}
       >
         <Content>
