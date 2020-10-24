@@ -1,11 +1,13 @@
 import React, { Component } from "react"
 import App from "../components/App"
 import { Browser } from "react-kawaii"
+import Seo from "../components/Seo"
 
 export default class NotFound extends Component {
   render() {
     return (
       <App>
+        <Seo title="404" />
         <div
           style={{
             display: "flex",

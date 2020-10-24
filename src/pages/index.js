@@ -4,11 +4,13 @@ import { StaticQuery, graphql } from "gatsby"
 import App from "../components/App"
 import PostEntryList from "../components/PostEntryList"
 import Bio from "../components/Bio"
+import Seo from "../components/Seo"
 
 export default class Index extends Component {
   render() {
     return (
       <App>
+        <Seo title="Home" />
         <Bio />
         <StaticQuery
           query={graphql`

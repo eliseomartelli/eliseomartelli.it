@@ -4,14 +4,16 @@ import { graphql } from "gatsby"
 import App from "../components/App"
 import ArticleDate from "../components/ArticleDate"
 import { ArticleTitle } from "../components/ArticleTitle"
+import Seo from "../components/Seo"
 
 export default function PostTemplate({ data }) {
   const { markdownRemark } = data
-  const { html, timeToRead } = markdownRemark
+  const { html, timeToRead, excerpt } = markdownRemark
   const { date } = markdownRemark.fields
   const { title } = markdownRemark.frontmatter
   return (
     <App>
+      <Seo title={title} description={excerpt} />
       <article>
         <ArticleTitle>{title}</ArticleTitle>
         <ArticleDate date={date} timeToRead={timeToRead} />

@@ -10,7 +10,6 @@ import Content from "./Content"
 import Footer from "./Footer"
 import Header from "./Header"
 import { GlobalStyle } from "./GlobalStyle"
-
 import { rhythm } from "../utils/typography"
 
 export default class App extends Component {
