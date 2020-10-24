@@ -10,7 +10,7 @@ export default class Index extends Component {
   render() {
     return (
       <App>
-        <Seo title="Home" />
+        <Seo title="Home" description="I'm Eliseo, a CS student in Italy. Join my journey through networks and computers."/>
         <Bio />
         <StaticQuery
           query={graphql`
