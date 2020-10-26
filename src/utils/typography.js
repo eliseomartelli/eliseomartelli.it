@@ -1,6 +1,17 @@
 import Typography from "typography"
 import grandViewTheme from "typography-theme-grand-view"
 
+grandViewTheme.googleFonts = [
+  {
+    name: "Montserrat",
+    styles: ["700"],
+  },
+  {
+    name: "Arvo",
+    styles: ["400", "400i", "700&display=swap"],
+  },
+]
+
 grandViewTheme.overrideThemeStyles = () => ({
   a: {
     color: "var(--secondary)",
