@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import ThemeContext from "../context/ThemeContext"
 
-import { scale } from "../utils/typography"
-
 export default class DarkModeToggle extends Component {
   render() {
     return (
