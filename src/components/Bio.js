@@ -15,7 +15,7 @@ export default class Bio extends Component {
             query {
               placeholderImage: file(relativePath: { eq: "avatar.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 128) {
+                  fluid(maxWidth: 64) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -26,8 +26,8 @@ export default class Bio extends Component {
             <Img
               style={{
                 boxSizing: "border-box",
-                minWidth: 64,
-                minHeight: 64,
+                width: 64,
+                height: 64,
                 borderRadius: "50%",
                 marginRight: 16,
                 alignSelf: "center",
