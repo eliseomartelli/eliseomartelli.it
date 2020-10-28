@@ -25,9 +25,9 @@ export default class Bio extends Component {
           render={data => (
             <Img
               style={{
-                boxSizing: "border-box",
+                minWidth: 64,
+                minHeight: 64,
                 width: 64,
-                height: 64,
                 borderRadius: "50%",
                 marginRight: 16,
                 alignSelf: "center",
@@ -59,4 +59,6 @@ const BioContainer = styled.div`
   padding: 16px;
   border-radius: 6px;
   display: flex;
+  flex-direction: row;
+  align-self: center;
 `
