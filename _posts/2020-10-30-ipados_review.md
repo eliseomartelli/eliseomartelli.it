@@ -3,7 +3,7 @@ title: iPadOS, a year long review
 categories: computing ipad
 ---
 
-![](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/doilovemyipad.svg)
+![](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/confusedipad.svg)
 
 What's an iPad? Is it a real computer? That's one of the questions Apple tries to ask and answer with its advertising. The truth is that you can consider it as a computer only if your use-cases match what Apple envisioned for it.
 
