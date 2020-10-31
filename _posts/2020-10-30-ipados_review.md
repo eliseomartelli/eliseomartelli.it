@@ -72,6 +72,12 @@ The mouse/trackpad experience on the iPad is far from the desktop-like experienc
 
 ## Multitasking
 
-The iPad is a focus-centric operating system. It has interesting multitasking abilities although, for me, they are meant to be used in a burst when a single app on screen can be limiting. 
+The iPad is a focus-centric operating system. It has interesting multitasking abilities although, for me, they are meant to be used in a burst when a single app on screen can be limiting.
 
 I find myself using the "Slideover" feature a lot when I need to check on something quickly and not strictly related to the main task. Instead, I use the split-screen feature to reference notes and transfer data between apps.
+
+The discoverability factor of the various multitasking features is pretty low. How am I supposed to know, at a glance, that there are multiple drop targets for the apps?
+
+A limitation that may seem small of the iPad multitasking is that it's only limited to apps you have in the dock or dragged from Spotlight. You will quickly realize that it's not a small limitation when you can't trigger Spotlight from other apps if you don't have a keyboard attached.
+
+Something funny about the multitasking UI is that you can't use it with the Apple Pencil. Strange. I can drag files and apps just fine with the Pencil elsewhere in the system.
