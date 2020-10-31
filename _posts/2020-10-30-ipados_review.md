@@ -29,9 +29,6 @@ Apple took a **great stance** with the introduction of the **Apple Pencil** and 
 
 Apps like [**GoodNotes**](https://apps.apple.com/us/app/goodnotes-5/id1444383602), [**Pretext**](https://apps.apple.com/us/app/pretext/id1347707000), or [**Concepts**](https://apps.apple.com/us/app/concepts/id560586497) feel right at home on the iPad. Starting from iPadOS 13.4, the addition of first-class mouse support on the iPad brought exciting new possibilities to this platform.
 
-![Pretext and iSH](https://i.ibb.co/NS2G5xS/IMG-0608.jpg)
-<i style="text-align: center; display: block">Pretext and iSH working togheter via the Document Provider Framework.</i>
-
 **Creativity-oriented** apps on the iPad are **powerful** yet simple. You will comfortably adapt from a keyboard and mouse workflow to the iPad since creating something on it requires less cognitive load.  
 I'm a big fan of apps like [**Procreate**](https://apps.apple.com/us/app/procreate/id425073498) (even though I can't draw). Keep in mind that developers are bringing more and more desktop apps to the iPad. On the App Store, you'll see names like Affinity Designer, Affinity Photo. There's even a slice of Adobe Creative Cloud apps on the iPad!
 
@@ -99,10 +96,44 @@ What are the **criteria** used to move a setting from one screen to another? **I
 
 ##Home Screen
 
+The iPad home screen remained **simple** even with the advent of iPadOS 14. I'd love to see widgets on the home screen like the iOS counterpart.
+The icon grid is well-spaced. Selecting the "more" option is something you should do immediately.
+
+I wish Apple gives us the ability to use the **App Library** on the iPad since the home screen can get messy when you have a lot of apps.
+
 ##File Management
 
-##Breaking the box
+File management on the iPad happens inside the "Files" app. You can also see connected **external drives** in the Files app.  
+The iPad doesn't expose its whole **filesystem** to apps. Inter-app communication can happen in two ways: [**FileProvider**](https://developer.apple.com/documentation/fileprovider) or the **share sheet.**
+
+![Pretext and iSH](https://i.ibb.co/NS2G5xS/IMG-0608.jpg)
+<i style="text-align: center; display: block">Pretext and iSH working togheter via the FileProvider Framework.</i>
+
+Apps using the FileProvider Framework can see other apps files and work with them. It's a little feature that can enable powerful workflows on the iPad.  
+For example, you can connect your camera to your iPad and access pictures from Pixelmator Photo. Edit the images and then save them to Google Drive without switching any app.
+
+##Scriptable goodness
+
+Another powerful app on the iPad is "Shortcuts".
+**Shortcuts** are like mini-applets that you can make to **automate** all sorts of things. You can use them to send commands to other machines via SSH or to consume a REST API.
+
+If you're an automation geek you'll feel right at home with its interface.  
+I use Shortcuts to compress images, control my Torrent box, and shorten URLs.
+
+![An illustration of me with an iPad and an heart](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/doilovemyipad.svg)
+
+##Honorable Mentions
+
+- **HomeKit** is the fastest way to control my smart home since it controls devices locally and it's not cloud-dependent.
+
+- **Spotlight** search is _really_ fast and apps integrate with it nicely.
+
+- The **App Store** "Today" view is well-curated and often brings up some hidden gems. App discoverability, in general, is stellar on the iPad.
 
 ##Wish List
 
-<!-- conclusion -->
+I wish Apple took the developer market more seriously with the iPad. A built-in U**NIX shell** would make me very happy.  
+Another wish would be better **conferencing** app support on the iPad since only FaceTime can use the popup view.
+
+Overall, The iPad is proving as a **powerful** device to learn, create, and consume on. It's making me **curious** about iOS in general.
+The iPad is a device that I'm more than happy using. I don't see it parting away from my digital life anytime soon.
