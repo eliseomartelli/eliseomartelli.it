@@ -64,7 +64,11 @@ The responsiveness of the Pencil is **remarkable**. It feels like you're writing
 
 ###Mouse and Keyboard
 
-When you add a keyboard and a mouse to the iPad equation, it starts **feeling like a real computer**. Text interaction is instantly **natural**. If you're coming from a macOS machine, the majority of the **shortcuts are the same**.
+The default software keyboard is okay. It's the only keyboard I know that supports **split typing** on the iPad. It's **responsive** most of the time. The only problem I encountered with it is when using a combination of keyboard-based input and the new "Scribble" feature.
+
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/mqefxehXa_c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+When you add a physical keyboard and a mouse to the iPad equation, it starts **feeling like a real computer**. Text interaction is instantly **natural**. If you're coming from a macOS machine, the majority of the **shortcuts are the same**.
 
 The mouse/trackpad experience on the iPad is **far from the desktop-like experience** and not in a bad way. The cursor is **optimized for touch-first interfaces** and morphs into the UI element you're trying to point and click and sticks to it, like a magnet.
 
@@ -84,7 +88,7 @@ Something **funny** about the multitasking UI is that you **can't use** it with 
 
 ##Settings
 
-I feel like settings on iPadOS are **flawed**. The idea of **centralizing** everything under one roof looks good even though it's not something every developer adapted their apps for. You'll find a lot of inconsistencies and settings scattered between the app and the Settings app.
+I feel like settings on iPadOS are **flawed**. The idea of **centralizing** everything under one roof looks good even though it's not something every developer adapted their apps for. You'll find a lot of **inconsistencies** and settings **scattered** between the app and the Settings app.
 
 ![Procreate inside Settings App](https://i.ibb.co/2cstJ5C/IMG-0617.png)
 
@@ -98,5 +102,7 @@ What are the **criteria** used to move a setting from one screen to another? **I
 ##File Management
 
 ##Breaking the box
+
+##Wish List
 
 <!-- conclusion -->
