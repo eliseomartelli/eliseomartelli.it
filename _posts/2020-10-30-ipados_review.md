@@ -22,6 +22,17 @@ The quality of these apps is usually _top-notch_ and the often powerful chips on
 One of the most fascinating things as an Android user is that when Apple introduces a new framework or new hardware features, the developers are always keen on updating their apps to take advantage of these new features.  
 There's always something _fresh_ on the iPad and each iPadOS update brings new features to the table.
 
-### Productivity
+### Productivity & Creativity
 
-The
+One of the main reasons I've bought an iPad is to run productivity apps.
+Apple took a great stance with the introduction of the Apple Pencil and the Smart Keyboard(s). The iPad has become a productivity-first device and not only another content consumption machine.
+
+Apps like GoodNotes, Pretext, or Concepts feel right at home on the iPad. Starting from iPadOS 13.4, the addition of first-class mouse support on the iPad brought exciting new possibilities to this platform.
+
+![Pretext and iSH](https://i.ibb.co/NS2G5xS/IMG-0608.jpg)
+_Pretext and iSH working togheter via the Document Provider Framework._
+
+Creativity-oriented apps on the iPad are powerful yet simple. You will comfortably adapt from a keyboard and mouse workflow to the iPad since creating something on it requires less cognitive load.  
+I'm a big fan of apps like Procreate (even though I can't draw). Keep in mind that developers are bringing more and more desktop apps to the iPad. On the App Store, you'll see names like Affinity Designer, Affinity Photo. There's even a slice of Adobe Creative Cloud apps on the iPad!
+
+## Input on the iPad
