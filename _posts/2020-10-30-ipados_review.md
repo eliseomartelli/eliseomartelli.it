@@ -3,29 +3,29 @@ title: iPadOS, a year-long review
 categories: computing iPad
 ---
 
-What's an iPad? Is it a real computer? That's one of the **questions** Apple tries to ask and answer with its advertising.  
+What’s an iPad? Is it a real computer? These are the main **questions** Apple tries to ask and answer with its advertising.  
 The truth is that you can consider it as a computer only if your **use-cases** match what Apple envisioned for it.
 
 ![A confused iPad](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/confusedipad.svg)
 
-iPadOS is a **fun computing platform** designed for a _touch-first_ interaction model, and let me get this straight: It excels at it.  
+iPadOS is a **fun computing platform** designed for a _touch-first_ interaction model, and let me get this straight: it excels at it.  
 If you take a look at **competing platforms** like Windows, ChromeOS, or Android, you will see ecosystems that are **far from perfect** on tablets.  
 These platforms are designed with input paradigms tied to a mouse and a keyboard or a smartphone interface.  
 The iPad, on the other hand, is _distinctive_ and what sets it apart is the **App ecosystem**.  
-This shouldn't be an invitation to Apple to stop fixing things or adding new features to the iPad.
+However, this shouldn't be an invitation to Apple to stop fixing things or adding new features to the iPad.
 
 ## There's an app for that
 
 The iPad platform offers a **clean slate** that developers are happy to use and develop for. The App Store is full of pretty **good iPad apps**.  
 The quality of these apps is usually _top-notch_ and the often powerful chips on these devices help to deliver a smooth experience.
 
-One of the most fascinating things as an Android user is that when Apple introduces a new framework or new hardware features, the developers are always keen on updating their apps to take advantage of these new features.  
+One of the most **fascinating** things looking through an Android user's perspective, is that the developer **adoption** of new frameworks or new hardware features is always **fast**. Developers are keen on updating their apps to take advantage of these new features.
 There's always something _fresh_ on the iPad and each iPadOS update brings new features to the table.
 
 ### Productivity & Creativity
 
-One of the main reasons I've bought an iPad is to run productivity apps.
-Apple took a **great stance** with the introduction of the **Apple Pencil** and the Smart Keyboard(s). The iPad has become a productivity-first device and not only another content consumption machine.
+One of the main reasons I bought an iPad is to run productivity apps.
+Apple took a **great stance** with the introduction of the **Apple Pencil** and the Smart Keyboard(s). The iPad has become a productivity-first device and not another content consumption machine.
 
 Apps like [**GoodNotes**](https://apps.apple.com/us/app/goodnotes-5/id1444383602), [**Pretext**](https://apps.apple.com/us/app/pretext/id1347707000), or [**Concepts**](https://apps.apple.com/us/app/concepts/id560586497) feel right at home on the iPad. Starting from iPadOS 13.4, the addition of first-class mouse support on the iPad brought exciting new possibilities to this platform.
 
@@ -99,7 +99,7 @@ What are the **criteria** used to move a setting from one screen to another? **I
 The iPad home screen remained **simple** even with the advent of iPadOS 14. I'd love to see widgets on the home screen like the iOS counterpart.
 The icon grid is well-spaced. Selecting the "more" option is something you should do immediately.
 
-I wish Apple gives us the ability to use the **App Library** on the iPad since the home screen can get messy when you have a lot of apps.
+I wish Apple gave us the ability to use the **App Library** on the iPad since the home screen can get messy when you have a lot of apps.
 
 ##File Management
 
@@ -120,7 +120,7 @@ Another powerful app on the iPad is "Shortcuts".
 If you're an automation geek you'll feel right at home with its interface.  
 I use Shortcuts to compress images, control my Torrent box, and shorten URLs.
 
-![An illustration of me with an iPad and an heart](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/doilovemyipad.svg)
+![An illustration of me with an iPad and a heart](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/doilovemyipad.svg)
 
 ##Honorable Mentions
 
@@ -132,8 +132,8 @@ I use Shortcuts to compress images, control my Torrent box, and shorten URLs.
 
 ##Wish List
 
-I wish Apple took the developer market more seriously with the iPad. A built-in U**NIX shell** would make me very happy.  
+I wish Apple took the developer market more seriously with the iPad. A built-in **UNIX shell** would make me very happy.  
 Another wish would be better **conferencing** app support on the iPad since only FaceTime can use the popup view.
 
-Overall, The iPad is proving as a **powerful** device to learn, create, and consume on. It's making me **curious** about iOS in general.
+Overall, The iPad is proving a **powerful** device to learn, create, and consume on. It's making me **curious** about iOS in general.
 The iPad is a device that I'm more than happy using. I don't see it parting away from my digital life anytime soon.
