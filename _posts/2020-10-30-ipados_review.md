@@ -12,7 +12,7 @@ iPadOS is a fun computing platform designed for a touch-first interaction model,
 If you take a look at competing platforms like Windows, ChromeOS, or Android, you will see ecosystems that are far from perfect on tablets.  
 These platforms are designed with input paradigms tied to a mouse and a keyboard or a smartphone interface.  
 The iPad, on the other hand, is _distinctive_ and what sets it apart is the App ecosystem.  
-This shouldn't be an invitation to Apple to stop fixing things or adding new features to the iPad. It's not a perfect device (more on this later).
+This shouldn't be an invitation to Apple to stop fixing things or adding new features to the iPad.
 
 ## There's an app for that
 
@@ -30,9 +30,36 @@ Apple took a great stance with the introduction of the Apple Pencil and the Smar
 Apps like GoodNotes, Pretext, or Concepts feel right at home on the iPad. Starting from iPadOS 13.4, the addition of first-class mouse support on the iPad brought exciting new possibilities to this platform.
 
 ![Pretext and iSH](https://i.ibb.co/NS2G5xS/IMG-0608.jpg)
-_Pretext and iSH working togheter via the Document Provider Framework._
+<i style="text-align: center; display: block">Pretext and iSH working togheter via the Document Provider Framework.</i>
 
 Creativity-oriented apps on the iPad are powerful yet simple. You will comfortably adapt from a keyboard and mouse workflow to the iPad since creating something on it requires less cognitive load.  
 I'm a big fan of apps like Procreate (even though I can't draw). Keep in mind that developers are bringing more and more desktop apps to the iPad. On the App Store, you'll see names like Affinity Designer, Affinity Photo. There's even a slice of Adobe Creative Cloud apps on the iPad!
 
 ## Input on the iPad
+
+I feel like this is an area of the iPad experience that can take a little revision. Input feels fluid, some of the interactions are well presented and understandable but there are times I find them very confusing.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4Pv3rEjI4fQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Just look at this video by Apple Support. It's just scratching the surface. Now add a trackpad, a keyboard, and the Apple Pencil. It's gesture-ville!  
+There's even a shake-to-undo gesture on by default and the best time to discover it is when you're trying to get something done inside a vehicle.
+
+![Undo typing popup](https://i.ibb.co/D4NKn5g/aintthatfun.png)
+<i style="text-align: center; display: block">Oh, Hi! Hello there!</i>
+
+### Apple Pencil, a must that comes at a price
+
+The Apple Pencil is one of the accessories that separate the iPad experience from other tablets. It's not an extension of your fingers. It's a tool designed for content creation.  
+With iPadOS 14 and the introduction of Scribble and handwriting editing, you can use the Apple Pencil on a lot more apps.
+
+![The Apple Pencil](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/applepencil.svg)
+
+> If you're using the iPad for anything more other than content consumption, the Pencil is a must.
+
+The responsiveness of the Pencil is remarkable. It feels like you're writing on paper. There are only one problem and two annoyances:
+
+1. It costs 1/3 of the cheapest iPad;
+2. Placement and charging of the first generation is ridiculous (solved by the second generation);
+3. Not every part of the iPad interface supports it (more on this later).
+
+### Mouse and Keyboard
