@@ -63,3 +63,15 @@ The responsiveness of the Pencil is remarkable. It feels like you're writing on 
 3. Not every part of the iPad interface supports it (more on this later).
 
 ### Mouse and Keyboard
+
+When you add a keyboard and a mouse to the iPad equation, it starts feeling like a real computer. Text interaction is instantly natural. If you're coming from a macOS machine, the majority of the shortcuts are the same.
+
+The mouse/trackpad experience on the iPad is far from the desktop-like experience and not in a bad way. The cursor is optimized for touch-first interfaces and morphs into the UI element you're trying to point and click and sticks to it, like a magnet.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZP0zeUfYt7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Multitasking
+
+The iPad is a focus-centric operating system. It has interesting multitasking abilities although, for me, they are meant to be used in a burst when a single app on screen can be limiting. 
+
+I find myself using the "Slideover" feature a lot when I need to check on something quickly and not strictly related to the main task. Instead, I use the split-screen feature to reference notes and transfer data between apps.
