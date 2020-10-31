@@ -3,8 +3,7 @@ title: iPadOS, a year-long review
 categories: computing iPad
 ---
 
-What’s an iPad? Is it a real computer? These are the main **questions** Apple tries to ask and answer with its advertising.  
-The truth is that you can consider it as a computer only if your **use-cases** match what Apple envisioned for it.
+What's an iPad? Is it a real computer? You might ask. Well, long story short: you can look at it as a computer only if your **use-cases** match what Apple envisioned for it. Let’s take a deep dive into it.
 
 ![A confused iPad](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/confusedipad.svg)
 
@@ -19,7 +18,7 @@ However, this shouldn't be an invitation to Apple to stop fixing things or addin
 The iPad platform offers a **clean slate** that developers are happy to use and develop for. The App Store is full of pretty **good iPad apps**.  
 The quality of these apps is usually _top-notch_ and the often powerful chips on these devices help to deliver a smooth experience.
 
-One of the most **fascinating** things looking through an Android user's perspective, is that the developer **adoption** of new frameworks or new hardware features is always **fast**. Developers are keen on updating their apps to take advantage of these new features.
+Looking through an Android user's perspective, one of the most **fascinating** things is that the developer **adoption** of new frameworks or new hardware features is always **fast**. Developers are keen on updating their apps to take advantage of these new features.
 There's always something _fresh_ on the iPad and each iPadOS update brings new features to the table.
 
 ### Productivity & Creativity
@@ -135,5 +134,5 @@ I use Shortcuts to compress images, control my Torrent box, and shorten URLs.
 I wish Apple took the developer market more seriously with the iPad. A built-in **UNIX shell** would make me very happy.  
 Another wish would be better **conferencing** app support on the iPad since only FaceTime can use the popup view.
 
-Overall, The iPad is proving a **powerful** device to learn, create, and consume on. It's making me **curious** about iOS in general.
+Overall, the iPad is proving a **powerful** device to learn, create, and consume on. It's making me **curious** about iOS in general.
 The iPad is a device that I'm more than happy using. I don't see it parting away from my digital life anytime soon.
