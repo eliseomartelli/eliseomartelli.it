@@ -39,7 +39,7 @@ I'm a big fan of apps like [**Procreate**](https://apps.apple.com/us/app/procrea
 
 I feel like this is an area of the iPad experience that can take a **little revision**. Input feels fluid, some of the interactions are well presented and understandable but there are times I find them very **confusing**.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4Pv3rEjI4fQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/4Pv3rEjI4fQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Just look at this video by Apple Support. It's just scratching the surface. Now add a trackpad, a keyboard, and the Apple Pencil. It's _gesture-ville_!  
 There's even a _shake-to-undo_ gesture on by default and the best time to discover it is when you're trying to get something done inside a vehicle.
@@ -47,7 +47,7 @@ There's even a _shake-to-undo_ gesture on by default and the best time to discov
 ![Undo typing popup](https://i.ibb.co/D4NKn5g/aintthatfun.png)
 <i style="text-align: center; display: block">Oh, Hi! Hello there!</i>
 
-### Apple Pencil, a must that comes at a price
+###Apple Pencil, a must that comes at a price
 
 The Apple Pencil is one of the accessories that **separate** the iPad experience **from other tablets**. It's not an extension of your fingers. It's a **tool** designed for **content creation**.  
 With iPadOS 14 and the introduction of **Scribble** and **handwriting editing**, you can use the Apple Pencil on a lot more apps.
@@ -62,15 +62,15 @@ The responsiveness of the Pencil is **remarkable**. It feels like you're writing
 2. **Placement** and **charging** of the first generation is ridiculous (solved by the second generation);
 3. **Not every part** of the iPad interface **supports it** (more on this later).
 
-### Mouse and Keyboard
+###Mouse and Keyboard
 
 When you add a keyboard and a mouse to the iPad equation, it starts **feeling like a real computer**. Text interaction is instantly **natural**. If you're coming from a macOS machine, the majority of the **shortcuts are the same**.
 
 The mouse/trackpad experience on the iPad is **far from the desktop-like experience** and not in a bad way. The cursor is **optimized for touch-first interfaces** and morphs into the UI element you're trying to point and click and sticks to it, like a magnet.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZP0zeUfYt7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ZP0zeUfYt7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Multitasking
+##Multitasking
 
 iPadOS is a _focus-centric_ operating system. It has **interesting** multitasking abilities although, for me, they are meant to be used in a burst when a single app on screen can be limiting.
 
@@ -81,3 +81,22 @@ The **discoverability** factor of the various multitasking features is pretty **
 A limitation that may seem small of the iPad multitasking is that it's only limited to apps you have in the **dock** or dragged from **Spotlight**. You will quickly realize that it's **not a small limitation** when you can't trigger Spotlight from other apps if you don't have a keyboard attached.
 
 Something **funny** about the multitasking UI is that you **can't use** it with the **Apple Pencil**. Strange. I can drag files and apps just fine with the Pencil elsewhere in the system.
+
+##Settings
+
+I feel like settings on iPadOS are **flawed**. The idea of **centralizing** everything under one roof looks good even though it's not something every developer adapted their apps for. You'll find a lot of inconsistencies and settings scattered between the app and the Settings app.
+
+![Procreate inside Settings App](https://i.ibb.co/2cstJ5C/IMG-0617.png)
+
+![Settings inside Procreate](https://i.ibb.co/DYgJt3N/IMG-0616.png)
+<i style="text-align: center; display: block">Procreate settings example</i>
+
+What are the **criteria** used to move a setting from one screen to another? **I will never know.**
+
+##Home Screen
+
+##File Management
+
+##Breaking the box
+
+<!-- conclusion -->
