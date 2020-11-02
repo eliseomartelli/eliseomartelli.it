@@ -22,7 +22,7 @@
     "prism-theme-night-owl": "^1.4.0",
     "prismjs": "^1.22.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^16.14.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.19",
