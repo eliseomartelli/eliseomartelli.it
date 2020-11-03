@@ -3,8 +3,10 @@ module.exports = {
     title: `Eliseo Martelli`,
     description: ``,
     author: `@eliseomartelli`,
+    siteUrl: `https://eliseomartelli.it/`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
