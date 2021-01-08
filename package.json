@@ -33,7 +33,7 @@
     "typography-theme-grand-view": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "2.1.2",
+    "prettier": "2.2.1",
     "react-kawaii": "^0.16.0"
   },
   "keywords": [
