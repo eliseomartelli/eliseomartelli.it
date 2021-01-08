@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "prettier": "2.2.1",
-    "react-kawaii": "^0.16.0"
+    "react-kawaii": "^0.17.0"
   },
   "keywords": [
     "gatsby"
