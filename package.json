@@ -28,7 +28,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.19",
-    "styled-components": "^5.2.1",
+    "styled-components": "^5.2.3",
     "typography": "^0.16.19",
     "typography-theme-grand-view": "^0.16.19"
   },
