@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "disqus-react": "^1.0.11",
-    "gatsby": "^2.32.9",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-feed": "^2.12.0",
     "gatsby-plugin-manifest": "^2.12.1",
