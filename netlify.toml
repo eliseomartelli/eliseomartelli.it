@@ -1,7 +1,0 @@
-[[redirects]]
-    from = "/blog/*"
-    to = "/:splat"
-
-[[plugins]]
-    package = "@netlify/plugin-lighthouse"
-
