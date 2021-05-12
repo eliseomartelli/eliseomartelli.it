@@ -21,7 +21,7 @@ export class Bio extends React.Component<BioProps> {
           {this.props.socials.map((social) => (
             <li>
               <a title={social.name} target="blank" href={social.url}>
-                <i className={`text-brand-blue fab ${social.iconName}`} />
+                <i className={`hover:text-brand-pink text-brand-blue fab fa-lg ${social.iconName}`} />
               </a>
             </li>
           ))}
