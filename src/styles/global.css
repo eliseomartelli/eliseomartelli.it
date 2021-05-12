@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("../../node_modules/@fortawesome/fontawesome-free/css/all.min.css");
+
+b {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-xl font-bold;
+}
