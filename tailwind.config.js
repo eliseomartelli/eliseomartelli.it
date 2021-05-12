@@ -1,11 +1,16 @@
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "brand-pink": "#DC267F",
+        "brand-blue": "#648FFF",
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
