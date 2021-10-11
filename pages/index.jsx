@@ -1,12 +1,6 @@
 export default function Home() {
   return (
-    <div className="grid-cols-2 grid space-y-8">
-      <Article
-        direction="col-span-2 space-x-8"
-        image="https://eliseomartelli.it/static/aeb7d0061d695afcf54b40d74c79274f/f84cf/network-equipment-hardware-internet-data-server-communication-connection-datacenter.jpg"
-      />
-      <Article />
-      <Article />
+    <div className="">
       <Article />
       <Article />
       <Article />
