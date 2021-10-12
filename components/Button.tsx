@@ -17,13 +17,13 @@ export const Button: React.FC<ButtonProps> = ({
   isTransparent,
   className,
 }) => {
-  const base = "border font-bold px-4 py-2 hover:bg-gray-100 rounded-lg";
   const classes = [
-    className,
+    "border font-bold px-4 py-2 hover:bg-gray-100 rounded-lg", // Base
     isBig ? "text-xl px-8" : "",
     isActive ? "text-red-500 border-red-200" : "",
     isTransparent ? "border-transparent" : "",
     isRed ? "hover:bg-red-500 hover:text-white hover:border-transparent" : "",
+    className,
   ];
-  return <div className={[base, ...classes].join(" ")}>{children}</div>;
+  return <div className={classes.join(" ")}>{children}</div>;
 };

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       typography: {
-        'nounder': {
+        nounder: {
           css: { a: { textDecoration: "none" } },
         },
       },

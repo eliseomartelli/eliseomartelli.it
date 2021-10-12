@@ -11,7 +11,7 @@ const NotFound = () => {
         <Link href="/" passHref>
           <a className="no-underline">
             <Button isBig isRed>
-            🏠 Go Home
+              🏠 Go Home
             </Button>
           </a>
         </Link>

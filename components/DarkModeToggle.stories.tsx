@@ -7,5 +7,10 @@ export default {
 };
 
 
-export const Normal = () => <DarkModeToggle theme={"light"}/>
-export const Dark = () => <DarkModeToggle theme={"dark"}/>
+var theme = "dark"
+
+const toggleTheme = () => {
+  theme = theme === 'dark' ? 'light' : 'dark' 
+}
+
+export const Normal = () => <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />;

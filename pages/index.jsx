@@ -1,27 +1,40 @@
-export default function Home() {
+import { Article } from "../components/Article";
+import path from "path";
+import { promises as fs } from "fs";
+
+export default function Home({ posts }) {
   return (
-    <div className="">
-      <Article />
-      <Article />
-      <Article />
+    <div>
+      <ul className="space-y-8">
+        {posts.map((e) => {
+          return (
+            <li>
+              <Article
+                hero
+                timeToRead="5 minutes"
+                date="12 Feb, 2021"
+                title={e.filename}
+                excerpt={e.content.substring(200, 400)}
+              />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
 
-const Article = ({ image, direction }) => {
-  return (
-    <article className={`flex ${direction}`}>
-      {image ? <img className="max-w-xl max-h-80" src={image} /> : <></>}
-      <div className="prose w-1/2">
-        <h2>Netflix Payments reminder with the help of Home Assistant</h2>
-        <p>
-          March 2, 2020 - 🕒 <i>6 minutes read</i>
-        </p>
-        <p>
-          Today's project aims at tracking the invoices of a shared account
-          thanks to Home Assistant. For those of you that don't know what Home…
-        </p>
-      </div>
-    </article>
-  );
-};
+// https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+export async function getStaticProps() {
+  const postsDirectory = path.join(process.cwd(), "_posts");
+  const filenames = await fs.readdir(postsDirectory);
+
+  const posts = filenames.map(async (filename) => {
+    const filePath = path.join(postsDirectory, filename);
+    const fileContents = await fs.readFile(filePath, "utf8");
+    return { filename, content: fileContents };
+  });
+  return {
+    props: { posts: await Promise.all(posts) }, // will be passed to the page component as props
+  };
+}
