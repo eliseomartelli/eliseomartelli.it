@@ -1,6 +1,6 @@
 import "tailwindcss/tailwind.css";
-import { Toolbar } from "../components/Toolbar.tsx";
-import { Footer } from "../components/Footer.tsx";
+import { Toolbar } from "../components/Toolbar/Toolbar";
+import { Footer } from "../components/Footer/Footer";
 import useDarkMode from "../utils/useDarkMode.tsx";
 
 const links = [
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     <div className={theme}>
       <div className="flex flex-col min-h-screen">
         <Toolbar toggleTheme={toggleTheme} theme={theme} />
-        <div className="max-w-6xl w-full px-4 mx-auto min-h-screen flex-grow">
+        <div className="max-w-6xl px-4 mx-auto min-h-screen flex-grow items-center">
           <Component {...pageProps} />
         </div>
         <Footer startYear="2015" title="Eliseo Martelli" links={links} />

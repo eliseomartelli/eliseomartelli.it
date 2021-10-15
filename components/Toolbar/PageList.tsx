@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Button } from "./Button";
+import { Button } from "../Button/Button";
 import Link from "next/link";
 
 interface Page {

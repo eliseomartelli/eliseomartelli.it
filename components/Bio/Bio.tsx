@@ -1,5 +1,5 @@
 import Image from "next/image";
-import propic from "../public/propic.jpg";
+import propic from "../../public/propic.jpg";
 
 const Bio = ({ name, description }) => {
   return (
