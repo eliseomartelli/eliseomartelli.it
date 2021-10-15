@@ -13,15 +13,18 @@ export default function Home({ posts }) {
       <ul className="space-y-8">
         {posts.map((e, i) => {
           return (
-            <li>
-              <Article
-                hero={i === 0}
-                timeToRead="5 minutes"
-                date="12 Feb, 2021"
-                title={e.title}
-                excerpt={e.content.substring(200, 400)}
-              />
-            </li>
+            <>
+              <li>
+                <Article
+                  hero={i === 0}
+                  timeToRead="5 minutes"
+                  date="12 Feb, 2021"
+                  title="Lorem Ipsum? Dolor sit amet!"
+                  excerpt={e.content.substring(200, 400)}
+                />
+              </li>
+              {i === 0 ? (<h1 className="text-2xl font-bold pt-24">More Stories:</h1>):(<></>)}
+            </>
           );
         })}
       </ul>
