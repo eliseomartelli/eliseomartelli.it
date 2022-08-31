@@ -1,16 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: "class",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./providers/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {
-      typography: {
-        nounder: {
-          css: { a: { textDecoration: "none" } },
-        },
-      },
-    },
-  },
-  variants: {
     extend: {},
   },
   plugins: [require("@tailwindcss/typography")],
