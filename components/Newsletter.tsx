@@ -23,6 +23,7 @@ export function Newsletter({ modal }: NewsletterProps): JSX.Element {
     if (state != FormState.Initial) {
       setState(FormState.Initial);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [email]);
 
   async function formSubmission(e: FormEvent<HTMLFormElement>) {
