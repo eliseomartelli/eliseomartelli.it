@@ -9,6 +9,7 @@ import { mdxToHTML } from "../../lib/mdx";
 import { GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Button, { Color } from "../../components/Button";
+import path from "path";
 
 interface BlogPostProps {
   content: MDXRemoteSerializeResult;
@@ -58,8 +59,10 @@ interface IParams extends ParsedUrlQuery {
 export async function getStaticProps(
   context: GetStaticPropsContext
 ): Promise<{ props: BlogPostProps }> {
-  const { slug } = context.params as IParams;
-  const file = fs.readFileSync(`posts/${slug}.md`, "utf-8");
+  let { slug } = context.params as IParams;
+  slug += ".md";
+  const filePath = path.join("posts", slug);
+  const file = fs.readFileSync(filePath, "utf-8");
   const { html } = await mdxToHTML(file);
   return {
     props: {
