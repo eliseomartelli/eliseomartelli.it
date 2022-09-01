@@ -27,7 +27,7 @@ export default function Nav(): JSX.Element {
     <nav>
       <a
         href="#skip"
-        className="absolute p-8 opacity-0 focus:opacity-100 bg-gray-800 text-white -top-16 focus:top-0"
+        className="absolute p-8 opacity-100 focus:opacity-100 bg-gray-800 text-white -top-24 focus:top-0"
       >
         Skip to content
       </a>
