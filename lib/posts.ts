@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import path from "path";
 import { Frontmatter } from "../types/frontmatter";
 import { Post } from "../types/post";
 
@@ -11,7 +12,8 @@ export function loadPosts(): Post[] {
 export function loadPostsByFile(fileNames: string[]): Post[] {
   const posts = fileNames.map((fileName) => {
     const slug = fileName.split(".")[0];
-    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
+    const filePath = path.join("posts", fileName);
+    const readFile = fs.readFileSync(filePath, "utf-8");
     const { data: frontmatter, content } = matter(readFile);
 
     frontmatter.date = parseDate(frontmatter.date);
