@@ -6,12 +6,12 @@ export function Newsletter({ modal }: NewsletterProps): JSX.Element {
     <section className="flex flex-col gap-4">
       <h3 className="text-2xl font-bold">Subscribe to the newsletter</h3>
       <form
-        className={`flex flex-col ${
+        className={`flex flex-col gap-2 ${
           !modal && "p-4 border rounded-md bg-gray-50"
         }`}
       >
         <p>Stay in the loop to get news about software development and tech.</p>
-        <fieldset className="relative mt-2">
+        <fieldset className="relative">
           <input
             type="email"
             placeholder="mail@domain.com"

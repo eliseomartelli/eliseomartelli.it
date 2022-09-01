@@ -11,7 +11,7 @@ export default function About(): JSX.Element {
             from="2017"
             to="2018"
             what="Network Technician"
-            where="Dedalonet SRL, Lanciano, Italy"
+            where="Dedalonet S.r.l, Lanciano, Italy"
           />
           <TimelineElement
             from="2013"
