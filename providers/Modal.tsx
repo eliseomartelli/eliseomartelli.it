@@ -44,6 +44,7 @@ export function ModalProvider({
         ></div>
         <div className="relative bg-white p-4 mx-4 w-full max-w-2xl box-content rounded-md shadow-md">
           <button
+            aria-label="Close modal"
             className="absolute top-0 right-0 p-4"
             onClick={() => {
               initialState.hideModal();

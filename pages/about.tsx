@@ -4,42 +4,44 @@ export default function About(): JSX.Element {
   return (
     <Container customMeta={{ title: "About - Eliseo Martelli" }}>
       <h1>About</h1>
-      <h3 className="text-xl font-bold mb-4">Work</h3>
-      <ol className="border-l border-gray-800 relative flex flex-col gap-4">
-        <TimelineElement
-          from="2011"
-          to="Ongoing"
-          what="Freelance software developer"
-          where="Client projects ranging from websites to hardware devices"
-        />
-        <TimelineElement
-          from="2013"
-          to="2017"
-          what="Android developer"
-          where="~1M downloads on Google Play Store"
-        />
-        <TimelineElement
-          from="2017"
-          to="2018"
-          what="Network Technician"
-          where="Dedalonet SRL, Lanciano, Italy"
-        />
-      </ol>
-      <h3 className="text-xl font-bold mb-4">Studies</h3>
-      <ol className="border-l border-gray-800 relative flex flex-col gap-4">
-        <TimelineElement
-          from="2012"
-          to="2017"
-          what="Telecomunications and Computer Science Degree"
-          where="IIS Da Vinci-De Giorgio, Lanciano, Italy"
-        />
-        <TimelineElement
-          from="2019"
-          to="Ongoing"
-          what="Computer Science Bachelor Degree"
-          where="Università degli Studi di Torino, Turin, Italy"
-        />
-      </ol>
+      <div className="flex flex-col gap-4">
+        <h3 className="text-xl font-bold">Work</h3>
+        <ol className="border-l border-gray-800 relative flex flex-col gap-4 mb-8">
+          <TimelineElement
+            from="2017"
+            to="2018"
+            what="Network Technician"
+            where="Dedalonet SRL, Lanciano, Italy"
+          />
+          <TimelineElement
+            from="2013"
+            to="2017"
+            what="Android Developer"
+            where="~1M downloads on Google Play Store"
+          />
+          <TimelineElement
+            from="2011"
+            to="Ongoing"
+            what="Freelance Software Developer"
+            where="Client projects ranging from websites to hardware devices"
+          />
+        </ol>
+        <h3 className="text-xl font-bold">Studies</h3>
+        <ol className="border-l border-gray-800 relative flex flex-col gap-4">
+          <TimelineElement
+            from="2019"
+            to="Ongoing"
+            what="Computer Science Bachelor Degree"
+            where="Università degli Studi di Torino, Turin, Italy"
+          />
+          <TimelineElement
+            from="2012"
+            to="2017"
+            what="Telecomunications and Computer Science Degree"
+            where="IIS Da Vinci-De Giorgio, Lanciano, Italy"
+          />
+        </ol>
+      </div>
     </Container>
   );
 }

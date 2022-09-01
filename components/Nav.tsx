@@ -12,9 +12,9 @@ function NavButton({ title, href }: NavButtonProps): JSX.Element {
   const isActive = router.asPath === href;
   return (
     <Link href={href} passHref>
-      <Button>
-        <a className={`${isActive ? "font-extrabold" : ""}`}>{title}</a>
-      </Button>
+      <a className={`${isActive && "font-extrabold"}`}>
+        <Button>{title}</Button>
+      </a>
     </Link>
   );
 }
@@ -45,7 +45,7 @@ export default function Nav(): JSX.Element {
             <NavButton title="Photos" href="/photos" />
           </li>
         </ul>
-        <Button onClick={() => setDark(!dark)}>
+        <Button onClick={() => setDark(!dark)} ariaLabel="Color toggle">
           {!dark ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
