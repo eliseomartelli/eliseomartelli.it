@@ -5,7 +5,6 @@ import LoadingSpinner from "./LoadingSpinner";
 interface NewsletterProps {
   modal?: boolean;
 }
-
 enum FormState {
   Initial,
   Loading,

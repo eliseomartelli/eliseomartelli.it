@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import { ModalContext } from "../providers/Modal";
 import Button, { Color } from "./Button";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function Bio(): JSX.Element {
   const modal = useContext(ModalContext);
@@ -44,59 +45,94 @@ export default function Bio(): JSX.Element {
   );
 }
 
+enum FormState {
+  Initial,
+  Loading,
+  Error,
+  Success,
+}
+
 function ContactModal(): JSX.Element {
-  const [sending, setSending] = useState(false);
+  const [state, setState] = useState<FormState>(FormState.Initial);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (state != FormState.Initial) {
+      setState(FormState.Initial);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [name, email, message]);
+
+  async function formSubmission(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (
+      email.length == 0 ||
+      message.length == 0 ||
+      name.length == 0 ||
+      state != FormState.Initial
+    ) {
+      return;
+    }
+    setState(FormState.Loading);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({ name, email, message }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const { error } = await res.json();
+    if (error) {
+      setState(FormState.Error);
+      return;
+    }
+    setState(FormState.Success);
+  }
+
   return (
-    <form className="flex flex-col gap-4">
+    <form className="flex flex-col gap-4" onSubmit={formSubmission}>
       <h2 className="font-bold text-2xl text-center">Contact Me</h2>
       <input
         type="name"
         placeholder="Name"
         className="border px-4 py-2 rounded-md"
+        onChange={(e) => setName(e.target.value)}
       />
       <input
         type="email"
         placeholder="E-mail"
         className="border px-4 py-2 rounded-md"
+        onChange={(e) => setEmail(e.target.value)}
       />
       <textarea
         name="message"
         placeholder="Message..."
         rows={5}
         className="border px-4 py-2 rounded-md resize-none"
+        onChange={(e) => setMessage(e.target.value)}
       />
       <Button
+        disabled={
+          email.length == 0 ||
+          message.length == 0 ||
+          name.length == 0 ||
+          state != FormState.Initial
+        }
         className="justify-center flex"
-        color={Color.Red}
-        onClick={(e) => {
-          e.preventDefault();
-          setSending(!sending);
-        }}
+        color={
+          state == FormState.Initial ||
+          state == FormState.Error ||
+          state == FormState.Loading
+            ? Color.Red
+            : Color.Green
+        }
       >
-        {!sending && "Send"}
-        {sending && (
-          <svg
-            className="-ml-3 h-6 w-10 self-center relative animate-spin"
-            xmlns="
-            http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth={4}
-            ></circle>
-            <path
-              className="opacity-100"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            ></path>
-          </svg>
-        )}
+        {(state == FormState.Initial || state == FormState.Error) && "Send"}
+        {state == FormState.Success && "E-mail sent"}
+        {state == FormState.Loading && <LoadingSpinner />}
       </Button>
     </form>
   );
