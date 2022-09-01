@@ -1,4 +1,5 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
+import { ModalContext } from "../providers/Modal";
 import Button, { Color } from "./Button";
 import LoadingSpinner from "./LoadingSpinner";
 
@@ -12,7 +13,9 @@ enum FormState {
   Success,
 }
 
-export function Newsletter({ modal }: NewsletterProps): JSX.Element {
+export function Newsletter({ modal: isModal }: NewsletterProps): JSX.Element {
+  const modal = useContext(ModalContext);
+
   const [state, setState] = useState<FormState>(FormState.Initial);
 
   const [email, setEmail] = useState("");
@@ -45,6 +48,9 @@ export function Newsletter({ modal }: NewsletterProps): JSX.Element {
       return;
     }
     setState(FormState.Success);
+    setTimeout(() => {
+      modal.hideModal();
+    }, 1500);
   }
 
   return (
@@ -52,7 +58,7 @@ export function Newsletter({ modal }: NewsletterProps): JSX.Element {
       <h3 className="text-2xl font-bold">Subscribe to the newsletter</h3>
       <form
         className={`flex flex-col gap-2 ${
-          !modal && "p-4 border rounded-md bg-gray-50"
+          !isModal && "p-4 border rounded-md bg-gray-50"
         }`}
         onSubmit={formSubmission}
       >
@@ -78,10 +84,10 @@ export function Newsletter({ modal }: NewsletterProps): JSX.Element {
             className="absolute right-1.5 top-1/2 -translate-y-1/2 transition-all"
           >
             {(state == FormState.Initial || state == FormState.Error) &&
-              "Subscribe"}
-            {state == FormState.Loading && <LoadingSpinner />}
-            {state == FormState.Success && "Subscribed"}
-          </Button>
+              "Subscribe"}{" "}
+            {state == FormState.Loading && <LoadingSpinner />}{" "}
+            {state == FormState.Success && "Subscribed"}{" "}
+          </Button>{" "}
         </fieldset>
         {state == FormState.Error && (
           <p className="text-sm text-gray-600">{error}</p>

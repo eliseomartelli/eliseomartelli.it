@@ -53,6 +53,7 @@ enum FormState {
 }
 
 function ContactModal(): JSX.Element {
+  const modal = useContext(ModalContext);
   const [state, setState] = useState<FormState>(FormState.Initial);
 
   const [name, setName] = useState("");
@@ -90,6 +91,9 @@ function ContactModal(): JSX.Element {
       return;
     }
     setState(FormState.Success);
+    setTimeout(() => {
+      modal.hideModal();
+    }, 1500);
   }
 
   return (
