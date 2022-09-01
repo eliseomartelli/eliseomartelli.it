@@ -1,7 +1,6 @@
 ---
 title: IoT device segregation on EdgeOS
-categories: networking
-published: true
+date: "2020-09-14"
 ---
 
 ![Network Equipment](https://p0.pikist.com/photos/309/174/network-equipment-hardware-internet-data-server-communication-connection-datacenter.jpg)

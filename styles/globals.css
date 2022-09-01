@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+h1 {
+  @apply text-4xl font-bold;
+}

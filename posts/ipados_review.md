@@ -1,6 +1,6 @@
 ---
 title: iPadOS, a year-long review
-categories: computing iPad
+date: "2020-10-31"
 ---
 
 What's an iPad? Is it a real computer? You might ask. Well, long story short: you can look at it as a computer only if your **use-cases** match what Apple envisioned for it. Let’s take a deep dive into it.
@@ -35,15 +35,15 @@ I'm a big fan of apps like [**Procreate**](https://apps.apple.com/us/app/procrea
 
 I feel like this is an area of the iPad experience that can take a **little revision**. Input feels fluid, some of the interactions are well presented and understandable but there are times I find them very **confusing**.
 
-<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/4Pv3rEjI4fQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/4Pv3rEjI4fQ" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 Just look at this video by Apple Support. It's just scratching the surface. Now add a trackpad, a keyboard, and the Apple Pencil. It's _gesture-ville_!  
 There's even a _shake-to-undo_ gesture on by default and the best time to discover it is when you're trying to get something done inside a vehicle.
 
 ![Undo typing popup](https://i.ibb.co/D4NKn5g/aintthatfun.png)
-<i style="text-align: center; display: block">Oh, Hi! Hello there!</i>
+_Oh, Hi! Hello there!_
 
-###Apple Pencil, a must that comes at a price
+### Apple Pencil, a must that comes at a price
 
 The Apple Pencil is one of the accessories that **separate** the iPad experience **from other tablets**. It's not an extension of your fingers. It's a **tool** designed for **content creation**.  
 With iPadOS 14 and the introduction of **Scribble** and **handwriting editing**, you can use the Apple Pencil on a lot more apps.
@@ -58,19 +58,19 @@ The responsiveness of the Pencil is **remarkable**. It feels like you're writing
 2. **Placement** and **charging** of the first generation is ridiculous (solved by the second generation);
 3. **Not every part** of the iPad interface **supports it** (more on this later).
 
-###Mouse and Keyboard
+### Mouse and Keyboard
 
 The default software keyboard is okay. It's the only keyboard I know that supports **split typing** on the iPad. It's **responsive** most of the time. The only problem I encountered with it is when using a combination of keyboard-based input and the new "Scribble" feature.
 
-<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/mqefxehXa_c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/mqefxehXa_c" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 When you add a physical keyboard and a mouse to the iPad equation, it starts **feeling like a real computer**. Text interaction is instantly **natural**. If you're coming from a macOS machine, the majority of the **shortcuts are the same**.
 
 The mouse/trackpad experience on the iPad is **far from the desktop-like experience** and not in a bad way. The cursor is **optimized for touch-first interfaces** and morphs into the UI element you're trying to point and click and sticks to it, like a magnet.
 
-<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ZP0zeUfYt7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ZP0zeUfYt7U" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-##Multitasking
+## Multitasking
 
 iPadOS is a _focus-centric_ operating system. It has **interesting** multitasking abilities although, for me, they are meant to be used in a burst when a single app on screen can be limiting.
 
@@ -82,36 +82,36 @@ A limitation that may seem small of the iPad multitasking is that it's only limi
 
 Something **funny** about the multitasking UI is that you **can't use** it with the **Apple Pencil**. Strange. I can drag files and apps just fine with the Pencil elsewhere in the system.
 
-##Settings
+## Settings
 
 I feel like settings on iPadOS are **flawed**. The idea of **centralizing** everything under one roof looks good even though it's not something every developer adapted their apps for. You'll find a lot of **inconsistencies** and settings **scattered** between the app and the Settings app.
 
 ![Procreate inside Settings App](https://i.ibb.co/2cstJ5C/IMG-0617.png)
 
 ![Settings inside Procreate](https://i.ibb.co/DYgJt3N/IMG-0616.png)
-<i style="text-align: center; display: block">Procreate settings example</i>
+<i className="text-center">Procreate settings example</i>
 
 What are the **criteria** used to move a setting from one screen to another? **I will never know.**
 
-##Home Screen
+## Home Screen
 
 The iPad home screen remained **simple** even with the advent of iPadOS 14. I'd love to see widgets on the home screen like the iOS counterpart.
 The icon grid is well-spaced. Selecting the "more" option is something you should do immediately.
 
 I wish Apple gave us the ability to use the **App Library** on the iPad since the home screen can get messy when you have a lot of apps.
 
-##File Management
+## File Management
 
 File management on the iPad happens inside the "Files" app. You can also see connected **external drives** in the Files app.  
 The iPad doesn't expose its whole **filesystem** to apps. Inter-app communication can happen in two ways: [**FileProvider**](https://developer.apple.com/documentation/fileprovider) or the **share sheet.**
 
 ![Pretext and iSH](https://i.ibb.co/NS2G5xS/IMG-0608.jpg)
-<i style="text-align: center; display: block">Pretext and iSH working togheter via the FileProvider Framework.</i>
+<i className="text-center">Pretext and iSH working togheter via the FileProvider Framework.</i>
 
 Apps using the FileProvider Framework can see other apps files and work with them. It's a little feature that can enable powerful workflows on the iPad.  
 For example, you can connect your camera to your iPad and access pictures from Pixelmator Photo. Edit the images and then save them to Google Drive without switching any app.
 
-##Scriptable goodness
+## Scriptable goodness
 
 Another powerful app on the iPad is "Shortcuts".
 **Shortcuts** are like mini-applets that you can make to **automate** all sorts of things. You can use them to send commands to other machines via SSH or to consume a REST API.
@@ -121,7 +121,7 @@ I use Shortcuts to compress images, control my Torrent box, and shorten URLs.
 
 ![An illustration of me with an iPad and a heart](https://raw.githubusercontent.com/eliseomartelli/illustrations/main/svg/doilovemyipad.svg)
 
-##Honorable Mentions
+## Honorable Mentions
 
 - **HomeKit** is the fastest way to control my smart home since it controls devices locally and it's not cloud-dependent.
 
@@ -129,7 +129,7 @@ I use Shortcuts to compress images, control my Torrent box, and shorten URLs.
 
 - The **App Store** "Today" view is well-curated and often brings up some hidden gems. App discoverability, in general, is stellar on the iPad.
 
-##Wish List
+## Wish List
 
 I wish Apple took the developer market more seriously with the iPad. A built-in **UNIX shell** would make me very happy.  
 Another wish would be better **conferencing** app support on the iPad since only FaceTime can use the popup view.

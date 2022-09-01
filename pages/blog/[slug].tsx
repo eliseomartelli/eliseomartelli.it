@@ -1,57 +1,67 @@
 import fs from "fs";
-import matter from "gray-matter";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { useContext } from "react";
 import Container from "../../components/Container";
 import { Newsletter } from "../../components/Newsletter";
-import markdownToHTML from "../../lib/markdownToHTML";
 import { loadPostSlugs } from "../../lib/posts";
 import { ModalContext } from "../../providers/Modal";
+import { mdxToHTML } from "../../lib/mdx";
+import { GetStaticPropsContext } from "next";
+import { ParsedUrlQuery } from "querystring";
 
-export async function getStaticProps({
-  params: { slug },
-}: {
-  params: { slug: string };
-}): Promise<{ props: { frontmatter: any; content: any } }> {
-  const fileName = fs.readFileSync(`posts/${slug}.md`, "utf-8");
-  const { data: frontmatter, content } = matter(fileName);
-  return {
-    props: {
-      frontmatter,
-      content: await markdownToHTML(content),
-    },
-  };
+interface BlogPostProps {
+  content: MDXRemoteSerializeResult;
 }
 
-export async function getStaticPaths() {
-  const files = loadPostSlugs();
-  const paths = files.map((fileName) => ({
-    params: {
-      slug: fileName.replace(".md", ""),
-    },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-export default function BlogPost({ frontmatter, content }): JSX.Element {
+export default function BlogPost({ content }: BlogPostProps): JSX.Element {
   const modal = useContext(ModalContext);
   return (
-    <Container>
-      <h1 className="text-3xl font-bold">{frontmatter.title}</h1>
-      <article
-        dangerouslySetInnerHTML={{ __html: content }}
-        className="prose mx-auto max-w-full"
-      />
+    <Container
+      customMeta={{ title: `${content.frontmatter?.title} - Eliseo Martelli` }}
+    >
+      <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
+      <article className="prose mx-auto max-w-full">
+        <MDXRemote {...content} components={{ Newsletter }} />
+      </article>
       <a
         className="mt-4 bg-gray-500 hover:bg-gray-800 text-white font-bold px-4 py-2 rounded-md self-end cursor-pointer"
         onClick={() => {
           modal.showModal(<Newsletter modal />);
         }}
       >
-        Subscribe to the newsletter →
+        Subscribe to the newsletter
       </a>
     </Container>
   );
+}
+
+export async function getStaticPaths() {
+  const slugs = loadPostSlugs();
+  const paths = slugs.map((slug) => ({
+    params: {
+      slug,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+}
+
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
+
+export async function getStaticProps(
+  context: GetStaticPropsContext
+): Promise<{ props: BlogPostProps }> {
+  const { slug } = context.params as IParams;
+  const file = fs.readFileSync(`posts/${slug}.md`, "utf-8");
+  const { html } = await mdxToHTML(file);
+  return {
+    props: {
+      content: html,
+    },
+  };
 }

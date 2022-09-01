@@ -1,14 +1,13 @@
 ---
 title: How to use pfSense to load balance between two ISPs
-categories: networking
-published: true
+date: "2020-04-05"
 ---
 
 Today's post aims at helping people that are working/studying from home and don't have a stable internet conection.  
 Since me and my family are currently _staying at home_ we are **taxing our ADSL2+** connection very hard with multiple simultaneous video conferences, so I had to find a way to keep all my family online.  
 The way I've chosen to do that is using **multiple WANs**, one of them being over **LTE**.
 
-<a href="https://ibb.co/DWQNfqz"><img src="https://i.ibb.co/LR1MdGY/Untitled-Artwork.png" alt="Untitled-Artwork" border="0"></a>
+<a href="https://ibb.co/DWQNfqz"><img src="https://i.ibb.co/LR1MdGY/Untitled-Artwork.png" alt="Untitled-Artwork" border="0"/></a>
 
 ## Prerequisites
 
@@ -22,11 +21,11 @@ If you already have the prerequisites sorted out, let's get to balancing!
 
 To start the _journey_ in load balancing, we'll start by telling our pfSense box where to find the interface that we will later use to connect our LTE router.
 
-<a href="https://ibb.co/5TcLbHh"><img src="https://i.ibb.co/tBCDVrp/Screenshot-2020-04-05-at-21-36-07.png" alt="Screenshot-2020-04-05-at-21-36-07" border="0"></a>
+<a href="https://ibb.co/5TcLbHh"><img src="https://i.ibb.co/tBCDVrp/Screenshot-2020-04-05-at-21-36-07.png" alt="Screenshot-2020-04-05-at-21-36-07" border="0"/></a>
 
 To add an interface you need to open the **Assingnment** menu under **Interfaces**, select the desidered interface in the dropdown menu, and then click **add**.
 
-<a href="https://ibb.co/rt33d3Z"><img src="https://i.ibb.co/wL77c7K/Screenshot-2020-04-05-at-21-36-51.png" alt="Screenshot-2020-04-05-at-21-36-51" border="0"></a>
+<a href="https://ibb.co/rt33d3Z"><img src="https://i.ibb.co/wL77c7K/Screenshot-2020-04-05-at-21-36-51.png" alt="Screenshot-2020-04-05-at-21-36-51" border="0"/></a>
 
 We can now **configure** the chosen interface and assing it a name. In my case I had to setup the address of this interface with DHCP.
 
@@ -39,7 +38,7 @@ At the bottom of the page I checked block private and bogus networks, then you c
 We're almost there!  
 We have to **create a multi-gateway** that we'll later use to route our traffic through.
 
-<a href="https://ibb.co/0VXCMSH"><img src="https://i.ibb.co/yBR6y1H/Screenshot-2020-04-05-at-21-38-53.png" alt="Screenshot-2020-04-05-at-21-38-53" border="0"></a>
+<a href="https://ibb.co/0VXCMSH"><img src="https://i.ibb.co/yBR6y1H/Screenshot-2020-04-05-at-21-38-53.png" alt="Screenshot-2020-04-05-at-21-38-53" border="0"/></a>
 
 We need to set a network tier, remember that a **lower** number is **preferred**.  
 If both interfaces share the same network tier, pfSense will balance packets on both of them.  
@@ -60,11 +59,11 @@ Source: Any
 Destination: Any
 ```
 
-<a href="https://ibb.co/fdqV7kv"><img src="https://i.ibb.co/4RKwx8d/Screenshot-2020-04-05-at-21-40-58.png" alt="Screenshot-2020-04-05-at-21-40-58" border="0"></a>
+<a href="https://ibb.co/fdqV7kv"><img src="https://i.ibb.co/4RKwx8d/Screenshot-2020-04-05-at-21-40-58.png" alt="Screenshot-2020-04-05-at-21-40-58" border="0"/></a>
 
 The last thing to do is going to the **advanced** section of our firewall rule and set the **gateway** to the previously created gateway group.
 
-<a href="https://ibb.co/Jy7SPvd"><img src="https://i.ibb.co/Hxz9Qt2/Screenshot-2020-04-05-at-21-41-14.png" alt="Screenshot-2020-04-05-at-21-41-14" border="0"></a>
+<a href="https://ibb.co/Jy7SPvd"><img src="https://i.ibb.co/Hxz9Qt2/Screenshot-2020-04-05-at-21-41-14.png" alt="Screenshot-2020-04-05-at-21-41-14" border="0"/></a>
 
 We're finally done!  
 You can now go and test your load balanced network!

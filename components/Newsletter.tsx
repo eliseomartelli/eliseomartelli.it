@@ -19,7 +19,7 @@ export function Newsletter({ modal }: NewsletterProps): JSX.Element {
         <input
           type="submit"
           value="Subscribe"
-          className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-red-300 px-4 py-1 rounded-md font-bold hover:bg-red-400"
+          className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-red-800 px-4 py-1 text-white rounded-md font-bold hover:bg-red-600"
         />
       </fieldset>
     </form>

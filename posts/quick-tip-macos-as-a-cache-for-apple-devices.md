@@ -1,7 +1,6 @@
 ---
 title: "Quick Tip: macOS as a cache for Apple Devices"
-categories: home_networking
-published: true
+date: "2020-04-09"
 ---
 
 A cache server is a great tool to **speed up** recurring network requests (example: system updates) and reduce the overall used internet bandwidth.

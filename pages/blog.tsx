@@ -2,6 +2,41 @@ import Link from "next/link";
 import Container from "../components/Container";
 import { loadPosts } from "../lib/posts";
 
+import { Post } from "../types/post";
+
+interface BlogProps {
+  posts: Post[];
+}
+
+const Blog = ({ posts }: BlogProps) => {
+  return (
+    <Container customMeta={{ title: "Blog - Eliseo Martelli" }}>
+      <h1>Blog</h1>
+      <ul className="flex flex-col gap-10">
+        {posts.map((post, i) => {
+          return (
+            <li key={i}>
+              <Link href={`/blog/${post.slug}`} passHref>
+                <a>
+                  <h3 className="font-bold text-xl">
+                    {post.frontmatter.title}
+                  </h3>
+                  <p>
+                    {post.frontmatter.date} - ⏱ {post.timeToRead} minutes to
+                    read
+                  </p>
+                  <p className="mt-2">{post.frontmatter.excerpt}</p>
+                </a>
+              </Link>
+            </li>
+          );
+        })}
+        <li></li>
+      </ul>
+    </Container>
+  );
+};
+
 export async function getStaticProps() {
   return {
     props: {
@@ -9,52 +44,5 @@ export async function getStaticProps() {
     },
   };
 }
-
-interface BlogProps {
-  posts: any;
-}
-
-const Blog = ({ posts }: BlogProps) => {
-  return (
-    <Container>
-      <h2 className="text-2xl font-bold">Blog</h2>
-      <ul className="flex flex-col gap-10">
-        {posts.map(
-          (
-            post: {
-              date: string;
-              frontmatter: { title: string };
-              slug: string;
-              timeToRead: number;
-            },
-            i: number
-          ) => {
-            return (
-              <li key={i}>
-                <Link href={`/blog/${post.slug}`} passHref>
-                  <a>
-                    <h3 className="font-bold text-xl">
-                      {post.frontmatter.title}
-                    </h3>
-                    <p></p>
-                    <p className="mt-4">
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}{" "}
-                      - ⏱ {post.timeToRead} minutes to read
-                    </p>
-                  </a>
-                </Link>
-              </li>
-            );
-          }
-        )}
-        <li></li>
-      </ul>
-    </Container>
-  );
-};
 
 export default Blog;

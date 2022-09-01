@@ -1,24 +1,19 @@
-import type { NextPage } from "next";
 import Link from "next/link";
 import Bio from "../components/Bio";
 import Container from "../components/Container";
 import { Newsletter } from "../components/Newsletter";
+import { loadPostsByFile } from "../lib/posts";
+import { Post } from "../types/post";
 
-const Home: NextPage = () => {
+function Home({ featuredPosts }: { featuredPosts: Post[] }) {
   return (
     <Container>
       <Bio />
-      <FeaturedPosts
-        posts={[
-          { title: "Lorem Ipsum dolor sit amet" },
-          { title: "Configuring Nebula, a simple overlay networking tool" },
-          { title: "Wireguard VPN, welcome to the future" },
-        ]}
-      />
+      <FeaturedPosts posts={featuredPosts} />
       <Newsletter />
     </Container>
   );
-};
+}
 
 function FeaturedPosts({ posts }: FeaturedPostsProps): JSX.Element {
   return (
@@ -26,13 +21,17 @@ function FeaturedPosts({ posts }: FeaturedPostsProps): JSX.Element {
       <h2 className="text-2xl font-bold">Featured Posts</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {posts.map((post, key) => (
-          <li
-            key={key}
-            className="bg-gray-50 hover:bg-gray-200 rounded-md p-4 flex flex-col justify-between gap-8 border"
-          >
-            <h3 className="font-semibold">{post.title}</h3>
-            <p>Aug 30, 2022</p>
-          </li>
+          <Link href={`/blog/${post.slug}`} passHref key={key}>
+            <a
+              className="bg-gray-50 hover:bg-gray-200 rounded-md p-4 border"
+              key={key}
+            >
+              <li className="flex flex-col justify-between gap-8 h-full">
+                <h3 className="font-semibold">{post.frontmatter.title}</h3>
+                <p>{post.frontmatter.date}</p>
+              </li>
+            </a>
+          </Link>
         ))}
       </ul>
       <Link href="/blog" passHref>
@@ -44,12 +43,17 @@ function FeaturedPosts({ posts }: FeaturedPostsProps): JSX.Element {
   );
 }
 
-interface FeaturedPostsProps {
-  posts: Post[];
+export async function getStaticProps() {
+  const featured = ["ipados_review.md", "nebula.md", "iot-vlan-edgeos.md"];
+  return {
+    props: {
+      featuredPosts: loadPostsByFile(featured),
+    },
+  };
 }
 
-interface Post {
-  title: string;
+interface FeaturedPostsProps {
+  posts: Post[];
 }
 
 export default Home;

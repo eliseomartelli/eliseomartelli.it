@@ -3,9 +3,9 @@ import { Newsletter as NewsletterComponent } from "../components/Newsletter";
 
 function Newsletter(): JSX.Element {
   return (
-    <Container>
-      <h3 className="font-bold text-3xl">Newsletter</h3>
-      <p>lorem ipsum dolor sit amet</p>
+    <Container customMeta={{ title: "Newsletter - Eliseo Martelli" }}>
+      <h1>Newsletter</h1>
+      <p>Get a behind the scenes look on what I&apos;m building.</p>
       <NewsletterComponent />
     </Container>
   );

@@ -1,17 +1,30 @@
+import Link from "next/link";
+
 export default function Footer(): JSX.Element {
   return (
     <footer className="py-6 bg-gray-100 grow-0">
       <div className="flex max-w-3xl px-4 mx-auto flex-col gap-8">
         <div className="grid grid-cols-2 gap-4">
           <ul className="flex gap-1 flex-col">
-            <li>Newsletter</li>
-            <li>Contact me</li>
-            <li>About</li>
+            <FooterLink name="Newsletter" url="/newsletter" />
+            <FooterLink name="About" url="/about" />
           </ul>
           <ul className="flex gap-1 flex-col">
-            <li>Twitter</li>
-            <li>Instagram</li>
-            <li>GitHub</li>
+            <FooterLink
+              name="Twitter"
+              url="https://twitter.com/eliseomartelli"
+              external
+            />
+            <FooterLink
+              name="Instagram"
+              url="https://instagram.com/eliseomartelli"
+              external
+            />
+            <FooterLink
+              name="GitHub"
+              url="https://github.com/eliseomartelli"
+              external
+            />
           </ul>
         </div>
         <p className="text-sm">
@@ -21,3 +34,25 @@ export default function Footer(): JSX.Element {
     </footer>
   );
 }
+
+interface FooterLinkProps {
+  name: string;
+  url: string;
+  external?: boolean;
+}
+
+const FooterLink = ({ name, url, external }: FooterLinkProps) => {
+  const linkProps = external && {
+    target: "_blank",
+    rel: "noopener noreferrer",
+  };
+  return (
+    <li>
+      <Link href={url} passHref>
+        <a {...linkProps} className="hover:text-gray-600">
+          {name}
+        </a>
+      </Link>
+    </li>
+  );
+};
