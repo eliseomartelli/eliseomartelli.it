@@ -19,7 +19,10 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
   const modal = useContext(ModalContext);
   return (
     <Container
-      customMeta={{ title: `${content.frontmatter?.title} - Eliseo Martelli` }}
+      customMeta={{
+        title: `${content.frontmatter?.title} - Eliseo Martelli`,
+        description: content.frontmatter?.excerpt,
+      }}
     >
       <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
       <article className="prose mx-auto max-w-full">
