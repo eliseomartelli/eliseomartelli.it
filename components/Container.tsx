@@ -31,7 +31,7 @@ export default function Container({
   const router = useRouter();
 
   return (
-    <div className="flex flex-col gap-8 min-h-screen">
+    <div className="flex flex-col gap-8 min-h-screen overflow-x-hidden">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />

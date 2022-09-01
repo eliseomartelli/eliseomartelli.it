@@ -2,6 +2,7 @@ import Link from "next/link";
 import Bio from "../components/Bio";
 import Container from "../components/Container";
 import { Newsletter } from "../components/Newsletter";
+import { featuredPosts } from "../featuredPosts";
 import { loadPostsByFile } from "../lib/posts";
 import { Post } from "../types/post";
 
@@ -41,10 +42,9 @@ function FeaturedPosts({ posts }: FeaturedPostsProps): JSX.Element {
 }
 
 export async function getStaticProps() {
-  const featured = ["ipados_review.md", "nebula.md", "iot-vlan-edgeos.md"];
   return {
     props: {
-      featuredPosts: loadPostsByFile(featured),
+      featuredPosts: loadPostsByFile(featuredPosts),
     },
   };
 }

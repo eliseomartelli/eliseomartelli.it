@@ -8,6 +8,7 @@ import { ModalContext } from "../../providers/Modal";
 import { mdxToHTML } from "../../lib/mdx";
 import { GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
+import Button, { Color } from "../../components/Button";
 
 interface BlogPostProps {
   content: MDXRemoteSerializeResult;
@@ -23,14 +24,15 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
       <article className="prose mx-auto max-w-full">
         <MDXRemote {...content} components={{ Newsletter }} />
       </article>
-      <a
-        className="mt-4 bg-gray-500 hover:bg-gray-800 text-white font-bold px-4 py-2 rounded-md self-end cursor-pointer"
+      <Button
+        className="self-end"
+        color={Color.DarkGray}
         onClick={() => {
           modal.showModal(<Newsletter modal />);
         }}
       >
         Subscribe to the newsletter
-      </a>
+      </Button>
     </Container>
   );
 }

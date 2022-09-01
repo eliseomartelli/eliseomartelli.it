@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
+import Button, { Color } from "../components/Button";
 type ModalContextType = {
   hideModal: () => void;
   showModal: (e: ReactNode) => void;
@@ -29,6 +30,21 @@ export function ModalProvider({
     },
     open: open,
   };
+
+  const escFunction = (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      initialState.hideModal();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, true);
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, true);
+    };
+  }, []);
+
   return (
     <ModalContext.Provider value={initialState}>
       <div
@@ -43,8 +59,9 @@ export function ModalProvider({
           }}
         ></div>
         <div className="relative bg-white p-4 mx-4 w-full max-w-2xl box-content rounded-md shadow-md">
-          <button
-            aria-label="Close modal"
+          <Button
+            color={Color.Transparent}
+            ariaLabel="Close modal"
             className="absolute top-0 right-0 p-4"
             onClick={() => {
               initialState.hideModal();
@@ -64,7 +81,7 @@ export function ModalProvider({
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-          </button>
+          </Button>
           {modal}
         </div>
       </div>

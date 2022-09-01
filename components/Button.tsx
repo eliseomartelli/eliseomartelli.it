@@ -4,16 +4,43 @@ interface ButtonProps {
   children?: ReactNode;
   onClick?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
   ariaLabel?: string;
+  color?: Color;
+  small?: boolean;
+  className?: string;
+  disabled?: boolean;
+}
+
+export enum Color {
+  Transparent,
+  Red,
+  DarkGray,
+  Green,
 }
 
 export default function Button({
   children,
   onClick,
   ariaLabel,
+  color,
+  small,
+  className: passedClassNames,
+  disabled,
 }: ButtonProps): JSX.Element {
+  const className = [
+    "rounded-md transition-colors font-bold",
+    color == Color.Transparent && "hover:bg-gray-200",
+    color == Color.Red &&
+      "text-white bg-red-800 hover:bg-red-600 disabled:bg-gray-500",
+    color == Color.Green && "text-white bg-green-800 hover:bg-green-600",
+    color == Color.DarkGray && "text-white bg-gray-500 hover:bg-gray-800",
+    small ? "px-4 py-1" : "py-2 px-4",
+    passedClassNames,
+  ].join(" ");
+
   return (
     <button
-      className="hover:bg-gray-200 py-2 px-4 rounded-md transition-colors"
+      disabled={disabled}
+      className={className}
       onClick={onClick}
       aria-label={ariaLabel}
     >
