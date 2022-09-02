@@ -18,9 +18,9 @@ const Blog = ({ posts }: BlogProps) => {
             <li key={i}>
               <Link href={`/blog/${post.slug}`} passHref>
                 <a>
-                  <h3 className="font-bold text-xl">
+                  <h2 className="font-bold text-xl">
                     {post.frontmatter.title}
-                  </h3>
+                  </h2>
                   <p>
                     {post.frontmatter.date} - ⏱ {post.timeToRead} minutes to
                     read
@@ -31,7 +31,6 @@ const Blog = ({ posts }: BlogProps) => {
             </li>
           );
         })}
-        <li></li>
       </ul>
     </Container>
   );
