@@ -14,7 +14,7 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
   posts.forEach((post) => {
     feed.item({
       title: post.frontmatter.title,
-      url: `https://eliseomartelli.it/${post.slug}`,
+      url: `https://eliseomartelli.it/blog/${post.slug}`,
       date: post.frontmatter.date,
       description: post.frontmatter.excerpt!,
     });
