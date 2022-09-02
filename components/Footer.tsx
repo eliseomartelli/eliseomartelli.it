@@ -8,6 +8,7 @@ export default function Footer(): JSX.Element {
           <ul className="flex gap-1 flex-col">
             <FooterLink name="Newsletter" url="/newsletter" />
             <FooterLink name="About" url="/about" />
+            <FooterLink name="RSS Feed" url="/feed.xml" external />
           </ul>
           <ul className="flex gap-1 flex-col">
             <FooterLink
