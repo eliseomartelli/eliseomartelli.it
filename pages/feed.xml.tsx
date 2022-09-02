@@ -16,7 +16,7 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
       title: post.frontmatter.title,
       url: `https://eliseomartelli.it/${post.slug}`,
       date: post.frontmatter.date,
-      description: post.frontmatter.excerpt,
+      description: post.frontmatter.excerpt!,
     });
   });
 
