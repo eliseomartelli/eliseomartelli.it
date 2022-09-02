@@ -22,6 +22,8 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
       customMeta={{
         title: `${content.frontmatter?.title} - Eliseo Martelli`,
         description: content.frontmatter?.excerpt,
+        image: content.frontmatter?.previewImgUrl,
+        date: content.frontmatter?.date,
       }}
     >
       <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
