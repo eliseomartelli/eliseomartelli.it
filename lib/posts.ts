@@ -33,7 +33,7 @@ export function loadPostsByFile(fileNames: string[]): Post[] {
 
 const WPM_READ = 200;
 
-const timeToRead = (content: string): string => {
+export const timeToRead = (content: string): string => {
   return Math.round(content.split(" ").length / WPM_READ).toString();
 };
 
