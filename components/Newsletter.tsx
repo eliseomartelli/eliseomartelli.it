@@ -67,7 +67,7 @@ export function Newsletter({ modal: isModal }: NewsletterProps): JSX.Element {
           <input
             type="email"
             placeholder="john@apple.com"
-            className="px-4 py-2 border rounded-md w-full"
+            className="px-4 py-2 border rounded-md w-full pr-32"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></input>
