@@ -26,6 +26,7 @@ export default function Container({
     description:
       "Software developer, technology enthusiast, and photography lover.",
     type: "website",
+    image: "https://eliseomartelli.it/sitecard.png",
     ...customMeta,
   };
   const router = useRouter();
