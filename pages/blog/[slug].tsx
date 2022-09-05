@@ -1,10 +1,9 @@
 import fs from "fs";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { useContext } from "react";
 import Container from "../../components/Container";
 import { Newsletter } from "../../components/Newsletter";
 import { loadPostSlugs } from "../../lib/posts";
-import { ModalContext } from "../../providers/Modal";
+import { useModal } from "../../providers/Modal";
 import { mdxToHTML } from "../../lib/mdx";
 import { GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
@@ -15,8 +14,10 @@ interface BlogPostProps {
   content: MDXRemoteSerializeResult;
 }
 
+const components = {};
+
 export default function BlogPost({ content }: BlogPostProps): JSX.Element {
-  const modal = useContext(ModalContext);
+  const { showModal } = useModal();
   return (
     <Container
       customMeta={{
@@ -31,13 +32,13 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
         <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
       </div>
       <article className="prose mx-auto w-full max-w-full prose-img:mx-auto">
-        <MDXRemote {...content} components={{ Newsletter }} />
+        <MDXRemote {...content} components={components} />
       </article>
       <Button
         className="self-end"
         color={Color.DarkGray}
         onClick={() => {
-          modal.showModal(<Newsletter modal />);
+          showModal(<Newsletter modal />);
         }}
       >
         Subscribe to the newsletter

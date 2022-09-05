@@ -1,5 +1,5 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
-import { ModalContext } from "../providers/Modal";
+import { FormEvent, useEffect, useState } from "react";
+import { useModal } from "../providers/Modal";
 import Button, { Color } from "./Button";
 import LoadingSpinner from "./LoadingSpinner";
 
@@ -14,7 +14,7 @@ enum FormState {
 }
 
 export function Newsletter({ modal: isModal }: NewsletterProps): JSX.Element {
-  const modal = useContext(ModalContext);
+  const { hideModal } = useModal();
 
   const [state, setState] = useState<FormState>(FormState.Initial);
 
@@ -49,7 +49,7 @@ export function Newsletter({ modal: isModal }: NewsletterProps): JSX.Element {
     }
     setState(FormState.Success);
     setTimeout(() => {
-      modal.hideModal();
+      hideModal();
     }, 1500);
   }
 

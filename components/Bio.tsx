@@ -1,10 +1,10 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
-import { ModalContext } from "../providers/Modal";
+import { FormEvent, useEffect, useState } from "react";
+import { useModal } from "../providers/Modal";
 import Button, { Color } from "./Button";
 import LoadingSpinner from "./LoadingSpinner";
 
 export default function Bio(): JSX.Element {
-  const modal = useContext(ModalContext);
+  const { showModal } = useModal();
 
   return (
     <div className="flex sm:flex-row flex-col-reverse sm:items-center w-full gap-6 my-6">
@@ -18,7 +18,7 @@ export default function Bio(): JSX.Element {
           className="mt-4"
           color={Color.Red}
           onClick={() => {
-            modal.showModal(<ContactModal />);
+            showModal(<ContactModal />);
           }}
         >
           Get in touch
@@ -53,7 +53,7 @@ enum FormState {
 }
 
 function ContactModal(): JSX.Element {
-  const modal = useContext(ModalContext);
+  const { hideModal } = useModal();
   const [state, setState] = useState<FormState>(FormState.Initial);
 
   const [name, setName] = useState("");
@@ -92,7 +92,7 @@ function ContactModal(): JSX.Element {
     }
     setState(FormState.Success);
     setTimeout(() => {
-      modal.hideModal();
+      hideModal();
     }, 1500);
   }
 

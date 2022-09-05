@@ -3,14 +3,14 @@ import Link from "next/link";
 export default function Footer(): JSX.Element {
   return (
     <footer className="py-6 bg-gray-100 grow-0">
-      <div className="flex max-w-3xl px-4 mx-auto flex-col gap-8">
+      <div className="flex max-w-3xl px-6 mx-auto flex-col gap-8">
         <div className="grid grid-cols-2 gap-4">
-          <ul className="flex gap-1 flex-col">
+          <ul className="flex gap-2 flex-col">
             <FooterLink name="Newsletter" url="/newsletter" />
             <FooterLink name="About" url="/about" />
             <FooterLink name="RSS Feed" url="/feed.xml" external />
           </ul>
-          <ul className="flex gap-1 flex-col">
+          <ul className="flex gap-2 flex-col">
             <FooterLink
               name="Twitter"
               url="https://twitter.com/eliseomartelli"
@@ -50,7 +50,7 @@ const FooterLink = ({ name, url, external }: FooterLinkProps) => {
   return (
     <li>
       <Link href={url} passHref>
-        <a {...linkProps} className="hover:text-gray-600">
+        <a {...linkProps} className="hover:text-gray-600 py-2">
           {name}
         </a>
       </Link>

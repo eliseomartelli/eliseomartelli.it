@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import Button, { Color } from "../components/Button";
 type ModalContextType = {
   hideModal: () => void;
@@ -89,3 +95,5 @@ export function ModalProvider({
     </ModalContext.Provider>
   );
 }
+
+export const useModal = (): ModalContextType => useContext(ModalContext);
