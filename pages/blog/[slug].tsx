@@ -9,6 +9,7 @@ import { GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Button, { Color } from "../../components/Button";
 import path from "path";
+import { useRouter } from "next/router";
 
 interface BlogPostProps {
   content: MDXRemoteSerializeResult;
@@ -18,6 +19,7 @@ const components = {};
 
 export default function BlogPost({ content }: BlogPostProps): JSX.Element {
   const { showModal } = useModal();
+  const { asPath } = useRouter();
   return (
     <Container
       customMeta={{
@@ -34,15 +36,26 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
       <article className="prose mx-auto w-full max-w-full prose-img:mx-auto">
         <MDXRemote {...content} components={components} />
       </article>
-      <Button
-        className="self-end"
-        color={Color.DarkGray}
-        onClick={() => {
-          showModal(<Newsletter modal />);
-        }}
-      >
-        Subscribe to the newsletter
-      </Button>
+      <div className="flex gap-2">
+        <a
+          href={`https://twitter.com/search?q=${
+            "https://eliseomartelli.it" + asPath
+          }&f=live`}
+        >
+          <Button className="self-end" color={Color.Sky}>
+            Discuss on Twitter
+          </Button>
+        </a>
+        <Button
+          className="self-end"
+          color={Color.DarkGray}
+          onClick={() => {
+            showModal(<Newsletter modal />);
+          }}
+        >
+          Subscribe to the newsletter
+        </Button>
+      </div>
     </Container>
   );
 }

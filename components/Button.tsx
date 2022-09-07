@@ -15,6 +15,7 @@ export enum Color {
   Red,
   DarkGray,
   Green,
+  Sky,
 }
 
 export default function Button({
@@ -33,6 +34,7 @@ export default function Button({
       "text-white bg-red-800 hover:bg-red-600 disabled:bg-gray-500",
     color == Color.Green && "text-white bg-green-800 hover:bg-green-600",
     color == Color.DarkGray && "text-white bg-gray-500 hover:bg-gray-800",
+    color == Color.Sky && "text-white bg-sky-500 hover:bg-sky-800",
     small ? "px-4 py-1" : "py-2 px-4",
     passedClassNames,
   ].join(" ");
