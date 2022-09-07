@@ -10,12 +10,13 @@ import { ParsedUrlQuery } from "querystring";
 import Button, { Color } from "../../components/Button";
 import path from "path";
 import { useRouter } from "next/router";
+import HighlightBox from "../../components/HighlightBox";
 
 interface BlogPostProps {
   content: MDXRemoteSerializeResult;
 }
 
-const components = {};
+const components = { HighlightBox };
 
 export default function BlogPost({ content }: BlogPostProps): JSX.Element {
   const { showModal } = useModal();
@@ -33,7 +34,7 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
         <p className="mb-2">{content.frontmatter?.date}</p>
         <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
       </div>
-      <article className="prose mx-auto w-full max-w-full prose-img:mx-auto">
+      <article className="prose mx-auto w-full max-w-full">
         <MDXRemote {...content} components={components} />
       </article>
       <div className="flex gap-2">
