@@ -10,11 +10,11 @@ export default function HighlightBox({
   color,
 }: HighlightBoxProps): JSX.Element {
   const classNames = [
-    "text-white w-screen block relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] text-4xl md:text-6xl font-extrabold",
+    "w-screen block relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] text-5xl md:text-6xl font-extrabold",
     color == "black" && "bg-black",
     color == "pink" && "bg-pink-700",
     color == "slate" && "bg-slate-800",
-    color == "sky" && "bg-sky-800",
+    color == "sky" && "bg-sky-900",
   ].join(" ");
   const [clientHeight, setClientHeight] = useState(0);
   const [offsetTop, setOffsetTop] = useState(0);
@@ -47,7 +47,7 @@ export default function HighlightBox({
           <span
             key={i}
             className={`${
-              i < index ? "text-white" : "text-white/40"
+              i < index ? "text-white" : "text-white/25"
             } transition-colors`}
           >
             {part}{" "}
