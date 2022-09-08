@@ -2,7 +2,7 @@
 title: "Far out: what's new in Apple hardware?"
 date: "2022-09-07"
 excerpt: Discover what's new in Apple hardware after the September 2022 event
-previewImgUrl: https://eliseomartelli/posts/apple-event-september2022/cover.jpg
+previewImgUrl: https://eliseomartelli.it/posts/apple-event-september2022/cover.jpg
 ---
 
 ![Apple Far Out event cover](/posts/apple-event-september2022/cover.jpg)
