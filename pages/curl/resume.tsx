@@ -14,7 +14,7 @@ export async function getServerSideProps({
   req,
 }: GetServerSidePropsContext) {
   if (!req.headers["user-agent"]?.includes("curl")) {
-    res.writeHead(301, { Location: "/blog" });
+    res.writeHead(301, { Location: "/about" });
   }
   res.setHeader("Content-Type", "text");
   res.setHeader(
