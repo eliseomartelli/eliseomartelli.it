@@ -28,12 +28,9 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
 
   res.write(feed.xml({ indent: true }));
   res.end();
-
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
-export default function RSSFeed() {
+export default function _() {
   return null;
 }

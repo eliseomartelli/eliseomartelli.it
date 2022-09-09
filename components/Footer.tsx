@@ -9,6 +9,7 @@ export default function Footer(): JSX.Element {
             <FooterLink name="Newsletter" url="/newsletter" />
             <FooterLink name="About" url="/about" />
             <FooterLink name="RSS Feed" url="/feed.xml" external />
+            <FooterLink name="PGP Key" url="/pubkey.pgp" external />
           </ul>
           <ul className="flex gap-2 flex-col">
             <FooterLink
