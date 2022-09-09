@@ -1,18 +1,13 @@
 import { GetServerSidePropsContext } from "next";
-
-export const RESET = "\x1b[0m";
-export const BOLD = "\x1b[1m";
-export const ITALIC = "\x1b[3m";
-export const UNDERLINE = "\x1b[4m";
-export const CYAN = "\x1b[38;5;36m";
-export const HIGHLIGHT = "\x1b[48;5;124m\x1b[38;5;15m";
+import { BOLD, RESET } from "../../lib/cli/colors";
+import { page } from "../../lib/cli/page";
 
 export async function getServerSideProps({
   res,
   req,
 }: GetServerSidePropsContext) {
   if (!req.headers["user-agent"]?.includes("curl")) {
-    res.writeHead(301, { Location: "/" });
+    res.writeHead(301, { Location: "/about" });
   }
   res.setHeader("Content-Type", "text");
   res.setHeader(
@@ -20,31 +15,27 @@ export async function getServerSideProps({
     "public, s-maxage=1200, stale-while-revalidate=600"
   );
 
-  const response = `
-${BOLD + HIGHLIGHT} Eliseo Martelli ${RESET}
-
+  const content = `
 Freelance software developer from Italy.
 Helping people build modern & compelling digital experiences.
 
-${HIGHLIGHT + BOLD} Contact me ${RESET}
+${BOLD}Contact me${RESET}
 
 mail: me@eliseomartelli.it
 
-${HIGHLIGHT + BOLD} Other pages ${RESET}
+${BOLD}Other pages${RESET}
 
  - https://eliseomartelli.it/curl/blog
  - https://eliseomartelli.it/curl/resume
-${RESET}
+
+${BOLD}PGP KEY${RESET}: https://eliseomartelli.it/pubkey.pgp
 `;
 
-  res.write(response);
+  res.write(page(content));
   res.end();
-
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
-export default function RSSFeed() {
+export default function _() {
   return null;
 }

@@ -4,14 +4,13 @@ import { loadPostSlugs } from "../lib/posts";
 const createSitemap = (
   slugs: string[]
 ) => `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	${slugs
-    .map((slug) => {
-      return `<url><loc>${`https://eliseomartelli.it/${slug}`}</loc></url>`;
-    })
-    .join("")}
-    </urlset>
-`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${slugs
+  .map((slug) => {
+    return `<url><loc>${`https://eliseomartelli.it/${slug}`}</loc></url>`;
+  })
+  .join("")}
+</urlset>`;
 
 export async function getServerSideProps({ res }: GetServerSidePropsContext) {
   const allPosts = loadPostSlugs();
@@ -31,11 +30,9 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
   res.write(createSitemap(pages));
   res.end();
 
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
-export default function Sitemap() {
+export default function _() {
   return null;
 }

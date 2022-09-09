@@ -1,12 +1,13 @@
 import { GetServerSidePropsContext } from "next";
-import { BOLD, HIGHLIGHT, ITALIC, RESET } from ".";
+import { BOLD, ITALIC, RESET } from "../../lib/cli/colors";
+import { page } from "../../lib/cli/page";
 import { studies, TimelineElementProps, workExperiences } from "../about";
 
 const buildExperienceString = (experience: TimelineElementProps) =>
-  ` - ${experience.from} - ${experience.to}
+  `
+ - ${experience.from} - ${experience.to}
    ${BOLD}${experience.what}${RESET}
    ${ITALIC}${experience.where}${RESET}
-${RESET}
 `;
 
 export async function getServerSideProps({
@@ -24,31 +25,25 @@ export async function getServerSideProps({
 
   const workString = workExperiences
     .map((work) => buildExperienceString(work))
-    .reduce((prev, curr) => prev + curr);
+    .join("");
 
   const studiesString = studies
     .map((work) => buildExperienceString(work))
-    .reduce((prev, curr) => prev + curr);
+    .join("");
 
-  const response = `
-Eliseo Martelli ${RESET}${HIGHLIGHT} Resumé ${RESET}
-
+  const content = `
 ${BOLD}Work Experience${RESET}
-
 ${workString}
+
 ${BOLD}Studies${RESET}
-
 ${studiesString}
-${RESET}`;
+`;
 
-  res.write(response);
+  res.write(page(content, "Resumé"));
   res.end();
-
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
-export default function RSSFeed() {
+export default function _() {
   return null;
 }

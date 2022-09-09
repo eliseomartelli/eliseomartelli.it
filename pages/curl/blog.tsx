@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext } from "next";
-import { BOLD, CYAN, HIGHLIGHT, ITALIC, RESET, UNDERLINE } from ".";
+import { BOLD, CYAN, ITALIC, RESET, UNDERLINE } from "../../lib/cli/colors";
+import { page } from "../../lib/cli/page";
 import { loadPosts } from "../../lib/posts";
 
 export async function getServerSideProps({
@@ -8,6 +9,7 @@ export async function getServerSideProps({
 }: GetServerSidePropsContext) {
   if (!req.headers["user-agent"]?.includes("curl")) {
     res.writeHead(301, { Location: "/blog" });
+    return;
   }
   res.setHeader("Content-Type", "text");
   res.setHeader(
@@ -27,21 +29,12 @@ export async function getServerSideProps({
     })
     .reduce((prev, curr) => prev + curr);
 
-  const response = `
-Eliseo Martelli ${RESET}${HIGHLIGHT} Blog ${RESET}
-
-${posts}
-${RESET}
-`;
-
-  res.write(response);
+  res.write(page(posts, "Blog"));
   res.end();
 
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
-export default function RSSFeed() {
+export default function _() {
   return null;
 }
