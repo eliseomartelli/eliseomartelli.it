@@ -2,7 +2,13 @@ import { GetServerSidePropsContext } from "next";
 import { BOLD, CYAN, HIGHLIGHT, ITALIC, RESET, UNDERLINE } from ".";
 import { loadPosts } from "../../lib/posts";
 
-export async function getServerSideProps({ res }: GetServerSidePropsContext) {
+export async function getServerSideProps({
+  res,
+  req,
+}: GetServerSidePropsContext) {
+  if (!req.headers["user-agent"]?.includes("curl")) {
+    res.writeHead(301, { Location: "/blog" });
+  }
   res.setHeader("Content-Type", "text");
   res.setHeader(
     "Cache-Control",
@@ -12,9 +18,9 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
   const posts = loadPosts()
     .map((post) => {
       return `
-- ${ITALIC}${post.frontmatter.date}${RESET}
-  ${BOLD}${post.frontmatter.title}${RESET}
-  ${ITALIC + UNDERLINE + CYAN}${
+ - ${ITALIC}${post.frontmatter.date}${RESET}
+   ${BOLD}${post.frontmatter.title}${RESET}
+   ${ITALIC + UNDERLINE + CYAN}${
         "https://eliseomartelli.it/blog/" + post.slug
       }${RESET}
 `;
@@ -25,7 +31,7 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
 Eliseo Martelli ${RESET}${HIGHLIGHT} Blog ${RESET}
 
 ${posts}
-
+${RESET}
 `;
 
   res.write(response);

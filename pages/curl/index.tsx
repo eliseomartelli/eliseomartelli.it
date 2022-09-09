@@ -7,7 +7,13 @@ export const UNDERLINE = "\x1b[4m";
 export const CYAN = "\x1b[38;5;36m";
 export const HIGHLIGHT = "\x1b[48;5;124m\x1b[38;5;15m";
 
-export async function getServerSideProps({ res }: GetServerSidePropsContext) {
+export async function getServerSideProps({
+  res,
+  req,
+}: GetServerSidePropsContext) {
+  if (!req.headers["user-agent"]?.includes("curl")) {
+    res.writeHead(301, { Location: "/" });
+  }
   res.setHeader("Content-Type", "text");
   res.setHeader(
     "Cache-Control",
@@ -26,8 +32,9 @@ mail: me@eliseomartelli.it
 
 ${HIGHLIGHT + BOLD} Other pages ${RESET}
 
-- https://eliseomartelli.it/curl/blog
-
+ - https://eliseomartelli.it/curl/blog
+ - https://eliseomartelli.it/curl/resume
+${RESET}
 `;
 
   res.write(response);

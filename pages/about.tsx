@@ -48,41 +48,17 @@ export default function About(): JSX.Element {
         <h3 className="text-xl font-bold">Work</h3>
         <div className="pl-2">
           <ul className="border-l border-gray-800 relative flex flex-col gap-4 mb-8 list-none p-0 m-0 not-prose">
-            <TimelineElement
-              from="2017"
-              to="2018"
-              what="Network Technician"
-              where="Dedalonet S.r.l, Lanciano, Italy"
-            />
-            <TimelineElement
-              from="2013"
-              to="2017"
-              what="Android Developer"
-              where="~1M downloads on Google Play Store"
-            />
-            <TimelineElement
-              from="2011"
-              to="Ongoing"
-              what="Freelance Software Developer"
-              where="Client projects ranging from websites to hardware devices"
-            />
+            {workExperiences.map((work, i) => (
+              <TimelineElement {...work} key={i} />
+            ))}
           </ul>
         </div>
         <h3 className="text-xl font-bold">Studies</h3>
         <div className="pl-2">
           <ul className="border-l border-gray-800 relative flex flex-col gap-4 not-prose list-none p-0">
-            <TimelineElement
-              from="2019"
-              to="Ongoing"
-              what="Computer Science Bachelor Degree"
-              where="Università degli Studi di Torino, Turin, Italy"
-            />
-            <TimelineElement
-              from="2012"
-              to="2017"
-              what="Telecomunications and Computer Science Degree"
-              where="IIS Da Vinci-De Giorgio, Lanciano, Italy"
-            />
+            {studies.map((work, i) => (
+              <TimelineElement {...work} key={i} />
+            ))}
           </ul>
         </div>
       </article>
@@ -90,12 +66,49 @@ export default function About(): JSX.Element {
   );
 }
 
-interface TimelineElementProps {
+export interface TimelineElementProps {
   from: string;
   to: string;
   what: string;
   where: string;
+  key?: number;
 }
+
+export const workExperiences: TimelineElementProps[] = [
+  {
+    from: "2017",
+    to: "2018",
+    what: "Network Technician",
+    where: "Dedalonet S.r.l, Lanciano, Italy",
+  },
+  {
+    from: "2013",
+    to: "2017",
+    what: "Android Developer",
+    where: "~1M downloads on Google Play Store",
+  },
+  {
+    from: "2011",
+    to: "Ongoing",
+    what: "Freelance Software Developer",
+    where: "Client projects ranging from websites to hardware devices",
+  },
+];
+
+export const studies: TimelineElementProps[] = [
+  {
+    from: "2019",
+    to: "Ongoing",
+    what: "Computer Science Bachelor Degree",
+    where: "Università degli Studi di Torino, Turin, Italy",
+  },
+  {
+    from: "2012",
+    to: "2017",
+    what: "Telecomunications and Computer Science Degree",
+    where: "IIS Da Vinci-De Giorgio, Lanciano, Italy",
+  },
+];
 
 function TimelineElement({
   from,
