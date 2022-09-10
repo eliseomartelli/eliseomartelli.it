@@ -19,8 +19,7 @@ export async function getServerSideProps({ res }: GetServerSidePropsContext) {
 
   await Promise.all(
     posts.map(async (post) => {
-      post.slug += ".md";
-      const filePath = path.join("posts", post.slug);
+      const filePath = path.join("posts", post.slug + ".md");
       const file = fs.readFileSync(filePath, "utf-8");
 
       const { html } = await mdxToHTML(file);
