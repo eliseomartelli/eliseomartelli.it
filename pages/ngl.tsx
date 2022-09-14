@@ -48,7 +48,7 @@ ${message}`,
   }
 
   return (
-    <Container>
+    <Container customMeta={{ title: "NGL - Eliseo Martelli" }}>
       <form
         className="max-w-md w-full mx-auto flex flex-col gap-4"
         onSubmit={formSubmission}
