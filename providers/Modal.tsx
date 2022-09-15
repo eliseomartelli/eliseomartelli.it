@@ -39,6 +39,15 @@ export function ModalProvider({
     open: open,
   };
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.offsetWidth;
+    body!.style.overflow = open ? "hidden" : "auto";
+    body!.style.paddingRight = open ? 2 * scrollbarWidth + "px" : "";
+    body!.style.marginRight = open ? -scrollbarWidth + "px" : "";
+  }, [open]);
+
   const escFunction = (event: KeyboardEvent) => {
     if (event.key === "Escape") {
       initialState.hideModal();
@@ -87,7 +96,7 @@ export function ModalProvider({
   return (
     <ModalContext.Provider value={initialState}>
       <div
-        className={`bg-black/80 backdrop-blur-sm fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center z-10 ${
+        className={`bg-black/80 backdrop-blur-md fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center z-10 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         } transition-opacity`}
       >
