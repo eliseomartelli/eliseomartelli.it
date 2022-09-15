@@ -1,5 +1,6 @@
 import {
   createContext,
+  createRef,
   ReactNode,
   useContext,
   useEffect,
@@ -25,6 +26,7 @@ export function ModalProvider({
 }): JSX.Element {
   const [open, setOpen] = useState<boolean>(false);
   const [modal, setModal] = useState<ReactNode>();
+  const modalRef = createRef<HTMLDivElement>();
   const initialState: ModalContextType = {
     hideModal: () => {
       setOpen(false);
@@ -41,20 +43,51 @@ export function ModalProvider({
     if (event.key === "Escape") {
       initialState.hideModal();
     }
+    if (event.key === "Tab") {
+      const focusableElements = Array.from(
+        (modalRef.current as Element).querySelectorAll(
+          "a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled])"
+        )
+      );
+      const first = focusableElements[0] as HTMLElement;
+      var last = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      if (!focusableElements.includes(document.activeElement!)) {
+        if (event.shiftKey) {
+          last.focus();
+        } else {
+          first.focus();
+        }
+        return event.preventDefault();
+      }
+
+      if (event.shiftKey && document.activeElement === first) {
+        last.focus();
+        return event.preventDefault();
+      }
+      if (!event.shiftKey && document.activeElement === last) {
+        first.focus();
+        return event.preventDefault();
+      }
+    }
   };
 
   useEffect(() => {
-    document.addEventListener("keydown", escFunction, true);
+    if (open) {
+      document.addEventListener("keydown", escFunction, true);
+    } else {
+      document.removeEventListener("keydown", escFunction, true);
+    }
 
     return () => {
       document.removeEventListener("keydown", escFunction, true);
     };
-  }, []);
+  }, [open]);
 
   return (
     <ModalContext.Provider value={initialState}>
       <div
-        className={`bg-black/75 fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center z-10 ${
+        className={`bg-black/80 backdrop-blur-sm fixed top-0 left-0 bottom-0 right-0 w-full h-full flex justify-center items-center z-10 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         } transition-opacity`}
       >
@@ -64,7 +97,12 @@ export function ModalProvider({
             initialState.hideModal();
           }}
         ></div>
-        <div className="relative bg-white p-4 mx-4 w-full max-w-2xl box-content rounded-md shadow-md">
+        <div
+          className="relative bg-white p-4 mx-4 w-full max-w-2xl box-content rounded-md shadow-md"
+          role="dialog"
+          aria-modal="true"
+          ref={modalRef}
+        >
           <Button
             color={Color.Transparent}
             ariaLabel="Close modal"
