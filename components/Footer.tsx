@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="py-6 bg-gray-100 grow-0">
+    <footer className="py-6 bg-gray-100 grow-0 print:hidden">
       <div className="flex max-w-3xl px-6 mx-auto flex-col gap-8">
         <div className="grid grid-cols-2 gap-4">
           <ul className="flex gap-2 flex-col">

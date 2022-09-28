@@ -31,13 +31,16 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
       }}
     >
       <div>
+        <p className="hidden print:block text-xs">
+          From Eliseo Martelli - https://eliseomartelli.it
+        </p>
         <p className="mb-2">{content.frontmatter?.date}</p>
         <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
       </div>
       <article className="prose mx-auto w-full max-w-full">
         <MDXRemote {...content} components={components} />
       </article>
-      <div className="flex gap-2">
+      <div className="flex gap-2 print:hidden">
         <a
           href={`https://twitter.com/search?q=${
             "https://eliseomartelli.it" + asPath
