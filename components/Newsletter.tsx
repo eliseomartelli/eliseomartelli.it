@@ -18,8 +18,8 @@ export function Newsletter({ modal: isModal }: NewsletterProps): JSX.Element {
 
   const [state, setState] = useState<FormState>(FormState.Initial);
 
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     if (state != FormState.Initial) {

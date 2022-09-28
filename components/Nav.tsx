@@ -24,7 +24,7 @@ function NavButton({ title, href }: NavButtonProps): JSX.Element {
 
 export default function Nav(): JSX.Element {
   return (
-    <nav>
+    <nav className="print:hidden">
       <a
         href="#skip"
         className="absolute p-8 opacity-100 focus:opacity-100 bg-gray-800 text-white -top-24 focus:top-0"
