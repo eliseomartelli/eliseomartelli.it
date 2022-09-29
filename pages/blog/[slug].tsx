@@ -37,7 +37,7 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
         <p className="mb-2">{content.frontmatter?.date}</p>
         <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
       </div>
-      <article className="prose mx-auto w-full max-w-full">
+      <article className="prose mx-auto w-full max-w-full prose-img:mx-auto">
         <MDXRemote {...content} components={components} />
       </article>
       <div className="flex gap-2 print:hidden">
