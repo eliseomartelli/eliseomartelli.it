@@ -1,7 +1,7 @@
 ---
-title: "IDK"
+title: OSPF over Wireguard with VyOS
 date: "2022-09-28"
-excerpt: Static routes out, OSPF in
+excerpt: Avoiding static routes because I'm lazy and I wanted to lab a bit
 ---
 
 My home network is getting another friend, and I wanted to share the experience of setting everything up with you.  
@@ -23,7 +23,7 @@ It looks like the perfect candidate for our purposes. Another option we could us
 
 The network has three routers in three different sites, connected with Wireguard over the internet. Each router connects to several networks. Only a subset of these networks should be advertised to other routers.
 
-diagram here.
+![Network diagram](/posts/vyos-ospf-wireguard/netdiag1.svg)
 
 ## Preparation
 
@@ -123,13 +123,30 @@ I'm not covering how to set up your firewall here since your configuration might
 
 ## Let's check if everything is in its place
 
-We have to check:
+At this point, everything should be working.  
+Let's check:
 
-TODO
+1. if the neighboring relationships are getting formed;
+2. if the link-state database is getting populated;
+3. if routes are getting injected into the routing table.
 
-1. if neighbor relationships are formed;
-2. link state database (show IP OSPF database);
-3. routes are injected in the routing table.
+### Neighboring relationships
+
+```
+rtr-01 $ show ip ospf neighbor
+```
+
+### Link-state database
+
+```
+rtr-01 $ show ip ospf database
+```
+
+### Routes
+
+```
+rtr-01 $ show ip route ospf
+```
 
 ## Filtering routes
 
@@ -158,11 +175,42 @@ rtr-01 # commit; save; exit
 
 ## Bonus: (s)NAT
 
-TODO
+Let's say you want to access a web server that sits in a network redistributed by `rtr-02` from a client in a network attached to `rtr-01`, but we configured this router to don't redistribute that network.
+In this case, SNAT is our friend. We are going to translate the source address of our client to the address of the interface connected to `rtr-02`.
+
+![Network diagram](/posts/vyos-ospf-wireguard/netdiag2.svg)
+
+Let's add this NAT rule to `rtr-01`.
+
+```
+rtr-01 $ configure
+rtr-01 # edit nat source
+rtr-01 # set rule 100 outbound-interface wg01
+rtr-01 # set rule 100 source address 192.168.16.0/24 # Change with your network.
+rtr-01 # commit; save; exit
+```
 
 ## Final checks
 
-TODO
+### Neighboring relationships
+
+```
+rtr-01 $ show ip ospf neighbor
+```
+
+### Link-state database
+
+```
+rtr-01 $ show ip ospf database
+```
+
+### Routes
+
+```
+rtr-01 $ show ip route ospf
+```
+
+You can see that the link state database and, consequently, the routing table are leaner than before since we have fewer routes advertised between our routers.
 
 ## Conclusion
 
