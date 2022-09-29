@@ -2,6 +2,7 @@
 title: OSPF over Wireguard with VyOS
 date: "2022-09-29"
 excerpt: Avoiding static routes because I'm lazy and I wanted to lab a bit
+previewImgUrl: "https://eliseomartelli.it/posts/vyos-ospf-wireguard/social.png"
 ---
 
 My home network is getting another friend, and I wanted to share the experience of setting everything up with you.  
