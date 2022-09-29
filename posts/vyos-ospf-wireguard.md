@@ -1,6 +1,6 @@
 ---
 title: OSPF over Wireguard with VyOS
-date: "2022-09-28"
+date: "2022-09-29"
 excerpt: Avoiding static routes because I'm lazy and I wanted to lab a bit
 ---
 
