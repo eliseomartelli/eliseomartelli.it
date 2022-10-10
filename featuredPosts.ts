@@ -1,5 +1,5 @@
 export const featuredPosts = [
-  "ipados_review.md",
+  "vyos-ospf-wireguard.md",
   "nebula.md",
   "pfSense_multiple_wan.md",
 ];
