@@ -1,4 +1,5 @@
 import Container from "../components/Container";
+import { socials } from "../socials";
 
 export default function About(): JSX.Element {
   return (
@@ -7,43 +8,13 @@ export default function About(): JSX.Element {
       <article className="prose">
         <h3>Links</h3>
         <ul>
-          <li>
-            <a
-              href="https://twitter.com/eliseomartelli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://instagram.com/eliseomartelli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/eliseomartelli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            E-mail:{" "}
-            <a
-              href="mailto:me@eliseomartelli.it"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              me@eliseomartelli.it
-            </a>
-          </li>
+          {socials.map((e, i) => (
+            <li key={i}>
+              <a href={e.url} target="_blank" rel="noopener noreferrer">
+                {e.name}
+              </a>
+            </li>
+          ))}
         </ul>
         <h3 className="text-xl font-bold">Work</h3>
         <div className="pl-2">
