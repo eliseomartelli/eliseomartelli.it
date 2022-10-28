@@ -14,7 +14,7 @@ export default function Socials(): JSX.Element {
         <ul>
           {socials.map((e, i) => (
             <li key={i}>
-              <a href={e.url} target="_blank" rel="noopener noreferrer">
+              <a href={e.url} target="_blank" rel="noopener noreferrer me">
                 {e.name}
               </a>
             </li>
