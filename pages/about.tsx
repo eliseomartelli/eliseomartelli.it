@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "../components/Container";
 import { socials } from "../socials";
 
@@ -6,7 +7,9 @@ export default function About(): JSX.Element {
     <Container customMeta={{ title: "About - Eliseo Martelli" }}>
       <h1>About</h1>
       <article className="prose">
-        <h3>Links</h3>
+        <Link href="/socials">
+          <h3 className="hover:cursor-pointer">Socials and contacts</h3>
+        </Link>
         <ul>
           {socials.map((e, i) => (
             <li key={i}>
@@ -16,7 +19,14 @@ export default function About(): JSX.Element {
             </li>
           ))}
         </ul>
-        <h3 className="text-xl font-bold">Work</h3>
+        <h2>Experiences</h2>
+        <p>
+          Here you can see a condensation of my work and study experiences.
+          <br />
+          You can also find my ongoing personal projects on my GitHub profile or
+          in my personal public-facing pages.
+        </p>
+        <h3>Work</h3>
         <div className="pl-2">
           <ul className="border-l border-gray-800 relative flex flex-col gap-4 mb-8 list-none p-0 m-0 not-prose">
             {workExperiences.map((work, i) => (
@@ -24,7 +34,7 @@ export default function About(): JSX.Element {
             ))}
           </ul>
         </div>
-        <h3 className="text-xl font-bold">Studies</h3>
+        <h3>Studies</h3>
         <div className="pl-2">
           <ul className="border-l border-gray-800 relative flex flex-col gap-4 not-prose list-none p-0">
             {studies.map((work, i) => (
