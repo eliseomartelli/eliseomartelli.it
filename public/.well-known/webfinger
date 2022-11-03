@@ -1,0 +1,8 @@
+{
+	"subject": "acct":"me@eliseomartelli.it",
+	"links": [
+		"rel": "self",
+		"type": "application/activity+json",
+		"href": "https://eliseomartelli.it/actor"
+	]
+}
