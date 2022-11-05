@@ -40,18 +40,25 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
       <article className="prose mx-auto w-full max-w-full prose-img:mx-auto">
         <MDXRemote {...content} components={components} />
       </article>
-      <div className="flex gap-2 print:hidden">
-        <a
-          href={`https://twitter.com/search?q=${
-            "https://eliseomartelli.it" + asPath
-          }&f=live`}
-        >
-          <Button className="self-end" color={Color.Sky}>
-            Discuss on Twitter
-          </Button>
-        </a>
+      <div className="flex gap-2 flex-col print:hidden items-center">
+        <div className="flex gap-2 justify-center items-center">
+          <p className="font-bold">Discuss on:</p>
+          <a href={`https://mastodon.social/@eliseomartelli`}>
+            <Button className="self-end" color={Color.Purple}>
+              Mastodon
+            </Button>
+          </a>
+          <a
+            href={`https://twitter.com/search?q=${
+              "https://eliseomartelli.it" + asPath
+            }&f=live`}
+          >
+            <Button className="self-end" color={Color.Sky}>
+              Twitter
+            </Button>
+          </a>
+        </div>
         <Button
-          className="self-end"
           color={Color.DarkGray}
           onClick={() => {
             showModal(<Newsletter modal />);
