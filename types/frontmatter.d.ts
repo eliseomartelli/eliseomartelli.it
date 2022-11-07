@@ -3,4 +3,5 @@ export declare type Frontmatter = {
   date: string;
   excerpt?: string;
   previewImgUrl?: string;
+  tags?: string[];
 };

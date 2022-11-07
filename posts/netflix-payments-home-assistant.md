@@ -2,6 +2,8 @@
 title: "Netflix Payments reminder with the help of Home Assistant"
 date: "2020-03-02"
 excerpt: Aren't you tired of being the only one to pay for Netflix?
+tags:
+  - Misc
 ---
 
 Today's project aims at tracking the _invoices_ of a shared account thanks to [Home Assistant](https://home-assistant.io).  

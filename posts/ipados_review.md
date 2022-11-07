@@ -2,6 +2,8 @@
 title: iPadOS, a year-long review
 date: "2020-10-31"
 excerpt: Looking at iPadOS from a content creation perspective
+tags:
+  - Apple
 ---
 
 What's an iPad? Is it a real computer? You might ask. Well, long story short: you can look at it as a computer only if your **use-cases** match what Apple envisioned for it. Let’s take a deep dive into it.

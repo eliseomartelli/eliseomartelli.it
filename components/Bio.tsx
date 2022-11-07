@@ -10,10 +10,7 @@ export default function Bio(): JSX.Element {
     <div className="flex sm:flex-row flex-col-reverse sm:items-center w-full gap-6 my-6">
       <div className="flex flex-col gap-2 sm:flex-1 items-start">
         <h1 className="font-bold text-4xl">Eliseo Martelli</h1>
-        <p>Freelance software developer from 🇮🇹</p>
-        <p className="mt-2 text-gray-500">
-          Helping people build modern & compelling digital experiences.
-        </p>
+        <p>Computers, photography & music. From 🇮🇹</p>
         <Button
           className="mt-4"
           color={Color.Red}
