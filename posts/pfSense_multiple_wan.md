@@ -2,6 +2,8 @@
 title: How to use pfSense to load balance between two ISPs
 date: "2020-04-05"
 excerpt: Internet goes brrrrr with multiple WANs
+tags:
+  - Network
 ---
 
 Today's post aims at helping people that are working/studying from home and don't have a stable internet conection.  

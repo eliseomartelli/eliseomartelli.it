@@ -2,6 +2,8 @@
 title: Configuring Nebula, a simple overlay networking tool
 date: "2020-05-01"
 excerpt: Overlay networking that scaaaaaaaaaales
+tags:
+  - Network
 ---
 
 ![](https://cdn.spacetelescope.org/archives/images/screen/opo9544b.jpg)

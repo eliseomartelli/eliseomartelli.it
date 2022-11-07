@@ -2,6 +2,10 @@
 title: "Using Ansible to deploy IoT devices"
 date: "2020-03-10"
 excerpt: Blending two automation platforms to bring some sanity to the IoT world.
+tags:
+  - Automation
+  - Ansible
+  - IoT
 ---
 
 This article is going to show you how an existing tool intended for completely different purposes can be used to automate the boring task of manually setting up and **mantain a fleet of IoT devices.**  

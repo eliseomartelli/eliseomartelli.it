@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "../components/Container";
+import { Taglet } from "../components/Taglet";
 import { loadPosts } from "../lib/posts";
 
 import { Post } from "../types/post";
@@ -29,6 +30,11 @@ const Blog = ({ posts }: BlogProps) => {
                     read
                   </p>
                   <p className="mt-2">{post.frontmatter.excerpt}</p>
+                  <div className="flex gap-2">
+                    {post.frontmatter.tags?.map((e, i) => (
+                      <Taglet tag={e} key={i} />
+                    ))}
+                  </div>
                 </a>
               </Link>
             </li>
