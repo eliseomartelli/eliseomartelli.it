@@ -8,19 +8,17 @@ type OutboxType = {
   next?: string;
   prev?: string;
   partOf?: string;
-  orderedItems?: [
-    {
-      id?: string;
-      type?: string;
-      actor?: string;
-      published?: string;
-      to?: string[];
-      cc?: string[];
-      object?: string;
-      name?: string;
-      content?: string;
-    }
-  ];
+  orderedItems?: {
+    id?: string;
+    type?: string;
+    actor?: string;
+    published?: string;
+    to?: string[];
+    cc?: string[];
+    object?: string;
+    name?: string;
+    content?: string;
+  }[];
 };
 
 export default async function handler(
@@ -37,6 +35,11 @@ export default async function handler(
         type: "Note",
         name: "Hello, world!",
         content: "Hello, world!",
+      },
+      {
+        type: "Note",
+        name: "Hello, world 2!",
+        content: "Hello, world 2!",
       },
     ],
   });
