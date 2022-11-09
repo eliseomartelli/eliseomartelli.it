@@ -17,7 +17,7 @@ export default async function handler(
 ) {
   const { ACTIVITYPUB_DOMAIN } = process.env;
   res.status(200).json({
-    subject: "site",
+    subject: `acct:site@${ACTIVITYPUB_DOMAIN}`,
     links: [
       {
         rel: "self",
