@@ -6,6 +6,12 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  async rewrites() {
+    return [
+      { source: "/actor", destination: "/api/fedi/actor" },
+      { source: "/.well-known/webfinger", destination: "/api/fedi/webfinger" },
+    ];
+  },
 };
 
 module.exports = nextConfig;
