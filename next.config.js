@@ -9,6 +9,7 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: "/actor", destination: "/api/fedi/actor" },
+      { source: "/outbox", destination: "/api/fedi/outbox" },
       { source: "/.well-known/webfinger", destination: "/api/fedi/webfinger" },
     ];
   },
