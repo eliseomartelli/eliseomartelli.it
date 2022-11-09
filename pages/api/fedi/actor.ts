@@ -6,6 +6,7 @@ type ActorType = {
   type: string;
   preferredUsername: string;
   inbox: string;
+  outbox: string;
   publicKey: {
     id: string;
     owner: string;
@@ -27,6 +28,7 @@ export default async function handler(
     type: "Person",
     preferredUsername: "site",
     inbox: `https://${ACTIVITYPUB_DOMAIN}/inbox`,
+    outbox: `https://${ACTIVITYPUB_DOMAIN}/outbox`,
     publicKey: {
       id: `https://${ACTIVITYPUB_DOMAIN}/actor#main-key`,
       owner: `https://${ACTIVITYPUB_DOMAIN}/actor`,
