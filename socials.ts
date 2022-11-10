@@ -3,10 +3,15 @@ type Social = {
   url: string;
   customRel?: string;
 };
+
 export const socials: Social[] = [
   {
-    name: "Twitter: @eliseomartelli",
-    url: "https://twitter.com/eliseomartelli",
+    name: "Email: me@eliseomartelli.it",
+    url: "mailto:me@eliseomartelli.it",
+  },
+  {
+    name: "GitHub: @eliseomartelli",
+    url: "https://github.com/eliseomartelli",
   },
   {
     name: "Instagram: @eliseomartelli",
@@ -18,11 +23,11 @@ export const socials: Social[] = [
     customRel: "me",
   },
   {
-    name: "GitHub: @eliseomartelli",
-    url: "https://github.com/eliseomartelli",
+    name: "Telegram: @eliseomartelli",
+    url: "https://t.me/eliseomartelli",
   },
   {
-    name: "Email: me@eliseomartelli.it",
-    url: "mailto:me@eliseomartelli.it",
+    name: "Twitter: @eliseomartelli",
+    url: "https://twitter.com/eliseomartelli",
   },
 ];
