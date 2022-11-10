@@ -1,22 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-type ActorType = {
-  "@context": string[];
-  id: string;
-  type: string;
-  preferredUsername: string;
-  inbox: string;
-  outbox: string;
-  publicKey: {
-    id: string;
-    owner: string;
-    publicKeyPem: string;
-  };
-};
+import { FediActor } from "../../../types/fedi/actor";
 
 export default async function handler(
   _: NextApiRequest,
-  res: NextApiResponse<ActorType>
+  res: NextApiResponse<FediActor>
 ) {
   const { ACTIVITYPUB_DOMAIN, ACTIVITYPUB_PUBLIC_KEY_PEM } = process.env;
   res.status(200).json({

@@ -1,9 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { FediOutbox } from "../../../types/fedi/outbox";
 
 export default async function handler(
   _: NextApiRequest,
-  res: NextApiResponse<FediOutbox>
+  res: NextApiResponse<any>
 ) {
   const { ACTIVITYPUB_DOMAIN } = process.env;
   res.status(200).json({

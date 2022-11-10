@@ -1,19 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-type WebfingerType = {
-  subject: string;
-  links: [
-    {
-      rel: "self";
-      type: "application/activity+json";
-      href: string;
-    }
-  ];
-};
+import { FediWebfinger } from "../../../types/fedi/webfinger";
 
 export default async function handler(
   _: NextApiRequest,
-  res: NextApiResponse<WebfingerType>
+  res: NextApiResponse<FediWebfinger>
 ) {
   const { ACTIVITYPUB_DOMAIN } = process.env;
   res.status(200).json({

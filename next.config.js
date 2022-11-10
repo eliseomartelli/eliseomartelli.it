@@ -10,6 +10,7 @@ const nextConfig = {
     return [
       { source: "/actor", destination: "/api/fedi/actor" },
       { source: "/outbox", destination: "/api/fedi/outbox" },
+      { source: "/inbox", destination: "/api/fedi/inbox" },
       { source: "/.well-known/webfinger", destination: "/api/fedi/webfinger" },
     ];
   },
