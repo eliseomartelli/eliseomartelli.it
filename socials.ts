@@ -1,6 +1,7 @@
 type Social = {
   name: string;
   url: string;
+  customRel?: string;
 };
 export const socials: Social[] = [
   {
@@ -14,6 +15,7 @@ export const socials: Social[] = [
   {
     name: "Mastodon: @eliseomartelli@mastodon.social",
     url: "https://mastodon.social/@eliseomartelli",
+    customRel: "me",
   },
   {
     name: "GitHub: @eliseomartelli",
