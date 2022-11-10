@@ -13,11 +13,7 @@ export default function About(): JSX.Element {
         <ul>
           {socials.map((e, i) => (
             <li key={i}>
-              <a
-                href={e.url}
-                target="_blank"
-                rel={e.customRel || "noopener noreferrer"}
-              >
+              <a href={e.url} rel={e.customRel || "noopener noreferrer"}>
                 {e.name}
               </a>
             </li>
