@@ -8,12 +8,16 @@ export default function About(): JSX.Element {
       <h1>About</h1>
       <article className="prose">
         <Link href="/socials">
-          <h3 className="hover:cursor-pointer">Socials and contacts</h3>
+          <h2 className="hover:cursor-pointer">Socials and contacts</h2>
         </Link>
         <ul>
           {socials.map((e, i) => (
             <li key={i}>
-              <a href={e.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={e.url}
+                target="_blank"
+                rel={e.customRel || "noopener noreferrer"}
+              >
                 {e.name}
               </a>
             </li>
