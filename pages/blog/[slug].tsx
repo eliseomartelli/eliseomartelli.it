@@ -11,12 +11,13 @@ import Button, { Color } from "../../components/Button";
 import path from "path";
 import { useRouter } from "next/router";
 import HighlightBox from "../../components/HighlightBox";
+import { HighlightSection } from "../../components/HighlightSection";
 
 interface BlogPostProps {
   content: MDXRemoteSerializeResult;
 }
 
-const components = { HighlightBox };
+const components = { HighlightBox, HighlightSection };
 
 export default function BlogPost({ content }: BlogPostProps): JSX.Element {
   const { showModal } = useModal();
