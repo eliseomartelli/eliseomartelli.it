@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "../components/Container";
 import { socials } from "../socials";
@@ -41,6 +42,21 @@ export default function About(): JSX.Element {
               <TimelineElement {...work} key={i} />
             ))}
           </ul>
+        </div>
+        <h2>Profile Picture</h2>
+        <div className="flex gap-2 flex-row">
+          <Image
+            src="/pfp/c.jpg"
+            width={250}
+            height={250}
+            className="rounded-md shadow-lg grow"
+          />
+          <Image
+            src="/pfp/b.jpg"
+            width={250}
+            height={250}
+            className="rounded-md shadow-lg grow"
+          />
         </div>
       </article>
     </Container>
