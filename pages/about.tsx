@@ -47,12 +47,14 @@ export default function About(): JSX.Element {
         <div className="flex gap-2 flex-row">
           <Image
             src="/pfp/c.jpg"
+            alt="Color."
             width={250}
             height={250}
             className="rounded-md shadow-lg grow"
           />
           <Image
             src="/pfp/b.jpg"
+            alt="Black and white."
             width={250}
             height={250}
             className="rounded-md shadow-lg grow"

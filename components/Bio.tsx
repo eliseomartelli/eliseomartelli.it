@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 import { useModal } from "../providers/Modal";
 import Button, { Color } from "./Button";
@@ -21,22 +22,12 @@ export default function Bio(): JSX.Element {
           Get in touch
         </Button>
       </div>
-      <div className="w-32 h-32 flex justify-center items-center relative">
-        <div className="bg-red-400 block w-32 h-32 rounded-full absolute -z-10"></div>
-        <div className="absolute w-48 h-48">
-          <video
-            width={192}
-            height={192}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="overflow-hidden"
-          >
-            <source src="/memoji-hevc-safari.mp4" type="video/mp4" />
-            <source src="/memoji-vp9-chrome.webm" type="video/webm" />
-          </video>
-        </div>
+      <div className="w-44 h-44 flex justify-center items-center relative">
+        <Image
+          src="/icon.png"
+          layout="fill"
+          alt="Profile picture in the style of a Memoji"
+        ></Image>
       </div>
     </div>
   );
