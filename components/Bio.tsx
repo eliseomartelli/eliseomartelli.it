@@ -4,6 +4,8 @@ import { useModal } from "../providers/Modal";
 import Button, { Color } from "./Button";
 import LoadingSpinner from "./LoadingSpinner";
 
+import profileImage from "../public/icon.png";
+
 export default function Bio(): JSX.Element {
   const { showModal } = useModal();
 
@@ -24,10 +26,11 @@ export default function Bio(): JSX.Element {
       </div>
       <div className="w-44 h-44 flex justify-center items-center relative">
         <Image
-          src="/icon.png"
+          src={profileImage}
           layout="fill"
           alt="Profile picture in the style of a Memoji"
           priority
+          placeholder="blur"
         ></Image>
       </div>
     </div>
