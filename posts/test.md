@@ -38,7 +38,9 @@ If we look at it from this perspective, this is something we do every day. Are t
 That's how he described the world around him, and that's the base he used to enunciate these principles.
 
 <HighlightSection text={"Innovative"} number={'1'}/>
-Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
+Innovation can be of all forms and shapes. When building something, you decide what to put in and to leave out, the software/hardware stack to use, and how everything connects.
+
+Innovation means finding new ways to use the existing toolset and building new tools to achieve the final goal.
 
 <HighlightSection text={"Useful"} number={'2'}/>
 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
