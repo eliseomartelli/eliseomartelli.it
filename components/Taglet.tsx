@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Color: { [name: string]: string } = {
   apple: "bg-cyan-50 border-cyan-300",
   network: "bg-pink-50 border-pink-300",
@@ -8,11 +10,13 @@ const Color: { [name: string]: string } = {
 };
 
 export const Taglet = ({ tag }: { tag: string }) => (
-  <span
-    className={`px-2.5 py-0.5 border ${
-      Color[tag.toLowerCase()] || Color.default
-    } rounded-full font-medium text-xs`}
-  >
-    {tag}
-  </span>
+  <Link href={`/blog/category/${tag}`}>
+    <span
+      className={`px-2.5 py-0.5 border ${
+        Color[tag.toLowerCase()] || Color.default
+      } rounded-full font-medium text-xs cursor-pointer`}
+    >
+      {tag}
+    </span>
+  </Link>
 );

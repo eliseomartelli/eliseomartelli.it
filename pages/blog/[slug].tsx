@@ -37,10 +37,14 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
         </p>
         <p className="mb-2">{content.frontmatter?.date}</p>
         <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
-        <div className="flex gap-2 mt-2">{content.frontmatter?.tags!} </div>
+        <div className="flex gap-2 mt-2">
+          {(content.frontmatter!.tags as unknown as string[]).map((e, i) => (
+            <Taglet key={i} tag={e} />
+          ))}
+        </div>
       </div>
       <article className="prose mx-auto w-full max-w-full prose-img:mx-auto">
-        <MDXRemote {...content} components={components} />
+        <MDXRemote {...content} components={components} lazy />
       </article>
       <div className="flex gap-2 flex-col print:hidden items-center">
         <div className="flex gap-2 justify-center items-center">
