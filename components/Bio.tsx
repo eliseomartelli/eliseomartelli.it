@@ -27,6 +27,7 @@ export default function Bio(): JSX.Element {
           src="/icon.png"
           layout="fill"
           alt="Profile picture in the style of a Memoji"
+          priority
         ></Image>
       </div>
     </div>
