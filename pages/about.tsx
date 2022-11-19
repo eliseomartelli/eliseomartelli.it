@@ -3,6 +3,9 @@ import Link from "next/link";
 import Container from "../components/Container";
 import { socials } from "../socials";
 
+import pfp from "public/pfp/c.jpg";
+import pfpbw from "public/pfp/b.jpg";
+
 export default function About(): JSX.Element {
   return (
     <Container customMeta={{ title: "About - Eliseo Martelli" }}>
@@ -45,20 +48,26 @@ export default function About(): JSX.Element {
         </div>
         <h2>Profile Picture</h2>
         <div className="flex gap-2 flex-row">
-          <Image
-            src="/pfp/c.jpg"
-            alt="Color."
-            width={250}
-            height={250}
-            className="rounded-md shadow-lg grow"
-          />
-          <Image
-            src="/pfp/b.jpg"
-            alt="Black and white."
-            width={250}
-            height={250}
-            className="rounded-md shadow-lg grow"
-          />
+          <a href="/pfp/c.jpg">
+            <Image
+              src={pfp}
+              alt="Color."
+              width={512}
+              height={512}
+              className="rounded-md shadow-lg grow"
+              placeholder="blur"
+            />
+          </a>
+          <a href="/pfp/b.jpg">
+            <Image
+              src={pfpbw}
+              alt="Black and white."
+              width={512}
+              height={512}
+              className="rounded-md shadow-lg grow"
+              placeholder="blur"
+            />
+          </a>
         </div>
       </article>
     </Container>
