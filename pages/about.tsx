@@ -11,7 +11,7 @@ export default function About(): JSX.Element {
     <Container customMeta={{ title: "About - Eliseo Martelli" }}>
       <h1>About</h1>
       <article className="prose">
-        <Link href="/socials">
+        <Link href="/socials" legacyBehavior>
           <h2 className="hover:cursor-pointer">Socials and contacts</h2>
         </Link>
         <ul>

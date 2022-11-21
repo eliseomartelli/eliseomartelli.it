@@ -23,19 +23,25 @@ function FeaturedPosts({ posts }: FeaturedPostsProps): JSX.Element {
       <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {posts.map((post, key) => (
           <li key={key}>
-            <Link href={`/blog/${post.slug}`} passHref>
-              <a className="bg-gray-50 hover:bg-gray-200 rounded-md p-4 border flex flex-col justify-between gap-8 h-full cursor-pointer">
-                <h3 className="font-semibold">{post.frontmatter.title}</h3>
-                <p>{post.frontmatter.date}</p>
-              </a>
+            <Link
+              href={`/blog/${post.slug}`}
+              passHref
+              className="bg-gray-50 hover:bg-gray-200 rounded-md p-4 border flex flex-col justify-between gap-8 h-full cursor-pointer">
+
+              <h3 className="font-semibold">{post.frontmatter.title}</h3>
+              <p>{post.frontmatter.date}</p>
+
             </Link>
           </li>
         ))}
       </ul>
-      <Link href="/blog" passHref>
-        <a className="text-gray-800 hover:text-gray-500 transition-colors self-end">
+      <Link
+        href="/blog"
+        passHref
+        className="text-gray-800 hover:text-gray-500 transition-colors self-end">
+        
           View all posts →
-        </a>
+        
       </Link>
     </div>
   );

@@ -10,7 +10,7 @@ function NavButton({ title, href }: NavButtonProps): JSX.Element {
   const router = useRouter();
   const isActive = router.asPath === href;
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref legacyBehavior>
       <a
         className={`hover:bg-gray-200 py-2 px-4 rounded-md transition-colors ${
           isActive && "font-extrabold"

@@ -11,15 +11,15 @@ const Color: { [name: string]: string } = {
 };
 
 export const Taglet = ({ tag }: { tag: string }) => (
-  <Link href={`/blog/category/${tag}`} passHref>
-    <a>
-      <span
-        className={`px-2.5 py-0.5 border ${
-          Color[tag.toLowerCase()] || Color.default
-        } rounded-full font-medium text-xs cursor-pointer`}
-      >
-        {tag}
-      </span>
-    </a>
-  </Link>
+  (<Link href={`/blog/category/${tag}`} passHref>
+
+    <span
+      className={`px-2.5 py-0.5 border ${
+        Color[tag.toLowerCase()] || Color.default
+      } rounded-full font-medium text-xs cursor-pointer`}
+    >
+      {tag}
+    </span>
+
+  </Link>)
 );

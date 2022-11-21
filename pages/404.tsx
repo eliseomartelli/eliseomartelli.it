@@ -17,7 +17,7 @@ export default function NotFound(): JSX.Element {
         I can&apos;t find this page but I&apos;m sure you will find something
         interesting here.
       </p>
-      <Link href="/" passHref>
+      <Link href="/" passHref legacyBehavior>
         <Button className="self-start" color={Color.Red}>
           Go home →
         </Button>

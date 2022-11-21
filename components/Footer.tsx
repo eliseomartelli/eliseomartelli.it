@@ -54,7 +54,7 @@ const FooterLink = ({ name, url, external }: FooterLinkProps) => {
   };
   return (
     <li>
-      <Link href={url} passHref>
+      <Link href={url} passHref legacyBehavior>
         <a {...linkProps} className="hover:text-gray-600 py-2">
           {name}
         </a>
