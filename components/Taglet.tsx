@@ -7,12 +7,13 @@ const Color: { [name: string]: string } = {
   ansible: "bg-red-50 border-red-300",
   short: "bg-orange-50 border-orange-300",
   automation: "bg-green-50 border-green-300",
+  photography: "bg-indigo-50 border-indigo-300",
+  music: "bg-purple-50 border-purple-300",
   default: "bg-gray-50 border-gray-300",
 };
 
 export const Taglet = ({ tag }: { tag: string }) => (
-  (<Link href={`/blog/category/${tag}`} passHref>
-
+  <Link href={`/blog/category/${tag}`} passHref>
     <span
       className={`px-2.5 py-0.5 border ${
         Color[tag.toLowerCase()] || Color.default
@@ -20,6 +21,5 @@ export const Taglet = ({ tag }: { tag: string }) => (
     >
       {tag}
     </span>
-
-  </Link>)
+  </Link>
 );
