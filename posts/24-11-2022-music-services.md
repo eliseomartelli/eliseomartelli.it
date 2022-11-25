@@ -5,7 +5,6 @@ excerpt: DRM & bass.
 tags:
   - Music
   - Short
-  - 100DaysToOffload
 ---
 
 The evolution of portable, personal, and on-demand music started in 1979 thanks to Sony with their Walkman (ウォークマン), after about 20 years of pocket radios.
