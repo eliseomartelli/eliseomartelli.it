@@ -1,6 +1,6 @@
 ---
 title: Web3 isn't for me
-date: 2022-11-25 19:40
+date: 2022-11-26 19:40
 excerpt: You wouldn't funge a token
 tags:
   - Misc
