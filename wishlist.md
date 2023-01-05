@@ -19,3 +19,4 @@ I will try to collect things I might eventually buy that I need/want.
 | What        | Make    | Model     | Link(s) | Price |
 | ----------- | ------- | --------- | ------- | ----- |
 | Pasta Maker | Philips | Hr2382/15 | -       | ~€250 |
+| SD Adapter  | Apple   | MJYT2ZM/A | -       | €39   |
