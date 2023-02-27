@@ -39,6 +39,9 @@ export default function Nav(): JSX.Element {
           <li>
             <NavButton title="Blog" href="/blog" />
           </li>
+          <li>
+            <NavButton title="Photos" href="/photos" />
+          </li>
         </ul>
       </div>
     </nav>
