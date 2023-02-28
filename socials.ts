@@ -18,7 +18,10 @@ export const socials: Social[] = [
     customRel: "me",
   },
   { name: "Telegram: @eliseomartelli", url: "https://t.me/eliseomartelli" },
-  { name: "TikTok: @eliseo.martelli", url: "https://TikTok.com/@eliseo.martelli" },
+  {
+    name: "TikTok: @eliseo.martelli",
+    url: "https://TikTok.com/@eliseo.martelli",
+  },
   {
     name: "Twitter: @eliseomartelli",
     url: "https://twitter.com/eliseomartelli",
