@@ -6,8 +6,10 @@ interface ButtonProps {
   ariaLabel?: string;
   color?: Color;
   small?: boolean;
+  noCenter?: boolean;
   className?: string;
   disabled?: boolean;
+  noBold?: boolean;
 }
 
 export enum Color {
@@ -27,9 +29,11 @@ export default function Button({
   small,
   className: passedClassNames,
   disabled,
+  noCenter,
+  noBold,
 }: ButtonProps): JSX.Element {
   const className = [
-    "rounded-md transition-colors font-bold",
+    "rounded-md transition-colors",
     color == Color.Transparent && "hover:bg-gray-200",
     color == Color.Red &&
       "text-white bg-red-800 hover:bg-red-600 disabled:bg-gray-500",
@@ -39,6 +43,8 @@ export default function Button({
     color == Color.Purple && "text-white bg-purple-800 hover:bg-pink-900",
     small ? "px-4 py-1" : "py-2 px-4",
     passedClassNames,
+    noCenter ? "text-start" : "",
+    noBold ? "" : "font-bold",
   ].join(" ");
 
   return (

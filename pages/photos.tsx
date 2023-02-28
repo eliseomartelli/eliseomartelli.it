@@ -1,20 +1,43 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import Accordion from "../components/Accordion";
+import Button, { Color } from "../components/Button";
 import Container from "../components/Container";
-import { loadPhotoFiles } from "../lib/photos";
 
-const Photos = ({ content }: { content: string[] }) => {
+import portfolio from "../photo_portfolio.json";
+
+const Photos = () => {
+  const [selected, setSelected] = useState(Object.keys(portfolio)[0]);
   return (
     <Container>
-      <div
-        className="w-[100vw]
+      <Accordion
+        menu={
+          <div className="flex flex-col gap-2">
+            {Object.keys(portfolio).map((c, i) => (
+              <Button
+                small
+                noCenter
+                noBold={selected !== c}
+                color={Color.Transparent}
+                key={i}
+                onClick={() => setSelected(c)}
+              >
+                {c}
+              </Button>
+            ))}
+          </div>
+        }
+        title={selected}
+      >
+        <div
+          className="w-[100vw]
                 relative
                 ml-[-50vw]
                 left-1/2
 				"
-      >
-        <div
-          className="
+        >
+          <div
+            className="
 					columns-1
 					sm:columns-2
 					md:columns-3
@@ -25,35 +48,31 @@ const Photos = ({ content }: { content: string[] }) => {
 					px-4
 					content-evenly
 					leading-[0]
-					bg-red-50
 					max-w-7xl
 					"
-        >
-          {content.map((e, i) => (
-            <Image
-              src={`/image_portfolio/${e}`}
-              width={512}
-              height={512}
-              loading="lazy"
-              alt={""}
-              key={i}
-              className="pb-2 mx-auto"
-            />
-          ))}
+          >
+            <PhotoGrid category={selected} />
+          </div>
         </div>
-      </div>
+      </Accordion>
     </Container>
   );
 };
 
-export async function getStaticProps(): Promise<{
-  props: { content: string[] };
-}> {
-  return {
-    props: {
-      content: loadPhotoFiles(),
-    },
-  };
-}
+const PhotoGrid = ({ category }: { category: string }) => (
+  <>
+    {portfolio[category as keyof typeof portfolio].map((e, i) => (
+      <Image
+        src={`/image_portfolio/${e}`}
+        width={512}
+        height={512}
+        loading="lazy"
+        alt={""}
+        key={i}
+        className="pb-2 mx-auto"
+      />
+    ))}
+  </>
+);
 
 export default Photos;
