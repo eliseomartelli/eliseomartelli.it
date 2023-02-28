@@ -3,7 +3,7 @@ import React from "react";
 import Container from "../components/Container";
 import { loadPhotoFiles } from "../lib/photos";
 
-export default ({ content }: { content: string[] }) => {
+const Photos = ({ content }: { content: string[] }) => {
   return (
     <Container>
       <div
@@ -55,3 +55,5 @@ export async function getStaticProps(): Promise<{
     },
   };
 }
+
+export default Photos;

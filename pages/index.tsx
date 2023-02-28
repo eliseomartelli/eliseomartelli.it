@@ -26,11 +26,10 @@ function FeaturedPosts({ posts }: FeaturedPostsProps): JSX.Element {
             <Link
               href={`/blog/${post.slug}`}
               passHref
-              className="bg-gray-50 hover:bg-gray-200 rounded-md p-4 border flex flex-col justify-between gap-8 h-full cursor-pointer">
-
+              className="bg-gray-50 hover:bg-gray-200 rounded-md p-4 border flex flex-col justify-between gap-8 h-full cursor-pointer"
+            >
               <h3 className="font-semibold">{post.frontmatter.title}</h3>
               <p>{post.frontmatter.date}</p>
-
             </Link>
           </li>
         ))}
@@ -38,10 +37,9 @@ function FeaturedPosts({ posts }: FeaturedPostsProps): JSX.Element {
       <Link
         href="/blog"
         passHref
-        className="text-gray-800 hover:text-gray-500 transition-colors self-end">
-        
-          View all posts →
-        
+        className="text-gray-800 hover:text-gray-500 transition-colors self-end"
+      >
+        View all posts →
       </Link>
     </div>
   );
