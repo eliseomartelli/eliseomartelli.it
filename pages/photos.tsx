@@ -37,18 +37,17 @@ const Photos = () => {
 				"
         >
           <div
-            className="
-					columns-1
+            className="columns-1
 					sm:columns-2
 					md:columns-3
 					lg:columns-4
 					break-inside-avoid
 					mx-auto
 					gap-2
-					px-4
-					content-evenly
+					sm:px-4
+					px-8
 					leading-[0]
-					max-w-7xl
+					7xl:max-w-7xl
 					"
           >
             <PhotoGrid category={selected} />
@@ -64,12 +63,14 @@ const PhotoGrid = ({ category }: { category: string }) => (
     {portfolio[category as keyof typeof portfolio].map((e, i) => (
       <Image
         src={`/image_portfolio/${e}`}
-        width={512}
-        height={512}
+        fill
         loading="lazy"
         alt={""}
         key={i}
-        className="pb-2 mx-auto"
+        sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+        className="!relative mx-auto pb-2"
       />
     ))}
   </>
