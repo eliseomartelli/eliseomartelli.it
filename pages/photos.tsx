@@ -44,8 +44,7 @@ const Photos = () => {
 					break-inside-avoid
 					mx-auto
 					gap-2
-					sm:px-4
-					px-8
+					px-4
 					leading-[0]
 					7xl:max-w-7xl
 					"
@@ -67,9 +66,11 @@ const PhotoGrid = ({ category }: { category: string }) => (
         loading="lazy"
         alt={""}
         key={i}
-        sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
+        sizes="
+              (min-width: 640px) 50vw,
+              (min-width: 768px) 33vw,
+              (min-width: 1024px) 25vw,
+              100vw"
         className="!relative mx-auto pb-2"
       />
     ))}

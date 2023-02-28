@@ -22,7 +22,10 @@ export default function Accordion({
     <section className="flex flex-col gap-4">
       <div className="flex items-center">
         <h2 className="flex-grow text-2xl font-bold">{title}</h2>
-        <Button onClick={() => setMenuState(!menuState)} color={Color.DarkGray}>
+        <Button
+          onClick={() => setMenuState(!menuState)}
+          color={Color.Transparent}
+        >
           {buttonContent ? (
             buttonContent
           ) : (
@@ -30,7 +33,7 @@ export default function Accordion({
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
+              strokeWidth={2}
               stroke="currentColor"
               className="w-6 h-6"
             >
