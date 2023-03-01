@@ -7,7 +7,9 @@ export async function mdxToHTML(source: string) {
     parseFrontmatter: true,
     mdxOptions: { remarkPlugins: [remarkGfm] },
   });
-  mdxSource.frontmatter!.date! = parseDate(mdxSource.frontmatter!.date!);
+  mdxSource.frontmatter!.date! = parseDate(
+    mdxSource.frontmatter!.date! as string
+  );
   return {
     html: mdxSource,
   };

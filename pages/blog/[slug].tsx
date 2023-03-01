@@ -26,17 +26,19 @@ export default function BlogPost({ content }: BlogPostProps): JSX.Element {
     <Container
       customMeta={{
         title: `${content.frontmatter?.title} - Eliseo Martelli`,
-        description: content.frontmatter?.excerpt,
-        image: content.frontmatter?.previewImgUrl,
-        date: content.frontmatter?.date,
+        description: content.frontmatter?.excerpt as string,
+        image: content.frontmatter?.previewImgUrl as string,
+        date: content.frontmatter?.date as string,
       }}
     >
       <div>
         <p className="hidden print:block text-xs">
           From Eliseo Martelli - https://eliseomartelli.it
         </p>
-        <p className="mb-2">{content.frontmatter?.date}</p>
-        <h1 className="text-3xl font-bold">{content.frontmatter?.title}</h1>
+        <p className="mb-2">{content.frontmatter?.date as string}</p>
+        <h1 className="text-3xl font-bold">
+          {content.frontmatter?.title as string}
+        </h1>
         <div className="flex gap-2 mt-2">
           {(content.frontmatter!.tags as unknown as string[]).map((e, i) => (
             <Taglet key={i} tag={e} />
