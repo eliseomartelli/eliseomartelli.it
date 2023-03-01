@@ -60,19 +60,20 @@ const Photos = () => {
 const PhotoGrid = ({ category }: { category: string }) => (
   <>
     {portfolio[category as keyof typeof portfolio].map((e, i) => (
-      <Image
-        src={`/image_portfolio/${e}`}
-        fill
-        loading="lazy"
-        alt={""}
-        key={i}
-        sizes="
+      <div className="mx-auto pb-2" key={i}>
+        <Image
+          src={`/image_portfolio/${e}`}
+          fill
+          loading="lazy"
+          alt={""}
+          sizes="
               (min-width: 640px) 50vw,
               (min-width: 768px) 33vw,
               (min-width: 1024px) 25vw,
               100vw"
-        className="!relative mx-auto pb-2"
-      />
+          className="!relative"
+        />
+      </div>
     ))}
   </>
 );
