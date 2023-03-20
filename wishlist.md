@@ -5,7 +5,6 @@ I will try to collect things I might eventually buy that I need/want.
 | Make  | Model             | Link(s) | Price        |
 | ----- | ----------------- | ------- | ------------ |
 | Canon | EF 28mm f/1.8 USM | -       | ~€250 (Used) |
-| Canon | EOS RP            | -       | ~€700 (Used) |
 
 ## Books
 
