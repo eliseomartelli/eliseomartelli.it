@@ -6,13 +6,7 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  async rewrites() {
-    return [
-      { source: "/actor", destination: "/api/fedi/actor" },
-      { source: "/outbox", destination: "/api/fedi/outbox" },
-      { source: "/.well-known/webfinger", destination: "/api/fedi/webfinger" },
-    ];
-  },
+  experimental: { appDir: true },
 };
 
 module.exports = nextConfig;
