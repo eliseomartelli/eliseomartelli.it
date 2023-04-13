@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+  experimental: {
+    appDir: true,
   },
-  experimental: { appDir: true },
+  async rewrites() {
+    return [{ source: "/socials", destination: "/about" }];
+  },
 };
 
-module.exports = nextConfig;
+const { withContentlayer } = require("next-contentlayer");
+module.exports = withContentlayer(nextConfig);

@@ -1,0 +1,24 @@
+{
+  "title": "Web3 isn't for me",
+  "excerpt": "You wouldn't funge a token",
+  "date": "2022-11-26T18:40:00.000Z",
+  "tags": [
+    "Misc",
+    "Short"
+  ],
+  "body": {
+    "raw": "\nWhenever I read around the web terms like crypto, web3 or nft, the blanket of pure skepticism covers my eyes, and I can't stop myself from asking questions about the subject.\n\nThe shift of ownership to the users, arguably the only point of interest of Web3, is just an afterthought and a promise, so people buy the latest shitcoin.\nThe term itself is a money-mover, a way for VC to gather cash fast from enthusiasts.\n\nThe vision presented by the crypto-enthusiast is at the edge of dystopia, and sometimes it becomes _religious_.\n\nMy criticism of Web3 is mainly on the crypto/nft side. Decentralization, on the other end, is a great concept and something that already exists in various forms.\n\nBitTorrent, for instance, is an example of decentralization. It has been around for at least 20 years without any signs of cryptocurrency.\nOther examples are ActivityPub, IPFS, ...\n\n\"Cryptobros\" usually call me a hater, but I can't see the class of problems this technology is supposed to solve.\nWeb3 became the umbrella term for the gamification/reification of everything around us.\n",
+    "code": "var Component=(()=>{var m=Object.create;var r=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,d=Object.prototype.hasOwnProperty;var y=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var s in e)r(t,s,{get:e[s],enumerable:!0})},i=(t,e,s,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of f(e))!d.call(t,o)&&o!==s&&r(t,o,{get:()=>e[o],enumerable:!(a=u(e,o))||a.enumerable});return t};var g=(t,e,s)=>(s=t!=null?m(p(t)):{},i(e||!t||!t.__esModule?r(s,\"default\",{value:t,enumerable:!0}):s,t)),x=t=>i(r({},\"__esModule\",{value:!0}),t);var h=y((I,c)=>{c.exports=_jsx_runtime});var _={};b(_,{default:()=>w,frontmatter:()=>j});var n=g(h()),j={title:\"Web3 isn't for me\",date:\"2022-11-26 19:40\",excerpt:\"You wouldn't funge a token\",tags:[\"Misc\",\"Short\"]};function l(t){let e=Object.assign({p:\"p\",em:\"em\"},t.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:\"Whenever I read around the web terms like crypto, web3 or nft, the blanket of pure skepticism covers my eyes, and I can't stop myself from asking questions about the subject.\"}),`\n`,(0,n.jsx)(e.p,{children:`The shift of ownership to the users, arguably the only point of interest of Web3, is just an afterthought and a promise, so people buy the latest shitcoin.\nThe term itself is a money-mover, a way for VC to gather cash fast from enthusiasts.`}),`\n`,(0,n.jsxs)(e.p,{children:[\"The vision presented by the crypto-enthusiast is at the edge of dystopia, and sometimes it becomes \",(0,n.jsx)(e.em,{children:\"religious\"}),\".\"]}),`\n`,(0,n.jsx)(e.p,{children:\"My criticism of Web3 is mainly on the crypto/nft side. Decentralization, on the other end, is a great concept and something that already exists in various forms.\"}),`\n`,(0,n.jsx)(e.p,{children:`BitTorrent, for instance, is an example of decentralization. It has been around for at least 20 years without any signs of cryptocurrency.\nOther examples are ActivityPub, IPFS, ...`}),`\n`,(0,n.jsx)(e.p,{children:`\"Cryptobros\" usually call me a hater, but I can't see the class of problems this technology is supposed to solve.\nWeb3 became the umbrella term for the gamification/reification of everything around us.`})]})}function v(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(l,t)})):l(t)}var w=v;return x(_);})();\n;return Component;"
+  },
+  "_id": "blog/26-11-2022-cryptobros.md",
+  "_raw": {
+    "sourceFilePath": "blog/26-11-2022-cryptobros.md",
+    "sourceFileName": "26-11-2022-cryptobros.md",
+    "sourceFileDir": "blog",
+    "contentType": "markdown",
+    "flattenedPath": "blog/26-11-2022-cryptobros"
+  },
+  "type": "Post",
+  "url": "blog/26-11-2022-cryptobros",
+  "timeToRead": "1"
+}

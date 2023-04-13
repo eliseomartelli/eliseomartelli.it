@@ -1,0 +1,77 @@
+{
+  "title": "Street Photography",
+  "photos": [
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0040.jpg",
+      "aspect": "vertical",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0118.jpg",
+      "aspect": "horizontal",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0092.jpg",
+      "aspect": "horizontal",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0076.jpg",
+      "aspect": "horizontal",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0203.jpg",
+      "aspect": "horizontal",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0140.jpg",
+      "aspect": "horizontal",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0187.jpg",
+      "aspect": "horizontal",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0215.jpg",
+      "aspect": "vertical",
+      "type": "Photo",
+      "_raw": {}
+    },
+    {
+      "title": "Street photo",
+      "url": "/photoPortfolio/street/IMG_0355.jpg",
+      "aspect": "vertical",
+      "type": "Photo",
+      "_raw": {}
+    }
+  ],
+  "_id": "photos/street.yaml",
+  "_raw": {
+    "sourceFilePath": "photos/street.yaml",
+    "sourceFileName": "street.yaml",
+    "sourceFileDir": "photos",
+    "contentType": "data",
+    "flattenedPath": "photos/street"
+  },
+  "type": "Photos"
+}

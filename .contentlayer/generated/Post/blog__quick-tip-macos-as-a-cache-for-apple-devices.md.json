@@ -1,0 +1,23 @@
+{
+  "title": "Quick Tip: macOS as a cache for Apple Devices",
+  "excerpt": "Papa Tim is surely happy if you have all those Apple devices",
+  "date": "2020-04-09T00:00:00.000Z",
+  "tags": [
+    "Apple"
+  ],
+  "body": {
+    "raw": "\nA cache server is a great tool to **speed up** recurring network requests (example: system updates) and reduce the overall used internet bandwidth.\n\nToday we'll see how to set-up a cache server for our Apple devices.\n\nLet's say that you have multiple Apple devices on your network and you happen to have a macOS device **always powered on** (or a macOS vm, ed.), you can use the after-mentioned device as a cache for your other devices.\n\nTo **check** if it's possible to use your Mac as a caching server, run this command:\n\n```bash\n$ AssetCacheManagerUtil canActivate\n```\n\nIf you get a \"**yes**\" as a response, you can set-up your cache server via this simple command:\n\n```bash\n$ sudo AssetCacheManagerUtil activate\n```\n\nYour devices will now discover this cache server automatically after a **reboot**.\n\nYou can find more information about this macOS feature [here](https://support.apple.com/guide/mac-help/manage-content-caching-command-line-mac-mchla6d4541e/mac).\n",
+    "code": "var Component=(()=>{var h=Object.create;var c=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var v=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),y=(n,e)=>{for(var t in e)c(n,t,{get:e[t],enumerable:!0})},o=(n,e,t,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let r of u(e))!g.call(n,r)&&r!==t&&c(n,r,{get:()=>e[r],enumerable:!(s=p(e,r))||s.enumerable});return n};var f=(n,e,t)=>(t=n!=null?h(m(n)):{},o(e||!n||!n.__esModule?c(t,\"default\",{value:n,enumerable:!0}):t,n)),x=n=>o(c({},\"__esModule\",{value:!0}),n);var l=v((M,i)=>{i.exports=_jsx_runtime});var j={};y(j,{default:()=>b,frontmatter:()=>w});var a=f(l()),w={title:\"Quick Tip: macOS as a cache for Apple Devices\",date:\"2020-04-09\",excerpt:\"Papa Tim is surely happy if you have all those Apple devices\",tags:[\"Apple\"]};function d(n){let e=Object.assign({p:\"p\",strong:\"strong\",pre:\"pre\",code:\"code\",a:\"a\"},n.components);return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.p,{children:[\"A cache server is a great tool to \",(0,a.jsx)(e.strong,{children:\"speed up\"}),\" recurring network requests (example: system updates) and reduce the overall used internet bandwidth.\"]}),`\n`,(0,a.jsx)(e.p,{children:\"Today we'll see how to set-up a cache server for our Apple devices.\"}),`\n`,(0,a.jsxs)(e.p,{children:[\"Let's say that you have multiple Apple devices on your network and you happen to have a macOS device \",(0,a.jsx)(e.strong,{children:\"always powered on\"}),\" (or a macOS vm, ed.), you can use the after-mentioned device as a cache for your other devices.\"]}),`\n`,(0,a.jsxs)(e.p,{children:[\"To \",(0,a.jsx)(e.strong,{children:\"check\"}),\" if it's possible to use your Mac as a caching server, run this command:\"]}),`\n`,(0,a.jsx)(e.pre,{children:(0,a.jsx)(e.code,{className:\"language-bash\",children:`$ AssetCacheManagerUtil canActivate\n`})}),`\n`,(0,a.jsxs)(e.p,{children:['If you get a \"',(0,a.jsx)(e.strong,{children:\"yes\"}),'\" as a response, you can set-up your cache server via this simple command:']}),`\n`,(0,a.jsx)(e.pre,{children:(0,a.jsx)(e.code,{className:\"language-bash\",children:`$ sudo AssetCacheManagerUtil activate\n`})}),`\n`,(0,a.jsxs)(e.p,{children:[\"Your devices will now discover this cache server automatically after a \",(0,a.jsx)(e.strong,{children:\"reboot\"}),\".\"]}),`\n`,(0,a.jsxs)(e.p,{children:[\"You can find more information about this macOS feature \",(0,a.jsx)(e.a,{href:\"https://support.apple.com/guide/mac-help/manage-content-caching-command-line-mac-mchla6d4541e/mac\",children:\"here\"}),\".\"]})]})}function A(n={}){let{wrapper:e}=n.components||{};return e?(0,a.jsx)(e,Object.assign({},n,{children:(0,a.jsx)(d,n)})):d(n)}var b=A;return x(j);})();\n;return Component;"
+  },
+  "_id": "blog/quick-tip-macos-as-a-cache-for-apple-devices.md",
+  "_raw": {
+    "sourceFilePath": "blog/quick-tip-macos-as-a-cache-for-apple-devices.md",
+    "sourceFileName": "quick-tip-macos-as-a-cache-for-apple-devices.md",
+    "sourceFileDir": "blog",
+    "contentType": "markdown",
+    "flattenedPath": "blog/quick-tip-macos-as-a-cache-for-apple-devices"
+  },
+  "type": "Post",
+  "url": "blog/quick-tip-macos-as-a-cache-for-apple-devices",
+  "timeToRead": "1"
+}

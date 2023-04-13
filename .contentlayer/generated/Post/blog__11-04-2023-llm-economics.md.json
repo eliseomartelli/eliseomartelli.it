@@ -1,0 +1,24 @@
+{
+  "title": "The economic impact of LLMs",
+  "excerpt": "A great master must be a great teacher",
+  "date": "2023-04-11T19:30:00.000Z",
+  "tags": [
+    "Misc",
+    "Short"
+  ],
+  "body": {
+    "raw": "\nLarge language models such as generative pre-trained transformers (GPTs) are in full bloom, with researchers developing, testing, and refining systems with capabilities spanning various domains [[1]](#1).\n\nTechnological evolution brought these tools to a broader than-ever audience. In a modern office type-setting, it's increasingly normal to see someone interacting with AI tools like ChatGPT.\n\n### References\n\n<a id=\"1\">[1]</a>\nSparks of Artificial General Intelligence: Early experiments with GPT-4  \n<a id=\"2\">[2]</a>\nGPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models\n",
+    "code": "var Component=(()=>{var g=Object.create;var i=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var u=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),b=(n,e)=>{for(var r in e)i(n,r,{get:e[r],enumerable:!0})},o=(n,e,r,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!f.call(n,a)&&a!==r&&i(n,a,{get:()=>e[a],enumerable:!(s=d(e,a))||s.enumerable});return n};var x=(n,e,r)=>(r=n!=null?g(p(n)):{},o(e||!n||!n.__esModule?i(r,\"default\",{value:n,enumerable:!0}):r,n)),L=n=>o(i({},\"__esModule\",{value:!0}),n);var l=u((G,c)=>{c.exports=_jsx_runtime});var _={};b(_,{default:()=>T,frontmatter:()=>j});var t=x(l()),j={title:\"The economic impact of LLMs\",date:\"2023-04-11 21:30\",excerpt:\"A great master must be a great teacher\",tags:[\"Misc\",\"Short\"]};function h(n){let e=Object.assign({p:\"p\",a:\"a\",h3:\"h3\",br:\"br\"},n.components);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(e.p,{children:[\"Large language models such as generative pre-trained transformers (GPTs) are in full bloom, with researchers developing, testing, and refining systems with capabilities spanning various domains \",(0,t.jsx)(e.a,{href:\"#1\",children:\"[1]\"}),\".\"]}),`\n`,(0,t.jsx)(e.p,{children:\"Technological evolution brought these tools to a broader than-ever audience. In a modern office type-setting, it's increasingly normal to see someone interacting with AI tools like ChatGPT.\"}),`\n`,(0,t.jsx)(e.h3,{children:\"References\"}),`\n`,(0,t.jsxs)(e.p,{children:[(0,t.jsx)(\"a\",{id:\"1\",children:\"[1]\"}),`\nSparks of Artificial General Intelligence: Early experiments with GPT-4`,(0,t.jsx)(e.br,{}),`\n`,(0,t.jsx)(\"a\",{id:\"2\",children:\"[2]\"}),`\nGPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models`]})]})}function M(n={}){let{wrapper:e}=n.components||{};return e?(0,t.jsx)(e,Object.assign({},n,{children:(0,t.jsx)(h,n)})):h(n)}var T=M;return L(_);})();\n;return Component;"
+  },
+  "_id": "blog/11-04-2023-llm-economics.md",
+  "_raw": {
+    "sourceFilePath": "blog/11-04-2023-llm-economics.md",
+    "sourceFileName": "11-04-2023-llm-economics.md",
+    "sourceFileDir": "blog",
+    "contentType": "markdown",
+    "flattenedPath": "blog/11-04-2023-llm-economics"
+  },
+  "type": "Post",
+  "url": "blog/11-04-2023-llm-economics",
+  "timeToRead": "1"
+}
