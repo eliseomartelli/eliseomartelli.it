@@ -9,7 +9,7 @@ const Blog = () => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
   return (
-    <WidthLimit className="p-4">
+    <WidthLimit>
       <h1 className="text-4xl font-bold mb-4">Blog</h1>
       <ul className="flex flex-col gap-8 mt-8">
         {posts.map((post, i) => (

@@ -12,7 +12,7 @@ const PhotoComponent = ({ url, title, aspect }: Photo) => {
         aspect == "vertical" ? "aspect-vertical" : "aspect-horizontal"
       } bg-gray-400 ${
         loading && "animate-pulse"
-      } rounded-md overflow-hidden mb-4`}
+      } rounded-md overflow-hidden mb-4 z-0`}
     >
       <Image
         src={url!}
@@ -24,7 +24,7 @@ const PhotoComponent = ({ url, title, aspect }: Photo) => {
               (min-width: 768px) 33vw,
               (min-width: 1024px) 25vw,
               100vw"
-        className="!relative"
+        className="!relative "
         onLoad={() => {
           setLoading(false);
         }}

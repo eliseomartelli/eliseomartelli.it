@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SVGProps } from "react";
 
 export const Menu = () => {
   return (
@@ -15,55 +15,6 @@ export const Menu = () => {
         strokeLinejoin="round"
         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
       />
-    </svg>
-  );
-};
-
-export const Spinner = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      stroke="#000"
-      viewBox="0 0 24 24"
-    >
-      <g>
-        <circle
-          cx="12"
-          cy="12"
-          r="9.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeWidth="3"
-        >
-          <animate
-            attributeName="stroke-dasharray"
-            calcMode="spline"
-            dur="1.5s"
-            keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1"
-            keyTimes="0;0.475;0.95;1"
-            repeatCount="indefinite"
-            values="0 150;42 150;42 150;42 150"
-          ></animate>
-          <animate
-            attributeName="stroke-dashoffset"
-            calcMode="spline"
-            dur="1.5s"
-            keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1"
-            keyTimes="0;0.475;0.95;1"
-            repeatCount="indefinite"
-            values="0;-16;-59;-59"
-          ></animate>
-        </circle>
-        <animateTransform
-          attributeName="transform"
-          dur="2s"
-          repeatCount="indefinite"
-          type="rotate"
-          values="0 12 12;360 12 12"
-        ></animateTransform>
-      </g>
     </svg>
   );
 };
@@ -99,5 +50,48 @@ export const ArrowUpHighIcon = ({ className }: { className: string }) => (
       strokeLinejoin="round"
       d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
     />
+  </svg>
+);
+
+export const Loading = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <circle cx="4" cy="12" r="3">
+      <animate
+        id="spinner_qFRN"
+        attributeName="cy"
+        begin="0;spinner_OcgL.end+0.25s"
+        calcMode="spline"
+        dur="0.6s"
+        keySplines=".33,.66,.66,1;.33,0,.66,.33"
+        values="12;6;12"
+      ></animate>
+    </circle>
+    <circle cx="12" cy="12" r="3">
+      <animate
+        attributeName="cy"
+        begin="spinner_qFRN.begin+0.1s"
+        calcMode="spline"
+        dur="0.6s"
+        keySplines=".33,.66,.66,1;.33,0,.66,.33"
+        values="12;6;12"
+      ></animate>
+    </circle>
+    <circle cx="20" cy="12" r="3">
+      <animate
+        id="spinner_OcgL"
+        attributeName="cy"
+        begin="spinner_qFRN.begin+0.2s"
+        calcMode="spline"
+        dur="0.6s"
+        keySplines=".33,.66,.66,1;.33,0,.66,.33"
+        values="12;6;12"
+      ></animate>
+    </circle>
   </svg>
 );

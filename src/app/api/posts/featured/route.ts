@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { allPosts } from "../../../../../.contentlayer/generated/index.mjs";
+import { allPosts } from "contentlayer/generated";
 
 export async function GET() {
   const featuredPostsUrl = [
-    "blog/07-12-2022-photostruggles",
+    "blog/vyos-ospf-wireguard",
     "blog/26-11-2022-cryptobros",
     "blog/25-11-2022-cameras",
   ];

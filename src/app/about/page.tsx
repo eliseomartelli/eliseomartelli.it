@@ -59,7 +59,7 @@ const socials: Social[] = [
 
 const About = () => {
   return (
-    <WidthLimit className="p-4">
+    <WidthLimit>
       <h1 className="text-4xl font-bold">About</h1>
       <span className="prose w-full">
         <p className="mt-8">

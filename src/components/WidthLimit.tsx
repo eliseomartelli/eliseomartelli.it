@@ -8,7 +8,7 @@ const WidthLimit = ({
   className?: string;
 }) => {
   return (
-    <div className={["max-w-4xl mx-auto w-full", className].join(" ")}>
+    <div className={["max-w-4xl mx-auto w-full px-4", className].join(" ")}>
       {children}
     </div>
   );

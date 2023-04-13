@@ -40,10 +40,8 @@ export const FeaturedPostCard = ({ post }: { post?: Post }) => {
 
 export const EmptyFeaturedPostCard = () => (
   //Empty State
-  <span className="grow">
-    <Card>
-      <span className="block h-8 w-1/3 bg-gray-500 animate-pulse" />
-      <span className="block h-6 w-2/3 bg-gray-300 animate-pulse" />
-    </Card>
-  </span>
+  <Card className="grow">
+    <span className="block h-8 w-1/3 bg-gray-500 animate-pulse mb-12" />
+    <span className="block h-6 w-2/3 bg-gray-300 animate-pulse" />
+  </Card>
 );

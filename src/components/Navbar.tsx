@@ -28,6 +28,7 @@ export const Navbar = ({
         <div className="hidden md:block">{children}</div>
         <Button
           className="md:hidden block"
+          color={Color.Transparent}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <Menu />
@@ -36,12 +37,14 @@ export const Navbar = ({
       {menuOpen && (
         <div className="relative">
           <div
-            className="md:hidden flex-col justify-end items-end border-md shadow-md flex bg-white border absolute rounded-md right-4 p-4 z-50"
+            className="md:hidden flex absolute z-50 justify-end w-full"
             onClick={() => {
               setMenuOpen(false);
             }}
           >
-            {children}
+            <div className=" bg-white p-4 shadow-2xl rounded-md">
+              {children}
+            </div>
           </div>
         </div>
       )}

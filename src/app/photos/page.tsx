@@ -5,7 +5,7 @@ import PhotoComponent from "./PhotoTile";
 const Photos = () => {
   return (
     <>
-      <WidthLimit className="p-4">
+      <WidthLimit>
         <h1 className="text-4xl font-bold mb-4">Photos</h1>
       </WidthLimit>
       {allPhotos.map((photoSection, i) => (

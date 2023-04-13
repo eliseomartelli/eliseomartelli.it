@@ -4,6 +4,8 @@ import {
   makeSource,
 } from "contentlayer/source-files";
 import { timeToRead } from "./src/lib/timeToRead";
+import remarkGfm from "remark-gfm";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const Photo = defineNestedType(() => ({
   name: "Photo",
@@ -77,4 +79,8 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: ".",
   documentTypes: [Post, Photos],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [[rehypePrettyCode, { theme: "one-dark-pro" }]],
+  },
 });

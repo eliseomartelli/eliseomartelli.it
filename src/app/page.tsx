@@ -5,10 +5,12 @@ import Image from "next/image";
 import { DefaultFeaturedPosts } from "./featuredPostSection";
 import { Newsletter } from "@/components/Newsletter";
 import Link from "next/link";
+import { Features, useFeatures } from "@/lib/useFeatures";
 
-export default function Home() {
+const Home = () => {
+  const features = useFeatures();
   return (
-    <WidthLimit className="p-4 flex flex-col gap-16">
+    <WidthLimit className="flex flex-col gap-16">
       <Bio
         name="Eliseo Martelli"
         description="Hey, I'm Eliseo. I'm passionate about computers, photography & music."
@@ -19,7 +21,7 @@ export default function Home() {
             height={128}
             alt="Logo"
             className="rounded-full"
-          ></Image>
+          />
         }
         extra={
           <Link href="/contact">
@@ -27,8 +29,10 @@ export default function Home() {
           </Link>
         }
       ></Bio>
-      <DefaultFeaturedPosts />
-      <Newsletter />
+      {features.includes(Features.FeaturedPosts) && <DefaultFeaturedPosts />}
+      {features.includes(Features.Newsletter) && <Newsletter />}
     </WidthLimit>
   );
-}
+};
+
+export default Home;

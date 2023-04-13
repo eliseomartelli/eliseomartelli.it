@@ -1,6 +1,6 @@
 import { ImageResponse } from "@vercel/og";
-import { allPosts } from "../../../../../.contentlayer/generated/index.mjs";
-import { dateFormatter } from "../../../../lib/dateFormatter";
+import { allPosts } from "contentlayer/generated";
+import { dateFormatter } from "@/lib/dateFormatter";
 import { NextResponse } from "next/server.js";
 
 export async function GET(
@@ -25,11 +25,11 @@ export async function GET(
   const view = (
     <div tw="flex flex-col w-full h-full p-24 bg-gray-100">
       <div tw="flex flex-col">
-        <p tw="mt-0 text-xl">{dateFormatter(post?.date)}</p>
+        <p tw="mt-0 text-xl">{dateFormatter(post.date)}</p>
         <h2 tw="text-6xl font-bold text-gray-900 text-left tracking-tight max-w-2/3">
-          {post?.title}
+          {post.title}
         </h2>
-        <p tw="text-xl max-w-1/2">{post?.excerpt}</p>
+        <p tw="text-xl max-w-1/2">{post.excerpt}</p>
       </div>
       <div tw="flex grow"></div>
       <div tw="flex flex-row items-center justify-end">

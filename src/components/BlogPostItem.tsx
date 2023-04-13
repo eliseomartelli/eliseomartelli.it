@@ -2,7 +2,7 @@ import { Post } from "contentlayer/generated";
 import Link from "next/link";
 import { CategoryTaglet } from "./Taglet";
 import { dateFormatter } from "@/lib/dateFormatter";
-import { pluralize } from "@/lib/usePlural";
+import { pluralize } from "@/lib/pluralize";
 
 const formatMinutesToRead = (minutes: number) =>
   pluralize(minutes, ["%d minute to read", "%d minutes to read"]);
