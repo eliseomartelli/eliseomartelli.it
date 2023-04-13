@@ -34,7 +34,12 @@ export async function GET(
       <div tw="flex grow"></div>
       <div tw="flex flex-row items-center justify-end">
         <h1 tw="text-3xl">Eliseo Martelli</h1>
-        <img src="https://eliseomartelli.it/icon.png" tw="w-24 ml-4"></img>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://eliseomartelli.it/icon.png"
+          tw="w-24 ml-4"
+          alt="Logo"
+        />
       </div>
     </div>
   );
