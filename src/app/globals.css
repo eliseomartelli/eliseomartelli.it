@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-rehype-pretty-code-fragment] code {
+  @apply max-w-xs;
+  counter-reset: line;
+  box-decoration-break: clone;
+}
