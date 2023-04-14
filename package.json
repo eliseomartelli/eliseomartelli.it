@@ -10,7 +10,7 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^4.29.5-appdir.0",
+    "@netlify/plugin-nextjs": "^4.34.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.15.11",
     "@types/nodemailer": "^6.4.7",
