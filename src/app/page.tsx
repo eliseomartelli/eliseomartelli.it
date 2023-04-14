@@ -7,6 +7,8 @@ import { Newsletter } from "@/components/Newsletter";
 import Link from "next/link";
 import { Features, useFeatures } from "@/lib/useFeatures";
 
+export const metadata = { title: "Home - Eliseo Martelli" };
+
 const Home = () => {
   const features = useFeatures();
   return (

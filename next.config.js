@@ -4,7 +4,10 @@ const nextConfig = {
     appDir: true,
   },
   async rewrites() {
-    return [{ source: "/socials", destination: "/about" }];
+    return [
+      { source: "/socials", destination: "/about" },
+      { source: "/ngl", destination: "/feedback" },
+    ];
   },
 };
 

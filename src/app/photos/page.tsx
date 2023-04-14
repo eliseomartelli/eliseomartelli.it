@@ -2,6 +2,11 @@ import WidthLimit from "@/components/WidthLimit";
 import { allPhotos } from "contentlayer/generated";
 import PhotoComponent from "./PhotoTile";
 
+export const metadata = {
+  title: "Photos - Eliseo Martelli",
+  description: "Some pictures that I like",
+};
+
 const Photos = () => {
   return (
     <>

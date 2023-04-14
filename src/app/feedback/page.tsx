@@ -1,5 +1,11 @@
 import WidthLimit from "@/components/WidthLimit";
 import { FeedbackForm } from "./form";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Feedback - Eliseo Martelli",
+  description: "Leave feedback, anonymously",
+};
 
 const Feedback = () => {
   return (

@@ -5,6 +5,7 @@ import { Input, Textarea } from "@/components/Input";
 import { checkEmail } from "@/lib/checkEmail";
 import { checkMessage } from "@/lib/checkMessage";
 import { checkName } from "@/lib/checkName";
+import { Contact } from "@/types/Contact";
 import { FormEvent, useEffect, useState } from "react";
 
 enum FormState {
@@ -15,27 +16,25 @@ enum FormState {
   Error,
 }
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
 export const ContactForm = () => {
   const [state, setState] = useState<FormState>(FormState.Input);
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<Contact>({
     name: "",
     email: "",
     message: "",
   });
 
-  const submitFunction = (e: FormEvent) => {
+  const submitFunction = async (e: FormEvent) => {
     e.preventDefault();
     setState(FormState.Sending);
-    // TODO: Do network activity
-    setTimeout(() => {
-      setState(FormState.Sent);
-    }, 1000);
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
+    if (!response.ok) {
+      setState(FormState.Error);
+    }
+    setState(FormState.Sent);
   };
 
   useEffect(() => {

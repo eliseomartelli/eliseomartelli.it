@@ -1,6 +1,12 @@
 import WidthLimit from "@/components/WidthLimit";
 import Link from "next/link";
 import { ContactForm } from "./form";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact - Eliseo Martelli",
+  description: "Contact me easily",
+};
 
 const Contact = () => {
   return (

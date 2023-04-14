@@ -5,12 +5,54 @@ import { Newsletter } from "@/components/Newsletter";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
 import { allPosts } from "contentlayer/generated";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post.url,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    slug: string;
+  };
+}): Promise<Metadata | undefined> {
+  const post = allPosts.find(
+    (post) => post._raw.flattenedPath === `blog/${params.slug}`
+  );
+  if (!post) {
+    return;
+  }
+
+  const { title, date: publishedTime, excerpt: description } = post;
+  const ogImage = `https://eliseomartelli.it/api/og/${post.url}`;
+
+  return {
+    title: `${title} - Eliseo Martelli`,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime,
+      url: `https://eliseomartelli.it/${post._raw.flattenedPath}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
 }
 
 const PostPage = ({ params }: { params: { slug: string } }) => {

@@ -3,6 +3,11 @@ import React from "react";
 import WidthLimit from "@/components/WidthLimit";
 import { allPosts } from "contentlayer/generated";
 import { BlogPostItem } from "@/components/BlogPostItem";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog - Eliseo Martelli",
+};
 
 const Blog = () => {
   const posts = allPosts.sort((a, b) => {

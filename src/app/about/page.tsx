@@ -1,7 +1,12 @@
 import { Card } from "@/components/Card";
 import WidthLimit from "@/components/WidthLimit";
+import { Metadata } from "next";
 import Link from "next/link";
 import React, { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "About - Eliseo Martelli",
+};
 
 interface Social {
   url: string;

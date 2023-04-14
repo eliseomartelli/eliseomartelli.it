@@ -4,6 +4,7 @@ import Button, { Color } from "@/components/Button";
 import { Loading } from "@/components/Icons";
 import { Textarea } from "@/components/Input";
 import { checkMessage } from "@/lib/checkMessage";
+import { Feedback } from "@/types/Feedback";
 import React, { FormEvent, useEffect, useState } from "react";
 
 enum FormState {
@@ -17,13 +18,18 @@ enum FormState {
 export const FeedbackForm = () => {
   const [state, setState] = useState<FormState>(FormState.Input);
   const [message, setMessage] = useState("");
-  const submitFunction = (e: FormEvent) => {
+  const submitFunction = async (e: FormEvent) => {
     e.preventDefault();
     setState(FormState.Sending);
-    // TODO: Do network activity
-    setTimeout(() => {
-      setState(FormState.Sent);
-    }, 1000);
+    const feedback: Feedback = { message: message };
+    const response = await fetch("/api/feedback", {
+      method: "POST",
+      body: JSON.stringify(feedback),
+    });
+    if (!response.ok) {
+      setState(FormState.Error);
+    }
+    setState(FormState.Sent);
   };
 
   useEffect(() => {
