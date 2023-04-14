@@ -28,10 +28,12 @@ export const BlogPostTitle = ({
   title,
   timeToRead,
   date,
+  big,
 }: {
   title: string;
   timeToRead?: number;
   date: string;
+  big?: boolean;
 }) => {
   const dateBar = timeToRead ? (
     <>
@@ -42,7 +44,7 @@ export const BlogPostTitle = ({
   );
   return (
     <>
-      <h1 className="text-xl font-bold">{title}</h1>
+      <h1 className={`${big ? "text-3xl" : "text-xl"} font-bold`}>{title}</h1>
       <p className="text-gray-500">{dateBar}</p>
     </>
   );

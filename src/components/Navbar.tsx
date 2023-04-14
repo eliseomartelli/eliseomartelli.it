@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import Button, { Color } from "./Button";
+import Button, { Color, getButtonClassNames } from "./Button";
 import Link from "next/link";
 import { Menu } from "./Icons";
 import Image from "next/image";
@@ -53,14 +53,15 @@ export const Navbar = ({
 };
 
 export const NavbarLink = ({ title, href, selected }: NavbarLinkProps) => (
-  <Link href={href} className="w-full">
-    <Button
-      noBold={!selected}
-      color={Color.Transparent}
-      className="w-full md:w-auto text-right"
-    >
-      {title}
-    </Button>
+  <Link
+    href={href}
+    className={getButtonClassNames({
+      noBold: !selected,
+      color: Color.Transparent,
+      className: "w-full md:w-auto text-right",
+    })}
+  >
+    {title}
   </Link>
 );
 

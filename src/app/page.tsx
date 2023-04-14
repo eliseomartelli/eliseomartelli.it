@@ -1,5 +1,5 @@
 import { Bio } from "@/components/Bio";
-import Button, { Color } from "@/components/Button";
+import { Color, getButtonClassNames } from "@/components/Button";
 import WidthLimit from "@/components/WidthLimit";
 import Image from "next/image";
 import { DefaultFeaturedPosts } from "./featuredPostSection";
@@ -24,8 +24,11 @@ const Home = () => {
           />
         }
         extra={
-          <Link href="/contact">
-            <Button color={Color.Red}>Get in touch</Button>
+          <Link
+            href="/contact"
+            className={getButtonClassNames({ color: Color.Red })}
+          >
+            Get in touch
           </Link>
         }
       ></Bio>

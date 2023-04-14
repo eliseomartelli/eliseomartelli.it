@@ -27,7 +27,7 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
     <>
       <article className="prose mx-auto px-4 w-full">
         <section className="not-prose text-black text-center flex flex-col items-center align-middle mb-8">
-          <BlogPostTitle {...post} />
+          <BlogPostTitle {...post} big />
           <TagRow tags={post.tags} />
         </section>
         <MDXComponent code={post.body.code} />

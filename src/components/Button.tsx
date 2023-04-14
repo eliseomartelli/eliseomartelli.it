@@ -23,19 +23,15 @@ export enum Color {
   Black,
 }
 
-export default function Button({
-  children,
-  onClick,
-  ariaLabel,
+export const getButtonClassNames = ({
   color,
   small,
   className: passedClassNames,
-  disabled,
   noCenter,
   noBold,
   noRounded,
-}: ButtonProps): JSX.Element {
-  const className = [
+}: ButtonProps) => {
+  return [
     "transition-colors",
     !noRounded && "rounded-md",
     color == Color.Transparent && "hover:bg-gray-200",
@@ -51,15 +47,17 @@ export default function Button({
     noCenter ? "text-start" : "",
     noBold ? "" : "font-bold",
   ].join(" ");
+};
 
+export default function Button(props: ButtonProps): JSX.Element {
   return (
     <button
-      disabled={disabled}
-      className={className}
-      onClick={onClick}
-      aria-label={ariaLabel}
+      disabled={props.disabled}
+      className={getButtonClassNames(props)}
+      onClick={props.onClick}
+      aria-label={props.ariaLabel}
     >
-      {children}
+      {props.children}
     </button>
   );
 }
