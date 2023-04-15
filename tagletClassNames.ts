@@ -7,6 +7,8 @@ export const tagletClassNames: { [name: string]: string } = {
   automation: "bg-green-50 border-green-300",
   photography: "bg-indigo-50 border-indigo-300",
   programming: "bg-stone-50 border-stone-300",
+  misc: "bg-rose-50 border-rose-300",
+  studies: "bg-violet-50 border-violet-300",
   music: "bg-purple-50 border-purple-300",
   default: "bg-gray-50 border-gray-300",
 };

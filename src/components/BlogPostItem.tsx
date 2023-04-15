@@ -53,7 +53,9 @@ export const BlogPostTitle = ({
 export const TagRow = ({ tags }: { tags: string[] }) => (
   <div className="flex flex-row gap-2 mt-4">
     {tags.map((tag, i) => (
-      <CategoryTaglet category={tag} key={i} />
+      <Link href={`/blog/tags/${tag}`} key={i}>
+        <CategoryTaglet category={tag} />
+      </Link>
     ))}
   </div>
 );
