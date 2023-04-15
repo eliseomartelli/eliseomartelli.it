@@ -2,6 +2,7 @@ import { ImageResponse } from "@vercel/og";
 import { allPosts } from "contentlayer/generated";
 import { dateFormatter } from "@/lib/dateFormatter";
 import { NextResponse } from "next/server.js";
+import { tagletClassNames } from "../../../../../tagletClassNames";
 
 export async function GET(
   _: Request,
@@ -30,6 +31,19 @@ export async function GET(
           {post.title}
         </h2>
         <p tw="text-xl max-w-1/2">{post.excerpt}</p>
+        <div tw="flex">
+          {post.tags.map((tag, i) => (
+            <span
+              key={i}
+              tw={`${
+                tagletClassNames[tag.toLowerCase()] ||
+                tagletClassNames["default"]
+              } py-2 px-4 rounded-full`}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
       <div tw="flex grow"></div>
       <div tw="flex flex-row items-center justify-end">

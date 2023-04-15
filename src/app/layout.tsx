@@ -70,11 +70,11 @@ const externalLinks = [
   },
   {
     name: "SSH Key",
-    href: "https://instagram.com/eliseomartelli",
+    href: "/ssh/default",
   },
   {
     name: "PGP Key",
-    href: "https://instagram.com/eliseomartelli",
+    href: "https://keyserver.ubuntu.com/pks/lookup?op=hget&search=d1d8ef9629b93cda0ee2b0164fa7d02e",
   },
 ];
 
@@ -97,7 +97,7 @@ const internalLinks = [
   },
   {
     name: "RSS Feed",
-    href: "/feex.xml",
+    href: "/feed.xml",
   },
   {
     name: "Feedback",

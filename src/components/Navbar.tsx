@@ -29,6 +29,7 @@ export const Navbar = ({
         <Button
           className="md:hidden block"
           color={Color.Transparent}
+          ariaLabel="Menu button"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <Menu />
@@ -42,7 +43,7 @@ export const Navbar = ({
               setMenuOpen(false);
             }}
           >
-            <div className=" bg-white p-4 shadow-2xl rounded-md">
+            <div className="bg-white p-4 shadow-2xl rounded-md flex flex-col text-center">
               {children}
             </div>
           </div>

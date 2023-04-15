@@ -22,8 +22,7 @@ const PhotoComponent = ({ url, title, aspect }: Photo) => {
         sizes="
               (min-width: 640px) 50vw,
               (min-width: 768px) 33vw,
-              (min-width: 1024px) 25vw,
-              100vw"
+              25vw"
         className="!relative "
         onLoad={() => {
           setLoading(false);

@@ -22,6 +22,7 @@ const Home = () => {
             width={128}
             height={128}
             alt="Logo"
+            loading="eager"
             className="rounded-full"
           />
         }
