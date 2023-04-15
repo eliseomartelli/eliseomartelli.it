@@ -21,7 +21,7 @@ export async function GET() {
         title: post.title,
         url: `https://eliseomartelli.it/blog/${post.url}`,
         date: post.date,
-        description: post.body.raw,
+        description: post.body.code,
       });
     })
   );
