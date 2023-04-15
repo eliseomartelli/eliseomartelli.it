@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const transporter = getMailTransporter();
     const { SMTP_FROM: from, SMTP_TO: to } = process.env;
 
-    transporter
+    await transporter
       .sendMail({
         from,
         to,
