@@ -13,7 +13,7 @@ const PhotoComponent = ({ url, title, aspect }: Photo) => {
         aspect == "vertical" ? "aspect-vertical" : "aspect-horizontal"
       } bg-gray-400 ${
         loading && "animate-pulse"
-      } rounded-md overflow-hidden z-0 mb-4`}
+      } rounded-md overflow-hidden z-0 mb-4 group`}
     >
       <Link href={url!}>
         <Image
@@ -25,11 +25,14 @@ const PhotoComponent = ({ url, title, aspect }: Photo) => {
               (min-width: 640px) 50vw,
               (min-width: 768px) 33vw,
               25vw"
-          className="!relative "
+          className="!relative group-hover:brightness-50 z-0"
           onLoad={() => {
             setLoading(false);
           }}
         />
+        <p className="group-hover:opacity-100 opacity-0 absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          {title}
+        </p>
       </Link>
     </div>
   );
