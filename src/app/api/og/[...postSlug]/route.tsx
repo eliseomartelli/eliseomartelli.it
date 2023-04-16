@@ -4,10 +4,6 @@ import { dateFormatter } from "@/lib/dateFormatter";
 import { NextResponse } from "next/server.js";
 import { tagletClassNames } from "../../../../../tagletClassNames";
 
-export const config = {
-  runtime: "edge",
-};
-
 export async function GET(
   _: Request,
   {

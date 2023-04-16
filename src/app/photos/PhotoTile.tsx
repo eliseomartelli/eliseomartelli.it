@@ -1,21 +1,22 @@
 "use client";
 
+import { MapPin } from "@/components/Icons";
 import { Photo } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const PhotoComponent = ({ url, title, aspect }: Photo) => {
+const PhotoComponent = ({ url, title, aspect, place }: Photo) => {
   const [loading, setLoading] = useState(true);
   return (
-    <div
-      className={`relative w-full ${
-        aspect == "vertical" ? "aspect-vertical" : "aspect-horizontal"
-      } bg-gray-400 ${
-        loading && "animate-pulse"
-      } rounded-md overflow-hidden z-0 mb-4 group`}
-    >
-      <Link href={url!}>
+    <Link href={url!} className="break-before-column">
+      <div
+        className={`relative w-full ${
+          aspect == "vertical" ? "aspect-vertical" : "aspect-horizontal"
+        } bg-gray-400 ${
+          loading && "animate-pulse"
+        } rounded-md overflow-hidden z-0 mb-4`}
+      >
         <Image
           src={url!}
           fill
@@ -30,11 +31,8 @@ const PhotoComponent = ({ url, title, aspect }: Photo) => {
             setLoading(false);
           }}
         />
-        <p className="group-hover:opacity-100 opacity-0 absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          {title}
-        </p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

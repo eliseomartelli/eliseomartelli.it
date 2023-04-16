@@ -13,6 +13,10 @@ const Photo = defineNestedType(() => ({
     title: {
       type: "string",
     },
+    place: {
+      type: "string",
+      required: false,
+    },
     url: {
       type: "string",
     },
