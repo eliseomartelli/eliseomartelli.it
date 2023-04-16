@@ -1,6 +1,10 @@
 import { allPhotos } from "contentlayer/generated";
 import { ImageResponse, NextResponse } from "next/server";
 
+export const config = {
+  runtime: "edge",
+};
+
 export async function GET(
   _: Request,
   {
