@@ -10,6 +10,7 @@ export const metadata = {
 };
 
 const Photos = () => {
+  const { SITE_HOST } = process.env;
   return (
     <WidthLimit>
       <h1 className="text-4xl font-bold mb-4">Photos</h1>
@@ -21,7 +22,7 @@ const Photos = () => {
               hoverable
             >
               <Image
-                src={`/api/thumbnail/${photo._raw.flattenedPath}`}
+                src={`${SITE_HOST}/api/thumbnail/${photo._raw.flattenedPath}`}
                 alt={photo.title}
                 fill
                 className="brightness-50 z-0 hover:brightness-[0.25]"

@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ["eliseomartelli.it"],
+  },
   async rewrites() {
     return [
       { source: "/socials", destination: "/about" },
