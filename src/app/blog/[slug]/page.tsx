@@ -1,7 +1,5 @@
 import { DefaultFeaturedPosts } from "@/app/featuredPostSection";
 import { BlogPostTitle, TagRow } from "@/components/BlogPostItem";
-import { Color, getButtonClassNames } from "@/components/Button";
-import { RSSIcon } from "@/components/Icons";
 import { MDXComponent } from "@/components/MDX";
 import { Newsletter } from "@/components/Newsletter";
 import { RSSSubscribe } from "@/components/RSSSubscribe";
