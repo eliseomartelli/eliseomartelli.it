@@ -1,6 +1,7 @@
-import { allPosts } from "../../../.contentlayer/generated/index.mjs";
+import { allPosts } from "contentlayer/generated";
 import RSS from "rss";
 import { compareDesc } from "date-fns";
+import { MDXComponent } from "@/components/MDX";
 
 export async function GET() {
   const feed = new RSS({
@@ -15,13 +16,18 @@ export async function GET() {
     })
     .slice(0, 5); // Return latest 5 articles.
 
+  const ReactDOMServer = (await import("react-dom/server")).default;
+
   await Promise.all(
     posts.map(async (post) => {
       feed.item({
         title: post.title,
         url: `https://eliseomartelli.it/blog/${post.url}`,
         date: post.date,
-        description: post.body.code,
+        description: ReactDOMServer.renderToString(
+          <MDXComponent code={post.body.code} />
+        ),
+        categories: post.tags,
       });
     })
   );
