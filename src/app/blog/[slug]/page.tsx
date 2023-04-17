@@ -1,11 +1,15 @@
 import { DefaultFeaturedPosts } from "@/app/featuredPostSection";
 import { BlogPostTitle, TagRow } from "@/components/BlogPostItem";
+import { Color, getButtonClassNames } from "@/components/Button";
+import { RSSIcon } from "@/components/Icons";
 import { MDXComponent } from "@/components/MDX";
 import { Newsletter } from "@/components/Newsletter";
+import { RSSSubscribe } from "@/components/RSSSubscribe";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
 import { allPosts } from "contentlayer/generated";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -74,7 +78,8 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
         </section>
         <MDXComponent code={post.body.code} />
       </article>
-      <WidthLimit className="mt-16 gap-8 flex flex-col">
+      <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
+        <RSSSubscribe />
         {features.includes(Features.FeaturedPosts) && <DefaultFeaturedPosts />}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>

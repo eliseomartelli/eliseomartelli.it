@@ -17,7 +17,7 @@ export const FeaturedPosts = ({
     </div>
   );
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4 w-full">
       <h2 className="text-2xl font-bold">Featured Posts</h2>
       {error ? <p>{error}</p> : postGrid}
     </section>
