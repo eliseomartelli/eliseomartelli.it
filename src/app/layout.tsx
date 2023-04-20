@@ -59,14 +59,17 @@ const externalLinks = [
   {
     name: "GitHub",
     href: "https://github.com/eliseomartelli",
+    rel: "me",
   },
   {
     name: "Mastodon",
     href: "https://mastodon.social/@eliseomartelli",
+    rel: "me",
   },
   {
     name: "Instagram",
     href: "https://instagram.com/eliseomartelli",
+    rel: "me",
   },
   {
     name: "SSH Key",
