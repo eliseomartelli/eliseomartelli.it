@@ -43,11 +43,7 @@ export default function RootLayout({
     <html lang="en" className="min-h-screen scroll-smooth">
       <body className="flex flex-col w-full min-h-screen">
         <NextTopLoader color="rgb(153 27 27)" showSpinner={false} />
-        <div className="backdrop-blur-md sticky w-full border-b-[0.5px] bg-white/90 top-0 z-[100]">
-          <WidthLimit className="p-4">
-            <DefaultNavbar />
-          </WidthLimit>
-        </div>
+        <DefaultNavbar />
         <main className="flex flex-col min-h-screen my-8">{children}</main>
         <Footer />
       </body>

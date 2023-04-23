@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu } from "./Icons";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import WidthLimit from "./WidthLimit";
 
 interface NavbarLinkProps {
   title: string;
@@ -23,13 +24,14 @@ export const Navbar = ({
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-      <div className="flex flex-row justify-between place-items-end items-center">
+      <div className="flex flex-row justify-between items-center">
         {trailing}
-        <div className="hidden md:block">{children}</div>
+        <div className="hidden md:block ml-auto py-1">{children}</div>
         <Button
-          className="md:hidden block"
+          className="md:hidden block ml-auto"
           color={Color.Transparent}
           ariaLabel="Menu button"
+          small
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <Menu />
@@ -59,7 +61,9 @@ export const NavbarLink = ({ title, href, selected }: NavbarLinkProps) => (
     className={getButtonClassNames({
       noBold: !selected,
       color: Color.Transparent,
-      className: "w-full md:w-auto text-right",
+      className: `w-full md:w-auto text-right ${
+        selected && "underline"
+      } decoration-wavy underline-offset-4 decoration-red-600`,
     })}
   >
     {title}
@@ -74,23 +78,30 @@ export const DefaultNavbar = () => {
     { title: "About", href: "/about" },
   ];
   const pathname = usePathname();
+
   return (
-    <Navbar
-      trailing={
-        <Link href="/">
-          <Image
-            src="/icon.png"
-            width={48}
-            height={48}
-            alt="Site icon"
-            className="block h-12 w-auto rounded-full"
-          ></Image>
-        </Link>
-      }
-    >
-      {links.map((link, i) => (
-        <NavbarLink {...link} key={i} selected={pathname === link.href} />
-      ))}
-    </Navbar>
+    <div className="backdrop-blur-md sticky w-full border-b-[0.5px] bg-white/90 top-0 z-[100]">
+      <WidthLimit className="p-4">
+        <Navbar
+          trailing={
+            pathname !== "/" && (
+              <Link href="/">
+                <Image
+                  src="/icon.png"
+                  width={32}
+                  height={32}
+                  alt="Site icon"
+                  className="block h-8 w-auto rounded-full"
+                ></Image>
+              </Link>
+            )
+          }
+        >
+          {links.map((link, i) => (
+            <NavbarLink {...link} key={i} selected={pathname === link.href} />
+          ))}
+        </Navbar>
+      </WidthLimit>
+    </div>
   );
 };

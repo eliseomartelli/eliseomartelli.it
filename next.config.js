@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["eliseomartelli.it"],
+    domains: ["eliseomartelli.it", "localhost"],
   },
   async rewrites() {
     return [
