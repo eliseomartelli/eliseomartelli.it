@@ -8,6 +8,7 @@ import { Color, getButtonClassNames } from "@/components/Button";
 import Link from "next/link";
 import { ArrowUpHighIcon } from "@/components/Icons";
 import { RSSSubscribe } from "@/components/RSSSubscribe";
+import * as typography from "@/components/Typography";
 
 export const metadata: Metadata = {
   title: "Blog - Eliseo Martelli",
@@ -20,7 +21,7 @@ const Blog = () => {
   return (
     <WidthLimit className="flex flex-col gap-4 items-end">
       <div className="flex justify-between items-center w-full">
-        <h1 className="text-4xl font-bold">Blog</h1>
+        <typography.h1>Blog</typography.h1>
         <Link
           href={"/blog/tags"}
           className={getButtonClassNames({

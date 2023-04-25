@@ -95,6 +95,10 @@ const internalLinks = [
     href: "/photos",
   },
   {
+    name: "Uses",
+    href: "/uses",
+  },
+  {
     name: "RSS Feed",
     href: "/feed.xml",
   },

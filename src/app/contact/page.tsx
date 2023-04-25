@@ -2,6 +2,7 @@ import WidthLimit from "@/components/WidthLimit";
 import Link from "next/link";
 import { ContactForm } from "./form";
 import { Metadata } from "next";
+import * as typography from "@/components/Typography";
 
 export const metadata: Metadata = {
   title: "Contact - Eliseo Martelli",
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
 const Contact = () => {
   return (
     <WidthLimit>
-      <h1 className="text-4xl font-bold mb-4">Get in touch</h1>
+      <typography.h1 className="text-4xl font-bold mb-4">
+        Get in touch
+      </typography.h1>
       <section className="prose pb-8 mt-8 mx-auto w-full">
         <p>
           I&apos;d love to hear from you and learn more about how we can work

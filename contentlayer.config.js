@@ -41,6 +41,12 @@ export const Photos = defineDocumentType(() => ({
   },
 }));
 
+export const Uses = defineDocumentType(() => ({
+  name: "Uses",
+  filePathPattern: "uses.md",
+  contentType: "mdx",
+}));
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `blog/*.md`,
@@ -82,7 +88,7 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./data",
-  documentTypes: [Post, Photos],
+  documentTypes: [Post, Photos, Uses],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [[rehypePrettyCode, { theme: "one-dark-pro" }]],
