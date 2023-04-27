@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import { Card } from "./Card";
-import Link from "next/link";
 import { Color, getButtonClassNames } from "./Button";
 
 export const Product = ({
@@ -26,7 +25,7 @@ export const Product = ({
           )}
         </h1>
         {link && (
-          <Link
+          <a
             href={link}
             className={getButtonClassNames({
               small: true,
@@ -35,7 +34,7 @@ export const Product = ({
             })}
           >
             {linkText}
-          </Link>
+          </a>
         )}
       </div>
       <section className="prose">{children}</section>
