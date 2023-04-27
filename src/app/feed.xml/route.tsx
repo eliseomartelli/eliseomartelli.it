@@ -22,7 +22,7 @@ export async function GET() {
     posts.map(async (post) => {
       feed.item({
         title: post.title,
-        url: `https://eliseomartelli.it/blog/${post.url}`,
+        url: `https://eliseomartelli.it/${post.url}`,
         date: post.date,
         description: ReactDOMServer.renderToString(
           <MDXComponent code={post.body.code} />

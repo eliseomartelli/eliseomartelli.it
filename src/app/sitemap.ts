@@ -2,7 +2,7 @@ import { allPosts } from "contentlayer/generated";
 
 export default async function sitemap() {
   const blogs = allPosts.map((post) => ({
-    url: `https://eliseomartelli.it/blog/${post.url}`,
+    url: `https://eliseomartelli.it/${post.url}`,
     lastModified: post.date,
   }));
 
@@ -14,6 +14,7 @@ export default async function sitemap() {
     "/contact",
     "/feedback",
     "/photos",
+    "/uses",
   ].map((route) => ({
     url: `https://eliseomartelli.it${route}`,
     lastModified: new Date().toISOString().split("T")[0],
