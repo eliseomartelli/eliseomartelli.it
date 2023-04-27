@@ -11,15 +11,15 @@ export const Product = ({
   linkText = "Buy",
 }: {
   children?: ReactNode;
-  title?: string;
+  title?: ReactNode;
   variation?: string;
   link?: string;
   linkText?: string;
 }) => {
   return (
-    <Card className="mb-4">
-      <div className="flex justify-between not-prose">
-        <h1 className="text-xl font-bold">
+    <Card className="mb-4 flex gap-1.5 flex-col">
+      <div className="flex justify-between not-prose items-center">
+        <h1 className="text-xl font-bold flex items-center gap-2">
           {title}{" "}
           {variation && (
             <span className="text-sm text-gray-500">{variation}</span>
