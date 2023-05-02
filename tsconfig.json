@@ -22,7 +22,7 @@
       { "name": "unused-imports" }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*", "./*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },

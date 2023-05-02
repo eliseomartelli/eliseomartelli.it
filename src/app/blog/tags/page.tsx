@@ -3,7 +3,7 @@ import WidthLimit from "@/components/WidthLimit";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Card } from "@/components/Card";
-import { tagletClassNames } from "../../../../tagletClassNames";
+import { tagletClassNames } from "@/tagletClassNames";
 import { allTags } from "./allTags";
 
 export const metadata: Metadata = {

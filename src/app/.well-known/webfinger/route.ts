@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-export async function GET() {
-  return NextResponse.json({
+export async function GET(): Promise<NextResponse> {
+  const webfinger = {
     subject: "acct:eliseomartelli@mastodon.social",
     aliases: [
       "https://mastodon.social/@eliseomartelli",
@@ -23,5 +23,6 @@ export async function GET() {
         template: "https://mastodon.social/authorize_interaction?uri={uri}",
       },
     ],
-  });
+  };
+  return NextResponse.json(webfinger);
 }

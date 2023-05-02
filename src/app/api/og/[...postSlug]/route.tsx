@@ -2,7 +2,7 @@ import { ImageResponse } from "next/server";
 import { allPosts } from "contentlayer/generated";
 import { dateFormatter } from "@/lib/dateFormatter";
 import { NextResponse } from "next/server.js";
-import { tagletClassNames } from "../../../../../tagletClassNames";
+import { tagletClassNames } from "@/tagletClassNames";
 
 export const runtime = "edge";
 

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { tagletClassNames } from "../../tagletClassNames";
+import { tagletClassNames } from "@/tagletClassNames";
 
 export const Taglet = ({
   children,
