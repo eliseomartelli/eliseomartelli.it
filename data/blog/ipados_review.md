@@ -38,7 +38,7 @@ I'm a big fan of apps like [**Procreate**](https://apps.apple.com/us/app/procrea
 
 I feel like this is an area of the iPad experience that can take a **little revision**. Input feels fluid, some of the interactions are well presented and understandable but there are times I find them very **confusing**.
 
-<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/4Pv3rEjI4fQ" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<YouTube id="4Pv3rEjI4fQ"/>
 
 Just look at this video by Apple Support. It's just scratching the surface. Now add a trackpad, a keyboard, and the Apple Pencil. It's _gesture-ville_!  
 There's even a _shake-to-undo_ gesture on by default and the best time to discover it is when you're trying to get something done inside a vehicle.
@@ -65,13 +65,13 @@ The responsiveness of the Pencil is **remarkable**. It feels like you're writing
 
 The default software keyboard is okay. It's the only keyboard I know that supports **split typing** on the iPad. It's **responsive** most of the time. The only problem I encountered with it is when using a combination of keyboard-based input and the new "Scribble" feature.
 
-<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/mqefxehXa_c" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<YouTube id="mqefxehXa_c" />
 
 When you add a physical keyboard and a mouse to the iPad equation, it starts **feeling like a real computer**. Text interaction is instantly **natural**. If you're coming from a macOS machine, the majority of the **shortcuts are the same**.
 
 The mouse/trackpad experience on the iPad is **far from the desktop-like experience** and not in a bad way. The cursor is **optimized for touch-first interfaces** and morphs into the UI element you're trying to point and click and sticks to it, like a magnet.
 
-<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ZP0zeUfYt7U" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<YouTube id="ZP0zeUfYt7U"/>
 
 ## Multitasking
 

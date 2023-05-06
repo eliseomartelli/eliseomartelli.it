@@ -5,9 +5,9 @@ import { Newsletter } from "@/components/Newsletter";
 import { RSSSubscribe } from "@/components/RSSSubscribe";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
-import { allPosts } from "contentlayer/generated";
+import moo from "@eliseomartelli/moo/dist";
+import { Post, allPosts } from "contentlayer/generated";
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -70,10 +70,7 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <article className="prose mx-auto px-4 w-full">
-        <section className="not-prose text-black text-center flex flex-col items-center align-middle mb-8">
-          <BlogPostTitle {...post} big />
-          <TagRow tags={post.tags} />
-        </section>
+        <PostTitle post={post} />
         <MDXComponent code={post.body.code} />
       </article>
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
@@ -84,5 +81,23 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
     </>
   );
 };
+
+const PostTitle = ({ post }: { post: Post }) => (
+  <section
+    className={moo(
+      "not-prose",
+      "text-black",
+      "text-center",
+      "flex",
+      "flex-col",
+      "items-center",
+      "align-middle",
+      "mb-8"
+    )}
+  >
+    <BlogPostTitle {...post} big />
+    <TagRow tags={post.tags} />
+  </section>
+);
 
 export default PostPage;

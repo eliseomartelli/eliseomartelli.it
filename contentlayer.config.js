@@ -6,6 +6,8 @@ import {
 import { timeToRead } from "./src/lib/timeToRead";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkToc from "remark-toc";
 
 const Photo = defineNestedType(() => ({
   name: "Photo",
@@ -90,7 +92,10 @@ export default makeSource({
   contentDirPath: "./data",
   documentTypes: [Post, Photos, Uses],
   mdx: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [[rehypePrettyCode, { theme: "one-dark-pro" }]],
+    remarkPlugins: [remarkGfm, remarkToc],
+    rehypePlugins: [
+      [rehypePrettyCode, { theme: "one-dark-pro" }],
+      [rehypeAutolinkHeadings, { properties: { className: ["anchor"] } }],
+    ],
   },
 });

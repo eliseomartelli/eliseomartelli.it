@@ -1,7 +1,7 @@
 import { allPosts } from "contentlayer/generated";
 import RSS from "rss";
 import { compareDesc } from "date-fns";
-import { MDXComponent } from "@/components/MDX";
+import { FeedMDXComonent } from "@/components/MDX";
 
 export async function GET() {
   const feed = new RSS({
@@ -24,8 +24,8 @@ export async function GET() {
         title: post.title,
         url: `https://eliseomartelli.it/${post.url}`,
         date: post.date,
-        description: ReactDOMServer.renderToString(
-          <MDXComponent code={post.body.code} />
+        description: ReactDOMServer.renderToStaticMarkup(
+          <FeedMDXComonent code={post.body.code} />
         ),
         categories: post.tags,
       });
