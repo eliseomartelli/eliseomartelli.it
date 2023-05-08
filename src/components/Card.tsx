@@ -1,3 +1,4 @@
+import moo from "@eliseomartelli/moo/dist";
 import React, { ReactNode } from "react";
 
 export const Card = ({
@@ -9,10 +10,10 @@ export const Card = ({
   hoverable?: boolean;
   className?: string;
 }) => {
-  const classNames = [
+  const classNames = moo(
     "bg-gray-50 rounded-md p-4 border justify-between gap-8",
-    hoverable && "hover:bg-gray-200",
-    className,
-  ].join(" ");
+    ["hover:bg-gray-200", hoverable],
+    className!
+  );
   return <div className={classNames}>{children}</div>;
 };

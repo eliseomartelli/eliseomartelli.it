@@ -1,3 +1,4 @@
+import moo from "@eliseomartelli/moo/dist";
 import React from "react";
 
 const BASE_STYLE = "px-4 py-2 rounded-md border";
@@ -9,10 +10,7 @@ export const Input = (
   >
 ) => {
   return (
-    <input
-      {...props}
-      className={[BASE_STYLE, props.className].join(" ")}
-    ></input>
+    <input {...props} className={moo(BASE_STYLE, props.className!)}></input>
   );
 };
 
@@ -22,7 +20,5 @@ export const Textarea = (
     HTMLTextAreaElement
   >
 ) => {
-  return (
-    <textarea {...props} className={[BASE_STYLE, props.className].join(" ")} />
-  );
+  return <textarea {...props} className={moo(BASE_STYLE, props.className!)} />;
 };

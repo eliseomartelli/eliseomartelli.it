@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { tagletClassNames } from "@/tagletClassNames";
+import moo from "@eliseomartelli/moo/dist";
 
 export const Taglet = ({
   children,
@@ -9,7 +10,7 @@ export const Taglet = ({
   className?: string;
 }) => {
   return (
-    <span className={["rounded-full py-1 px-4 border", className].join(" ")}>
+    <span className={moo("rounded-full py-1 px-4 border", className!)}>
       {children}
     </span>
   );

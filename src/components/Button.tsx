@@ -1,3 +1,4 @@
+import moo from "@eliseomartelli/moo/dist";
 import { ReactNode } from "react";
 
 interface ButtonProps {
@@ -31,22 +32,23 @@ export const getButtonClassNames = ({
   noBold,
   noRounded,
 }: ButtonProps) => {
-  return [
+  return moo(
     "transition-colors",
-    !noRounded && "rounded-md",
-    color == Color.Transparent && "hover:bg-gray-200",
-    color == Color.Red &&
-      "text-white bg-red-800 hover:bg-red-600 disabled:bg-gray-500",
-    color == Color.Green && "text-white bg-green-800 hover:bg-green-600",
-    color == Color.DarkGray && "text-white bg-gray-500 hover:bg-gray-800",
-    color == Color.Sky && "text-white bg-sky-500 hover:bg-sky-800",
-    color == Color.Purple && "text-white bg-purple-800 hover:bg-pink-900",
-    color == Color.Black && "text-white bg-black hover:bg-gray-800",
-    small ? "px-4 py-1" : "py-2 px-4",
-    passedClassNames,
-    noCenter ? "text-start" : "",
-    noBold ? "" : "font-bold",
-  ].join(" ");
+    ["rounded-md", !noRounded],
+    ["hover:bg-gray-200", color == Color.Transparent],
+    ["text-white bg-red-800 hover:bg-red-600", color == Color.Red],
+    ["text-white bg-green-800 hover:bg-green-600", color == Color.Green],
+    ["text-white bg-gray-500 hover:bg-gray-800", color == Color.DarkGray],
+    ["text-white bg-sky-500 hover:bg-sky-800", color == Color.Sky],
+    ["text-white bg-purple-800 hover:bg-pink-900", color == Color.Purple],
+    ["text-white bg-black hover:bg-gray-800", color == Color.Black],
+    "disabled:bg-gray-500", // Disabled
+    ["px-4 py-1", small],
+    ["py-2 px-4", !small],
+    ["text-start", noCenter],
+    ["font-bold", !noBold],
+    passedClassNames!
+  );
 };
 
 export default function Button(props: ButtonProps): JSX.Element {

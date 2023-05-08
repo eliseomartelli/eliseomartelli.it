@@ -1,3 +1,4 @@
+import moo from "@eliseomartelli/moo/dist";
 import React, { ReactNode } from "react";
 
 const WidthLimit = ({
@@ -8,7 +9,7 @@ const WidthLimit = ({
   className?: string;
 }) => {
   return (
-    <div className={["max-w-4xl mx-auto w-full px-4", className].join(" ")}>
+    <div className={moo("max-w-4xl mx-auto w-full px-4", className!)}>
       {children}
     </div>
   );
