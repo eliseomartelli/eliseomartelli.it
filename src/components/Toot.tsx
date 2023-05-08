@@ -24,7 +24,7 @@ export async function Toot({
 }): Promise<JSX.Element> {
   const response = await fetch(`https://${server}/api/v1/statuses/${id}`);
   if (!response.ok) {
-    return <></>;
+    return <>Error loading Toot.</>;
   }
   const json = await response.json();
   const { content, account, url, media_attachments, created_at } = json;

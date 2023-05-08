@@ -6,7 +6,12 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["eliseomartelli.it", "localhost", "files.mastodon.social"],
+    domains: [
+      "eliseomartelli.it",
+      "localhost",
+      "files.mastodon.social",
+      "cdn.pony.social",
+    ],
   },
   async rewrites() {
     return [

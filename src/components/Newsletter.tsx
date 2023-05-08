@@ -74,7 +74,7 @@ export const Newsletter = () => {
     }, 1000);
   };
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4 w-full">
       <h2 className="text-2xl font-bold">Newsletter</h2>
       <Card>
         <form className="flex flex-col gap-2" onSubmit={submitFunction}>
@@ -84,7 +84,7 @@ export const Newsletter = () => {
             </p>
           ) : (
             <>
-              Stay in the loop to get news about software development and tech.
+              Stay in the loop and get news about what I have my eyes on!
               <fieldset className="relative w-full">
                 <Input
                   value={email}
