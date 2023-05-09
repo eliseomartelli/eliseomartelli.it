@@ -79,7 +79,7 @@ const About = () => {
         {socials.map((social, i) => (
           <Link href={social.url} key={i}>
             <Card hoverable>
-              <h4 className="font-bold">{social.name}</h4>
+              <h3 className="font-bold">{social.name}</h3>
               <p className="break-words">{social.user}</p>
             </Card>
           </Link>
