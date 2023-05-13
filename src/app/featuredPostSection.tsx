@@ -13,12 +13,14 @@ import { useEffect, useState } from "react";
 import { Color, getButtonClassNames } from "@/components/Button";
 import { ArrowUpHighIcon } from "@/components/Icons";
 
-export const DefaultFeaturedPosts = () => {
+export const DefaultFeaturedPosts = ({ url = "" }: { url?: string }) => {
   const [posts, setPosts] = useState<Array<Post>>([]);
   const [error, setError] = useState<string | undefined>(undefined);
 
+  const API_URL = url ? `/api/posts/featured/${url}` : `/api/posts/featured`;
+
   useEffect(() => {
-    fetch("/api/posts/featured")
+    fetch(API_URL)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -42,7 +44,8 @@ export const DefaultFeaturedPosts = () => {
             .fill(true)
             .map((_, i) => <EmptyFeaturedPostCard key={i} />)}
       <span className="basis-full h-0"></span> {/* Spacer */}
-      <div className="flex flex-col items-end justify-end grow">
+      <div className="flex flex-row items-center justify-between grow">
+        {url && <p className="text-sm">Featured posts generated using AI.</p>}
         <Link
           href={"/blog"}
           className={getButtonClassNames({

@@ -75,7 +75,9 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
       </article>
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
         <RSSSubscribe />
-        {features.includes(Features.FeaturedPosts) && <DefaultFeaturedPosts />}
+        {features.includes(Features.FeaturedPosts) && (
+          <DefaultFeaturedPosts url={post.url} />
+        )}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>
     </>

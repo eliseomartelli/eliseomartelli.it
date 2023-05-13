@@ -1,6 +1,6 @@
 ---
 title: Configuring Nebula, a simple overlay networking tool
-date: "2020-05-01"
+date: "2020-05-01 00:00:00"
 excerpt: Overlay networking that scaaaaaaaaaales
 tags:
   - Network

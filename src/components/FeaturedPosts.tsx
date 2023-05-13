@@ -28,6 +28,9 @@ export const FeaturedPostCard = ({ post }: { post?: Post }) => {
   if (!post) {
     return <EmptyFeaturedPostCard />;
   }
+
+  console.log(post.url, post.date);
+
   return (
     <Link href={post.url} className="flex-1">
       <Card className="flex-col flex grow h-full" hoverable>

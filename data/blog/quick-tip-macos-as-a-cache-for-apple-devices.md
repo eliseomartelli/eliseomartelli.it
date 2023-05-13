@@ -1,6 +1,6 @@
 ---
 title: "Quick Tip: macOS as a cache for Apple Devices"
-date: "2020-04-09"
+date: "2020-04-09 00:00:00"
 excerpt: Papa Tim is surely happy if you have all those Apple devices
 tags:
   - Apple

@@ -1,6 +1,6 @@
 ---
 title: "Netflix Payments reminder with the help of Home Assistant"
-date: "2020-03-02"
+date: "2020-03-02 00:00:00"
 excerpt: Aren't you tired of being the only one to pay for Netflix?
 tags:
   - Misc
