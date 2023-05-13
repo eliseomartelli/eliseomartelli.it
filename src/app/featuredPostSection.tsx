@@ -33,6 +33,7 @@ export const DefaultFeaturedPosts = ({ url = "" }: { url?: string }) => {
       .catch((error) => {
         setError(error);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
