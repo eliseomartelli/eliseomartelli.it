@@ -46,7 +46,13 @@ export const DefaultFeaturedPosts = ({ url = "" }: { url?: string }) => {
             .map((_, i) => <EmptyFeaturedPostCard key={i} />)}
       <span className="basis-full h-0"></span> {/* Spacer */}
       <div className="flex flex-row items-center justify-between grow">
-        {url && <p className="text-sm">Featured posts generated using AI.</p>}
+        {url && (
+          <Link href={"/blog/13-05-2023-onehundredpercent-more-ai"}>
+            <p className="text-xs text-gray-500 hover:underline">
+              ℹ️ Featured posts generated using AI.
+            </p>
+          </Link>
+        )}
         <Link
           href={"/blog"}
           className={getButtonClassNames({

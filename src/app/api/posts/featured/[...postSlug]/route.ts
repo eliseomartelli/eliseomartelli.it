@@ -9,8 +9,11 @@ export async function GET(
     params: { postSlug: string[] };
   }
 ): Promise<NextResponse> {
-  const list = allPosts.map((p) => p.url).join("\n");
-  const article = params.postSlug.join("/");
+  const article = allPosts.find((p) => p.url === params.postSlug.join("/"));
+  if (!article) {
+    return NextResponse.json({});
+  }
+  const list = allPosts.map((p) => `${p.url}: ${p.excerpt}`).join("\n");
   const prompt = `Pick 3 filenames from the possible filenames.
 
 The files are about topics spanning music,
@@ -30,8 +33,7 @@ RULES:
 Possible filenames:
 ${list}
 
-Current filename: ${article}
-`;
+Current filename: ${article.url}: ${article.url}`;
   const { AI_API_KEY } = process.env;
 
   const response = await fetch("https://aigateway.fly.dev/api", {
@@ -40,7 +42,7 @@ Current filename: ${article}
     headers: [["X-API-KEY", AI_API_KEY!]],
   });
   if (!response.ok) {
-    return NextResponse.json({});
+    return NextResponse.json([], { status: 404 });
   }
   const body = (await response.json()) as { output: string };
   const featuredPostsUrls: string[] = body.output
@@ -48,9 +50,8 @@ Current filename: ${article}
     .split("\n")
     .filter((e) => e.match("^blog/.*"));
   const featuredPosts = featuredPostsUrls.map((postURL) =>
-    allPosts.find((post) => post._raw.flattenedPath === postURL)
+    allPosts.find((post) => post._raw.flattenedPath === postURL.split(":")[0])
   );
-  console.log(featuredPostsUrls);
   return NextResponse.json(
     featuredPosts.map((e) => {
       // Don't send whole post over network...

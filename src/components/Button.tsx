@@ -7,7 +7,6 @@ interface ButtonProps {
   ariaLabel?: string;
   color?: Color;
   small?: boolean;
-  noCenter?: boolean;
   className?: string;
   disabled?: boolean;
   noBold?: boolean;
@@ -28,11 +27,10 @@ export const getButtonClassNames = ({
   color,
   small,
   className: passedClassNames,
-  noCenter,
   noBold,
   noRounded,
 }: ButtonProps) => {
-  return moo(
+  const className = moo(
     "transition-colors",
     ["rounded-md", !noRounded],
     ["hover:bg-gray-200", color == Color.Transparent],
@@ -45,10 +43,10 @@ export const getButtonClassNames = ({
     "disabled:bg-gray-500", // Disabled
     ["px-4 py-1", small],
     ["py-2 px-4", !small],
-    ["text-start", noCenter],
     ["font-bold", !noBold],
     passedClassNames!
   );
+  return className;
 };
 
 export default function Button(props: ButtonProps): JSX.Element {

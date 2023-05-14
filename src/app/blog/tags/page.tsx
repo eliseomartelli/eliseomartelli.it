@@ -23,7 +23,9 @@ const Tags = () => {
         {allTags.map((tag, i) => (
           <Link key={i} href={`/blog/tags/${tag}`}>
             <Card
-              className={`${tagletClassNames[tag.toLowerCase()]} text-center`}
+              className={`${
+                tagletClassNames[tag.toLowerCase()]
+              } text-center font-bold`}
               hoverable
             >
               {tag}
