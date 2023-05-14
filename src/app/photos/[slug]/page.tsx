@@ -2,7 +2,7 @@ import React from "react";
 import { Photos, allPhotos } from "contentlayer/generated";
 import PhotoComponent from "../PhotoTile";
 import WidthLimit from "@/components/WidthLimit";
-import Link from "next/link";
+import { SegmentedNav } from "@/components/SegmentedNav";
 
 const PhotoPage = ({ params }: { params: { slug: string } }) => {
   const photoGallery = allPhotos.find(
@@ -12,10 +12,12 @@ const PhotoPage = ({ params }: { params: { slug: string } }) => {
     <div>
       <WidthLimit>
         <h1 className="text-4xl font-bold mb-4">
-          <Link className="opacity-50" href={"/photos"}>
-            Photos/
-          </Link>
-          {photoGallery?.title}
+          <SegmentedNav
+            routes={[
+              { href: "/photos", name: "Photos" },
+              { href: `/photos/${params.slug}`, name: photoGallery?.title! },
+            ]}
+          />
         </h1>
       </WidthLimit>
       {phSection(photoGallery!)}

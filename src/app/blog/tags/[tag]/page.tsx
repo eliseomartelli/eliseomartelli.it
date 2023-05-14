@@ -4,6 +4,7 @@ import WidthLimit from "@/components/WidthLimit";
 import { compareDesc } from "date-fns";
 import Link from "next/link";
 import { allTags } from "../allTags";
+import { SegmentedNav } from "@/components/SegmentedNav";
 
 export async function generateStaticParams() {
   return allTags.map((currentTag) => ({
@@ -25,10 +26,13 @@ const TagPage = ({ params }: { params: { tag: string } }) => {
   return (
     <WidthLimit>
       <h1 className="text-4xl font-bold mb-4">
-        <Link className="opacity-50" href={"/blog/tags"}>
-          Blog/Tags/
-        </Link>
-        {params.tag}
+        <SegmentedNav
+          routes={[
+            { href: "/blog", name: "Blog" },
+            { href: "/blog/tags", name: "Tags" },
+            { href: `/blog/tags/${params.tag}`, name: params.tag },
+          ]}
+        />
       </h1>
       <ul className="flex flex-col gap-8 mt-8">
         {posts.map((post, i) => (
