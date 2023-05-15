@@ -553,7 +553,7 @@
     "@netlify/esbuild-windows-64" "0.14.39"
     "@netlify/esbuild-windows-arm64" "0.14.39"
 
-"@netlify/functions@^1.4.0":
+"@netlify/functions@^1.4.0", "@netlify/functions@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-1.6.0.tgz#c373423e6fef0e6f7422ac0345e8bbf2cb692366"
   integrity sha512-6G92AlcpFrQG72XU8YH8pg94eDnq7+Q0YJhb8x4qNpdGsvuzvrfHWBmqFGp/Yshmv4wex9lpsTRZOocdrA2erQ==
@@ -576,13 +576,13 @@
     ufo "^1.0.0"
     unstorage "^1.0.0"
 
-"@netlify/plugin-nextjs@^4.36.1":
-  version "4.36.1"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.36.1.tgz#2bfb1960d377dad6a34bbdab46f9599ec7682520"
-  integrity sha512-e7vmZht8OFWTueiCcMyp//u1sXYjGfjturUlh0wGjynvdFRBpYhJAl85gToRJGTvAthwJNGq9aLcgBuJWRMRIg==
+"@netlify/plugin-nextjs@^4.37.0":
+  version "4.37.0"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.37.0.tgz#f3c3e1d4fa33797dddd7aff145231c5339d63627"
+  integrity sha512-2CZ/B5aMjbiBr7rGCbLVf6LwZkqC8fkiZtntQMH/uP2Fa6F8HmKL+X32q3As3KL76bqe12kxTcoUidXfWx2lLg==
   dependencies:
     "@netlify/esbuild" "0.14.39"
-    "@netlify/functions" "^1.4.0"
+    "@netlify/functions" "^1.6.0"
     "@netlify/ipx" "^1.4.0"
     "@vercel/node-bridge" "^2.1.0"
     chalk "^4.1.2"

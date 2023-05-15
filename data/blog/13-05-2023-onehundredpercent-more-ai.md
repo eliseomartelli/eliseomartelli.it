@@ -3,6 +3,7 @@ title: Featured posts with 100% more AI
 date: 2023-05-13 21:30
 excerpt: AI critic uses AI to suggest posts to users
 tags:
+  - AI
   - Misc
   - Short
 ---

@@ -3,8 +3,8 @@ title: IoT device segregation on EdgeOS
 date: "2020-09-14 00:00:00"
 excerpt: "VLANs? VLANs. Get to know how to segregate chatty IoT devices on your network"
 tags:
-  - Network
   - IoT
+  - Network
 ---
 
 ![Network Equipment](https://p0.pikist.com/photos/309/174/network-equipment-hardware-internet-data-server-communication-connection-datacenter.jpg)
