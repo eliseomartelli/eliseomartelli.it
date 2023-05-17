@@ -11,6 +11,7 @@ const nextConfig = {
       "localhost",
       "files.mastodon.social",
       "cdn.pony.social",
+      "raw.githubusercontent.com",
     ],
   },
   async rewrites() {

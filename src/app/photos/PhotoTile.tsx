@@ -8,13 +8,13 @@ import { useState } from "react";
 const PhotoComponent = ({ url, title, aspect, place }: Photo) => {
   const [loading, setLoading] = useState(true);
   return (
-    <Link href={url!} className="break-before-column">
+    <Link href={url!} className="break-inside-avoid py-2 block">
       <div
         className={`relative w-full ${
           aspect == "vertical" ? "aspect-vertical" : "aspect-horizontal"
         } bg-gray-400 ${
           loading && "animate-pulse"
-        } rounded-md overflow-hidden z-0 mb-4`}
+        } rounded-md overflow-hidden z-0`}
       >
         <Image
           src={url!}

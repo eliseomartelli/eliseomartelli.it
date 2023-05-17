@@ -22,9 +22,10 @@ export default async function sitemap() {
     "/contact",
     "/feedback",
     "/photos",
+    "/wallpapers",
     "/uses",
     "/ssh",
-    "feed.xml",
+    "/feed.xml",
   ].map((route) => ({
     url: `https://eliseomartelli.it${route}`,
     lastModified: new Date().toISOString().split("T")[0],

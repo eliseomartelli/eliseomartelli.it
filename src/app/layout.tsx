@@ -67,8 +67,12 @@ const externalLinks = [
     rel: "me",
   },
   {
-    name: "SSH Key",
-    href: "/ssh/default",
+    name: "Wallpapers",
+    href: "/wallpapers",
+  },
+  {
+    name: "SSH Keys",
+    href: "/ssh",
   },
   {
     name: "PGP Key",
