@@ -1,11 +1,9 @@
 import { Card } from "@/components/Card";
 import WidthLimit from "@/components/WidthLimit";
-import Image from "next/image";
 import React from "react";
 import * as typography from "@/components/Typography";
 import Link from "next/link";
 import { AspectRatioImage } from "./AspectRatioImage";
-import { MapPin } from "@/components/Icons";
 
 export interface Wallpaper {
   reference?: string;

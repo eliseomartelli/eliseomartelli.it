@@ -15,6 +15,15 @@ export default {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        reveal: "reveal .25s ease-in-out",
+      },
+      keyframes: {
+        reveal: {
+          "0%": { transform: "translateY(0.5rem)", opacity: "0" },
+          "50%": { transform: "translateY(0.25rem)", opacity: "20%" },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

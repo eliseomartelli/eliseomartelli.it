@@ -45,11 +45,11 @@ export const DefaultFeaturedPosts = ({ url = "" }: { url?: string }) => {
             .fill(true)
             .map((_, i) => <EmptyFeaturedPostCard key={i} />)}
       <span className="basis-full h-0"></span> {/* Spacer */}
-      <div className="flex flex-row items-center justify-between grow">
+      <div className="flex flex-row items-center justify-end grow">
         {url && (
           <Link
             href={"/blog/13-05-2023-onehundredpercent-more-ai"}
-            className="text-xs text-gray-500 hover:underline flex flex-row items-center gap-2"
+            className="text-xs text-gray-500 hover:underline flex flex-row items-center gap-2 grow"
           >
             <span>ℹ️ </span>
             <div className="flex-col flex">
