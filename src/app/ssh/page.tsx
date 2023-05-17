@@ -1,9 +1,9 @@
-import { sshKeys } from "./[key]/route";
 import { Card } from "@/components/Card";
 import WidthLimit from "@/components/WidthLimit";
 import * as typography from "@/components/Typography";
 import { KeyIcon } from "@/components/Icons";
 import Link from "next/link";
+import { sshKeys } from "./keys";
 const page = () => {
   return (
     <WidthLimit className="flex flex-col gap-4">

@@ -1,6 +1,5 @@
 "use client";
 
-import { MapPin } from "@/components/Icons";
 import { Photo } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";

@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import { Card } from "./Card";
 import Link from "next/link";
 import { dateFormatter } from "@/lib/dateFormatter";
+import { Balancer } from "react-wrap-balancer";
 
 export const FeaturedPosts = ({
   children,
@@ -32,7 +33,9 @@ export const FeaturedPostCard = ({ post }: { post?: Post }) => {
   return (
     <Link href={post.url} className="flex-1">
       <Card className="flex-col flex grow h-full" hoverable>
-        <h3 className="font-bold">{post.title}</h3>
+        <h3 className="font-bold">
+          <Balancer>{post.title}</Balancer>
+        </h3>
         <p>{dateFormatter(post.date)}</p>
       </Card>
     </Link>
@@ -41,7 +44,7 @@ export const FeaturedPostCard = ({ post }: { post?: Post }) => {
 
 export const EmptyFeaturedPostCard = () => (
   //Empty State
-  <Card className="grow">
+  <Card className="grow" hoverable={false}>
     <span className="block h-8 w-1/3 bg-gray-500 animate-pulse mb-12" />
     <span className="block h-6 w-2/3 bg-gray-300 animate-pulse" />
   </Card>

@@ -2,14 +2,31 @@ import { allPosts } from "contentlayer/generated";
 import { BlogPostItem } from "@/components/BlogPostItem";
 import WidthLimit from "@/components/WidthLimit";
 import { compareDesc } from "date-fns";
-import Link from "next/link";
 import { allTags } from "../allTags";
 import { SegmentedNav } from "@/components/SegmentedNav";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   return allTags.map((currentTag) => ({
     tag: currentTag,
   }));
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    tag: string;
+  };
+}): Promise<Metadata | undefined> {
+  return {
+    title: `${params.tag} - Eliseo Martelli`,
+    openGraph: {
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+    },
+  };
 }
 
 const TagPage = ({ params }: { params: { tag: string } }) => {

@@ -24,8 +24,9 @@ const Photos = () => {
               <Image
                 src={`${SITE_HOST}/api/thumbnail/${photo._raw.flattenedPath}`}
                 alt={photo.title}
+                priority
                 fill
-                className="brightness-50 z-0 hover:brightness-[0.25]"
+                className="brightness-50 z-0 hover:brightness-[0.25] transition-all"
               />
               <h2 className="text-white absolute text-2xl font-bold left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
                 {photo.title}

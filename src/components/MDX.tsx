@@ -1,7 +1,10 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { Product } from "./Product";
-import { YouTube } from "./YouTube";
-import { BaseToot, Toot } from "./Toot";
+import dynamic from "next/dynamic";
+import { Toot } from "./Toot";
+
+const Product = dynamic(() => import("./Product").then((mod) => mod.Product));
+const YouTube = dynamic(() => import("./YouTube").then((mod) => mod.YouTube));
+const BaseToot = dynamic(() => import("./Toot").then((mod) => mod.BaseToot));
 
 const BaseComponents = { Product, YouTube, Toot: BaseToot };
 const AsyncComponets = { ...BaseComponents, Toot };

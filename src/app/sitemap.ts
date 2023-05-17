@@ -1,4 +1,5 @@
 import { allPosts } from "contentlayer/generated";
+import { allTags } from "./blog/tags/allTags";
 
 export default async function sitemap() {
   const blogs = allPosts.map((post) => ({
@@ -6,19 +7,28 @@ export default async function sitemap() {
     lastModified: post.date,
   }));
 
+  const photos = allPosts.map((photo) => ({
+    url: `https://eliseomartelli.it/${photo.url}`,
+  }));
+
+  const tags = allTags.map((tag) => ({
+    url: `https://eliseomartelli.it/blog/tags/${tag}`,
+  }));
+
   const routes = [
     "",
     "/about",
-    "/api",
     "/blog",
     "/contact",
     "/feedback",
     "/photos",
     "/uses",
+    "/ssh",
+    "feed.xml",
   ].map((route) => ({
     url: `https://eliseomartelli.it${route}`,
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...blogs];
+  return [...routes, ...blogs, ...photos, ...tags];
 }
