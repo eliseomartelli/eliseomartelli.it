@@ -1,6 +1,7 @@
 import WidthLimit from "@/components/WidthLimit";
 import { FeedbackForm } from "./form";
 import { Metadata } from "next";
+import { PageLayout } from "@/components/PageLayout";
 
 export const metadata: Metadata = {
   title: "Feedback - Eliseo Martelli",
@@ -9,10 +10,9 @@ export const metadata: Metadata = {
 
 const Feedback = () => {
   return (
-    <WidthLimit className="flex flex-col gap-8">
-      <h1 className="text-4xl font-bold mb-4">Feedback</h1>
-      <FeedbackForm />
-      <article className="prose mx-auto w-full">
+    <PageLayout routes={[{ name: "Feedback", href: "/feedback" }]}>
+      <article className="prose mx-auto">
+        <FeedbackForm />
         <h2>Data collected</h2>
         <ul>
           <li>The message you&apos;re sending.</li>
@@ -26,7 +26,7 @@ const Feedback = () => {
           </li>
         </ul>
       </article>
-    </WidthLimit>
+    </PageLayout>
   );
 };
 

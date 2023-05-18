@@ -26,6 +26,7 @@ const NotFound = () => {
       >
         Go home
       </Link>
+      {/* @ts-expect-error Server Component */}
       <DefaultFeaturedPosts />
     </WidthLimit>
   );

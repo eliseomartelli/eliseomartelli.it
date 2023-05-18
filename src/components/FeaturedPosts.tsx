@@ -7,10 +7,8 @@ import { Balancer } from "react-wrap-balancer";
 
 export const FeaturedPosts = ({
   children,
-  error,
 }: {
   children?: ReactNode[] | ReactNode;
-  error?: string;
 }) => {
   const postGrid = (
     <div className="flex flex-col md:flex-row gap-4 w-full flex-wrap">
@@ -20,16 +18,12 @@ export const FeaturedPosts = ({
   return (
     <section className="flex flex-col gap-4 w-full">
       <h2 className="text-2xl font-bold">Featured Posts</h2>
-      {error ? <p>{error}</p> : postGrid}
+      {postGrid}
     </section>
   );
 };
 
-export const FeaturedPostCard = ({ post }: { post?: Post }) => {
-  if (!post) {
-    return <EmptyFeaturedPostCard />;
-  }
-
+export const FeaturedPostCard = ({ post }: { post: Post }) => {
   return (
     <Link href={post.url} className="flex-1">
       <Card className="flex-col flex grow h-full" hoverable>
@@ -42,24 +36,25 @@ export const FeaturedPostCard = ({ post }: { post?: Post }) => {
   );
 };
 
-export const EmptyFeaturedPostCard = () => (
+export const FeaturedPostCardEmpty = () => (
   //Empty State
-  <Card className="flex-1 flex-col flex grow text-transparent">
-    <h3 className="font-bold">
+  <Card className="flex-col flex grow h-full flex-1">
+    <h3 className="font-bold text-transparent">
       <Balancer>
-        {"Lorem ipsum dolor sit amet Lorem ipsum dolor "
+        {"Lorem ipsum dolor sit amet Lorem ipsum dolor"
           .split(" ")
           .map((a, i) => (
             <>
-              <span key={i} className="bg-gray-300 animate-pulse">
+              <span
+                key={i}
+                className="text-transparent bg-gray-300 animate-pulse"
+              >
                 {a}
               </span>{" "}
             </>
           ))}
       </Balancer>
     </h3>
-    <p className="bg-gray-200 animate-pulse inline-block">
-      Lorem ipsum dolor sit
-    </p>
+    <p className="text-transparent bg-gray-300 animate-pulse">May 3, 2023</p>
   </Card>
 );

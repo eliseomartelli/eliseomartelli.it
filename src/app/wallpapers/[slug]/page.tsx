@@ -8,21 +8,19 @@ import { SegmentedNav } from "@/components/SegmentedNav";
 import { AspectRatioImage } from "../AspectRatioImage";
 import { wallpaper } from "@/lib/data/allWallpapers";
 import { notFound } from "next/navigation";
+import { PageLayout } from "@/components/PageLayout";
 
 const WallpaperInfo = async ({ params }: { params: { slug: string } }) => {
   try {
     const json = await wallpaper(params.slug);
     return (
-      <WidthLimit className="flex flex-col gap-4">
-        <typography.h1>
-          <SegmentedNav
-            routes={[
-              { href: "/wallpapers", name: "Wallpapers" },
-              { href: `/wallpapers/${params.slug}`, name: json.title },
-            ]}
-          />
-        </typography.h1>
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+      <PageLayout
+        routes={[
+          { href: "/wallpapers", name: "Wallpapers" },
+          { href: `/wallpapers/${params.slug}`, name: json.title },
+        ]}
+      >
+        <WidthLimit className="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div className="flex flex-col w-full gap-4">
             <AspectRatioImage src={json.preview} alt={json.title} />
           </div>
@@ -43,8 +41,8 @@ const WallpaperInfo = async ({ params }: { params: { slug: string } }) => {
               ))}
             </div>
           </div>
-        </div>
-      </WidthLimit>
+        </WidthLimit>
+      </PageLayout>
     );
   } catch (error) {
     notFound();

@@ -8,7 +8,7 @@ import { useState } from "react";
 const PhotoComponent = ({ url, title, aspect, place }: Photo) => {
   const [loading, setLoading] = useState(true);
   return (
-    <Link href={url!} className="break-inside-avoid py-2 block">
+    <Link href={url!} className="break-inside-avoid pb-4 block">
       <div
         className={`relative w-full ${
           aspect == "vertical" ? "aspect-vertical" : "aspect-horizontal"

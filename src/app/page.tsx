@@ -35,6 +35,7 @@ const Home = () => {
           </Link>
         }
       ></Bio>
+      {/* @ts-expect-error Server Component */}
       {features.includes(Features.FeaturedPosts) && <DefaultFeaturedPosts />}
       {features.includes(Features.Newsletter) && <Newsletter />}
     </WidthLimit>

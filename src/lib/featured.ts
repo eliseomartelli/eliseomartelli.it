@@ -1,17 +1,32 @@
-import { allPosts } from "@/.contentlayer/generated/index.mjs";
-import { NextResponse } from "next/server";
+import { allPosts } from "contentlayer/generated";
 
-export async function GET(
-  _: Request,
-  {
-    params,
-  }: {
-    params: { postSlug: string[] };
-  }
-): Promise<NextResponse> {
-  const article = allPosts.find((p) => p.url === params.postSlug.join("/"));
+export const featuredPosts = async () => {
+  const featuredPostsUrls = [
+    "vyos-ospf-wireguard",
+    "26-11-2022-cryptobros",
+    "25-11-2022-cameras",
+  ].map((slug) => `blog/${slug}`);
+
+  const featuredPosts = featuredPostsUrls.map((postURL) =>
+    allPosts.find((post) => post._raw.flattenedPath === postURL)
+  );
+
+  return featuredPosts.map((e) => {
+    // Don't send whole post over network...
+    return {
+      url: e?.url,
+      title: e?.title,
+      date: e?.date,
+    };
+  });
+};
+
+export const featuredPostsFromSlug = async (postSlug: string) => {
+  await new Promise((r) => setTimeout(r, 2000));
+
+  const article = allPosts.find((p) => p.url === postSlug);
   if (!article) {
-    return NextResponse.json({});
+    return [];
   }
   const list = allPosts.map((p) => `${p.url}: ${p.excerpt}`).join("\n");
   const prompt = `Pick 3 filenames from the possible filenames.
@@ -42,7 +57,7 @@ Current filename: ${article.url}: ${article.url}`;
     headers: [["X-API-KEY", AI_API_KEY!]],
   });
   if (!response.ok) {
-    return NextResponse.json([], { status: 404 });
+    return [];
   }
   const body = (await response.json()) as { output: string };
   const featuredPostsUrls: string[] = body.output
@@ -52,14 +67,12 @@ Current filename: ${article.url}: ${article.url}`;
   const featuredPosts = featuredPostsUrls.map((postURL) =>
     allPosts.find((post) => post._raw.flattenedPath === postURL.split(":")[0])
   );
-  return NextResponse.json(
-    featuredPosts.map((e) => {
-      // Don't send whole post over network...
-      return {
-        url: e?.url,
-        title: e?.title,
-        date: e?.date,
-      };
-    })
-  );
-}
+  return featuredPosts.map((e) => {
+    // Don't send whole post over network...
+    return {
+      url: e?.url,
+      title: e?.title,
+      date: e?.date,
+    };
+  });
+};

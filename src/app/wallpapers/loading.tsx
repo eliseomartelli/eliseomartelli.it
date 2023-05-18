@@ -1,15 +1,9 @@
-import WidthLimit from "@/components/WidthLimit";
-import * as typography from "@/components/Typography";
 import { Card } from "@/components/Card";
+import { PageLayout } from "@/components/PageLayout";
 
 const loading = () => (
-  <>
-    <WidthLimit>
-      <typography.h1 className="text-transparent bg-gray-200 animate-pulse rounded-md">
-        Wallpapers
-      </typography.h1>
-    </WidthLimit>
-    <div className="columns-2 md:columns-3 lg:columns-4 p-4 min-h-full gap-4">
+  <PageLayout routes={[{ name: "Wallpapers", href: "/wallpapers" }]}>
+    <div className="columns-2 md:columns-3 lg:columns-4 px-4 min-h-full gap-4">
       {new Array(7).fill(true).map((_, i) => (
         <Card
           className="!p-0 overflow-hidden break-inside-avoid block my-2 animate-pulse"
@@ -26,6 +20,6 @@ const loading = () => (
         </Card>
       ))}
     </div>
-  </>
+  </PageLayout>
 );
 export default loading;

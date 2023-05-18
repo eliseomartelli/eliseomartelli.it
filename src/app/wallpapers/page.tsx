@@ -1,11 +1,10 @@
 import { Card } from "@/components/Card";
-import WidthLimit from "@/components/WidthLimit";
 import React from "react";
-import * as typography from "@/components/Typography";
 import Link from "next/link";
 import { AspectRatioImage } from "./AspectRatioImage";
 import { allWallpapers } from "@/lib/data/allWallpapers";
 import { notFound } from "next/navigation";
+import { PageLayout } from "@/components/PageLayout";
 
 export interface Wallpaper {
   reference?: string;
@@ -19,11 +18,8 @@ const Wallpapers = async () => {
   try {
     const response = await allWallpapers();
     return (
-      <>
-        <WidthLimit className="flex flex-col gap-4 min-h-full">
-          <typography.h1>Wallpapers</typography.h1>
-        </WidthLimit>
-        <div className="columns-2 md:columns-3 lg:columns-4 p-4 min-h-full gap-4">
+      <PageLayout routes={[{ name: "Wallpapers", href: "/wallpapers" }]}>
+        <div className="columns-2 md:columns-3 lg:columns-4 px-4 min-h-full gap-4">
           {response.map((e, i) => (
             <Link
               key={i}
@@ -40,7 +36,7 @@ const Wallpapers = async () => {
             </Link>
           ))}
         </div>
-      </>
+      </PageLayout>
     );
   } catch (error) {
     notFound();
