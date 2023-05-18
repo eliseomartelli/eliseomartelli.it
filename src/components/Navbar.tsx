@@ -1,12 +1,14 @@
 "use client";
 
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import Button, { Color, getButtonClassNames } from "./Button";
 import Link from "next/link";
 import { Menu } from "./Icons";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import WidthLimit from "./WidthLimit";
+import { Modal } from "./Modal";
+import { useWindowWidth } from "@/hooks/useWindowSize";
 
 interface NavbarLinkProps {
   title: string;
@@ -22,6 +24,11 @@ export const Navbar = ({
   trailing?: ReactNode;
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const width = useWindowWidth();
+  useEffect(() => {
+    if (width! >= 768) setMenuOpen(false);
+  }, [width]);
+
   return (
     <>
       <div className="flex flex-row justify-between items-center">
@@ -38,22 +45,31 @@ export const Navbar = ({
         </Button>
       </div>
       {menuOpen && (
-        <div className="relative">
-          <div
-            className="md:hidden flex absolute z-50 justify-end w-full"
-            onClick={() => {
-              setMenuOpen(false);
-            }}
-          >
-            <div className="bg-white p-4 shadow-2xl rounded-md flex flex-col text-center">
-              {children}
-            </div>
-          </div>
-        </div>
+        <MobileNavBar onClose={() => setMenuOpen(false)}>
+          {children}
+        </MobileNavBar>
       )}
     </>
   );
 };
+
+export function MobileNavBar({
+  children,
+  onClose,
+}: {
+  children: ReactNode;
+  onClose: Function;
+}) {
+  return (
+    <Modal onClose={() => onClose()}>
+      <WidthLimit className="items-end flex flex-col">
+        <div className="bg-white p-4 shadow-2xl rounded-md flex flex-col text-center max-w-xs mx-3">
+          {children}
+        </div>
+      </WidthLimit>
+    </Modal>
+  );
+}
 
 export const NavbarLink = ({ title, href, selected }: NavbarLinkProps) => (
   <Link
