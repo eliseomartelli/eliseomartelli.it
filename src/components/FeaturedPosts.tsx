@@ -44,8 +44,22 @@ export const FeaturedPostCard = ({ post }: { post?: Post }) => {
 
 export const EmptyFeaturedPostCard = () => (
   //Empty State
-  <Card className="grow" hoverable={false}>
-    <span className="block h-8 w-1/3 bg-gray-500 animate-pulse mb-12" />
-    <span className="block h-6 w-2/3 bg-gray-300 animate-pulse" />
+  <Card className="flex-1 flex-col flex grow text-transparent">
+    <h3 className="font-bold">
+      <Balancer>
+        {"Lorem ipsum dolor sit amet Lorem ipsum dolor "
+          .split(" ")
+          .map((a, i) => (
+            <>
+              <span key={i} className="bg-gray-300 animate-pulse">
+                {a}
+              </span>{" "}
+            </>
+          ))}
+      </Balancer>
+    </h3>
+    <p className="bg-gray-200 animate-pulse inline-block">
+      Lorem ipsum dolor sit
+    </p>
   </Card>
 );
