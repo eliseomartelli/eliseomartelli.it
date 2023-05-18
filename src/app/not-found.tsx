@@ -1,10 +1,16 @@
 import { Color, getButtonClassNames } from "@/components/Button";
 import WidthLimit from "@/components/WidthLimit";
+import { Features, useFeatures } from "@/lib/useFeatures";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
-import { DefaultFeaturedPosts } from "./featuredPostSection";
+
+const FeaturedPosts = dynamic(() =>
+  import("@/components/FeaturedPosts").then((m) => m.FeaturedPosts)
+);
 
 const NotFound = () => {
+  const features = useFeatures();
   return (
     <WidthLimit className="flex flex-col gap-8 items-start">
       <h1 className="text-4xl font-bold">Uh, oh</h1>
@@ -25,9 +31,8 @@ const NotFound = () => {
         })}
       >
         Go home
+        {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
       </Link>
-      {/* @ts-expect-error Server Component */}
-      <DefaultFeaturedPosts />
     </WidthLimit>
   );
 };

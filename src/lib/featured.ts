@@ -1,4 +1,4 @@
-import { allPosts } from "contentlayer/generated";
+import { Post, allPosts } from "contentlayer/generated";
 
 export const featuredPosts = async () => {
   const featuredPostsUrls = [
@@ -18,7 +18,7 @@ export const featuredPosts = async () => {
       title: e?.title,
       date: e?.date,
     };
-  });
+  }) as Post[];
 };
 
 export const featuredPostsFromSlug = async (postSlug: string) => {
@@ -74,5 +74,5 @@ Current filename: ${article.url}: ${article.url}`;
       title: e?.title,
       date: e?.date,
     };
-  });
+  }) as Post[];
 };

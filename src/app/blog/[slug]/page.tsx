@@ -1,5 +1,8 @@
-import { DefaultFeaturedPosts } from "@/app/featuredPostSection";
 import { BlogPostTitle, TagRow } from "@/components/BlogPostItem";
+import {
+  AIFeaturedPostsProps,
+  EmptyFeaturedPosts,
+} from "@/components/FeaturedPosts";
 import { MDXComponent } from "@/components/MDX";
 import { Newsletter } from "@/components/Newsletter";
 import { RSSSubscribe } from "@/components/RSSSubscribe";
@@ -8,6 +11,7 @@ import { Features, useFeatures } from "@/lib/useFeatures";
 import moo from "@eliseomartelli/moo/dist";
 import { Post, allPosts } from "contentlayer/generated";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -57,6 +61,11 @@ export async function generateMetadata({
   };
 }
 
+const AIFeaturedPosts = dynamic<AIFeaturedPostsProps>(
+  () => import("@/components/FeaturedPosts").then((mod) => mod.AIFeaturedPosts),
+  { loading: () => <EmptyFeaturedPosts ai />, ssr: false }
+);
+
 const PostPage = ({ params }: { params: { slug: string } }) => {
   const features = useFeatures();
   const post = allPosts.find(
@@ -76,8 +85,7 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
         <RSSSubscribe />
         {features.includes(Features.FeaturedPosts) && (
-          /* @ts-expect-error Server Component */
-          <DefaultFeaturedPosts url={post._raw.flattenedPath} />
+          <AIFeaturedPosts post={post} />
         )}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>

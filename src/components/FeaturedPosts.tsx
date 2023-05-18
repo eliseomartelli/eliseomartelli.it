@@ -1,60 +1,127 @@
-import { Post } from "contentlayer/generated";
-import React, { ReactNode } from "react";
+import React, { ReactNode, use } from "react";
+import * as t from "@/components/Typography";
 import { Card } from "./Card";
-import Link from "next/link";
+import { Post } from "@/.contentlayer/generated/types";
+import { featuredPosts, featuredPostsFromSlug } from "@/lib/featured";
 import { dateFormatter } from "@/lib/dateFormatter";
-import { Balancer } from "react-wrap-balancer";
+import Link from "next/link";
+import { Color, getButtonClassNames } from "./Button";
+import { ArrowUpHighIcon } from "./Icons";
 
-export const FeaturedPosts = ({
-  children,
-}: {
-  children?: ReactNode[] | ReactNode;
-}) => {
-  const postGrid = (
-    <div className="flex flex-col md:flex-row gap-4 w-full flex-wrap">
-      {children}
-    </div>
+export const FeaturedPosts = () => {
+  return <FeaturedPostsLayout posts={use(featuredPosts())} />;
+};
+export const EmptyFeaturedPosts = ({ ai = false }: { ai: boolean }) => {
+  return <FeaturedPostsLayout ai={ai} empty />;
+};
+
+export interface AIFeaturedPostsProps {
+  post: Post;
+}
+
+export const AIFeaturedPosts = ({ post }: AIFeaturedPostsProps) => {
+  return (
+    <FeaturedPostsLayout posts={use(featuredPostsFromSlug(post.url))} ai />
   );
+};
+
+export const FeaturedPostsLayout = ({
+  posts,
+  ai = false,
+  empty = false,
+}: {
+  posts?: Post[];
+  ai?: boolean;
+  empty?: boolean;
+}) => {
+  const cards = !empty ? (
+    posts!.map((post, key) => (
+      <Link key={key} href={post.url} className="grow flex-1">
+        <li className="h-full">
+          <FeaturedPostCard post={post} />
+        </li>
+      </Link>
+    ))
+  ) : (
+    <>
+      <FeaturedPostCardEmpty />
+      <FeaturedPostCardEmpty />
+      <FeaturedPostCardEmpty />
+    </>
+  );
+
   return (
     <section className="flex flex-col gap-4 w-full">
-      <h2 className="text-2xl font-bold">Featured Posts</h2>
-      {postGrid}
+      <t.h2>Featured Posts</t.h2>
+      <FeaturedPostsGrid>{cards}</FeaturedPostsGrid>
+      <BottomBar ai={ai} />
     </section>
   );
 };
 
-export const FeaturedPostCard = ({ post }: { post: Post }) => {
-  return (
-    <Link href={post.url} className="flex-1">
-      <Card className="flex-col flex grow h-full" hoverable>
-        <h3 className="font-bold">
-          <Balancer>{post.title}</Balancer>
-        </h3>
-        <p>{dateFormatter(post.date)}</p>
-      </Card>
+const BottomBar = ({ ai }: { ai: boolean }) => (
+  <div className="flex justify-end items-center">
+    {ai && (
+      <Link
+        href={"/blog/13-05-2023-onehundredpercent-more-ai"}
+        className="text-xs text-gray-500 hover:underline flex flex-row items-center gap-2 grow"
+      >
+        <span>ℹ️ </span>
+        <div className="flex-col flex">
+          <span>Featured posts generated using AI.</span>
+          <span>
+            AI functionalities provided by OpenAI using GPT-3.5 model.
+          </span>
+        </div>
+      </Link>
+    )}
+    <Link
+      href={"/blog"}
+      className={getButtonClassNames({
+        small: true,
+        noBold: true,
+        color: Color.Transparent,
+        className: "group flex items-center gap-2",
+      })}
+    >
+      View all posts
+      <ArrowUpHighIcon className="h-4 w-4 group-hover:rotate-45 transition-all" />
     </Link>
+  </div>
+);
+
+const FeaturedPostsGrid = ({
+  children,
+}: {
+  children?: ReactNode[] | ReactNode;
+}) => (
+  <ul className="flex md:flex-row flex-col gap-4 items-stretch">{children}</ul>
+);
+
+const FeaturedPostCard = (props: { post: Post }) => {
+  const { title, date } = props.post;
+  return (
+    <Card className="gap-4 flex flex-col h-full">
+      <h3 className="font-bold">{title}</h3>
+      <p>{dateFormatter(date)}</p>
+    </Card>
   );
 };
 
-export const FeaturedPostCardEmpty = () => (
-  //Empty State
-  <Card className="flex-col flex grow h-full flex-1">
-    <h3 className="font-bold text-transparent">
-      <Balancer>
-        {"Lorem ipsum dolor sit amet Lorem ipsum dolor"
-          .split(" ")
-          .map((a, i) => (
-            <>
-              <span
-                key={i}
-                className="text-transparent bg-gray-300 animate-pulse"
-              >
-                {a}
-              </span>{" "}
-            </>
-          ))}
-      </Balancer>
+const FeaturedPostCardEmpty = () => (
+  <Card className="gap-4 flex flex-col h-full">
+    <h3 className="font-bold">
+      {"Lorem ipsum dolor sit amet, qui minim.".split(" ").map((word, key) => (
+        <>
+          <span
+            className="bg-gray-300 animate-pulse text-transparent"
+            key={key}
+          >
+            {word}
+          </span>{" "}
+        </>
+      ))}
     </h3>
-    <p className="text-transparent bg-gray-300 animate-pulse">May 3, 2023</p>
+    <p className="bg-gray-200 animate-pulse text-transparent">May 3, 2023</p>
   </Card>
 );

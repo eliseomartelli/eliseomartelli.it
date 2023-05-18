@@ -2,12 +2,16 @@ import { Bio } from "@/components/Bio";
 import { Color, getButtonClassNames } from "@/components/Button";
 import WidthLimit from "@/components/WidthLimit";
 import Image from "next/image";
-import { DefaultFeaturedPosts } from "./featuredPostSection";
 import { Newsletter } from "@/components/Newsletter";
 import Link from "next/link";
 import { Features, useFeatures } from "@/lib/useFeatures";
+import dynamic from "next/dynamic";
 
 export const metadata = { title: "Home - Eliseo Martelli" };
+
+const FeaturedPosts = dynamic(() =>
+  import("@/components/FeaturedPosts").then((m) => m.FeaturedPosts)
+);
 
 const Home = () => {
   const features = useFeatures();
@@ -35,8 +39,7 @@ const Home = () => {
           </Link>
         }
       ></Bio>
-      {/* @ts-expect-error Server Component */}
-      {features.includes(Features.FeaturedPosts) && <DefaultFeaturedPosts />}
+      {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
       {features.includes(Features.Newsletter) && <Newsletter />}
     </WidthLimit>
   );
