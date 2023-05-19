@@ -8,6 +8,7 @@ const nextConfig = {
   images: {
     domains: [
       "eliseomartelli.it",
+      "www.eliseomartelli.it",
       "localhost",
       "files.mastodon.social",
       "cdn.pony.social",
