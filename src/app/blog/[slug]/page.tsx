@@ -1,6 +1,6 @@
 import { BlogPostTitle, TagRow } from "@/components/BlogPostItem";
 import {
-  AIFeaturedPostsProps,
+  AIFeaturedPosts,
   EmptyFeaturedPosts,
 } from "@/components/FeaturedPosts";
 import { MDXComponent } from "@/components/MDX";
@@ -11,8 +11,8 @@ import { Features, useFeatures } from "@/lib/useFeatures";
 import moo from "@eliseomartelli/moo/dist";
 import { Post, allPosts } from "contentlayer/generated";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -61,12 +61,7 @@ export async function generateMetadata({
   };
 }
 
-const AIFeaturedPosts = dynamic<AIFeaturedPostsProps>(
-  () => import("@/components/FeaturedPosts").then((mod) => mod.AIFeaturedPosts),
-  { loading: () => <EmptyFeaturedPosts ai />, ssr: false }
-);
-
-const PostPage = ({ params }: { params: { slug: string } }) => {
+const PostPage = async ({ params }: { params: { slug: string } }) => {
   const features = useFeatures();
   const post = allPosts.find(
     (post) => post._raw.flattenedPath === `blog/${params.slug}`
@@ -85,7 +80,10 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
         <RSSSubscribe />
         {features.includes(Features.FeaturedPosts) && (
-          <AIFeaturedPosts post={post} />
+          <Suspense fallback={<EmptyFeaturedPosts ai={false} />}>
+            {/* @ts-expect-error Async Server Component */}
+            <AIFeaturedPosts post={post} />
+          </Suspense>
         )}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>

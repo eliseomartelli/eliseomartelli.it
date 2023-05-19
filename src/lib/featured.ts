@@ -21,9 +21,9 @@ export const featuredPosts = async () => {
   }) as Post[];
 };
 
-export const featuredPostsFromSlug = async (postSlug: string) => {
-  await new Promise((r) => setTimeout(r, 2000));
+export const ErrorFetchingAI = new Error("Error fetching posts from AI");
 
+export const featuredPostsFromSlug = async (postSlug: string) => {
   const article = allPosts.find((p) => p.url === postSlug);
   if (!article) {
     return [];
@@ -67,6 +67,9 @@ Current filename: ${article.url}: ${article.url}`;
   const featuredPosts = featuredPostsUrls.map((postURL) =>
     allPosts.find((post) => post._raw.flattenedPath === postURL.split(":")[0])
   );
+  if (featuredPosts.length !== 3) {
+    throw ErrorFetchingAI;
+  }
   return featuredPosts.map((e) => {
     // Don't send whole post over network...
     return {

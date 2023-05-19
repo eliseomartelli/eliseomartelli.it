@@ -1,4 +1,4 @@
-import React, { ReactNode, use } from "react";
+import React, { ReactNode } from "react";
 import * as t from "@/components/Typography";
 import { Card } from "./Card";
 import { Post } from "@/.contentlayer/generated/types";
@@ -8,9 +8,20 @@ import Link from "next/link";
 import { Color, getButtonClassNames } from "./Button";
 import { ArrowUpHighIcon } from "./Icons";
 
-export const FeaturedPosts = () => {
-  return <FeaturedPostsLayout posts={use(featuredPosts())} />;
-};
+export async function FeaturedPosts() {
+  const posts = await featuredPosts();
+  return <FeaturedPostsLayout posts={posts} />;
+}
+
+export async function AIFeaturedPosts({ post }: AIFeaturedPostsProps) {
+  try {
+    const posts = await featuredPostsFromSlug(post.url);
+    return <FeaturedPostsLayout posts={posts} ai />;
+  } catch (error) {
+    <EmptyFeaturedPosts ai />;
+  }
+}
+
 export const EmptyFeaturedPosts = ({ ai = false }: { ai: boolean }) => {
   return <FeaturedPostsLayout ai={ai} empty />;
 };
@@ -18,12 +29,6 @@ export const EmptyFeaturedPosts = ({ ai = false }: { ai: boolean }) => {
 export interface AIFeaturedPostsProps {
   post: Post;
 }
-
-export const AIFeaturedPosts = ({ post }: AIFeaturedPostsProps) => {
-  return (
-    <FeaturedPostsLayout posts={use(featuredPostsFromSlug(post.url))} ai />
-  );
-};
 
 export const FeaturedPostsLayout = ({
   posts,

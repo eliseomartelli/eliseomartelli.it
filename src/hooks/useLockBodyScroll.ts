@@ -10,7 +10,6 @@ export function useLockBody() {
       document.body.style.paddingRight = `${innerWidth - clientWidth}px`;
     }
     document.body.style.overflow = "hidden";
-    console.log(innerWidth - clientWidth);
     return () => {
       document.body.style.overflow = overflow;
       document.body.style.paddingRight = "0px";
