@@ -90,6 +90,7 @@ export const DefaultNavbar = () => {
   const links = [
     { title: "Home", href: "/" },
     { title: "Blog", href: "/blog" },
+    { title: "Snippets", href: "/snippets" },
     { title: "Photos", href: "/photos" },
     { title: "About", href: "/about" },
   ];

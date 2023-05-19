@@ -1,0 +1,41 @@
+---
+title: Dynamically load a component
+tags:
+  - TypeScript
+  - Next.JS
+---
+
+```tsx title="./Page.tsx"
+import dynamic from "next/dynamic";
+
+const DynamicComponent = dynamic<{}>(
+  () => import("@/components/Test").then((mod) => mod.Test),
+  { loading: () => <>Loading...</> }
+);
+
+const Page = () => (
+  <>
+    <DynamicComponent />
+  </>
+);
+
+export default Page;
+```
+
+```tsx title="./components/Text.tsx"
+import { use } from "React";
+
+const getName = async () => {
+	/* Do something */
+	return "Hello, world";
+}
+
+export const Test = () => {
+  const name = use(getName()); /* Using "use" instead of "await" */
+  return (
+    <>
+      Hello, world!
+    </>
+  );
+};
+```

@@ -49,6 +49,25 @@ export const Uses = defineDocumentType(() => ({
   contentType: "mdx",
 }));
 
+export const Snippet = defineDocumentType(() => ({
+  name: "Snippet",
+  filePathPattern: `snippets/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      description: "The title of the snippet",
+      required: true,
+    },
+    tags: {
+      type: "list",
+      of: { type: "string" },
+      description: "The tags of the snippet",
+      required: false,
+    },
+  },
+}));
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `blog/*.md`,
@@ -90,11 +109,29 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./data",
-  documentTypes: [Post, Photos, Uses],
+  documentTypes: [Post, Photos, Uses, Snippet],
   mdx: {
     remarkPlugins: [remarkGfm, remarkToc],
     rehypePlugins: [
-      [rehypePrettyCode, { theme: "one-dark-pro" }],
+      [
+        rehypePrettyCode,
+        {
+          theme: "one-dark-pro",
+          onVisitLine(node) {
+            // Prevent lines from collapsing in `display: grid` mode, and allow empty
+            // lines to be copy/pasted
+            if (node.children.length === 0) {
+              node.children = [{ type: "text", value: " " }];
+            }
+          },
+          onVisitHighlightedLine(node) {
+            node.properties.className.push("line--highlighted");
+          },
+          onVisitHighlightedWord(node) {
+            node.properties.className = ["word--highlighted"];
+          },
+        },
+      ],
       [rehypeAutolinkHeadings, { properties: { className: ["anchor"] } }],
     ],
   },

@@ -93,6 +93,10 @@ const internalLinks = [
     href: "/blog",
   },
   {
+    name: "Snippets",
+    href: "/snippets",
+  },
+  {
     name: "Photos",
     href: "/photos",
   },
