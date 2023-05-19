@@ -1,9 +1,14 @@
 import { Color, getButtonClassNames } from "@/components/Button";
-import { EmptyFeaturedPosts, FeaturedPosts } from "@/components/FeaturedPosts";
+import { EmptyFeaturedPosts } from "@/components/FeaturedPosts";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import React, { Suspense } from "react";
+
+const FeaturedPosts = dynamic(
+  () => import("@/components/FeaturedPosts").then((mod) => mod.FeaturedPosts),
+  { ssr: false, loading: () => <EmptyFeaturedPosts ai={false} /> }
+);
 
 const NotFound = () => {
   const features = useFeatures();
@@ -28,12 +33,7 @@ const NotFound = () => {
       >
         Go home
       </Link>
-      {features.includes(Features.FeaturedPosts) && (
-        <Suspense fallback={<EmptyFeaturedPosts ai={false} />}>
-          {/* @ts-expect-error Async Server Component */}
-          <FeaturedPosts />
-        </Suspense>
-      )}
+      {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
     </WidthLimit>
   );
 };

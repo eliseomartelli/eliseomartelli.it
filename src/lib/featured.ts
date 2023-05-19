@@ -59,17 +59,15 @@ Current filename: ${article.url}: ${article.url}`;
   if (!response.ok) {
     return [];
   }
-  const body = (await response.json()) as { output: string };
-  const featuredPostsUrls: string[] = body.output
+  const { output } = (await response.json()) as { output: string };
+
+  const featuredPostsUrls: string[] = output
     .trim()
     .split("\n")
     .filter((e) => e.match("^blog/.*"));
   const featuredPosts = featuredPostsUrls.map((postURL) =>
     allPosts.find((post) => post._raw.flattenedPath === postURL.split(":")[0])
   );
-  if (featuredPosts.length !== 3) {
-    throw ErrorFetchingAI;
-  }
   return featuredPosts.map((e) => {
     // Don't send whole post over network...
     return {

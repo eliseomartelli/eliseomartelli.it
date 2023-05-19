@@ -5,10 +5,15 @@ import Image from "next/image";
 import { Newsletter } from "@/components/Newsletter";
 import Link from "next/link";
 import { Features, useFeatures } from "@/lib/useFeatures";
-import { Suspense } from "react";
-import { EmptyFeaturedPosts, FeaturedPosts } from "@/components/FeaturedPosts";
+import { EmptyFeaturedPosts } from "@/components/FeaturedPosts";
+import dynamic from "next/dynamic";
 
 export const metadata = { title: "Home - Eliseo Martelli" };
+
+const FeaturedPosts = dynamic(
+  () => import("@/components/FeaturedPosts").then((mod) => mod.FeaturedPosts),
+  { ssr: false, loading: () => <EmptyFeaturedPosts ai={false} /> }
+);
 
 const Home = () => {
   const features = useFeatures();
@@ -36,12 +41,7 @@ const Home = () => {
           </Link>
         }
       ></Bio>
-      {features.includes(Features.FeaturedPosts) && (
-        <Suspense fallback={<EmptyFeaturedPosts ai={false} />}>
-          {/* @ts-expect-error Async Server Component */}
-          <FeaturedPosts />
-        </Suspense>
-      )}
+      {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
       {features.includes(Features.Newsletter) && <Newsletter />}
     </WidthLimit>
   );

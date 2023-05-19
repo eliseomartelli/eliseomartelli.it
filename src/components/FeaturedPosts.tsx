@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, use } from "react";
 import * as t from "@/components/Typography";
 import { Card } from "./Card";
 import { Post } from "@/.contentlayer/generated/types";
@@ -8,18 +8,14 @@ import Link from "next/link";
 import { Color, getButtonClassNames } from "./Button";
 import { ArrowUpHighIcon } from "./Icons";
 
-export async function FeaturedPosts() {
-  const posts = await featuredPosts();
+export function FeaturedPosts() {
+  const posts = use(featuredPosts());
   return <FeaturedPostsLayout posts={posts} />;
 }
 
-export async function AIFeaturedPosts({ post }: AIFeaturedPostsProps) {
-  try {
-    const posts = await featuredPostsFromSlug(post.url);
-    return <FeaturedPostsLayout posts={posts} ai />;
-  } catch (error) {
-    <EmptyFeaturedPosts ai />;
-  }
+export function AIFeaturedPosts({ post }: AIFeaturedPostsProps) {
+  const posts = use(featuredPostsFromSlug(post.url));
+  return <FeaturedPostsLayout posts={posts} ai />;
 }
 
 export const EmptyFeaturedPosts = ({ ai = false }: { ai: boolean }) => {
@@ -41,17 +37,23 @@ export const FeaturedPostsLayout = ({
 }) => {
   const cards = !empty ? (
     posts!.map((post, key) => (
-      <Link key={key} href={post.url} className="grow flex-1">
-        <li className="h-full">
+      <li className="grow flex-1" key={key}>
+        <Link href={post.url}>
           <FeaturedPostCard post={post} />
-        </li>
-      </Link>
+        </Link>
+      </li>
     ))
   ) : (
     <>
-      <FeaturedPostCardEmpty />
-      <FeaturedPostCardEmpty />
-      <FeaturedPostCardEmpty />
+      <li>
+        <FeaturedPostCardEmpty />
+      </li>
+      <li>
+        <FeaturedPostCardEmpty />
+      </li>
+      <li>
+        <FeaturedPostCardEmpty />
+      </li>
     </>
   );
 
@@ -114,7 +116,7 @@ const FeaturedPostCard = (props: { post: Post }) => {
 };
 
 const FeaturedPostCardEmpty = () => (
-  <Card className="gap-4 flex flex-col h-full">
+  <Card className="gap-4 flex flex-col h-full" hoverable={false}>
     <h3 className="font-bold">
       {"Lorem ipsum dolor sit amet, qui minim.".split(" ").map((word, key) => (
         <>

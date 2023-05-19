@@ -19,10 +19,11 @@ const Photos = () => {
           {allPhotos.map((photo, i) => (
             <Link href={`/${photo._raw.flattenedPath}`} key={i}>
               <Card
-                className="relative aspect-horizontal overflow-hidden group"
+                className="relative aspect-horizontal overflow-hidden group bg-gray-600"
                 hoverable
               >
                 <Image
+                  unoptimized
                   src={`${SITE_HOST}/api/thumbnail/${photo._raw.flattenedPath}`}
                   alt={photo.title}
                   priority

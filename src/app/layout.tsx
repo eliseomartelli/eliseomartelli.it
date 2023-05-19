@@ -1,6 +1,5 @@
-import "./globals.css";
-
 import { DefaultNavbar } from "@/components/Navbar";
+import "./globals.css";
 import WidthLimit from "@/components/WidthLimit";
 import Link from "next/link";
 

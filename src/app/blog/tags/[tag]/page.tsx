@@ -1,10 +1,10 @@
 import { allPosts } from "contentlayer/generated";
-import { BlogPostItem } from "@/components/BlogPostItem";
 import WidthLimit from "@/components/WidthLimit";
 import { compareDesc } from "date-fns";
 import { allTags } from "../allTags";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
+import { PostList } from "@/components/PostList";
 
 export async function generateStaticParams() {
   return allTags.map((currentTag) => ({
@@ -49,13 +49,7 @@ const TagPage = ({ params }: { params: { tag: string } }) => {
       ]}
     >
       <WidthLimit>
-        <ul className="flex flex-col gap-8">
-          {posts.map((post, i) => (
-            <li key={i}>
-              <BlogPostItem {...post} />
-            </li>
-          ))}
-        </ul>
+        <PostList posts={posts} />
       </WidthLimit>
     </PageLayout>
   );

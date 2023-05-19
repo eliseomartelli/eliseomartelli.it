@@ -1,18 +1,25 @@
 import { BlogPostTitle, TagRow } from "@/components/BlogPostItem";
-import {
-  AIFeaturedPosts,
-  EmptyFeaturedPosts,
-} from "@/components/FeaturedPosts";
 import { MDXComponent } from "@/components/MDX";
 import { Newsletter } from "@/components/Newsletter";
 import { RSSSubscribe } from "@/components/RSSSubscribe";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
 import moo from "@eliseomartelli/moo/dist";
-import { Post, allPosts } from "contentlayer/generated";
+import { allPosts, Post } from "contentlayer/generated";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+
+import {
+  AIFeaturedPostsProps,
+  EmptyFeaturedPosts,
+} from "@/components/FeaturedPosts";
+import dynamic from "next/dynamic";
+import React from "react";
+
+const AIFeaturedPosts = dynamic<AIFeaturedPostsProps>(
+  () => import("@/components/FeaturedPosts").then((mod) => mod.AIFeaturedPosts),
+  { ssr: false, loading: () => <EmptyFeaturedPosts ai /> }
+);
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -80,10 +87,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
         <RSSSubscribe />
         {features.includes(Features.FeaturedPosts) && (
-          <Suspense fallback={<EmptyFeaturedPosts ai={false} />}>
-            {/* @ts-expect-error Async Server Component */}
-            <AIFeaturedPosts post={post} />
-          </Suspense>
+          <AIFeaturedPosts post={post} />
         )}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>
