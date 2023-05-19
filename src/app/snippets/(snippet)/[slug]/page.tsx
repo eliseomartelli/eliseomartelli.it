@@ -1,5 +1,4 @@
 import { allSnippets } from "@/.contentlayer/generated/index.mjs";
-import { TagRow } from "@/components/BlogPostItem";
 import { MDXComponent } from "@/components/MDX";
 import { PageLayout } from "@/components/PageLayout";
 import { Taglet } from "@/components/Taglet";

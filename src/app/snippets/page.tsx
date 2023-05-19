@@ -18,8 +18,12 @@ const Snippets = () => {
     <PageLayout routes={[{ name: "Snippets", href: "/snippets" }]}>
       <WidthLimit className="flex flex-col gap-4">
         {snippets.map((s) => (
-          <Link href={s._raw.flattenedPath} key={s._id}>
-            <Card className="flex justify-between md:flex-row flex-col">
+          <Link href={s._raw.flattenedPath} key={s._raw.flattenedPath}>
+            <Card
+              className="flex justify-between md:flex-row flex-col -mx-4"
+              noBackground
+              noBorder
+            >
               <h2 className="font-bold text-md">{s.title}</h2>
               <div className="flex gap-2">
                 {s.tags!.map((tag) => (

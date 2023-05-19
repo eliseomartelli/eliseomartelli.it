@@ -5,6 +5,7 @@ import { dateFormatter } from "@/lib/dateFormatter";
 import { pluralize } from "@/lib/pluralize";
 import { Balancer } from "react-wrap-balancer";
 import moo from "@eliseomartelli/moo/dist";
+import { Card } from "./Card";
 
 const formatMinutesToRead = (minutes: number) =>
   pluralize(minutes, ["%d minute to read", "%d minutes to read"]);
@@ -17,13 +18,13 @@ export const BlogPostItem = ({
   excerpt,
   url,
 }: Post) => (
-  <div className="hover:bg-gray-100 p-4 -m-4 rounded-md">
+  <Card className="-mx-4" noBackground noBorder>
     <Link href={url}>
       <BlogPostTitle title={title} date={date} timeToRead={timeToRead} />
       <p className="mt-2">{excerpt}</p>
     </Link>
     <TagRow tags={tags} />
-  </div>
+  </Card>
 );
 
 export const BlogPostTitle = ({

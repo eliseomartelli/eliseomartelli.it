@@ -68,6 +68,56 @@ export const Snippet = defineDocumentType(() => ({
   },
 }));
 
+const Social = defineNestedType(() => ({
+  name: "Social",
+  fields: {
+    url: {
+      type: "string",
+    },
+    name: {
+      type: "string",
+    },
+    user: {
+      type: "string",
+    },
+  },
+}));
+
+const Socials = defineDocumentType(() => ({
+  name: "Socials",
+  filePathPattern: `socials.json`,
+  contentType: "data",
+  fields: { socials: { type: "list", of: Social } },
+}));
+
+const TimelineEvent = defineNestedType(() => ({
+  name: "TimelineEvent",
+  fields: {
+    from: { type: "string" },
+    to: { type: "string" },
+    what: { type: "string" },
+    where: { type: "string" },
+  },
+}));
+
+const Timeline = defineNestedType(() => ({
+  name: "Timeline",
+  fields: {
+    title: { type: "string" },
+    description: { type: "string", required: false },
+    events: { type: "list", of: TimelineEvent },
+  },
+}));
+
+const Timelines = defineDocumentType(() => ({
+  name: "Timelines",
+  filePathPattern: `timelines.yaml`,
+  contentType: "data",
+  fields: {
+    timelines: { type: "list", of: Timeline },
+  },
+}));
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `blog/*.md`,
@@ -109,7 +159,7 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./data",
-  documentTypes: [Post, Photos, Uses, Snippet],
+  documentTypes: [Post, Photos, Uses, Snippet, Socials, Timelines],
   mdx: {
     remarkPlugins: [remarkGfm, remarkToc],
     rehypePlugins: [
