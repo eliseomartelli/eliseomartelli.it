@@ -12,7 +12,7 @@ export const Taglet = ({
   return (
     <span
       className={moo(
-        "rounded-full py-1 px-4 border font-bold text-sm",
+        "rounded-full py-1 px-4 border font-bold text-sm flex items-center gap-2",
         className!
       )}
     >

@@ -118,6 +118,50 @@ const Timelines = defineDocumentType(() => ({
   },
 }));
 
+export const Ingredient = defineNestedType(() => ({
+  name: "Ingredient",
+  fields: {
+    name: {
+      type: "string",
+    },
+    quantity: {
+      type: "number",
+    },
+    unit: {
+      type: "string",
+      required: false,
+    },
+  },
+}));
+
+export const Recipe = defineDocumentType(() => ({
+  name: "Recipe",
+  filePathPattern: `recipes/*.*`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+    },
+    excerpt: {
+      type: "string",
+    },
+    category: {
+      type: "string",
+    },
+    yield: {
+      type: "json",
+      of: Ingredient,
+    },
+    prep_time: {
+      type: "string",
+    },
+    cook_time: {
+      type: "string",
+    },
+    ingredients: { type: "list", of: Ingredient },
+  },
+}));
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `blog/*.md`,
@@ -159,7 +203,7 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./data",
-  documentTypes: [Post, Photos, Uses, Snippet, Socials, Timelines],
+  documentTypes: [Post, Photos, Uses, Snippet, Socials, Timelines, Recipe],
   mdx: {
     remarkPlugins: [remarkGfm, remarkToc],
     rehypePlugins: [

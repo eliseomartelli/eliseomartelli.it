@@ -44,6 +44,7 @@ const externalLinks = [
     name: "Wallpapers",
     href: "/wallpapers",
   },
+  { name: "Recipes", href: "/recipes" },
   {
     name: "SSH Keys",
     href: "/ssh",

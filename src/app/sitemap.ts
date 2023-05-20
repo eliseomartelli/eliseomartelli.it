@@ -1,5 +1,6 @@
-import { allPosts } from "contentlayer/generated";
+import { allWallpapers } from "@/lib/data/allWallpapers";
 import { allTags } from "./blog/tags/allTags";
+import { allRecipes, allSnippets, allPosts } from "contentlayer/generated";
 
 export default async function sitemap() {
   const blogs = allPosts.map((post) => ({
@@ -15,21 +16,45 @@ export default async function sitemap() {
     url: `https://eliseomartelli.it/blog/tags/${tag}`,
   }));
 
+  const recipes = allRecipes.map((recipe) => ({
+    url: `https://eliseomartelli.it/${recipe._raw.flattenedPath}`,
+  }));
+
+  const snippets = allSnippets.map((snippet) => ({
+    url: `https://eliseomartelli.it/${snippet._raw.flattenedPath}`,
+  }));
+
+  const wallpapers = (await allWallpapers()).map((wallpaper) => ({
+    url: `https://eliseomartelli.it/wallpapers/${wallpaper.reference}`,
+  }));
+
   const routes = [
     "",
     "/about",
     "/blog",
     "/contact",
+    "/feed.xml",
     "/feedback",
     "/photos",
-    "/wallpapers",
-    "/uses",
+    "/recipes",
+    "/snippets",
     "/ssh",
-    "/feed.xml",
+    "/uses",
+    "/wallpapers",
   ].map((route) => ({
     url: `https://eliseomartelli.it${route}`,
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...blogs, ...photos, ...tags];
+  return [
+    ...routes,
+
+    // Dynamic
+    ...blogs,
+    ...photos,
+    ...recipes,
+    ...snippets,
+    ...tags,
+    ...wallpapers,
+  ];
 }
