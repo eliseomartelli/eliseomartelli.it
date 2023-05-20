@@ -185,6 +185,4 @@ The one I use when I'm wandering around.
 - iPad 7th gen
 - lots of AirTags
 
----
-
-Disclosure: this post contains one (or more) affiliate link. If you buy something through one of those links you won't pay anything more but I'll get a small commission that helps me mantaining this blog.
+<AffiliateDisclosure />

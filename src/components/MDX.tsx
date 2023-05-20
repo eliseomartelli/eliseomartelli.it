@@ -5,8 +5,16 @@ import { Toot } from "./Toot";
 const Product = dynamic(() => import("./Product").then((mod) => mod.Product));
 const YouTube = dynamic(() => import("./YouTube").then((mod) => mod.YouTube));
 const BaseToot = dynamic(() => import("./Toot").then((mod) => mod.BaseToot));
+const AffiliateDisclosure = dynamic(() =>
+  import("./AffiliateDisclosure").then((mod) => mod.AffiliateDisclosure)
+);
 
-const BaseComponents = { Product, YouTube, Toot: BaseToot };
+const BaseComponents = {
+  Product,
+  YouTube,
+  Toot: BaseToot,
+  AffiliateDisclosure,
+};
 const AsyncComponets = { ...BaseComponents, Toot };
 export const MDXComponent = ({
   code,

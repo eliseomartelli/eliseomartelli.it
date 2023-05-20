@@ -17,9 +17,9 @@ The communication between devices is encrypted using the [Noise Protocol Framewo
 
 And you know what's great? Nebula is completely **open source!**
 
-## Nebula Vocabolary
+## Nebula Vocabulary
 
-Nebula's vocabolary is not so different from normal networking, you should only get accostumed to two terms:
+Nebula's vocabulary is not so different from normal networking, you should only get accostumed to two terms:
 
 - lighthouse;
 - node.
@@ -36,7 +36,7 @@ This guide will show you how to run Nebula **as a regular user**, in constrast w
 
 On the machines you'd like to attach to Nebula, you need to **download the binary** from the release page on GitHub and then extract it using _tar_.
 
-```bash
+```console
 $ curl -OL https://github.com/slackhq/nebula/releases/download/v1.2.0/nebula-linux-amd64.tar.gz
 $ tar xzvf nebula-linux-amd64.tar.gz
 ```
@@ -44,27 +44,27 @@ $ tar xzvf nebula-linux-amd64.tar.gz
 Now you need to **move the Nebula binary** to /usr/bin/ and set the right permissions.\
 You can do it manually or you can use the _[install](https://man.cx/install)_ command.
 
-```bash
+```console
 # install ./nebula /usr/bin
 ```
 
 Since we don't want to run Nebula as root, it's the right time to add a _system_ user (so it's **hidden** from your login manager) for Nebula.\
 This new user doesn't need a _home_ directory, so we're instructing the _useradd_ command to not create one.
 
-```bash
+```console
 # useradd --system --no-create-home nebula
 ```
 
 Following the [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard) that states that configuration files should reside in the /etc directory, we're going to **create the directories** to store configuration files and certificates that are related to Nebula.
 
-```bash
+```console
 # mkdir /etc/nebula
 # mkdir /etc/nebula/certs
 ```
 
 To instantiate a Nebula network you have to **generate a Nebula Certificate authority**, preferably on another host so you can keep your private key secure. Remember to copy the certificate to your hosts!
 
-```bash
+```console
 $ ./nebula-cert ca -name "My really cool organization"
 $ scp ca.crt user@<hostname>:/etc/nebula/certs
 ```
@@ -73,7 +73,7 @@ Make sure to **keep the ca.key file in a safe place**, you will need it if you w
 
 **Generate a keypair** for each host you'd like to connect to your Nebula network and copy the pair to your Nebula's hosts:
 
-```bash
+```console
 $ ./nebula-cert sign -name "mylighthouse" -ip "192.168.100.1/24"
 $ scp mylighthouse.crt user@<hostname>:/etc/nebula/certs
 $ scp mylighthouse.key user@<hostname>:/etc/nebula/certs
@@ -83,7 +83,7 @@ It's time to configure Nebula!\
 **Create a configuration file** inside the previously created directory and open it with your text editor of choice. I've deviced to put my configuration in /etc/nebula/config.yml.
 The configuration will look a bit different depending by the node, for example, my Lighthouse node is sporting this configuration:
 
-```yaml
+```yaml title="/etc/nebula/config.yml (lighthouse)"
 pki:
   ca: /etc/nebula/certs/ca.crt
   cert: /etc/nebula/certs/mylighthouse.crt
@@ -130,7 +130,7 @@ firewall:
 
 On my other nodes, the configuration looks something like this:
 
-```yaml
+```yaml title="/etc/nebula/config.yml (nodes)"
 pki:
   ca: /etc/nebula/certs/ca.crt
   cert: /etc/nebula/certs/mynode.crt
@@ -179,20 +179,20 @@ Note that **nodes** need to **define their "Lighthouse".**
 
 To make our "nebula" user the owner of the /etc/nebula directory, we have to change the ownership of it. We should also change the permissions of the certificats to something less permissive.
 
-```bash
+```console
 # chown -R nebula:nebula /etc/nebula
 # chmod 600 /etc/nebula/certs/*
 ```
 
 We're almost done! The second-last thing to do is to add the _NET_CAP_ADMIN_ capability to the Nebula binary since it needs to be able to create a new interface on the system.
 
-```bash
+```console
 # setcap cap_net_admin=+pe /usr/bin/nebula
 ```
 
 For our last step, we run Nebula as the nebula user on our hosts.
 
-```bash
+```console
 # su nebula
 $ nebula -config /etc/nebula/config.yml
 ```
@@ -204,9 +204,7 @@ To **test Nebula** open a new shell and try to ping another machine on the Nebul
 A natural step to take after you've tested Nebula is to **run it as a service** so you don't need to start it manually each time you need it. Well, nothing could be simpler!\
 You just have to create and edit a Systemd unit. An example can be found below:
 
-_/etc/systemd/system/nebula.service_
-
-```
+```ini title="/etc/systemd/system/nebula.service"
 [Unit]
 Description=Nebula Service
 After=network.target
@@ -227,13 +225,13 @@ Note that this Systemd unit runs Nebula with the "nebula" user and starts just a
 
 Now you need to **reload** configuration files for the daemons on your system so Systemd can pick-up the new unit:
 
-```bash
+```console
 # systemctl daemon-reload
 ```
 
 You can now **enable** the Nebula service so it starts automatically after a reboot. If you're not going to reboot, remember to **start** the service manually. 😉
 
-```bash
+```console
 # systemctl enable nebula.service
 # systemctl start nebula.service
 ```
@@ -244,9 +242,7 @@ You can now **enable** the Nebula service so it starts automatically after a reb
 
 If you want to run Nebula as a daemon on **macOS**, create and edit a launchd plist file as follows:
 
-_/Library/LaunchDaemons/com.nebula.plist_
-
-```xml
+```xml title="/Library/LaunchDaemons/com.nebula.plist"
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -269,13 +265,11 @@ _/Library/LaunchDaemons/com.nebula.plist_
 
 Remember to load this new daemon:
 
-```bash
+```console
 # sudo launchctl load /Library/LaunchDaemons/com.nebula.plist
 ```
 
 Oh, nice to see you here!  
 If you've reached the end of this post you can now enjoy your _freshly baked_ SDN!
 
----
-
-_Disclosure: this post contains one (or more) affiliate link. If you buy something through one of those links you won't pay anything more but I'll get a small commission that helps me mantaining this blog._
+<AffiliateDisclosure />

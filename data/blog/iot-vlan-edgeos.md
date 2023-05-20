@@ -120,6 +120,4 @@ set service mdns repeater interface eth1.32
 
 At this point you should now have a new VLAN that cannot see your other networks but can still access the internet.
 
----
-
-_Disclosure: this post contains one (or more) affiliate link. If you buy something through one of those links you won't pay anything more but I'll get a small commission that helps me mantaining this blog._
+<AffiliateDisclosure />
