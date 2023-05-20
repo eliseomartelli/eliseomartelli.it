@@ -9,9 +9,10 @@ import { usePathname } from "next/navigation";
 import WidthLimit from "./WidthLimit";
 import { Modal } from "./Modal";
 import { useWindowWidth } from "@/hooks/useWindowSize";
+import { NAVBAR_LINKS } from "../../NavbarLinks";
 
 interface NavbarLinkProps {
-  title: string;
+  name: string;
   href: string;
   selected?: boolean;
 }
@@ -71,7 +72,7 @@ export function MobileNavBar({
   );
 }
 
-export const NavbarLink = ({ title, href, selected }: NavbarLinkProps) => (
+export const NavbarLink = ({ name, href, selected }: NavbarLinkProps) => (
   <Link
     href={href}
     className={getButtonClassNames({
@@ -82,18 +83,11 @@ export const NavbarLink = ({ title, href, selected }: NavbarLinkProps) => (
       } decoration-wavy underline-offset-4 decoration-red-600`,
     })}
   >
-    {title}
+    {name}
   </Link>
 );
 
 export const DefaultNavbar = () => {
-  const links = [
-    { title: "Home", href: "/" },
-    { title: "Blog", href: "/blog" },
-    { title: "Snippets", href: "/snippets" },
-    { title: "Photos", href: "/photos" },
-    { title: "About", href: "/about" },
-  ];
   const pathname = usePathname();
 
   return (
@@ -114,7 +108,7 @@ export const DefaultNavbar = () => {
             )
           }
         >
-          {links.map((link, i) => (
+          {NAVBAR_LINKS.map((link, i) => (
             <NavbarLink {...link} key={i} selected={pathname === link.href} />
           ))}
         </Navbar>

@@ -1,47 +1,45 @@
 import Link from "next/link";
 import WidthLimit from "./WidthLimit";
+import { NAVBAR_LINKS } from "../../NavbarLinks";
+import { allSocials } from "@/.contentlayer/generated";
 
 export const Footer = () => (
   <footer className="bg-gray-200 grow-0">
     <WidthLimit className="py-8">
       <div className="flex mb-8">
-        {[internalLinks, externalLinks].map((links, i) => (
-          <ul className="flex flex-col gap-2 grow" key={i}>
-            {links.map((link, j) => (
-              <li key={i}>
+        <ul className="columns-2 w-full">
+          {[internalLinks, externalLinks].map((links) =>
+            links.map((link) => (
+              <li key={link.href} className="py-1">
                 <Link
                   {...link}
-                  key={j}
-                  className="bold hover:text-red-800 hover:underline flex items-center gap-2"
+                  className="bold hover:text-red-800 hover:underline"
                 >
                   {link.name}
                 </Link>
               </li>
-            ))}
-          </ul>
-        ))}
+            ))
+          )}
+        </ul>
       </div>
       <p>© 2011-{new Date().getFullYear()} Eliseo Martelli 🐾</p>
     </WidthLimit>
   </footer>
 );
 
+const [socialsJson] = allSocials;
+const { socials } = socialsJson;
+
 const externalLinks = [
-  {
-    name: "GitHub",
-    href: "https://github.com/eliseomartelli",
-    rel: "me",
-  },
-  {
-    name: "Mastodon",
-    href: "https://mastodon.social/@eliseomartelli",
-    rel: "me",
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com/eliseomartelli",
-    rel: "me",
-  },
+  ...socials!
+    .filter((social) =>
+      ["GitHub", "Instagram", "Mastodon"].includes(social.name!)
+    )
+    .map((social) => ({
+      name: social.name!,
+      href: social.url!,
+      rel: "me",
+    })),
   {
     name: "Wallpapers",
     href: "/wallpapers",
@@ -57,26 +55,7 @@ const externalLinks = [
 ];
 
 const internalLinks = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "About",
-    href: "/about",
-  },
-  {
-    name: "Blog",
-    href: "/blog",
-  },
-  {
-    name: "Snippets",
-    href: "/snippets",
-  },
-  {
-    name: "Photos",
-    href: "/photos",
-  },
+  ...NAVBAR_LINKS,
   {
     name: "Uses",
     href: "/uses",
@@ -88,5 +67,9 @@ const internalLinks = [
   {
     name: "Feedback",
     href: "/feedback",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
   },
 ];
