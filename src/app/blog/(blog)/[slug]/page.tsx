@@ -1,10 +1,8 @@
-import { BlogPostTitle, TagRow } from "@/components/BlogPostItem";
 import { MDXComponent } from "@/components/MDX";
 import { Newsletter } from "@/components/Newsletter";
 import { RSSSubscribe } from "@/components/RSSSubscribe";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
-import moo from "@eliseomartelli/moo/dist";
 import { allPosts, Post } from "contentlayer/generated";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -15,6 +13,9 @@ import {
 } from "@/components/FeaturedPosts";
 import dynamic from "next/dynamic";
 import React from "react";
+import { BlogPostTitle } from "@/components/BlogPostTitle";
+import { CategoryRow } from "@/components/CategoryRow";
+import { PostTitle } from "@/components/PostTitle";
 
 const AIFeaturedPosts = dynamic<AIFeaturedPostsProps>(
   () => import("@/components/FeaturedPosts").then((mod) => mod.AIFeaturedPosts),
@@ -81,7 +82,10 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <article className="prose mx-auto px-4 w-full">
-        <PostTitle post={post} />
+        <PostTitle>
+          <BlogPostTitle {...post} big />
+          <CategoryRow tags={post.tags} />
+        </PostTitle>
         <MDXComponent code={post.body.code} />
       </article>
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
@@ -94,23 +98,5 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
     </>
   );
 };
-
-const PostTitle = ({ post }: { post: Post }) => (
-  <section
-    className={moo(
-      "not-prose",
-      "text-black",
-      "text-center",
-      "flex",
-      "flex-col",
-      "items-center",
-      "align-middle",
-      "mb-8"
-    )}
-  >
-    <BlogPostTitle {...post} big />
-    <TagRow tags={post.tags} />
-  </section>
-);
 
 export default PostPage;

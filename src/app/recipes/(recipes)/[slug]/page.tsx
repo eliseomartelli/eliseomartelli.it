@@ -9,38 +9,7 @@ import { Recipe } from "@/.contentlayer/generated";
 import Balancer from "react-wrap-balancer";
 import { Taglet } from "@/components/Taglet";
 import { Clock, Fire } from "@/components/Icons";
-
-const RecipeTitle = ({ recipe }: { recipe: Recipe }) => (
-  <section
-    className={moo(
-      "not-prose",
-      "text-black",
-      "text-center",
-      "flex",
-      "flex-col",
-      "gap-2",
-      "items-center",
-      "align-middle",
-      "mb-8"
-    )}
-  >
-    <h1 className={moo("font-bold", "text-3xl")}>
-      <Balancer>{recipe.title}</Balancer>
-    </h1>
-    <p>{recipe.excerpt}</p>
-    <span className="flex gap-2">
-      <Taglet>
-        <Clock />
-        {recipe.prep_time}
-      </Taglet>
-      <Taglet>
-        <Fire />
-        {recipe.cook_time}
-      </Taglet>
-    </span>
-    <Taglet>{recipe.category}</Taglet>
-  </section>
-);
+import { PostTitle } from "@/components/PostTitle";
 
 export async function generateStaticParams() {
   return allRecipes.map((post) => ({
@@ -92,7 +61,23 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <article className="prose mx-auto px-4 w-full">
-      <RecipeTitle recipe={recipe} />
+      <PostTitle>
+        <h1 className={moo("font-bold", "text-3xl")}>
+          <Balancer>{recipe.title}</Balancer>
+        </h1>
+        <p>{recipe.excerpt}</p>
+        <div className="flex flex-row gap-2 my-4">
+          <Taglet>
+            <Clock />
+            {recipe.prep_time}
+          </Taglet>
+          <Taglet>
+            <Fire />
+            {recipe.cook_time}
+          </Taglet>
+        </div>
+        <Taglet>{recipe.category}</Taglet>
+      </PostTitle>
       <MDXComponent code={recipe.body.code} />
     </article>
   );

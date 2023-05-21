@@ -1,6 +1,7 @@
 import { allSnippets } from "@/.contentlayer/generated/index.mjs";
 import { MDXComponent } from "@/components/MDX";
 import { PageLayout } from "@/components/PageLayout";
+import { PostTitle } from "@/components/PostTitle";
 import { Taglet } from "@/components/Taglet";
 import WidthLimit from "@/components/WidthLimit";
 import { Metadata } from "next";
@@ -61,11 +62,13 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
     >
       <WidthLimit>
         <article className="prose mx-auto">
-          <p className="justify-center flex gap-2">
-            {snippet.tags.map((tag) => (
-              <Taglet key={tag}>{tag}</Taglet>
-            ))}
-          </p>
+          <PostTitle>
+            <p className="justify-center flex gap-2">
+              {snippet.tags.map((tag) => (
+                <Taglet key={tag}>{tag}</Taglet>
+              ))}
+            </p>
+          </PostTitle>
           <MDXComponent code={snippet.body.code} />
         </article>
       </WidthLimit>
