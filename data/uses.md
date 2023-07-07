@@ -96,13 +96,6 @@ A simple clipboard manager that lives in the menu bar.
 </Product>
 
 <Product
-  title="Shottr"
-  link="https://shottr.cc/"
-  linkText="Open">
-Screenshot utility for macOS.
-</Product>
-
-<Product
   title="Rectangle"
   link="https://rectangleapp.com/"
   linkText="Open">
@@ -162,15 +155,14 @@ Workhorse.
 </Product>
 
 <Product
-  title="Canon EOS 600D"
-  link="https://amzn.to/41Fb09A">
-Old workhorse.
-</Product>
-
-<Product
   title="Canon 85mm USM f/1.8"
   link="https://amzn.to/43UEOAC">
 Portraits fave.
+</Product>
+
+<Product
+  title="Canon 28mm USM f/1.8">
+The wide boi.
 </Product>
 
 <Product
