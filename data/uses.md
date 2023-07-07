@@ -23,6 +23,57 @@ A great mechanical keyboard with great customizability.
 Can't get more minimal than this.
 </Product>
 
+## Photography Setup
+
+<Product
+  title="Canon EOS RP"
+  link="https://amzn.to/41DpuqC">
+The main camera I use for all the pictures you see on my social media.  
+Replaces my previous camera: Canon 600D.
+</Product>
+
+<Product
+  title="Canon 85mm USM f/1.8"
+  link="https://amzn.to/43UEOAC">
+The lens I use to shoot portraits and abstract street photography.
+Great compression, great bokeh, sharp.
+</Product>
+
+<Product
+  title="Canon 28mm USM f/1.8">
+The wide boi. I got this lens for the wide angle. Love the
+three-dimensional look.
+</Product>
+
+<Product
+  title="Canon 50mm f/1.8 II"
+  link="https://amzn.to/3V7Zkd8">
+The one I use when I'm wandering around. Cheap and effective.
+</Product>
+
+### Software
+
+<Product
+  title="Photoshop CC"
+  link="https://www.adobe.com/products/photoshop.html"
+  linkText="Open">
+Photo manipulation when needed.
+</Product>
+
+<Product
+  title="Lightroom Classic CC"
+  link="https://www.adobe.com/products/photoshop-lightroom-classichtml"
+  linkText="Open">
+Photo editing.
+</Product>
+
+<Product
+  title="Final Cut Pro X"
+  link="https://www.apple.com/final-cut-pro/"
+  linkText="Open">
+For the reels I post on my [instagram](https://instagram.com/eliseomartelli).
+</Product>
+
 ## Software
 
 ### Coding
@@ -49,7 +100,7 @@ link="https://support.apple.com/en-gb/guide/terminal/welcome/mac"
 I need it.
 </Product>
 
-### Design & Content
+### Design
 
 <Product
   title="Figma"
@@ -59,24 +110,10 @@ Design sketches, some social posts, quick to use.
 </Product>
 
 <Product
-  title="Photoshop CC"
-  link="https://www.adobe.com/products/photoshop.html"
+  title="Adobe XD"
+  link="https://www.adobe.com/products/xd/"
   linkText="Open">
-Photo manipulation when needed.
-</Product>
-
-<Product
-  title="Lightroom Classic CC"
-  link="https://www.adobe.com/products/photoshop-lightroom-classichtml"
-  linkText="Open">
-Photo editing.
-</Product>
-
-<Product
-  title="Final Cut Pro X"
-  link="https://www.apple.com/final-cut-pro/"
-  linkText="Open">
-For the reels I post on my [instagram](https://instagram.com/eliseomartelli).
+When I don't want to spin-up Figma.
 </Product>
 
 ### Misc
@@ -144,31 +181,6 @@ When I need silence.
   title="FiiO μBTR"
   link="https://amzn.to/4219Jtt">
 All your headphones, now wireless.
-</Product>
-
-## Cameras
-
-<Product
-  title="Canon EOS RP"
-  link="https://amzn.to/41DpuqC">
-Workhorse.
-</Product>
-
-<Product
-  title="Canon 85mm USM f/1.8"
-  link="https://amzn.to/43UEOAC">
-Portraits fave.
-</Product>
-
-<Product
-  title="Canon 28mm USM f/1.8">
-The wide boi.
-</Product>
-
-<Product
-  title="Canon 50mm f/1.8 II"
-  link="https://amzn.to/3V7Zkd8">
-The one I use when I'm wandering around.
 </Product>
 
 ## Misc
