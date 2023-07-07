@@ -17,12 +17,6 @@ I hate ergonomics /s
 A great mechanical keyboard with great customizability.
 </Product>
 
-<Product
-  title="IKEA x Swedish House Mafia OBEGRÄNSAD stand"
-  link="https://www.ikea.com/it/it/p/obegraensad-supporto-per-pc-portatile-nero-00526465/">
-Can't get more minimal than this.
-</Product>
-
 ## Photography Setup
 
 <Product

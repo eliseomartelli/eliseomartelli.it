@@ -18,12 +18,12 @@ export const Product = ({
   return (
     <Card className="mb-4 flex gap-1.5 flex-col">
       <div className="flex justify-between not-prose items-center">
-        <h1 className="text-xl font-bold flex items-center gap-2">
-          {title}{" "}
+        <div>
+          <h1 className="text-xl font-bold flex items-center gap-2">{title}</h1>
           {variation && (
             <span className="text-sm text-gray-500">{variation}</span>
           )}
-        </h1>
+        </div>
         {link && (
           <a
             href={link}
