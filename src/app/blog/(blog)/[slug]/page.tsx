@@ -3,24 +3,15 @@ import { Newsletter } from "@/components/Newsletter";
 import { RSSSubscribe } from "@/components/RSSSubscribe";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
-import { allPosts, Post } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import {
-  AIFeaturedPostsProps,
-  EmptyFeaturedPosts,
-} from "@/components/FeaturedPosts";
-import dynamic from "next/dynamic";
+import { FeaturedPosts } from "@/components/FeaturedPosts";
 import React from "react";
 import { BlogPostTitle } from "@/components/BlogPostTitle";
 import { CategoryRow } from "@/components/CategoryRow";
 import { PostTitle } from "@/components/PostTitle";
-
-const AIFeaturedPosts = dynamic<AIFeaturedPostsProps>(
-  () => import("@/components/FeaturedPosts").then((mod) => mod.AIFeaturedPosts),
-  { ssr: false, loading: () => <EmptyFeaturedPosts ai /> }
-);
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -90,9 +81,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
       </article>
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
         <RSSSubscribe />
-        {features.includes(Features.FeaturedPosts) && (
-          <AIFeaturedPosts post={post} />
-        )}
+        {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>
     </>

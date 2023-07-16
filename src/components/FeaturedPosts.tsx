@@ -2,7 +2,7 @@ import React, { ReactNode, use } from "react";
 import * as t from "@/components/Typography";
 import { Card } from "./Card";
 import { Post } from "@/.contentlayer/generated/types";
-import { featuredPosts, featuredPostsFromSlug } from "@/lib/featured";
+import { featuredPosts } from "@/lib/featured";
 import { dateFormatter } from "@/lib/dateFormatter";
 import Link from "next/link";
 import { Color, getButtonClassNames } from "./Button";
@@ -13,26 +13,15 @@ export function FeaturedPosts() {
   return <FeaturedPostsLayout posts={posts} />;
 }
 
-export function AIFeaturedPosts({ post }: AIFeaturedPostsProps) {
-  const posts = use(featuredPostsFromSlug(post.url));
-  return <FeaturedPostsLayout posts={posts} ai />;
-}
-
-export const EmptyFeaturedPosts = ({ ai = false }: { ai: boolean }) => {
-  return <FeaturedPostsLayout ai={ai} empty />;
+export const EmptyFeaturedPosts = () => {
+  return <FeaturedPostsLayout empty />;
 };
-
-export interface AIFeaturedPostsProps {
-  post: Post;
-}
 
 export const FeaturedPostsLayout = ({
   posts,
-  ai = false,
   empty = false,
 }: {
   posts?: Post[];
-  ai?: boolean;
   empty?: boolean;
 }) => {
   const cards = !empty ? (
@@ -61,27 +50,13 @@ export const FeaturedPostsLayout = ({
     <section className="flex flex-col gap-4 w-full">
       <t.h2>Featured Posts</t.h2>
       <FeaturedPostsGrid>{cards}</FeaturedPostsGrid>
-      <BottomBar ai={ai} />
+      <BottomBar />
     </section>
   );
 };
 
-const BottomBar = ({ ai }: { ai: boolean }) => (
+const BottomBar = () => (
   <div className="flex justify-end items-center">
-    {ai && (
-      <Link
-        href={"/blog/13-05-2023-onehundredpercent-more-ai"}
-        className="text-xs text-gray-500 hover:underline flex flex-row items-center gap-2 grow"
-      >
-        <span>ℹ️ </span>
-        <div className="flex-col flex">
-          <span>Featured posts generated using AI.</span>
-          <span>
-            AI functionalities provided by OpenAI using GPT-3.5 model.
-          </span>
-        </div>
-      </Link>
-    )}
     <Link
       href={"/blog"}
       className={getButtonClassNames({

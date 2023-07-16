@@ -39,6 +39,11 @@ export const Photos = defineDocumentType(() => ({
       description: "The title of the photo section.",
       required: true,
     },
+    thumbnail: {
+      type: "string",
+      description: "The thumbnail of the photo section.",
+      required: false,
+    },
     photos: { type: "list", of: Photo },
   },
 }));
