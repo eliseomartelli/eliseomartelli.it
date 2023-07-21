@@ -5,15 +5,9 @@ import Image from "next/image";
 import { Newsletter } from "@/components/Newsletter";
 import Link from "next/link";
 import { Features, useFeatures } from "@/lib/useFeatures";
-import { EmptyFeaturedPosts } from "@/components/FeaturedPosts";
-import dynamic from "next/dynamic";
+import { FeaturedPosts } from "@/components/FeaturedPosts";
 
 export const metadata = { title: "Home - Eliseo Martelli" };
-
-const FeaturedPosts = dynamic(
-  () => import("@/components/FeaturedPosts").then((mod) => mod.FeaturedPosts),
-  { ssr: false, loading: () => <EmptyFeaturedPosts ai={false} /> }
-);
 
 const Home = () => {
   const features = useFeatures();
