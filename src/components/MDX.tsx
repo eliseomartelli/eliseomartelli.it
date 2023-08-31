@@ -39,5 +39,7 @@ export const FeedMDXComonent = ({
   globals?: Record<string, unknown> | undefined;
 }) => {
   const MDX = useMDXComponent(code, globals);
+  // Workaround for Toots, awaitin upstreaming of this change in TypeScript
+  /* @ts-expect-error Async Server Component */
   return <MDX components={BaseComponents} />;
 };
