@@ -2,6 +2,10 @@ title: Street Photography
 thumbnail: /photoPortfolio/street/IMG_0118.jpg
 photos:
   - title: Street photo
+    url: "/photoPortfolio/street/jumping.jpg"
+    aspect: horizontal
+
+  - title: Street photo
     url: "/photoPortfolio/street/IMG_0040.jpg"
     aspect: vertical
 
