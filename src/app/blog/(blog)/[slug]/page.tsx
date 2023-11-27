@@ -27,7 +27,7 @@ export async function generateMetadata({
   };
 }): Promise<Metadata | undefined> {
   const post = allPosts.find(
-    (post) => post._raw.flattenedPath === `blog/${params.slug}`
+    (post) => post._raw.flattenedPath === `blog/${params.slug}`,
   );
   if (!post) {
     return;
@@ -63,7 +63,7 @@ export async function generateMetadata({
 const PostPage = async ({ params }: { params: { slug: string } }) => {
   const features = useFeatures();
   const post = allPosts.find(
-    (post) => post._raw.flattenedPath === `blog/${params.slug}`
+    (post) => post._raw.flattenedPath === `blog/${params.slug}`,
   );
 
   if (!post) {
@@ -71,7 +71,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <>
+    <div className="my-8">
       <article className="prose mx-auto px-4 w-full">
         <PostTitle>
           <BlogPostTitle {...post} big />
@@ -84,7 +84,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
         {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>
-    </>
+    </div>
   );
 };
 

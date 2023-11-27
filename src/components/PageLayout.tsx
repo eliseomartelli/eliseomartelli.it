@@ -7,14 +7,14 @@ import moo from "@eliseomartelli/moo/dist";
 export const PageLayout = ({
   children,
   routes,
-  center = false,
+  center = true,
 }: {
   children: ReactNode;
   routes: { href: string; name: string }[];
   center?: boolean;
 }) => (
   <>
-    <WidthLimit className="mb-8">
+    <WidthLimit className="my-8">
       <typography.h1 className={moo(["text-center", center])}>
         <SegmentedNav routes={routes} />
       </typography.h1>

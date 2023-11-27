@@ -23,7 +23,7 @@ const Blog = () => {
     <PageLayout routes={[{ name: "Blog", href: "/blog" }]}>
       <WidthLimit className="flex flex-col gap-4 items-end">
         <PostList posts={posts} />
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full mb-8">
           <Link
             href={"/blog/tags"}
             className={getButtonClassNames({

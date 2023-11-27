@@ -25,7 +25,7 @@ export async function generateMetadata({
   };
 }): Promise<Metadata | undefined> {
   const post = allRecipes.find(
-    (post) => post._raw.flattenedPath === `recipes/${params.slug}`
+    (post) => post._raw.flattenedPath === `recipes/${params.slug}`,
   );
   if (!post) {
     return;
@@ -52,7 +52,7 @@ export async function generateMetadata({
 
 const PostPage = async ({ params }: { params: { slug: string } }) => {
   const recipe = allRecipes.find(
-    (post) => post._raw.flattenedPath === `recipes/${params.slug}`
+    (post) => post._raw.flattenedPath === `recipes/${params.slug}`,
   ) as Recipe;
 
   if (!recipe) {
@@ -60,7 +60,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <article className="prose mx-auto px-4 w-full">
+    <article className="prose mx-auto px-4 w-full my-8">
       <PostTitle>
         <h1 className={moo("font-bold", "text-3xl")}>
           <Balancer>{recipe.title}</Balancer>

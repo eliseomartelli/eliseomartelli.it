@@ -12,7 +12,14 @@ export const SegmentedNav = ({
       {routes.map((route, i) => {
         const isLast = i === routes.length - 1;
         return (
-          <Link {...route} key={i} className={moo(["text-gray-500", !isLast])}>
+          <Link
+            {...route}
+            key={i}
+            className={moo(
+              ["text-gray-500 text-base", !isLast],
+              ["block", isLast],
+            )}
+          >
             {route.name}
             {i < routes.length - 1 && "/"}
           </Link>

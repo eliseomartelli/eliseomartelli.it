@@ -1,43 +1,48 @@
-import { Bio } from "@/components/Bio";
-import { Color, getButtonClassNames } from "@/components/Button";
-import WidthLimit from "@/components/WidthLimit";
-import Image from "next/image";
-import { Newsletter } from "@/components/Newsletter";
-import Link from "next/link";
-import { Features, useFeatures } from "@/lib/useFeatures";
 import { FeaturedPosts } from "@/components/FeaturedPosts";
+import { Newsletter } from "@/components/Newsletter";
+import WidthLimit from "@/components/WidthLimit";
+import { Features, useFeatures } from "@/lib/useFeatures";
+import Image from "next/image";
 
 export const metadata = { title: "Home - Eliseo Martelli" };
 
 const Home = () => {
   const features = useFeatures();
   return (
-    <WidthLimit className="flex flex-col gap-16">
-      <Bio
-        name="Eliseo Martelli"
-        description="Hey, I'm Eliseo. I'm passionate about computers, photography & music."
-        image={
-          <Image
-            src={"/profilePicture/colour.jpg"}
-            width={128}
-            height={128}
-            alt="Logo"
-            loading="eager"
-            className="rounded-full"
-          />
-        }
-        extra={
-          <Link
-            href="/contact"
-            className={getButtonClassNames({ color: Color.Red })}
-          >
-            Get in touch
-          </Link>
-        }
-      ></Bio>
-      {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
-      {features.includes(Features.Newsletter) && <Newsletter />}
-    </WidthLimit>
+    <>
+      <section className="bg-stone-800 text-white font-bold p-8">
+        <WidthLimit className="flex flex-col gap-4 animate-reveal">
+          <p>Hi, I&apos;m Eliseo Martelli.</p>
+          <section className="text-2xl gap-4 flex flex-col">
+            <p>
+              I&apos;m a Visual Artist & Software Developer based in Turin,
+              Italy.
+            </p>
+            <p>
+              I&apos;m also deeply passionate about design, music and cooking.
+            </p>
+            <p>This website is a collection of all the things I like.</p>
+          </section>
+          <div className="flex justify-end">
+            <div
+              className="relative aspect-square max-w-xs w-64 md:-mb-24
+before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-red-600"
+            >
+              <Image
+                src="/profilePicture/colour.jpg"
+                alt="A picture of me"
+                fill
+                sizes="(max-width: 350px)"
+              />
+            </div>
+          </div>
+        </WidthLimit>
+      </section>
+      <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
+        {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
+        {features.includes(Features.Newsletter) && <Newsletter />}
+      </WidthLimit>
+    </>
   );
 };
 
