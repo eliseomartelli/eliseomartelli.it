@@ -9,10 +9,10 @@ export async function GET(
     params,
   }: {
     params: { photoSlug: string[] };
-  }
+  },
 ) {
   const photo = allPhotos.find(
-    (p) => p._raw.flattenedPath === params.photoSlug.join("/")
+    (p) => p._raw.flattenedPath === params.photoSlug.join("/"),
   );
 
   const { SITE_HOST } = process.env;
@@ -22,12 +22,12 @@ export async function GET(
       { message: "Photos not found." },
       {
         status: 404,
-      }
+      },
     );
   }
 
   const view = (
-    <div tw="flex flex-wrap bg-gray-800">
+    <div tw="flex flex-wrap bg-stone-800">
       {photo.photos?.slice(0, 9).map((p, i) => (
         /* eslint-disable-next-line @next/next/no-img-element */
         <img
@@ -49,7 +49,7 @@ export async function GET(
       { message: "Failed to generate image" },
       {
         status: 500,
-      }
+      },
     );
   }
 }

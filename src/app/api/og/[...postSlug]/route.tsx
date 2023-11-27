@@ -12,7 +12,7 @@ export async function GET(
     params,
   }: {
     params: { postSlug: string[] };
-  }
+  },
 ) {
   const post = allPosts.find((p) => p.url === params.postSlug.join("/"));
 
@@ -21,12 +21,12 @@ export async function GET(
       { message: "Post not found." },
       {
         status: 404,
-      }
+      },
     );
   }
 
   const view = (
-    <div tw="flex flex-col w-full h-full p-24 bg-gray-100">
+    <div tw="flex flex-col w-full h-full p-24 bg-stone-100">
       <div tw="flex flex-col">
         <p tw="mt-0 text-xl">{dateFormatter(post.date)}</p>
         <h2 tw="text-6xl font-bold text-gray-900 text-left tracking-tight max-w-2/3">
@@ -67,7 +67,7 @@ export async function GET(
       { message: "Failed to generate image" },
       {
         status: 500,
-      }
+      },
     );
   }
 }

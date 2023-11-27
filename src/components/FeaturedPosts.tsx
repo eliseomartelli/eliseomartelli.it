@@ -96,7 +96,7 @@ const FeaturedPostCardEmpty = () => (
       {"Lorem ipsum dolor sit amet, qui minim.".split(" ").map((word, key) => (
         <>
           <span
-            className="bg-gray-300 animate-pulse text-transparent"
+            className="bg-stone-300 animate-pulse text-transparent"
             key={key}
           >
             {word}
@@ -104,6 +104,6 @@ const FeaturedPostCardEmpty = () => (
         </>
       ))}
     </h3>
-    <p className="bg-gray-200 animate-pulse text-transparent">May 3, 2023</p>
+    <p className="bg-stone-200 animate-pulse text-transparent">May 3, 2023</p>
   </Card>
 );

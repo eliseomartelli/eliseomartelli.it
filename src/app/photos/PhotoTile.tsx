@@ -12,7 +12,7 @@ const PhotoComponent = ({ url, title, aspect, place }: Photo) => {
       <div
         className={`relative w-full ${
           aspect == "vertical" ? "aspect-vertical" : "aspect-horizontal"
-        } bg-gray-400 ${
+        } bg-stone-400 ${
           loading && "animate-pulse"
         } rounded-md overflow-hidden z-0`}
       >

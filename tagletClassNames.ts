@@ -11,5 +11,5 @@ export const tagletClassNames: { [name: string]: string } = {
   ai: "bg-teal-50 border-teal-300 text-teal-800",
   studies: "bg-violet-50 border-violet-300 text-violet-800",
   music: "bg-purple-50 border-purple-300 text-purple-800",
-  default: "bg-gray-50 border-gray-300 text-gray-800",
+  default: "bg-stone-50 border-stone-300 text-stone-800",
 };

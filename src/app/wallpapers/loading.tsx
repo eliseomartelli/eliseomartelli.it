@@ -12,10 +12,10 @@ const loading = () => (
         >
           <div className="aspect-square border-gray-200" />
           <div className="p-4">
-            <h2 className="text-lg text-transparent bg-gray-300">
+            <h2 className="text-lg text-transparent bg-stone-300">
               Lorem ipsum dolor
             </h2>
-            <p className="flex text-transparent bg-gray-200">Sit amet</p>
+            <p className="flex text-transparent bg-stone-200">Sit amet</p>
           </div>
         </Card>
       ))}

@@ -4,7 +4,7 @@ import { NAVBAR_LINKS } from "../../NavbarLinks";
 import { allSocials } from "@/.contentlayer/generated";
 
 export const Footer = () => (
-  <footer className="bg-gray-200 grow-0">
+  <footer className="bg-stone-200 grow-0">
     <WidthLimit className="py-8">
       <div className="flex mb-8">
         <ul className="columns-2 w-full">
@@ -18,7 +18,7 @@ export const Footer = () => (
                   {link.name}
                 </Link>
               </li>
-            ))
+            )),
           )}
         </ul>
       </div>
@@ -33,7 +33,7 @@ const { socials } = socialsJson;
 const externalLinks = [
   ...socials!
     .filter((social) =>
-      ["GitHub", "Instagram", "Mastodon"].includes(social.name!)
+      ["GitHub", "Instagram", "Mastodon"].includes(social.name!),
     )
     .map((social) => ({
       name: social.name!,

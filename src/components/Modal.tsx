@@ -14,7 +14,7 @@ export const Modal = ({
   useLockBody();
   return (
     <div
-      className="bg-gray-600/60 w-screen h-screen fixed top-0 left-0"
+      className="bg-stone-600/60 w-screen h-screen fixed top-0 left-0"
       onClick={() => onClose()}
     >
       <WidthLimit>

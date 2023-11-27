@@ -19,7 +19,7 @@ const Photos = () => {
           {allPhotos.map((photo, i) => (
             <Link href={`/${photo._raw.flattenedPath}`} key={i}>
               <Card
-                className="relative aspect-horizontal overflow-hidden group bg-gray-600"
+                className="relative aspect-horizontal overflow-hidden group bg-stone-600"
                 hoverable
               >
                 <Image

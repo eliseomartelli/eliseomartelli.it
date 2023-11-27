@@ -1,8 +1,11 @@
+import * as t from "@/components/Typography";
 import { FeaturedPosts } from "@/components/FeaturedPosts";
 import { Newsletter } from "@/components/Newsletter";
 import WidthLimit from "@/components/WidthLimit";
 import { Features, useFeatures } from "@/lib/useFeatures";
 import Image from "next/image";
+import Link from "next/link";
+import { Color, getButtonClassNames } from "@/components/Button";
 
 export const metadata = { title: "Home - Eliseo Martelli" };
 
@@ -38,10 +41,25 @@ before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg
           </div>
         </WidthLimit>
       </section>
-      <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
+      <WidthLimit className="my-16 gap-8 flex flex-col items-end">
         {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>
+      <section className="border-s-red-600 border-s-4">
+        <WidthLimit className="py-8 gap-8 flex flex-col">
+          <t.h2>I&apos;d love to hear from you!</t.h2>
+          <span>
+            <Link
+              href="/contact"
+              className={getButtonClassNames({
+                color: Color.Red,
+              })}
+            >
+              Get in Touch
+            </Link>
+          </span>
+        </WidthLimit>
+      </section>
     </>
   );
 };

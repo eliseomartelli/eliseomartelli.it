@@ -16,10 +16,10 @@ export const Card = ({
 }) => {
   const classNames = moo(
     "rounded-md p-4 justify-between gap-8",
-    ["hover:bg-gray-100", hoverable],
-    ["bg-gray-50", !noBackground],
+    ["hover:bg-stone-100", hoverable],
+    ["bg-stone-50", !noBackground],
     ["border", !noBorder],
-    className!
+    className!,
   );
   return <div className={classNames}>{children}</div>;
 };

@@ -16,7 +16,7 @@ export function TimelineElement({
 }: TimelineElementProps): JSX.Element {
   return (
     <li className="relative">
-      <div className="absolute w-4 h-4 bg-gray-800 rounded-full -left-2 border border-white top-1/2 -translate-y-1/2"></div>
+      <div className="absolute w-4 h-4 bg-stone-800 rounded-full -left-2 border border-white top-1/2 -translate-y-1/2"></div>
       <div className="ml-6">
         <time className="text-xs">
           {from} - {to}

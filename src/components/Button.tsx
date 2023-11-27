@@ -33,18 +33,18 @@ export const getButtonClassNames = ({
   const className = moo(
     "transition-colors",
     ["rounded-md", !noRounded],
-    ["hover:bg-gray-200", color == Color.Transparent],
+    ["hover:bg-stone-200", color == Color.Transparent],
     ["text-white bg-red-800 hover:bg-red-600", color == Color.Red],
     ["text-white bg-green-800 hover:bg-green-600", color == Color.Green],
-    ["text-white bg-gray-500 hover:bg-gray-800", color == Color.DarkGray],
+    ["text-white bg-stone-500 hover:bg-stone-800", color == Color.DarkGray],
     ["text-white bg-sky-500 hover:bg-sky-800", color == Color.Sky],
     ["text-white bg-purple-800 hover:bg-pink-900", color == Color.Purple],
-    ["text-white bg-black hover:bg-gray-800", color == Color.Black],
-    "disabled:bg-gray-500", // Disabled
+    ["text-white bg-stone-700 hover:bg-stone-800", color == Color.Black],
+    "disabled:bg-stone-500", // Disabled
     ["px-4 py-1", small],
     ["py-2 px-4", !small],
     ["font-bold", !noBold],
-    passedClassNames!
+    passedClassNames!,
   );
   return className;
 };

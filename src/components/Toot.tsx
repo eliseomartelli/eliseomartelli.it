@@ -43,7 +43,7 @@ export async function Toot({
             <div>
               <p>
                 <span className="font-bold">{account.display_name}</span>
-                <span className="text-gray-400"> @{account.username}</span>
+                <span className="text-stone-400"> @{account.username}</span>
               </p>
               <p>{dateFormatter(created_at)}</p>
             </div>
