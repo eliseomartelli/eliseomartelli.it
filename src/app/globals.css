@@ -87,5 +87,5 @@ code > .line::before {
   @apply italic;
 }
 .intro {
-  @apply flex flex-col p-8 align-middle object-center max-w-sm w-full grow self-center snap-start;
+  @apply p-8 self-center min-w-[30ch];
 }

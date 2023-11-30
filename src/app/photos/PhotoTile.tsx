@@ -10,7 +10,7 @@ const PhotoComponent = ({ url, title, aspect, place }: Photo) => {
   return (
     <div
       className={moo(
-        "relative object-contain min-w-full min-h-full group snap-start",
+        "relative object-contain min-w-full min-h-full group",
         ["aspect-vertical", aspect == "vertical"],
         ["aspect-horizontal", aspect == "horizontal"],
         ["animate-reveal", !loading],

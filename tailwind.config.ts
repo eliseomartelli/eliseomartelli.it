@@ -17,12 +17,15 @@ export default {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        reveal: "reveal .25s ease-in-out",
+        reveal: "reveal 0.5s ease-in-out",
       },
       keyframes: {
         reveal: {
-          "0%": { transform: "translateY(0.5rem)", opacity: "0" },
-          "50%": { transform: "translateY(0.25rem)", opacity: "20%" },
+          "0%": {
+            transform: "translateX(1rem) translateY(2rem)",
+            opacity: "0",
+          },
+          "50%": { transform: "translateX(0.25rem)", opacity: "20%" },
         },
       },
     },
