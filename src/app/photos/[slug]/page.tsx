@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Photos, allPhotos } from "contentlayer/generated";
-import PhotoComponent from "../PhotoTile";
-import WidthLimit from "@/components/WidthLimit";
-import { SegmentedNav } from "@/components/SegmentedNav";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
+import { MDXComponent } from "@/components/MDX";
+import { PhotoSection } from "./PhotoSection";
 
 export async function generateMetadata({
   params,
@@ -14,7 +13,7 @@ export async function generateMetadata({
   };
 }): Promise<Metadata | undefined> {
   const photoGallery = allPhotos.find(
-    (photo) => photo._raw.flattenedPath === `photos/${params.slug}`
+    (photo) => photo._raw.flattenedPath === `photos/${params.slug}`,
   );
   if (!photoGallery) {
     return;
@@ -45,34 +44,13 @@ export async function generateMetadata({
 
 const PhotoPage = ({ params }: { params: { slug: string } }) => {
   const photoGallery = allPhotos.find(
-    (photo) => photo._raw.flattenedPath === `photos/${params.slug}`
+    (photo) => photo._raw.flattenedPath === `photos/${params.slug}`,
   );
   return (
-    <PageLayout
-      routes={[
-        {
-          name: "Photos",
-          href: "/photos",
-        },
-        {
-          name: photoGallery!.title,
-          href: `/photos/${params.slug}`,
-        },
-      ]}
-    >
-      {phSection(photoGallery!)}
+    <PageLayout routes={[]}>
+      <PhotoSection photoGallery={photoGallery!} />
     </PageLayout>
   );
 };
-
-const phSection = (photoGallery: Photos) => (
-  <section>
-    <div className="columns-2 md:columns-3 lg:columns-4 px-4">
-      {photoGallery.photos!.map((photo, i) => (
-        <PhotoComponent {...photo} key={i} />
-      ))}
-    </div>
-  </section>
-);
 
 export default PhotoPage;

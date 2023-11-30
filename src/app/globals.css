@@ -79,3 +79,13 @@ code > .line::before {
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none border-t-0;
 }
+
+.photogallery h1 {
+  @apply font-bold text-6xl font-serif;
+}
+.photogallery p {
+  @apply italic;
+}
+.photogallery section {
+  @apply min-w-[28rem]  flex flex-col p-8 align-middle object-center;
+}
