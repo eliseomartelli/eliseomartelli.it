@@ -10,7 +10,7 @@ const PhotoComponent = ({ url, title, aspect, place }: Photo) => {
   return (
     <div
       className={moo(
-        "relative object-contain w-full h-full group snap-start",
+        "relative object-contain min-w-full min-h-full group snap-start",
         ["aspect-vertical", aspect == "vertical"],
         ["aspect-horizontal", aspect == "horizontal"],
         ["animate-reveal", !loading],
@@ -29,7 +29,7 @@ const PhotoComponent = ({ url, title, aspect, place }: Photo) => {
         sizes="(min-width: 640px) 50vw,
               (min-width: 768px) 33vw,
               25vw"
-        className="!-z-50 object-contain"
+        className="!z-0 object-contain"
         onLoad={() => {
           setLoading(false);
         }}

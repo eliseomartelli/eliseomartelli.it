@@ -80,12 +80,12 @@ code > .line::before {
   @apply mt-0 rounded-t-none border-t-0;
 }
 
-.photogallery h1 {
-  @apply font-bold text-6xl font-serif;
+.intro > h1 {
+  @apply font-bold text-3xl font-serif;
 }
-.photogallery p {
+.intro > p {
   @apply italic;
 }
-.photogallery section {
-  @apply min-w-[28rem]  flex flex-col p-8 align-middle object-center;
+.intro {
+  @apply flex flex-col p-8 align-middle object-center max-w-sm w-full grow self-center snap-start;
 }

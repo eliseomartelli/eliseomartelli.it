@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { Photos, allPhotos } from "contentlayer/generated";
+import React from "react";
+import { allPhotos } from "contentlayer/generated";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
-import { MDXComponent } from "@/components/MDX";
 import { PhotoSection } from "./PhotoSection";
 
 export async function generateMetadata({
