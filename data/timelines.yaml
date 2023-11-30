@@ -15,8 +15,12 @@ timelines:
         where: "Client projects ranging from websites to hardware devices"
     title: Work
   - events:
-      - from: "2019"
+      - from: "2023"
         to: "Ongoing"
+        what: "Computer Science Masters Degree"
+        where: "Università degli Studi di Torino, Turin, Italy"
+      - from: "2019"
+        to: "2023"
         what: "Computer Science Bachelor Degree"
         where: "Università degli Studi di Torino, Turin, Italy"
       - from: "2012"
