@@ -1,5 +1,6 @@
 "use client";
 
+import { Photos } from "@/.contentlayer/generated";
 import { MDXComponent } from "@/components/MDX";
 
 export const PhotoSection = ({ photoGallery }: { photoGallery: Photos }) => {

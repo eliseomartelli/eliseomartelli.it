@@ -44,7 +44,7 @@ export const Photos = defineDocumentType(() => ({
       description: "The thumbnail of the photo section.",
       required: false,
     },
-    // photos: { type: "list", of: Photo },
+    photos: { type: "list", of: Photo },
   },
 }));
 

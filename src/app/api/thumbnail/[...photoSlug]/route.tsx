@@ -28,14 +28,14 @@ export async function GET(
 
   const view = (
     <div tw="flex flex-wrap bg-stone-800">
-      {photo.photos?.slice(0, 9).map((p, i) => (
+      {[photo.thumbnail].map((p, i) => (
         /* eslint-disable-next-line @next/next/no-img-element */
         <img
-          src={`${SITE_HOST}${p.url}`}
-          alt={p.title}
+          src={`${SITE_HOST}${p}`}
+          alt={p}
           key={i}
-          width={600 / 3}
-          height={402 / 3}
+          width={600}
+          height={402}
           style={{ objectFit: "cover" }}
         />
       ))}
