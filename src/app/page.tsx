@@ -13,13 +13,20 @@ const Home = () => {
   const features = useFeatures();
   return (
     <>
-      <section className="bg-stone-800 text-white font-bold p-8">
+      <section className="font-bold p-8">
         <WidthLimit className="flex flex-col gap-4 animate-reveal">
           <p>Hi, I&apos;m Eliseo Martelli.</p>
           <section className="text-2xl gap-4 flex flex-col">
             <p>
-              I&apos;m a Visual Artist & Software Developer based in Turin,
-              Italy.
+              I&apos;m a{" "}
+              <span className="hover:bg-red-600 hover:text-white transition-colors p-1 -m-1">
+                Visual Artist
+              </span>{" "}
+              &{" "}
+              <span className="hover:bg-red-600 hover:text-white transition-colors p-1 -m-1">
+                Software Developer
+              </span>{" "}
+              based in Turin, Italy.
             </p>
             <p>
               I&apos;m also deeply passionate about design, music and cooking.
@@ -29,7 +36,7 @@ const Home = () => {
           <div className="flex justify-end">
             <div
               className="relative aspect-square max-w-xs w-64 md:-mb-24
-before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-red-600"
+before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-red-600 mx-2"
             >
               <Image
                 src="/profilePicture/colour.jpg"

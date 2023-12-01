@@ -23,7 +23,7 @@ const About = () => {
   return (
     <PageLayout routes={[{ name: "About", href: "/about" }]} center>
       <WidthLimit>
-        <article className="prose mx-auto">
+        <article className="prose mx-auto mb-8">
           <p>
             Hey, I&apos;m Eliseo. A computer science student passionate about
             networking and high performance computing.

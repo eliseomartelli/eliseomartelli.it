@@ -18,7 +18,7 @@ export const Modal = ({
       onClick={() => onClose()}
     >
       <WidthLimit>
-        <div className="p-3 flex flex-col items-end">
+        <div className="py-3 flex flex-col items-end">
           <Button
             className="text-white"
             color={Color.DarkGray}

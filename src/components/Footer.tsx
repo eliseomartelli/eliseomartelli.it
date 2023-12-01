@@ -8,18 +8,23 @@ export const Footer = () => (
     <WidthLimit className="py-8">
       <div className="flex mb-8">
         <ul className="columns-2 w-full">
-          {[internalLinks, externalLinks].map((links) =>
-            links.map((link) => (
-              <li key={link.href} className="py-1">
-                <Link
-                  {...link}
-                  className="bold hover:text-red-800 hover:underline"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            )),
-          )}
+          {[internalLinks, externalLinks].map((links) => {
+            return (
+              <>
+                {links.map((link) => (
+                  <li key={link.href} className="py-1">
+                    <Link
+                      {...link}
+                      className="bold hover:text-red-800 hover:underline"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+                <br />
+              </>
+            );
+          })}
         </ul>
       </div>
       <p>© 2011-{new Date().getFullYear()} Eliseo Martelli 🐾</p>
@@ -40,15 +45,6 @@ const externalLinks = [
       href: social.url!,
       rel: "me",
     })),
-  {
-    name: "Wallpapers",
-    href: "/wallpapers",
-  },
-  { name: "Recipes", href: "/recipes" },
-  {
-    name: "SSH Keys",
-    href: "/ssh",
-  },
   {
     name: "PGP Key",
     href: "https://keyserver.ubuntu.com/pks/lookup?op=hget&search=d1d8ef9629b93cda0ee2b0164fa7d02e",
@@ -72,5 +68,14 @@ const internalLinks = [
   {
     name: "Contact",
     href: "/contact",
+  },
+  { name: "Recipes", href: "/recipes" },
+  {
+    name: "Wallpapers",
+    href: "/wallpapers",
+  },
+  {
+    name: "SSH Keys",
+    href: "/ssh",
   },
 ];

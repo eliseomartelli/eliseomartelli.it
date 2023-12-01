@@ -61,7 +61,7 @@ export function MobileNavBar({
   return (
     <Modal onClose={() => onClose()}>
       <WidthLimit className="items-end flex flex-col">
-        <div className="bg-white p-4 shadow-2xl rounded-md flex flex-col text-center max-w-xs mx-3">
+        <div className="bg-white shadow-2xl rounded-md flex flex-col text-center max-w-xs p-4">
           {children}
         </div>
       </WidthLimit>

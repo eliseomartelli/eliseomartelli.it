@@ -9,7 +9,7 @@ const Uses = () => {
   return (
     <PageLayout routes={[{ name: "Uses", href: "/uses" }]} center>
       <WidthLimit>
-        <article className="prose mx-auto">
+        <article className="prose mx-auto mb-8">
           <MDXComponent code={usesMd.body.code} />
         </article>
       </WidthLimit>

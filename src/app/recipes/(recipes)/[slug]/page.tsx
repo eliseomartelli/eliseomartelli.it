@@ -62,7 +62,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <article className="prose mx-auto px-4 w-full my-8">
       <PostTitle>
-        <h1 className={moo("font-bold", "text-3xl")}>
+        <h1 className={moo("font-bold font-serif", "text-3xl")}>
           <Balancer>{recipe.title}</Balancer>
         </h1>
         <p>{recipe.excerpt}</p>

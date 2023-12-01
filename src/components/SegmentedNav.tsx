@@ -17,7 +17,7 @@ export const SegmentedNav = ({
             key={i}
             className={moo(
               ["text-gray-500 text-base", !isLast],
-              ["block", isLast],
+              ["block font-serif", isLast],
             )}
           >
             {route.name}

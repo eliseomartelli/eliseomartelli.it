@@ -22,7 +22,13 @@ export const BlogPostTitle = ({
   );
   return (
     <div>
-      <h1 className={moo("font-bold", ["text-3xl", big], ["text-xl", !big])}>
+      <h1
+        className={moo(
+          "font-bold",
+          ["text-3xl font-serif", big],
+          ["text-xl font-sans", !big],
+        )}
+      >
         <Balancer>{title}</Balancer>
       </h1>
       <p className="text-gray-500">{dateBar}</p>
