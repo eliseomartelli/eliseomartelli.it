@@ -3,11 +3,12 @@ import {
   defineNestedType,
   makeSource,
 } from "contentlayer/source-files";
-import { timeToRead } from "./src/lib/timeToRead";
-import remarkGfm from "remark-gfm";
-import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
+
+import { timeToRead } from "./src/lib/timeToRead";
 
 const Photo = defineNestedType(() => ({
   name: "Photo",
@@ -45,6 +46,18 @@ export const Photos = defineDocumentType(() => ({
       required: false,
     },
     photos: { type: "list", of: Photo },
+  },
+}));
+
+export const Newsletter = defineDocumentType(() => ({
+  name: "Newsletter",
+  filePathPattern: `newsletter/*.md`,
+  contentType: "markdown",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
   },
 }));
 
@@ -208,7 +221,16 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./data",
-  documentTypes: [Post, Photos, Uses, Snippet, Socials, Timelines, Recipe],
+  documentTypes: [
+    Post,
+    Photos,
+    Uses,
+    Snippet,
+    Socials,
+    Timelines,
+    Recipe,
+    Newsletter,
+  ],
   mdx: {
     remarkPlugins: [remarkGfm, remarkToc],
     rehypePlugins: [
@@ -217,8 +239,8 @@ export default makeSource({
         {
           theme: "one-dark-pro",
           onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
+            // Prevent lines from collapsing in `display: grid` mode, and allow
+            // empty lines to be copy/pasted
             if (node.children.length === 0) {
               node.children = [{ type: "text", value: " " }];
             }

@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     if (!(checkEmail(email) && checkMessage(message) && checkName(name))) {
       return NextResponse.json(
         { message: "Email, message or name not valid" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 

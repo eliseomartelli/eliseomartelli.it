@@ -5,5 +5,5 @@ export enum Features {
 }
 
 export const useFeatures = () => {
-  return [Features.FeaturedPosts, Features.RSSSubscribe];
+  return [Features.FeaturedPosts, Features.Newsletter, Features.RSSSubscribe];
 };

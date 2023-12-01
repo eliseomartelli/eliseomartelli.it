@@ -3,9 +3,9 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { Card } from "./Card";
 import { Input } from "./Input";
-import Button, { Color, getButtonClassNames } from "./Button";
+import Button, { Color } from "./Button";
 import { checkEmail } from "@/lib/checkEmail";
-import { ArrowUpHighIcon, Loading } from "./Icons";
+import { Loading } from "./Icons";
 import Link from "next/link";
 
 enum FormState {
@@ -86,9 +86,7 @@ export const Newsletter = ({ showTitle = true }: { showTitle?: boolean }) => {
             </p>
           ) : (
             <>
-              <p className="">
-                Stay in the loop and get news about what I have my eyes on!
-              </p>
+              Stay in the loop and get news about what I have my eyes on!
               <fieldset className="relative w-full">
                 <Input
                   value={email}
@@ -103,21 +101,12 @@ export const Newsletter = ({ showTitle = true }: { showTitle?: boolean }) => {
             </>
           )}
         </form>
+        {showTitle && (
+          <Link href={"/newsletter"} className="">
+            Past issues
+          </Link>
+        )}
       </Card>
-      {showTitle && (
-        <Link
-          href={"/newsletter"}
-          className={getButtonClassNames({
-            small: true,
-            noBold: true,
-            color: Color.Transparent,
-            className: "group inline-flex items-center gap-2 self-end",
-          })}
-        >
-          Past Issues
-          <ArrowUpHighIcon className="h-4 w-4 group-hover:rotate-45 transition-all" />
-        </Link>
-      )}
     </section>
   );
 };

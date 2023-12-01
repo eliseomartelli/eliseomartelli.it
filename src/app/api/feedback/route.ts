@@ -10,26 +10,20 @@ export async function POST(request: Request) {
     if (!checkMessage(message)) {
       return NextResponse.json(
         { message: "Message not valid" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const transporter = getMailTransporter();
     const { SMTP_FROM: from, SMTP_TO: to } = process.env;
 
-    await transporter
-      .sendMail({
-        from,
-        to,
-        subject: "Feedback/NGL",
-        text: message,
-      })
-      .then(() => {
-        return NextResponse.json({ message: "OK" }, { status: 200 });
-      })
-      .catch((error) => {
-        return NextResponse.json({ message: error }, { status: 500 });
-      });
+    await transporter.sendMail({
+      from,
+      to,
+      subject: "Feedback/NGL",
+      text: message,
+    });
+    return NextResponse.json({ message: "OK" }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: error }, { status: 500 });
   }
