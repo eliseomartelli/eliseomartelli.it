@@ -1,46 +1,41 @@
-import {allWallpapers} from "@/lib/data/allWallpapers";
+import { allWallpapers } from "@/lib/data/allWallpapers";
+import { allTags } from "./blog/tags/allTags";
 import {
-  allNewsletters,
-  allPosts,
   allRecipes,
   allSnippets,
+  allPosts,
+  allNewsletters,
 } from "contentlayer/generated";
-
-import {allTags} from "./blog/tags/allTags";
 
 export default async function sitemap() {
   const blogs = allPosts.map((post) => ({
-                               url : `https://eliseomartelli.it/${post.url}`,
-                               lastModified : post.date,
-                             }));
+    url: `https://eliseomartelli.it/${post.url}`,
+    lastModified: post.date,
+  }));
 
   const photos = allPosts.map((photo) => ({
-                                url : `https://eliseomartelli.it/${photo.url}`,
-                              }));
+    url: `https://eliseomartelli.it/${photo.url}`,
+  }));
 
   const tags = allTags.map((tag) => ({
-                             url : `https://eliseomartelli.it/blog/tags/${tag}`,
-                           }));
+    url: `https://eliseomartelli.it/blog/tags/${tag}`,
+  }));
 
-  const recipes = allRecipes.map(
-      (recipe) => ({
-        url : `https://eliseomartelli.it/${recipe._raw.flattenedPath}`,
-      }));
+  const recipes = allRecipes.map((recipe) => ({
+    url: `https://eliseomartelli.it/${recipe._raw.flattenedPath}`,
+  }));
 
-  const snippets = allSnippets.map(
-      (snippet) => ({
-        url : `https://eliseomartelli.it/${snippet._raw.flattenedPath}`,
-      }));
+  const snippets = allSnippets.map((snippet) => ({
+    url: `https://eliseomartelli.it/${snippet._raw.flattenedPath}`,
+  }));
 
-  const newsletter = allNewsletters.map(
-      (newsletter) => ({
-        url : `https://eliseomartelli.it/${
-            newsletter._raw.sourceFilePath`,
+  const newsletter = allNewsletters.map((newsletter) => ({
+    url: `https://eliseomartelli.it/${newsletter._raw.sourceFilePath}`,
   }));
 
   const wallpapers = (await allWallpapers()).map((wallpaper) => ({
-    url: ` https : // eliseomartelli.it/wallpapers/${wallpaper.reference}`,
-        }));
+    url: `https://eliseomartelli.it/wallpapers/${wallpaper.reference}`,
+  }));
 
   const routes = [
     "",
@@ -55,11 +50,11 @@ export default async function sitemap() {
     "/ssh",
     "/uses",
     "/wallpapers",
+    "/newsletter",
   ].map((route) => ({
-    url: `
-        https : // eliseomartelli.it${route}`,
-        lastModified : new Date().toISOString().split("T")[0],
-      }));
+    url: `https://eliseomartelli.it${route}`,
+    lastModified: new Date().toISOString().split("T")[0],
+  }));
 
   return [
     ...routes,
@@ -71,5 +66,6 @@ export default async function sitemap() {
     ...snippets,
     ...tags,
     ...wallpapers,
+    ...newsletter,
   ];
 }
