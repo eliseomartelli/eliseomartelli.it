@@ -1,6 +1,7 @@
 import moo from "@eliseomartelli/moo/dist";
 import Link from "next/link";
 import React from "react";
+import { Balancer } from "react-wrap-balancer";
 
 export const SegmentedNav = ({
   routes,
@@ -20,7 +21,11 @@ export const SegmentedNav = ({
               ["block font-serif", isLast],
             )}
           >
-            {route.name}
+            {isLast ? (
+              <Balancer className="max-w-[60ch]">{route.name}</Balancer>
+            ) : (
+              route.name
+            )}
             {i < routes.length - 1 && "/"}
           </Link>
         );

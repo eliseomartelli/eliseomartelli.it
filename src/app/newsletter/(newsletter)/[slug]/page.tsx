@@ -64,7 +64,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
         className="prose mx-auto px-4 w-full my-8"
         dangerouslySetInnerHTML={{ __html: newsletter.body.html }}
       />
-      <p className="prose mx-auto">
+      <p className="prose mx-auto mb-8">
         {newsletter._id.split("/")[1].split(".")[0]}
       </p>
     </PageLayout>
