@@ -6,7 +6,6 @@ import {
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
-import remarkToc from "remark-toc";
 
 import { timeToRead } from "./src/lib/timeToRead";
 
@@ -232,7 +231,7 @@ export default makeSource({
     Newsletter,
   ],
   mdx: {
-    remarkPlugins: [remarkGfm, remarkToc],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
       [
         rehypePrettyCode,
