@@ -1,5 +1,6 @@
 import { allPhotos } from "contentlayer/generated";
-import { ImageResponse, NextResponse } from "next/server";
+import { ImageResponse } from "next/og";
+import { NextResponse } from "next/server";
 
 export const runtime = "edge";
 

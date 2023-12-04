@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/server";
+import { ImageResponse } from "next/og";
 import { allPosts } from "contentlayer/generated";
 import { dateFormatter } from "@/lib/dateFormatter";
 import { NextResponse } from "next/server.js";
