@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
 import Link from "next/link";
 import { Color, getButtonClassNames } from "@/components/Button";
+import { Article } from "@/components/Article";
 
 export const metadata: Metadata = {
   title: "Feedback - Eliseo Martelli",
@@ -14,7 +15,7 @@ const Feedback = () => {
   return (
     <PageLayout routes={[{ name: "Feedback", href: "/feedback" }]} center>
       <WidthLimit>
-        <article className="prose mx-auto">
+        <Article>
           <FeedbackForm />
           <h2>Data collected</h2>
           <ul>
@@ -45,7 +46,7 @@ const Feedback = () => {
               Contact me
             </Link>
           </div>
-        </article>
+        </Article>
       </WidthLimit>
     </PageLayout>
   );

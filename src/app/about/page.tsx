@@ -1,5 +1,6 @@
 import { allTimelines } from "@/.contentlayer/generated";
 import { allSocials } from "@/.contentlayer/generated/index.mjs";
+import { Article } from "@/components/Article";
 import { Card } from "@/components/Card";
 import { PageLayout } from "@/components/PageLayout";
 import {
@@ -23,7 +24,7 @@ const About = () => {
   return (
     <PageLayout routes={[{ name: "About", href: "/about" }]} center>
       <WidthLimit>
-        <article className="prose mx-auto mb-8">
+        <Article>
           <p>
             Hey, I&apos;m Eliseo. A computer science student passionate about
             networking and high performance computing.
@@ -64,7 +65,7 @@ const About = () => {
               </>
             ))}
           </section>
-        </article>
+        </Article>
       </WidthLimit>
     </PageLayout>
   );

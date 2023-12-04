@@ -8,66 +8,9 @@ export const featuredPosts = async () => {
   ].map((slug) => `blog/${slug}`);
 
   const featuredPosts = featuredPostsUrls.map((postURL) =>
-    allPosts.find((post) => post._raw.flattenedPath === postURL)
+    allPosts.find((post) => post._raw.flattenedPath === postURL),
   );
 
-  return featuredPosts.map((e) => {
-    // Don't send whole post over network...
-    return {
-      url: e?.url,
-      title: e?.title,
-      date: e?.date,
-    };
-  }) as Post[];
-};
-
-export const ErrorFetchingAI = new Error("Error fetching posts from AI");
-
-export const featuredPostsFromSlug = async (postSlug: string) => {
-  const article = allPosts.find((p) => p.url === postSlug);
-  if (!article) {
-    return [];
-  }
-  const list = allPosts.map((p) => `${p.url}: ${p.excerpt}`).join("\n");
-  const prompt = `Pick 3 filenames from the possible filenames.
-
-The files are about topics spanning music,
-photography,
-technology,
-software development,
-and life.
-
-RULES:
-- OUTPUT plain text ONLY.
-- OUTPUT exact filename ONLY.
-- OUTPUT one filename per line.
-- MUST NOT include explanations.
-- MUST NOT include current filename.
-- MUST NOT include any other text.
-
-Possible filenames:
-${list}
-
-Current filename: ${article.url}: ${article.url}`;
-  const { AI_API_KEY } = process.env;
-
-  const response = await fetch("https://aigateway.fly.dev/api", {
-    method: "POST",
-    body: JSON.stringify({ prompt: prompt }),
-    headers: [["X-API-KEY", AI_API_KEY!]],
-  });
-  if (!response.ok) {
-    return [];
-  }
-  const { output } = (await response.json()) as { output: string };
-
-  const featuredPostsUrls: string[] = output
-    .trim()
-    .split("\n")
-    .filter((e) => e.match("^blog/.*"));
-  const featuredPosts = featuredPostsUrls.map((postURL) =>
-    allPosts.find((post) => post._raw.flattenedPath === postURL.split(":")[0])
-  );
   return featuredPosts.map((e) => {
     // Don't send whole post over network...
     return {

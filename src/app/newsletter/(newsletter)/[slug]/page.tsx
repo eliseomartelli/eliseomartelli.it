@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import React from "react";
 import { Newsletter, allNewsletters } from "@/.contentlayer/generated";
 import { PageLayout } from "@/components/PageLayout";
+import { Article } from "@/components/Article";
+import { MDXComponent } from "@/components/MDX";
 
 export async function generateStaticParams() {
   return allNewsletters.map((post) => ({
@@ -60,13 +62,10 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
         { name: newsletter.title, href: newsletter._raw.sourceFilePath },
       ]}
     >
-      <article
-        className="prose mx-auto px-4 w-full my-8"
-        dangerouslySetInnerHTML={{ __html: newsletter.body.html }}
-      />
-      <p className="prose mx-auto mb-8">
-        {newsletter._id.split("/")[1].split(".")[0]}
-      </p>
+      <Article>
+        <span dangerouslySetInnerHTML={{ __html: newsletter.body.html }}></span>
+        <p>{newsletter._id.split("/")[1].split(".")[0]}</p>
+      </Article>
     </PageLayout>
   );
 };

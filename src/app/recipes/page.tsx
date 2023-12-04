@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const Recipes = () => {
   return (
     <PageLayout routes={[{ name: "Recipes", href: "/recipes" }]}>
-      <WidthLimit className="flex flex-col gap-4 items-end">
+      <WidthLimit className="flex gap-4 flex-col">
         {allRecipes.map((recipe) => (
           <Link
             href={recipe._raw.flattenedPath}

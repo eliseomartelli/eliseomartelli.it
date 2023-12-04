@@ -10,15 +10,17 @@ export const PageLayout = ({
   center = true,
 }: {
   children: ReactNode;
-  routes: { href: string; name: string }[];
+  routes?: { href: string; name: string }[];
   center?: boolean;
 }) => (
-  <>
-    <WidthLimit className="my-8">
-      <typography.h1 className={moo(["text-center", center])}>
-        <SegmentedNav routes={routes} />
-      </typography.h1>
-    </WidthLimit>
+  <main className="my-8">
+    {routes && (
+      <WidthLimit className="mb-8">
+        <typography.h1 className={moo(["text-center", center])}>
+          <SegmentedNav routes={routes} />
+        </typography.h1>
+      </WidthLimit>
+    )}
     {children}
-  </>
+  </main>
 );

@@ -35,7 +35,7 @@ const TagPage = ({ params }: { params: { tag: string } }) => {
       (post) =>
         post.tags
           .map((tag) => tag.toLowerCase())
-          .indexOf(params.tag.toLowerCase()) !== -1
+          .indexOf(params.tag.toLowerCase()) !== -1,
     )
     .sort((a, b) => {
       return compareDesc(new Date(a.date), new Date(b.date));

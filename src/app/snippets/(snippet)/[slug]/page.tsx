@@ -1,4 +1,5 @@
 import { allSnippets } from "@/.contentlayer/generated/index.mjs";
+import { Article } from "@/components/Article";
 import { MDXComponent } from "@/components/MDX";
 import { PageLayout } from "@/components/PageLayout";
 import { PostTitle } from "@/components/PostTitle";
@@ -23,7 +24,7 @@ export async function generateMetadata({
   };
 }): Promise<Metadata | undefined> {
   const snippet = allSnippets.find(
-    (post) => post._raw.flattenedPath === `snippets/${params.slug}`
+    (post) => post._raw.flattenedPath === `snippets/${params.slug}`,
   );
   if (!snippet) {
     return;
@@ -46,7 +47,7 @@ export async function generateMetadata({
 
 const PostPage = async ({ params }: { params: { slug: string } }) => {
   const snippet = allSnippets.find(
-    (post) => post._raw.flattenedPath === `snippets/${params.slug}`
+    (post) => post._raw.flattenedPath === `snippets/${params.slug}`,
   );
 
   if (!snippet) {
@@ -61,7 +62,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
       ]}
     >
       <WidthLimit>
-        <article className="prose mx-auto">
+        <Article>
           <PostTitle>
             <p className="justify-center flex gap-2">
               {snippet.tags.map((tag) => (
@@ -70,7 +71,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
             </p>
           </PostTitle>
           <MDXComponent code={snippet.body.code} />
-        </article>
+        </Article>
       </WidthLimit>
     </PageLayout>
   );

@@ -12,6 +12,8 @@ import React from "react";
 import { BlogPostTitle } from "@/components/BlogPostTitle";
 import { CategoryRow } from "@/components/CategoryRow";
 import { PostTitle } from "@/components/PostTitle";
+import { Article } from "@/components/Article";
+import { PageLayout } from "@/components/PageLayout";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -19,12 +21,14 @@ export async function generateStaticParams() {
   }));
 }
 
+interface BlogPostParams {
+  slug: string;
+}
+
 export async function generateMetadata({
   params,
 }: {
-  params: {
-    slug: string;
-  };
+  params: BlogPostParams;
 }): Promise<Metadata | undefined> {
   const post = allPosts.find(
     (post) => post._raw.flattenedPath === `blog/${params.slug}`,
@@ -60,7 +64,7 @@ export async function generateMetadata({
   };
 }
 
-const PostPage = async ({ params }: { params: { slug: string } }) => {
+const PostPage = async ({ params }: { params: BlogPostParams }) => {
   const features = useFeatures();
   const post = allPosts.find(
     (post) => post._raw.flattenedPath === `blog/${params.slug}`,
@@ -71,20 +75,20 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className="my-8">
-      <article className="prose mx-auto px-4 w-full">
+    <PageLayout>
+      <Article>
         <PostTitle>
           <BlogPostTitle {...post} big />
           <CategoryRow tags={post.tags} />
         </PostTitle>
         <MDXComponent code={post.body.code} />
-      </article>
+      </Article>
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
         <RSSSubscribe />
         {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>
-    </div>
+    </PageLayout>
   );
 };
 

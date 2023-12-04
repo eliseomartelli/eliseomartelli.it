@@ -10,6 +10,8 @@ import Balancer from "react-wrap-balancer";
 import { Taglet } from "@/components/Taglet";
 import { Clock, Fire } from "@/components/Icons";
 import { PostTitle } from "@/components/PostTitle";
+import { Article } from "@/components/Article";
+import { PageLayout } from "@/components/PageLayout";
 
 export async function generateStaticParams() {
   return allRecipes.map((post) => ({
@@ -60,26 +62,28 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <article className="prose mx-auto px-4 w-full my-8">
-      <PostTitle>
-        <h1 className={moo("font-bold font-serif", "text-3xl")}>
-          <Balancer>{recipe.title}</Balancer>
-        </h1>
-        <p>{recipe.excerpt}</p>
-        <div className="flex flex-row gap-2 my-4">
-          <Taglet>
-            <Clock />
-            {recipe.prep_time}
-          </Taglet>
-          <Taglet>
-            <Fire />
-            {recipe.cook_time}
-          </Taglet>
-        </div>
-        <Taglet>{recipe.category}</Taglet>
-      </PostTitle>
-      <MDXComponent code={recipe.body.code} />
-    </article>
+    <PageLayout>
+      <Article>
+        <PostTitle>
+          <h1 className={moo("font-bold font-serif", "text-3xl")}>
+            <Balancer>{recipe.title}</Balancer>
+          </h1>
+          <p>{recipe.excerpt}</p>
+          <div className="flex flex-row gap-2 my-4">
+            <Taglet>
+              <Clock />
+              {recipe.prep_time}
+            </Taglet>
+            <Taglet>
+              <Fire />
+              {recipe.cook_time}
+            </Taglet>
+          </div>
+          <Taglet>{recipe.category}</Taglet>
+        </PostTitle>
+        <MDXComponent code={recipe.body.code} />
+      </Article>
+    </PageLayout>
   );
 };
 

@@ -15,7 +15,7 @@ export const PostTitle = ({
       "flex-col",
       "items-center",
       "align-middle",
-      "mb-8"
+      "mb-8",
     )}
   >
     {children}

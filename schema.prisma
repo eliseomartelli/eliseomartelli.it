@@ -10,6 +10,7 @@ datasource db {
 
 model Subscriber {
   email     String   @id
+  unsub     String   @unique @default(uuid())
 }
 
 model LastSent {

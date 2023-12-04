@@ -1,4 +1,4 @@
-import { allNewsletters } from "@/.contentlayer/generated";
+import { allSortedNewsletters } from "@/lib/data/allSortedNewsletters";
 import { getMailTransporter } from "@/lib/getMailTransporter";
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
@@ -12,17 +12,7 @@ export async function GET(request: Request) {
       status: 401,
     });
   }
-  const newsletter = allNewsletters
-    .sort((a, b) => {
-      if (a._id < b._id) {
-        return -1;
-      }
-      if (a._id > b._id) {
-        return 1;
-      }
-      return 0;
-    })
-    .at(-1);
+  const newsletter = allSortedNewsletters.at(0);
   if (!newsletter || newsletter == undefined) {
     return NextResponse.json({ message: "No newsletters." }, { status: 200 });
   }
@@ -54,7 +44,7 @@ export async function GET(request: Request) {
       subject: newsletter.title,
       html: `${newsletter.body.html}
 <br />
-<a href="https://eliseomartelli.it/api/newsletter/unsubscribe/${e.email}">unsubscribe</a>`,
+<a href="https://eliseomartelli.it/newsletter/unsub/${e.unsub}">unsubscribe</a>`,
     });
   });
 

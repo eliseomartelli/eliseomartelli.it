@@ -41,7 +41,7 @@ export async function POST(
       bcc: subscriber.email,
       subject: "Welcome to the newsletter!",
       html: `Hi!<br/>
-Welcome to my newsletter. You can <a href="https://eliseomartelli.it/api/newsletter/unsubscribe/${subscriber.email}">unsubscribe</a> in any moment. Here I will share some of the things I'm working on.
+Welcome to my newsletter. You can <a href="https://eliseomartelli.it/newsletter/unsub/${subscriber.unsub}">unsubscribe</a> in any moment. Here I will share some of the things I'm working on.
 <br/>
 <br/>
 See you soon!<br/>

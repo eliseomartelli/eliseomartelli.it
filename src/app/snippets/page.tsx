@@ -16,7 +16,7 @@ const Snippets = () => {
 
   return (
     <PageLayout routes={[{ name: "Snippets", href: "/snippets" }]}>
-      <WidthLimit className="flex flex-col gap-4">
+      <WidthLimit>
         {snippets.map((s) => (
           <Link href={s._raw.flattenedPath} key={s._raw.flattenedPath}>
             <Card

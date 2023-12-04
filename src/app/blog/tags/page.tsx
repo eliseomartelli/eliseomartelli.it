@@ -19,7 +19,7 @@ const Tags = () => {
         { href: "/blog/tags", name: "Tags" },
       ]}
     >
-      <WidthLimit className="not-prose grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+      <WidthLimit className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
         {allTags.map((tag, i) => (
           <Link key={i} href={`/blog/tags/${tag}`}>
             <Card

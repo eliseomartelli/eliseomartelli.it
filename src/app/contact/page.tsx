@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ContactForm } from "./form";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/PageLayout";
+import { Article } from "@/components/Article";
 
 export const metadata: Metadata = {
   title: "Contact - Eliseo Martelli",
@@ -13,7 +14,7 @@ const Contact = () => {
   return (
     <PageLayout routes={[{ name: "Get in touch", href: "/contact" }]} center>
       <WidthLimit>
-        <article className="prose mx-auto">
+        <Article>
           <p>
             I&apos;d love to hear from you and learn more about how we can work
             together. Let&apos;s start a conversation and see where it takes us!
@@ -24,7 +25,7 @@ const Contact = () => {
             I&apos;ll get back to you as soon as possible.
           </p>
           <ContactForm />
-        </article>
+        </Article>
       </WidthLimit>
     </PageLayout>
   );
