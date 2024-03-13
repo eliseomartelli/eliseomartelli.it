@@ -48,7 +48,8 @@ export const FeaturedPostsLayout = ({
 
   return (
     <section className="flex flex-col gap-4 w-full">
-      <t.h2>Featured Posts</t.h2>
+      <t.h2>Writing</t.h2>
+      <p>Here are some of my thoughts.</p>
       <FeaturedPostsGrid>{cards}</FeaturedPostsGrid>
       <BottomBar />
     </section>

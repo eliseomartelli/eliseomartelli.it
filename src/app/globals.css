@@ -8,6 +8,10 @@
   box-decoration-break: clone;
 }
 
+.prose {
+  @apply prose-stone prose-headings:font-serif prose-headings:italic;
+}
+
 .prose .anchor:after {
   @apply text-neutral-300 dark:text-neutral-700;
   content: "#";

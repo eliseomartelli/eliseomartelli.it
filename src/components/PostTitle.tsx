@@ -7,16 +7,7 @@ export const PostTitle = ({
   children: ReactNode | ReactNode[];
 }) => (
   <section
-    className={moo(
-      "not-prose",
-      "text-black",
-      "text-center",
-      "flex",
-      "flex-col",
-      "items-center",
-      "align-middle",
-      "mb-8",
-    )}
+    className={moo("not-prose", "text-black", "flex", "flex-col", "mb-8")}
   >
     {children}
   </section>

@@ -1,15 +1,13 @@
 "use client";
 
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Button, { Color, getButtonClassNames } from "./Button";
 import Link from "next/link";
 import { Menu } from "./Icons";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import WidthLimit from "./WidthLimit";
 import { Modal } from "./Modal";
-import { useWindowWidth } from "@/hooks/useWindowSize";
 import { NAVBAR_LINKS } from "../../NavbarLinks";
+import WidthLimit from "./WidthLimit";
 
 interface NavbarLinkProps {
   name: string;
@@ -23,17 +21,10 @@ export const Navbar = ({
   children?: ReactNode[] | ReactNode;
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const width = useWindowWidth();
-  useEffect(() => {
-    if (width! >= 768) setMenuOpen(false);
-  }, [width]);
-
   return (
     <>
-      <div className="flex flex-row justify-start items-center">
-        <div className="hidden md:block -mx-4">{children}</div>
+      <div className="bg-stone-50 py-4 px-4 flex flex-row items-center gap-2">
         <Button
-          className="md:hidden block ml-auto"
           color={Color.Transparent}
           ariaLabel="Menu button"
           small
@@ -41,33 +32,17 @@ export const Navbar = ({
         >
           <Menu />
         </Button>
+        <Link href={"/"} className="font-bold font-serif">
+          eliseomartelli
+        </Link>
       </div>
-      {menuOpen && (
-        <MobileNavBar onClose={() => setMenuOpen(false)}>
-          {children}
-        </MobileNavBar>
-      )}
+
+      <Modal onClose={() => setMenuOpen(false)} open={menuOpen}>
+        {children}
+      </Modal>
     </>
   );
 };
-
-export function MobileNavBar({
-  children,
-  onClose,
-}: {
-  children: ReactNode;
-  onClose: Function;
-}) {
-  return (
-    <Modal onClose={() => onClose()}>
-      <WidthLimit className="items-end flex flex-col">
-        <div className="bg-white shadow-2xl rounded-md flex flex-col text-center max-w-xs p-4">
-          {children}
-        </div>
-      </WidthLimit>
-    </Modal>
-  );
-}
 
 export const NavbarLink = ({ name, href, selected }: NavbarLinkProps) => (
   <Link
@@ -75,9 +50,9 @@ export const NavbarLink = ({ name, href, selected }: NavbarLinkProps) => (
     className={getButtonClassNames({
       noBold: !selected,
       color: Color.Transparent,
-      className: `w-full md:w-auto text-right ${
-        selected && "underline"
-      } underline-offset-4 decoration-2 decoration-red-600`,
+      className: `w-full md:w-auto text-3xl font-serif ${
+        selected && "text-pink-700 underline"
+      }`,
     })}
   >
     {name}
@@ -88,14 +63,12 @@ export const DefaultNavbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="backdrop-blur-md sticky w-full border-b-[0.5px] bg-white/90 top-0 z-[100]">
-      <WidthLimit className="p-4">
-        <Navbar>
-          {NAVBAR_LINKS.map((link, i) => (
-            <NavbarLink {...link} key={i} selected={pathname === link.href} />
-          ))}
-        </Navbar>
+    <Navbar>
+      <WidthLimit className="flex flex-col justify-center h-screen ">
+        {NAVBAR_LINKS.map((link, i) => (
+          <NavbarLink {...link} key={i} selected={pathname === link.href} />
+        ))}
       </WidthLimit>
-    </div>
+    </Navbar>
   );
 };

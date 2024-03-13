@@ -1,72 +1,32 @@
-import * as t from "@/components/Typography";
-import { FeaturedPosts } from "@/components/FeaturedPosts";
-import { Newsletter } from "@/components/Newsletter";
 import WidthLimit from "@/components/WidthLimit";
-import { Features, useFeatures } from "@/lib/useFeatures";
-import Image from "next/image";
 import Link from "next/link";
-import { Color, getButtonClassNames } from "@/components/Button";
 
 export const metadata = { title: "Home - Eliseo Martelli" };
 
 const Home = () => {
-  const features = useFeatures();
   return (
     <>
-      <section className="font-bold p-8">
-        <WidthLimit className="flex flex-col gap-4 animate-reveal">
-          <p>Hi, I&apos;m Eliseo Martelli.</p>
-          <section className="text-2xl gap-4 flex flex-col">
-            <p>
-              I&apos;m a{" "}
-              <span className="hover:bg-red-600 hover:text-white transition-colors p-1 -m-1">
-                Visual Artist
-              </span>{" "}
-              &{" "}
-              <span className="hover:bg-red-600 hover:text-white transition-colors p-1 -m-1">
-                Software Developer
-              </span>{" "}
-              based in Turin, Italy.
-            </p>
-            <p>
-              I&apos;m also deeply passionate about design, music and cooking.
-            </p>
-            <p>This website is a collection of all the things I like.</p>
-          </section>
-          <div className="flex justify-end">
-            <div
-              className="relative aspect-square max-w-xs w-64 md:-mb-24
-before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-red-600 mx-2"
-            >
-              <Image
-                src="/profilePicture/colour.jpg"
-                alt="A picture of me"
-                fill
-                sizes="(max-width: 350px)"
-              />
-            </div>
-          </div>
-        </WidthLimit>
-      </section>
-      <WidthLimit className="my-16 gap-8 flex flex-col items-end">
-        {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
-        {features.includes(Features.Newsletter) && <Newsletter />}
+      <WidthLimit className="prose prose-p:text-4xl font-serif px-8 py-4">
+        <p>
+          I&apos;m Eliseo Martelli, a <b>Software Developer</b> &
+          <b>Visual Artist</b> based in Turin, Italy.
+        </p>
+        <p>
+          I&apos;m currently engaged in building a reproducible computing
+          platform for bioinformatics research.
+        </p>
+        <p>I love handcrafting human experiences and building communities.</p>
       </WidthLimit>
-      <section className="border-s-red-600 border-s-4">
-        <WidthLimit className="py-8 gap-8 flex flex-col">
-          <t.h2>I&apos;d love to hear from you!</t.h2>
-          <span>
-            <Link
-              href="/contact"
-              className={getButtonClassNames({
-                color: Color.Red,
-              })}
-            >
-              Get in Touch
-            </Link>
-          </span>
-        </WidthLimit>
-      </section>
+      <WidthLimit className="prose font-serif px-8">
+        <Link
+          href={
+            "http://github.com/eliseomartelli/cv/releases/latest/download/cv.pdf"
+          }
+        >
+          cv
+        </Link>{" "}
+        <Link href={"/about"}>about</Link>
+      </WidthLimit>
     </>
   );
 };

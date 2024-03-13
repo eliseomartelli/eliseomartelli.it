@@ -9,7 +9,7 @@ const WidthLimit = ({
   className?: string;
 }) => {
   return (
-    <div className={moo("max-w-4xl mx-auto w-full px-4", className!)}>
+    <div className={moo("max-w-[80ch] w-full px-8", className!)}>
       {children}
     </div>
   );
