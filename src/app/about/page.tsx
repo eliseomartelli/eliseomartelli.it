@@ -8,7 +8,6 @@ import {
   TimelineElement,
   TimelineElementProps,
 } from "@/components/Timeline";
-import WidthLimit from "@/components/WidthLimit";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";

@@ -17,9 +17,9 @@ export const Modal = ({
   return (
     <div
       className={moo(
-        ["w-screen h-screen", open],
-        ["w-0 h-0 opacity-0 pointer-events-none", !open],
-        "fixed left-0 top-0 bg-stone-50 transition-all z-50 duration-500",
+        ["translate-x-0", open],
+        ["-translate-x-full opacity-0 pointer-events-none", !open],
+        "fixed w-screen h-screen bg-stone-50 transition-all z-50 duration-100",
       )}
       onClick={() => onClose()}
     >
