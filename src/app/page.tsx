@@ -1,6 +1,9 @@
 import WidthLimit from "@/components/WidthLimit";
 import Link from "next/link";
 
+import blurry from "../blurry.svg";
+import Image from "next/image";
+
 export const metadata = { title: "Home - Eliseo Martelli" };
 
 const Home = () => {
@@ -18,15 +21,20 @@ const Home = () => {
         <p>I love handcrafting human experiences and building communities.</p>
       </WidthLimit>
       <WidthLimit className="prose font-serif px-8">
-        <Link
-          href={
-            "http://github.com/eliseomartelli/cv/releases/latest/download/cv.pdf"
-          }
-        >
-          cv
-        </Link>{" "}
-        <Link href={"/about"}>about</Link>
+        <div className="relative">
+          <Link href={"/about"}>about</Link>{" "}
+          <Link
+            href={
+              "http://github.com/eliseomartelli/cv/releases/latest/download/cv.pdf"
+            }
+          >
+            cv
+          </Link>
+        </div>
       </WidthLimit>
+      <div className="-z-10">
+        <Image src={blurry} alt="blob" fill />
+      </div>
     </>
   );
 };
