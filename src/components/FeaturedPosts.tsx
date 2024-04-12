@@ -27,7 +27,7 @@ export const FeaturedPostsLayout = ({
   const cards = !empty ? (
     posts!.map((post, key) => (
       <li className="grow flex-1" key={key}>
-        <Link href={post.url}>
+        <Link href={"/" + post.url}>
           <FeaturedPostCard post={post} />
         </Link>
       </li>
