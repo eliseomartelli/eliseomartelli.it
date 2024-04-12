@@ -9,7 +9,7 @@ tags:
 On the recent Tuesday, I joined my tutor, Luca Alessandrì, at GARR's Borsisti Day.
 It marked my inaugural presentation of "CREDO," the bioinformatic-oriented project I'm working on under my research fellowship.
 
-<iframe title="CREDO: DOcker file generator for bioinformatics applications - E. Martelli -  17° Borsisti Day 2024" width="560" height="315" src="https://garr.tv/videos/embed/2f7579db-ef10-47c8-969e-1d9ad6b905a8" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+<iframe title="CREDO: DOcker file generator for bioinformatics applications - E. Martelli -  17° Borsisti Day 2024" src="https://garr.tv/videos/embed/2f7579db-ef10-47c8-969e-1d9ad6b905a8" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups" class="aspect-video w-full"></iframe>
 
 [Slide deck](https://github.com/eliseomartelli/garr_borsisti_day_2024_04_09/archive/refs/tags/v1.0.0.zip)
 
