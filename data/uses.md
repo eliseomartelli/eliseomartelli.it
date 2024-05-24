@@ -22,16 +22,9 @@ A great mechanical keyboard with great customizability.
 <Product
   title="Canon EOS RP"
   link="https://amzn.to/41DpuqC">
-The main camera I use for all the pictures you see on my social media.  
-Replaces my previous camera: Canon 600D.
+The main camera I use .
 </Product>
 
-<Product
-  title="Canon 85mm USM f/1.8"
-  link="https://amzn.to/43UEOAC">
-The lens I use to shoot portraits and abstract street photography.
-Great compression, great bokeh, sharp.
-</Product>
 
 <Product
   title="Canon 28mm USM f/1.8">
@@ -40,9 +33,10 @@ three-dimensional look.
 </Product>
 
 <Product
-  title="Canon 50mm f/1.8 II"
-  link="https://amzn.to/3V7Zkd8">
-The one I use when I'm wandering around. Cheap and effective.
+  title="Canon 85mm USM f/1.8"
+  link="https://amzn.to/43UEOAC">
+The lens I use to shoot portraits.
+Great compression, great bokeh, sharp.
 </Product>
 
 ### Software
@@ -101,13 +95,6 @@ I need it.
   link="https://www.figma.com/"
   linkText="Open">
 Design sketches, some social posts, quick to use.
-</Product>
-
-<Product
-  title="Adobe XD"
-  link="https://www.adobe.com/products/xd/"
-  linkText="Open">
-When I don't want to spin-up Figma.
 </Product>
 
 ### Misc
