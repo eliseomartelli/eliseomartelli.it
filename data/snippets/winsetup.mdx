@@ -1,0 +1,23 @@
+---
+title: Setup Windows 11
+tags:
+  - Windows
+---
+
+## Bypass TPM and RAM:
+
+`SHIFT+F10`, `regedit`, `HKEY_LOCAL_MACHINE\SYSTEM\Setup`.
+Right click and add a new key named `LabConfig`.
+
+Right click in `LabConfig` and add two 32-bit DWORDs:
+
+- `BypassTPMCheck`
+- `BypassRAMCheck`
+
+Set them both to 1.
+
+## Skip Microsoft Account
+
+`SHIFT+F10`, `ipconfig \release` or `ncpa.cpl` and disable all network
+connections, `oobe\bypassnro`. 
+Just click "I don't have internet" during setup.
