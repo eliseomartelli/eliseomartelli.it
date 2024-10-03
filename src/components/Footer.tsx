@@ -5,7 +5,7 @@ import { allSocials } from "@/.contentlayer/generated";
 
 export const Footer = () => (
   <footer className="bg-stone-200 grow-0">
-    <WidthLimit className="py-8">
+    <WidthLimit className="py-8 mx-auto">
       <div className="flex mb-8">
         <ul className="columns-2 w-full">
           {[internalLinks, externalLinks].map((links) => {

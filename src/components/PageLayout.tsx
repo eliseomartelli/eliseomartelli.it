@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
-import WidthLimit from "./WidthLimit";
 import { SegmentedNav } from "./SegmentedNav";
 import * as typography from "@/components/Typography";
+import WidthLimit from "./WidthLimit";
 
 export const PageLayout = ({
   children,
@@ -13,7 +13,7 @@ export const PageLayout = ({
 }) => (
   <main className="my-8">
     {routes && (
-      <WidthLimit className="mb-8">
+      <WidthLimit className="mx-auto">
         <typography.h1>
           <SegmentedNav routes={routes} />
         </typography.h1>

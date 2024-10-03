@@ -83,7 +83,7 @@ const PostPage = async ({ params }: { params: BlogPostParams }) => {
         </PostTitle>
         <MDXComponent code={post.body.code} />
       </Article>
-      <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
+      <WidthLimit className="mt-16 gap-8 flex flex-col items-end mx-auto">
         <RSSSubscribe />
         {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
         {features.includes(Features.Newsletter) && <Newsletter />}

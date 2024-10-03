@@ -3,11 +3,11 @@
 import React, { ReactNode, useState } from "react";
 import Button, { Color, getButtonClassNames } from "./Button";
 import Link from "next/link";
-import { Menu } from "./Icons";
 import { usePathname } from "next/navigation";
 import { Modal } from "./Modal";
 import { NAVBAR_LINKS } from "../../NavbarLinks";
 import WidthLimit from "./WidthLimit";
+import moo from "@eliseomartelli/moo/dist";
 
 interface NavbarLinkProps {
   name: string;
@@ -22,25 +22,27 @@ export const Navbar = ({
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <>
-      <div className="bg-stone-50 py-4 px-4 flex flex-row items-center gap-2">
-        <Button
-          color={Color.Transparent}
-          ariaLabel="Menu button"
-          small
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <Menu />
-        </Button>
-        <Link href={"/"} className="font-bold font-serif">
-          eliseomartelli
-        </Link>
-      </div>
-
-      <Modal onClose={() => setMenuOpen(false)} open={menuOpen}>
+    <WidthLimit className="mx-auto pt-4 flex flex-row items-center justify-between">
+      {menuOpen ? <Link href={"/"} >
+        <div className="group relative h-8 w-40 overflow-hidden flex items-center font-bold hover:bg-stone-200 rounded-md p-2 -m-2">
+          <div className="absolute transition-transform duration-200 transform translate-y-0 group-hover:-translate-y-full">
+            <p className="font-serif">Eliseo Martelli</p>
+          </div>
+          <div className="absolute transition-transform duration-200 transform translate-y-full group-hover:translate-y-0">
+            <p className="font-mono">@eliseomartelli</p>
+          </div>
+        </div>
+      </Link> : <></>}
+      <div className={moo("-me-4",
+        ["block!", menuOpen],
+        ["hidden!", !menuOpen],
+        "md:hidden block")}>
         {children}
-      </Modal>
-    </>
+      </div>
+      <Button onClick={() => setMenuOpen(!menuOpen)} color={Color.Transparent} className={moo("font-serif -me-4 md:hidden")}>
+        {menuOpen ? "Menu" : "Close"}
+      </Button>
+    </WidthLimit >
   );
 };
 
@@ -50,9 +52,8 @@ export const NavbarLink = ({ name, href, selected }: NavbarLinkProps) => (
     className={getButtonClassNames({
       noBold: !selected,
       color: Color.Transparent,
-      className: `w-full md:w-auto text-3xl font-serif ${
-        selected && "text-pink-700 underline"
-      }`,
+      className: `w-full md:w-auto font-serif ${selected && "text-pink-700 underline"
+        }`,
     })}
   >
     {name}
@@ -64,11 +65,9 @@ export const DefaultNavbar = () => {
 
   return (
     <Navbar>
-      <WidthLimit className="flex flex-col justify-center h-screen ">
-        {NAVBAR_LINKS.map((link, i) => (
-          <NavbarLink {...link} key={i} selected={pathname === link.href} />
-        ))}
-      </WidthLimit>
+      {NAVBAR_LINKS.map((link, i) => (
+        <NavbarLink {...link} key={i} selected={pathname === link.href} />
+      ))}
     </Navbar>
   );
 };

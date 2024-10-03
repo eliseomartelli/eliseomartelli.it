@@ -1,14 +1,13 @@
+import { PageLayout } from "@/components/PageLayout";
 import WidthLimit from "@/components/WidthLimit";
 import Link from "next/link";
-
-import Image from "next/image";
 
 export const metadata = { title: "Home - Eliseo Martelli" };
 
 const Home = () => {
   return (
-    <>
-      <WidthLimit className="prose font-serif px-8 py-4 mx-auto">
+    <PageLayout>
+      <WidthLimit className="prose mx-auto">
         <p>
           I’m a software developer and visual artist based in Turin, balancing my
           passion for technology and creativity.
@@ -31,7 +30,7 @@ const Home = () => {
           cv
         </Link>
       </WidthLimit>
-    </>
+    </PageLayout >
   );
 };
 

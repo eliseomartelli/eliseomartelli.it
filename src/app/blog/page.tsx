@@ -14,7 +14,7 @@ const Blog = () => {
   const posts = allSortedPosts;
   return (
     <PageLayout routes={[{ name: "Blog", href: "/blog" }]}>
-      <WidthLimit>
+      <WidthLimit className="mx-auto">
         <PostList posts={posts} />
         <BlogListFooter />
       </WidthLimit>
