@@ -7,7 +7,7 @@ tags:
   - Short
 ---
 
-This year brought 356 sunrises and 366 sunsets—a journey marked by extended
+This year brought 366 sunrises and 366 sunsets—a journey marked by extended
 pauses from one of my favorite hobbies and periods of intense stress.
  
  As I reflect, this serves as a personal reminder to continually strive to be a
