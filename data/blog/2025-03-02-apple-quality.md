@@ -5,6 +5,24 @@ excerpt: Tim, I think we are not cooking
 tags:
   - Apple
 ---
+
+## Update: March 4, 2025
+
+The response to this post has been overwhelming, with sharing on
+[Hacker News](https://news.ycombinator.com/item?id=43243075) and
+[Reddit](https://www.reddit.com/r/MacOS/comments/1j2j7b4/apples_software_quality_crisis_when_premium/).
+It's clear that many others are experiencing similar frustrations, indicating
+broader software quality issue within Apple's ecosystem.
+
+To provide more context, here's the workflow that consistently triggers these
+issues: I create a new note at the start of each lecture, add a title and tags
+for organization, and begin writing with my Apple Pencil Pro.  
+The issues manifest predictably: after filling roughly one page (or "screen")
+with handwritten notes, the iPad starts to overheat, and lag spikes become
+increasingly frequent.
+
+---
+
 As a long-time Apple user, I've always appreciated the seamless integration of
 hardware and software that is the signature of the Apple ecosystem. However,
 recent experiences with my iPad Air 11" M2 has left me questioning whether
