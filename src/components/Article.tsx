@@ -5,5 +5,5 @@ export const Article = ({
 }: {
   children: ReactNode | ReactNode[] | null;
 }) => {
-  return <article className="prose px-8 w-full">{children}</article>;
+  return <article className="prose px-8 max-w-prose mx-auto">{children}</article>;
 };

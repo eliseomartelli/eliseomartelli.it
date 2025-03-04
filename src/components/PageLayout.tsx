@@ -11,7 +11,7 @@ export const PageLayout = ({
   routes?: { href: string; name: string }[];
   center?: boolean;
 }) => (
-  <main className="my-8">
+  <main className="my-8 mx-auto">
     {routes && (
       <WidthLimit className="mb-8">
         <typography.h1>
