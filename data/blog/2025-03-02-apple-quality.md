@@ -6,6 +6,16 @@ tags:
   - Apple
 ---
 
+## Update: March 5, 2025
+
+I wrote a small application that outputs
+[`ProcessInfo.ThermalState`](https://developer.apple.com/documentation/foundation/processinfo/thermalstate).
+The reported Thermal State is `nominal` when the iPad is not heating, `fair`
+when the iPad started to heat and `serious` when the iPad was hurting to touch.
+I defintely had the iPad heating more than `serious` on other occurrences.
+
+---
+
 ## Update: March 4, 2025
 
 The response to this post has been overwhelming, with sharing on
