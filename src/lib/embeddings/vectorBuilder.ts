@@ -17,7 +17,7 @@ export class VectorBuilder {
 
   constructor(
     textProcessor: TextProcessor,
-    weights: ContentWeights = { title: 6, excerpt: 2, tags: 1, body: 2 }
+    weights: ContentWeights = { title: 3, excerpt: 2, tags: 1, body: 1 }
   ) {
     this.textProcessor = textProcessor;
     this.weights = weights;
@@ -34,9 +34,12 @@ export class VectorBuilder {
       const content = this.getWeightedPostContent(post);
       const uniqueTerms = this.textProcessor.getUniqueTerms(content);
 
-      for (const term of Array.from(uniqueTerms.values())) {
-        this.documentFrequency.set(term, (this.documentFrequency.get(term) || 0) + 1);
-      }
+      uniqueTerms.forEach((term) => {
+        this.documentFrequency.set(
+          term,
+          (this.documentFrequency.get(term) || 0) + 1,
+        );
+      })
     }
 
     return this.documentFrequency;
