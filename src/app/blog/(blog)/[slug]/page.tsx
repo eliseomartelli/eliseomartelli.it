@@ -14,6 +14,8 @@ import { CategoryRow } from "@/components/CategoryRow";
 import { PostTitle } from "@/components/PostTitle";
 import { Article } from "@/components/Article";
 import { PageLayout } from "@/components/PageLayout";
+import { ScoredPost } from "@/lib/embeddings/types";
+import { embeddingSystem } from "@/lib/embeddings/embeddingSystem";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -65,6 +67,7 @@ export async function generateMetadata({
 }
 
 const PostPage = async ({ params }: { params: BlogPostParams }) => {
+
   const features = useFeatures();
   const post = allPosts.find(
     (post) => post._raw.flattenedPath === `blog/${params.slug}`,
@@ -73,6 +76,8 @@ const PostPage = async ({ params }: { params: BlogPostParams }) => {
   if (!post) {
     notFound();
   }
+  const similar: ScoredPost[] = embeddingSystem.getSimilarPosts(post._id, 3);
+  const similarPost = similar.map(item => item.post);
 
   return (
     <PageLayout>
@@ -85,7 +90,7 @@ const PostPage = async ({ params }: { params: BlogPostParams }) => {
       </Article>
       <WidthLimit className="mt-16 gap-8 flex flex-col items-end">
         <RSSSubscribe />
-        {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
+        {features.includes(Features.FeaturedPosts) && <FeaturedPosts posts={similarPost} />}
         {features.includes(Features.Newsletter) && <Newsletter />}
       </WidthLimit>
     </PageLayout>
@@ -93,3 +98,4 @@ const PostPage = async ({ params }: { params: BlogPostParams }) => {
 };
 
 export default PostPage;
+

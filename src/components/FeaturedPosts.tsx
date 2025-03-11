@@ -1,15 +1,15 @@
-import React, { ReactNode, use } from "react";
+import React, { ReactNode } from "react";
 import * as t from "@/components/Typography";
 import { Card } from "./Card";
 import { Post } from "@/.contentlayer/generated/types";
-import { featuredPosts } from "@/lib/featured";
 import { dateFormatter } from "@/lib/dateFormatter";
 import Link from "next/link";
 import { Color, getButtonClassNames } from "./Button";
 import { ArrowUpHighIcon } from "./Icons";
 
-export function FeaturedPosts() {
-  const posts = use(featuredPosts());
+export function FeaturedPosts({ posts }: { posts: Post[] }) {
+
+
   return <FeaturedPostsLayout posts={posts} />;
 }
 
@@ -27,7 +27,7 @@ export const FeaturedPostsLayout = ({
   const cards = !empty ? (
     posts!.map((post, key) => (
       <li className="grow flex-1" key={key}>
-        <Link href={"/" + post.url}>
+        <Link href={post.url}>
           <FeaturedPostCard post={post} />
         </Link>
       </li>
@@ -49,7 +49,7 @@ export const FeaturedPostsLayout = ({
   return (
     <section className="flex flex-col gap-4 w-full">
       <t.h2>Writing</t.h2>
-      <p>Here are some of my thoughts.</p>
+      <p>Here are some of my thoughts you might also like.</p>
       <FeaturedPostsGrid>{cards}</FeaturedPostsGrid>
       <BottomBar />
     </section>

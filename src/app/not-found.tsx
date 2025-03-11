@@ -2,6 +2,7 @@ import { Color, getButtonClassNames } from "@/components/Button";
 import { FeaturedPosts } from "@/components/FeaturedPosts";
 import { PageLayout } from "@/components/PageLayout";
 import WidthLimit from "@/components/WidthLimit";
+import { allSortedPosts } from "@/lib/data/allSortedPosts";
 import { Features, useFeatures } from "@/lib/useFeatures";
 import Link from "next/link";
 
@@ -29,7 +30,7 @@ const NotFound = () => {
         >
           Go home
         </Link>
-        {features.includes(Features.FeaturedPosts) && <FeaturedPosts />}
+        {features.includes(Features.FeaturedPosts) && <FeaturedPosts posts={allSortedPosts.slice(0, 3)} />}
       </WidthLimit>
     </PageLayout>
   );
