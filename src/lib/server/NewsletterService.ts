@@ -72,12 +72,12 @@ Eliseo`,
         email: this.to,
       },
     });
-    const { title, content } = allSortedNewsletter.at(0)!;
+    const { title, html } = allSortedNewsletter.at(0)!;
     await this.transporter.sendMail({
       from: this.from,
       to: this.to,
       subject: title,
-      html: `${content}
+      html: `${html}
 <br />
 <a href="https://eliseomartelli.it/newsletter/unsub/${subscribers!.unsub}">unsubscribe</a>`,
     });
@@ -85,7 +85,7 @@ Eliseo`,
 
   async sendLastNewsletterIssue() {
     const subscribers = await this.getAllSubscribers();
-    const { title, content, slug } = allSortedNewsletter.at(0)!;
+    const { title, html, slug } = allSortedNewsletter.at(0)!;
     const sent = await this.prisma.lastSent.findFirst({
       where: {
         sent: { equals: slug },
@@ -99,7 +99,7 @@ Eliseo`,
         from: this.from,
         to: e.email,
         subject: title,
-        html: `${content}
+        html: `${html}
 <br />
 <a href="https://eliseomartelli.it/newsletter/unsub/${e.unsub}">unsubscribe</a>`,
       });

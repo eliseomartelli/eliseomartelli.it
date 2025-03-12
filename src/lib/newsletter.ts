@@ -1,5 +1,5 @@
 import { defineCollection } from "@content-collections/core";
-import { compileMDX } from "@content-collections/mdx";
+import { compileMarkdown } from "@content-collections/markdown";
 
 export const newsletter = defineCollection({
   name: "newsletter",
@@ -10,8 +10,8 @@ export const newsletter = defineCollection({
   }),
 
   transform: async (document, context) => {
-    const mdx = await compileMDX(context, document);
+    const html = await compileMarkdown(context, document);
     const slug = document._meta.fileName.split(".")[0];
-    return { ...document, mdx, slug };
+    return { ...document, html, slug };
   },
 });
