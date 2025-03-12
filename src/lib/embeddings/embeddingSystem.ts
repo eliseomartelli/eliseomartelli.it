@@ -1,8 +1,8 @@
-import { Post, allPosts } from "@/.contentlayer/generated";
 import { TextProcessor } from "./textProcessor";
 import { VectorBuilder, ContentWeights } from "./vectorBuilder";
 import { VectorSimilarity } from "./vectorSimilarity";
 import { ScoredPost, EmbeddingSystemConfig, TfIdfVector } from "./types";
+import { allPosts, Post } from "content-collections";
 
 export class BlogEmbeddingSystem {
   private posts: Post[] = [];
@@ -25,20 +25,20 @@ export class BlogEmbeddingSystem {
       bodyWeight: 1,
       minTermLength: 2,
       debug: false,
-      ...config
+      ...config,
     };
 
     this.textProcessor = new TextProcessor(
       this.config.minTermLength,
       this.config.maxTextLength,
-      this.config.maxTermsPerDocument
+      this.config.maxTermsPerDocument,
     );
 
     const weights: ContentWeights = {
       title: this.config.titleWeight,
       excerpt: this.config.excerptWeight,
       tags: this.config.tagWeight,
-      body: this.config.bodyWeight
+      body: this.config.bodyWeight,
     };
 
     this.vectorBuilder = new VectorBuilder(this.textProcessor, weights);
@@ -60,14 +60,19 @@ export class BlogEmbeddingSystem {
     this.vectorBuilder.buildVocabulary(this.posts);
 
     for (const post of this.posts) {
-      if (!post._id) continue;
-      this.postVectors.set(post._id, this.vectorBuilder.createPostVector(post));
+      if (!post.slug) continue;
+      this.postVectors.set(
+        post.slug,
+        this.vectorBuilder.createPostVector(post),
+      );
     }
 
     this.isInitialized = true;
 
     if (this.config.debug) {
-      console.log(`Initialized embedding system with ${this.posts.length} posts`);
+      console.log(
+        `Initialized embedding system with ${this.posts.length} posts`,
+      );
     }
   }
 
@@ -83,13 +88,13 @@ export class BlogEmbeddingSystem {
     }
 
     return this.posts
-      .filter(post => post._id !== postId)
-      .map(post => ({
+      .filter((post) => post.slug !== postId)
+      .map((post) => ({
         post,
         score: this.vectorSimilarity.calculateCosineSimilarity(
           sourceVector,
-          this.postVectors.get(post._id) || {}
-        )
+          this.postVectors.get(post.slug) || {},
+        ),
       }))
       .sort((a, b) => b.score - a.score)
       .slice(0, count);
@@ -108,12 +113,12 @@ export class BlogEmbeddingSystem {
     const queryVector = this.vectorBuilder.createVector(query);
 
     return this.posts
-      .map(post => ({
+      .map((post) => ({
         post,
         score: this.vectorSimilarity.calculateCosineSimilarity(
           queryVector,
-          this.postVectors.get(post._id) || {}
-        )
+          this.postVectors.get(post.slug) || {},
+        ),
       }))
       .sort((a, b) => b.score - a.score)
       .slice(0, count);
@@ -124,13 +129,15 @@ export class BlogEmbeddingSystem {
    */
   private ensureInitialized(): void {
     if (!this.isInitialized) {
-      throw new Error('Embedding system not initialized. Call initialize() first.');
+      throw new Error(
+        "Embedding system not initialized. Call initialize() first.",
+      );
     }
   }
 }
 
 // Export a singleton instance with default configuration
 const embeddingSystem = new BlogEmbeddingSystem();
-embeddingSystem.initialize(allPosts)
+embeddingSystem.initialize(allPosts);
 
 export { embeddingSystem };

@@ -25,7 +25,7 @@ I realised that the best thing for my mental health is to avoid setting myself u
 
 Don’t get me wrong, this way of thinking has some positive connotations, but I’m still trying to find a healthy balance and to embrace humility without disregarding my own value.
 
-To be honest, I’m not feeling good with my body (f*ck Hashimoto's thyroiditis) but that’s a given. I have a bad year followed by a good year, with weight oscillations (of around 10 kg) that sometimes make me feel that my body isn't really mine and a face that sometimes I don't recognize.
+To be honest, I’m not feeling good with my body (f\*ck Hashimoto's thyroiditis) but that’s a given. I have a bad year followed by a good year, with weight oscillations (of around 10 kg) that sometimes make me feel that my body isn't really mine and a face that sometimes I don't recognize.
 
 The past month was a month of changes. Heck, this year was a year of changes. The pages of my life turned, challenging myself to adapt, learn and, I think, grow.
 

@@ -1,25 +1,39 @@
-import React from "react";
-import WidthLimit from "@/components/WidthLimit";
+import { PostList } from "@/components/custom/post-list";
+import { Button } from "@/components/ui/button";
+import { allSortedPosts } from "@/lib/sortedPosts";
+import { RssIcon, TagsIcon } from "lucide-react";
 import { Metadata } from "next";
-import { PageLayout } from "@/components/PageLayout";
-import { PostList } from "@/components/PostList";
-import { BlogListFooter } from "./BlogListFooter";
-import { allSortedPosts } from "@/lib/data/allSortedPosts";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog - Eliseo Martelli",
+  title: "Blog",
 };
 
-const Blog = () => {
-  const posts = allSortedPosts;
+export default function BlogPage() {
   return (
-    <PageLayout routes={[{ name: "Blog", href: "/blog" }]}>
-      <WidthLimit>
-        <PostList posts={posts} />
-        <BlogListFooter />
-      </WidthLimit>
-    </PageLayout>
+    <>
+      <section className="flex justify-between flex-row">
+        <Button variant="secondary" asChild>
+          <Link href="/feed.xml">
+            <>
+              <span className="text-orange-500">
+                <RssIcon />
+              </span>
+              Subscribe to RSS
+            </>
+          </Link>
+        </Button>
+        <Button variant="secondary" asChild>
+          <Link href="/blog/tags">
+            <>
+              <TagsIcon />
+              Explore Tags
+            </>
+          </Link>
+        </Button>
+      </section>
+      <hr />
+      <PostList postlist={allSortedPosts} />
+    </>
   );
-};
-
-export default Blog;
+}

@@ -41,12 +41,12 @@ Apple has lost sight of what once made their products great.
 ## A Brief Timeline
 
 - **November 6, 2024**: Visited the Apple Store in Turin with my then new iPad
-Air 11" M2 experiencing significant lag and overheating when using Notes and
-Freeform with Apple Pencil Pro.
+  Air 11" M2 experiencing significant lag and overheating when using Notes and
+  Freeform with Apple Pencil Pro.
 - **November 13, 2024**: Received a replacement unit after store
-representatives suggested a hardware swap.
+  representatives suggested a hardware swap.
 - **February 27, 2025**: The replacement unit is now having identical
-performance issues.
+  performance issues.
 
 ## Premium Hardware, Struggling Software
 
@@ -71,7 +71,6 @@ However, after further discussion, we
 both concluded this was likely a software problem rather than a
 hardware defect.
 
-
 I think this highlights a growing challenge for Apple's support model:
 how do you troubleshoot software issues when the traditional solution has been
 to replace hardware?
@@ -84,13 +83,13 @@ struggling with the same basic tasks. Despite multiple iPadOS updates since my
 original complaint (we're now on 18.3.1), the fundamental issues remain:
 
 - **Significant lag when using Apple's own Notes and Freeform applications**:
-Input latency increases dramatically after about 5-10 minutes of use, with
-stroke rendering delayed by up to 5 seconds;
+  Input latency increases dramatically after about 5-10 minutes of use, with
+  stroke rendering delayed by up to 5 seconds;
 - **Device overheating during standard usage scenarios**: CPU temperatures
-reach concerning levels (based on device's external heat) during pencil
-input;
+  reach concerning levels (based on device's external heat) during pencil
+  input;
 - **Poor responsiveness with the Apple Pencil Pro**: Palm rejection fails
-intermittently, and pressure and roll sensitivity becomes inconsistent.
+  intermittently, and pressure and roll sensitivity becomes inconsistent.
 
 This recurrence with a replacement device (and other friend's iPads) confirms
 what I and the support representative suspected last November - this is a
@@ -106,10 +105,10 @@ suggests a systemic problem rather than isolated incidents.
 I think these are sympthoms of two main problems:
 
 - **Thermal Management Issues**: The SoC should throttle performance
-before reaching high external temperatures;
+  before reaching high external temperatures;
 - **Memory Management Problems**: The gradual degradation in performance makes
-me think of memory leaks or improper garbage collection in Apple's Note and
-Freeform applications.
+  me think of memory leaks or improper garbage collection in Apple's Note and
+  Freeform applications.
 
 Most concerning is that multiple software updates have failed to address these
 performance issues while introducing new features that add more strain to the
@@ -125,17 +124,17 @@ proposition becomes increasingly difficult to defend.
 The persistence of these issues through multiple software updates suggests:
 
 1. **Feature prioritization over optimization**: Engineering resources appear
-focused on adding new capabilities rather than fixing existing performance
-problems;
+   focused on adding new capabilities rather than fixing existing performance
+   problems;
 2. **Inadequate performance testing**: Real-world usage scenarios with Apple's
-own applications aren't being adequately tested.
+   own applications aren't being adequately tested.
 
 As customers paying premium prices for Apple products, we at least deserve:
 
 1. **Transparency**: Acknowledgment of known performance issues;
 2. **Focus on fundamentals**: Updates focused on performance and stability;
 3. **Extended support**: Consideration for extended warranties when software
-issues impact hardware lifespan.
+   issues impact hardware lifespan.
 
 The Apple experience was once defined by the words "it just works".  
 Today, that promise feels hollow as software struggles to keep pace with

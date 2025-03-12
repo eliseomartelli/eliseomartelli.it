@@ -4,7 +4,10 @@ export class VectorSimilarity {
   /**
    * Calculate cosine similarity between two TF-IDF vectors
    */
-  public calculateCosineSimilarity(vectorA: TfIdfVector, vectorB: TfIdfVector): number {
+  public calculateCosineSimilarity(
+    vectorA: TfIdfVector,
+    vectorB: TfIdfVector,
+  ): number {
     if (!vectorA || !vectorB) return 0;
 
     let dotProduct = 0;

@@ -9,7 +9,7 @@ tags:
 Creating a personalized recommendation system for a blog doesn't require
 massive machine learning models or complex neural networks. With some clever
 mathematics, we can build a robust content similarity engine that runs entirely
-in the browser (or on the server). 
+in the browser (or on the server).
 
 In this article, I'll walk you through the implementation of a lightweight
 embedding system that powers the “Writing" section of this blog using TF-IDF
@@ -35,7 +35,7 @@ I corroborated a roadmap of what I needed to do:
 
 - Covert post content into mathematical vector representations
 - Weight different parts of the content (title, excerpt, tags, body)
-appropriately
+  appropriately
 - Calculate similarity scores between posts using vector mathematics
 
 ## Representing Text as Numbers
@@ -52,13 +52,17 @@ Before anything else, I need to prepare post’s text by:
 4. Filtering out common stopwords ("the", "and", "is", etc.);
 5. Removing very short terms.
 
-```typescript 
+```typescript
 const stopwords = Set(["the", "and", "is"]);
-const newText = text.toLowerCase()
-	.replace(/[^\w\s]/g, ' ')  // Replace punctuation with spaces
-	.split(/\s+/)              // Split on whitespace
-	.filter(term => term.length >= this.minTermLength && // Remove short terms
-	!this.stopWords.has(term));            // Remove stop words
+const newText = text
+  .toLowerCase()
+  .replace(/[^\w\s]/g, " ") // Replace punctuation with spaces
+  .split(/\s+/) // Split on whitespace
+  .filter(
+    (term) =>
+      term.length >= this.minTermLength && // Remove short terms
+      !this.stopWords.has(term),
+  ); // Remove stop words
 ```
 
 This transformation gives us a bag of meaningful words, but we still need to
@@ -170,6 +174,7 @@ public calculateCosineSimilarity(vectorA: TfIdfVector, vectorB: TfIdfVector): nu
   return dotProduct / magnitude;
 }
 ```
+
 Cosine similarity ranges from -1 (completely opposite) to 1 (exactly the same),
 with 0 indicating orthogonality (no relationship). In our context with
 non-negative TF-IDF values, it ranges from 0 to 1.

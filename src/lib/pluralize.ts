@@ -4,6 +4,6 @@ export function pluralize(number: number, strings: string[]): string {
   }
   return (number == 1 ? strings[0] : strings[1]).replace(
     "%d",
-    number.toString()
+    number.toString(),
   );
 }

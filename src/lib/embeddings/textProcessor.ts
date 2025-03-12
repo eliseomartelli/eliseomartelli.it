@@ -6,7 +6,11 @@ export class TextProcessor {
   private readonly maxTextLength: number;
   private readonly maxTermsPerDocument: number;
 
-  constructor(minTermLength = 2, maxTextLength = 100000, maxTermsPerDocument = 5000) {
+  constructor(
+    minTermLength = 2,
+    maxTextLength = 100000,
+    maxTermsPerDocument = 5000,
+  ) {
     this.minTermLength = minTermLength;
     this.maxTextLength = maxTextLength;
     this.maxTermsPerDocument = maxTermsPerDocument;
@@ -21,14 +25,16 @@ export class TextProcessor {
     // Safety limit for text size
     const limitedText = text.slice(0, this.maxTextLength);
 
-    return limitedText.toLowerCase()
-      .replace(/[^\w\s]/g, ' ')  // Replace punctuation with spaces
-      .split(/\s+/)              // Split on whitespace
-      .filter(term =>
-        term.length >= this.minTermLength && // Remove short terms
-        !this.stopWords.has(term)            // Remove stop words
+    return limitedText
+      .toLowerCase()
+      .replace(/[^\w\s]/g, " ") // Replace punctuation with spaces
+      .split(/\s+/) // Split on whitespace
+      .filter(
+        (term) =>
+          term.length >= this.minTermLength && // Remove short terms
+          !this.stopWords.has(term), // Remove stop words
       )
-      .slice(0, this.maxTermsPerDocument);   // Limit number of terms
+      .slice(0, this.maxTermsPerDocument); // Limit number of terms
   }
 
   /**

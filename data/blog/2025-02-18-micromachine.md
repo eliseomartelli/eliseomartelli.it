@@ -6,6 +6,7 @@ tags:
   - Programming
   - Short
 ---
+
 I'm pleased to announce the release of
 [Micromachine](https://github.com/eliseomartelli/micromachine), a new
 open-source library designed to simplify state management in Go applications.
@@ -35,4 +36,3 @@ Micromachine aims to solve this problem.
 You can check out the
 [Micromachine](https://github.com/eliseomartelli/micromachine) repository and
 start using it today.
-

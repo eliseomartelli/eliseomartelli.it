@@ -1,42 +1,27 @@
-import WidthLimit from "@/components/WidthLimit";
+import { CustomImage } from "@/components/custom/custom-image";
 import Link from "next/link";
 
-import blurry from "../blurry.svg";
-import Image from "next/image";
-
-export const metadata = { title: "Home - Eliseo Martelli" };
-
-const Home = () => {
+export default function Home() {
   return (
-    <>
-      <WidthLimit className="prose prose-p:text-4xl font-serif px-8 py-4">
-        <p>
-          I&apos;m Eliseo Martelli, a <b>Software Developer</b> &
-          <b>Visual Artist</b> based in Turin, Italy.
-        </p>
-        <p>
-          I&apos;m currently engaged in building a reproducible computing
-          platform for bioinformatics research.
-        </p>
-        <p>I love handcrafting human experiences and building communities.</p>
-      </WidthLimit>
-      <WidthLimit className="prose font-serif px-8">
-        <div className="relative">
-          <Link href={"/about"}>about</Link>{" "}
-          <Link
-            href={
-              "http://github.com/eliseomartelli/cv/releases/latest/download/cv.pdf"
-            }
-          >
-            cv
-          </Link>
-        </div>
-      </WidthLimit>
-      <div className="-z-10">
-        <Image src={blurry} alt="blob" fill />
+    <article className="prose">
+      <div className="w-full h-96">
+        <CustomImage src="/me.jpeg" alt="A picture of Eliseo Martelli" />
       </div>
-    </>
+      <p>
+        I&apos;m <b>Eliseo Martelli</b>, a Software Developer & Visual Artist
+        based in Turin, Italy.
+      </p>
+      <p>
+        I&apos;m currently engaged in building a reproducible computing platform
+        for bioinformatics research.
+      </p>
+      <p>I love handcrafting human experiences and building communities.</p>
+      <p>
+        <Link href="/about">about</Link>{" "}
+        <Link href="http://github.com/eliseomartelli/cv/releases/latest/download/cv.pdf">
+          cv
+        </Link>
+      </p>
+    </article>
   );
-};
-
-export default Home;
+}

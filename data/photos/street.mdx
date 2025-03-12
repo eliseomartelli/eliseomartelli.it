@@ -2,61 +2,34 @@
 title: Street Photography
 thumbnail: /photoPortfolio/street/Jumping.jpg
 ---
-<section className="intro">
-# Street Photography
-Discovering the interplay between humans and the city.
-</section>
 
-<PhotoComponent 
-	url="/photoPortfolio/street/Jumping.jpg"
-	aspect="horizontal"
-/>
-
-<div className="min-w-full h-full md:gap-8 gap-4 flex md:flex-row flex-col md:p-8">
-	<div className="w-full self-start">
-	<PhotoComponent 
-		url="/photoPortfolio/street/IMG_8778.jpg"
-		aspect="horizontal"
-	/>
-	</div>
-
-	<div className="w-full self-end">
-	<PhotoComponent 
-		url="/photoPortfolio/street/IMG_0092.jpg"
-		aspect="horizontal"
-	/>
-	</div>
+<div className="snap-start min-h-full min-w-md flex flex-row align-middle justify-center items-center">
+  <div className="prose relative p-4">
+    # Street Photography
+	Discovering the interplay between humans and the city.
+  </div>
 </div>
 
-<PhotoComponent 
-	url="/photoPortfolio/street/IMG_0040.jpg"
-	aspect="vertical"
-/>
+<CarouselPage>
+  <Photo url="/photoPortfolio/street/Jumping.jpg" />
+</CarouselPage>
 
-<div className="min-w-full h-full md:gap-12 gap-4 flex md:flex-row flex-col md:p-12">
-	<div className="h-full">
-	<PhotoComponent 
-		url="/photoPortfolio/street/IMG_0355.jpg"
-		aspect="vertical"
-	/>
-	</div>
+<CarouselPage>
+  <Photo url="/photoPortfolio/street/IMG_0092.jpg" />
+  <Photo url="/photoPortfolio/street/IMG_0040.jpg" />
+</CarouselPage>
 
-	<div className="w-full">
-	<PhotoComponent 
-		url="/photoPortfolio/street/IMG_0076.jpg"
-		aspect="horizontal"
-	/>
-	</div>
-</div>
+<CarouselPage>
+	<Photo url="/photoPortfolio/street/IMG_0355.jpg" />
 
-<PhotoComponent 
-	url="/photoPortfolio/street/IMG_0215.jpg"
-	aspect="vertical"
-/>
+    <Photo url="/photoPortfolio/street/IMG_0076.jpg" />
 
-<div className="min-w-full h-full md:gap-12 gap-4 flex md:flex-row flex-col md:p-28">
-<PhotoComponent 
-	url="/photoPortfolio/street/IMG_6356.jpg"
-	aspect="horizontal"
-/>
-</div>
+</CarouselPage>
+
+<CarouselPage>
+  <Photo url="/photoPortfolio/street/IMG_0215.jpg" />
+</CarouselPage>
+
+<CarouselPage>
+  <Photo url="/photoPortfolio/street/IMG_6356.jpg" />
+</CarouselPage>

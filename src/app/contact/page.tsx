@@ -1,31 +1,21 @@
+import { ContactForm } from "@/components/custom/contact-form";
 import Link from "next/link";
-import { ContactForm } from "./form";
-import { Metadata } from "next";
-import { PageLayout } from "@/components/PageLayout";
-import { Article } from "@/components/Article";
+import React from "react";
 
-export const metadata: Metadata = {
-  title: "Contact - Eliseo Martelli",
-  description: "Contact me easily",
-};
-
-const Contact = () => {
+export default function ContactPage() {
   return (
-    <PageLayout routes={[{ name: "Get in touch", href: "/contact" }]} center>
-      <Article>
-        <p>
-          I&apos;d love to hear from you and learn more about how we can work
-          together. Let&apos;s start a conversation and see where it takes us!
-        </p>
-        <p>
-          Just fill out the contact form below or send me an{" "}
-          <Link href={"mailto:info@eliseomartelli.it"}>email</Link>, and
-          I&apos;ll get back to you as soon as possible.
-        </p>
-        <ContactForm />
-      </Article>
-    </PageLayout>
+    <article className="prose w-full mx-auto">
+      <h1 className="font-serif">Get in touch</h1>
+      <p>
+        I'd love to hear from you and learn more about how we can work together.
+        Let's start a conversation and see where it takes us!
+      </p>
+      <p>
+        Just fill out the contact form below or send me an{" "}
+        <Link href="mailto:info@eliseomartelli.it">email</Link>, and I'll get
+        back to you as soon as possible.
+      </p>
+      <ContactForm />
+    </article>
   );
-};
-
-export default Contact;
+}

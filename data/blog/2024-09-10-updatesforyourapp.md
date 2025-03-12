@@ -12,7 +12,7 @@ is important for enhancing the user experience.
 In this post I will outline how I implemented a feature to notify the user
 of the latest update for you app, providing a link to download it.
 
-It was a "rush" feature, I worked on this for less than two hours, so it's not 
+It was a "rush" feature, I worked on this for less than two hours, so it's not
 perfect by any means, but it's serviceable.
 The latest version will be sourced from GitHub releases.
 
@@ -31,7 +31,6 @@ The GitHub API returns a JSON list of the releases of our application. Each
 release contains various pieces of information, but for our purpose, I only
 needed the name of the latest version. This simplifies the data I need to
 handle.
-
 
 ```swift title="App/Updates/GitHubVersion.swift"
 import Foundation
@@ -182,7 +181,7 @@ struct YourApp: App {
 }
 ```
 
-Now I can notify users of updates to my application! 
+Now I can notify users of updates to my application!
 
 If you found this interesting, check out
 [Cleeb](https://github.com/eliseomartelli/Cleeb), the app I made to help you

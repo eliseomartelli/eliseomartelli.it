@@ -1,58 +1,80 @@
-import { allPosts } from "contentlayer/generated";
-import WidthLimit from "@/components/WidthLimit";
-import { compareDesc } from "date-fns";
-import { allTags } from "../allTags";
+import { PostList } from "@/components/custom/post-list";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { colorClassFromPostTag } from "@/lib/color-from-tag";
+import { allSortedPosts } from "@/lib/sortedPosts";
+import { allTags, PostTagType } from "@/lib/tags";
+import { cn } from "@/lib/utils";
 import { Metadata } from "next";
-import { PageLayout } from "@/components/PageLayout";
-import { PostList } from "@/components/PostList";
 
-export async function generateStaticParams() {
-  return allTags.map((currentTag) => ({
-    tag: currentTag,
-  }));
-}
 export async function generateMetadata({
   params,
 }: {
-  params: {
-    tag: string;
-  };
-}): Promise<Metadata | undefined> {
+  params: Promise<{ tag: PostTagType }>;
+}): Promise<Metadata> {
+  const { tag: title } = await params;
+
   return {
-    title: `${params.tag} - Eliseo Martelli`,
+    title,
+    description: `All the posts about ${title}`,
     openGraph: {
-      type: "article",
-    },
-    twitter: {
-      card: "summary",
+      title,
+      description: `All the posts about ${title}`,
+      images: [],
     },
   };
 }
 
-const TagPage = ({ params }: { params: { tag: string } }) => {
-  const posts = allPosts
-    .filter(
-      (post) =>
-        post.tags
-          .map((tag) => tag.toLowerCase())
-          .indexOf(params.tag.toLowerCase()) !== -1,
-    )
-    .sort((a, b) => {
-      return compareDesc(new Date(a.date), new Date(b.date));
-    });
-  return (
-    <PageLayout
-      routes={[
-        { href: "/blog", name: "Blog" },
-        { href: "/blog/tags", name: "Tags" },
-        { href: `/blog/tags/${params.tag}`, name: params.tag },
-      ]}
-    >
-      <WidthLimit>
-        <PostList posts={posts} />
-      </WidthLimit>
-    </PageLayout>
-  );
-};
+export async function generateStaticParams() {
+  return allTags.map((tag) => ({ tag }));
+}
 
-export default TagPage;
+export default async function BlogTagViewPage({
+  params,
+}: {
+  params: Promise<{ tag: PostTagType }>;
+}) {
+  const { tag } = await params;
+
+  const postForTag = allSortedPosts.filter((post) => {
+    return post.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase());
+  });
+
+  return (
+    <>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/blog/tags">Tags</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink
+              href={`/blog/tags/${tag}`}
+              className={cn(
+                colorClassFromPostTag(tag),
+                "bg-transparent font-bold",
+              )}
+            >
+              {tag}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+      <PostList postlist={postForTag} />
+    </>
+  );
+}

@@ -3,41 +3,26 @@ title: Concerts
 thumbnail: /photoPortfolio/concerts/IMG_0088.jpg
 ---
 
-<section className="intro">
-# Concerts
-Pictures made to freeze the emotion of live playing bands.
-</section>
-
-<PhotoComponent 
-	url="/photoPortfolio/concerts/IMG_0267.jpg"
-	aspect="horizontal"
-/>
-
-<div className="min-w-full h-full md:gap-8 gap-4 flex md:flex-row flex-col md:p-12 ">
-
-<PhotoComponent 
-	url="/photoPortfolio/concerts/IMG_0088.jpg"
-	aspect="vertical"
-/>
+<div className="snap-start min-h-full min-w-md flex flex-row align-middle justify-center items-center">
+		<div className="prose relative p-4">
+				# Concerts
+				Pictures made to freeze the emotion of live playing bands.
+		</div>
 </div>
 
-<div className="min-w-full h-full md:gap-12 gap-4 flex md:flex-row flex-col md:p-12 justify-between">
-<div className="h-full">
-<PhotoComponent
-	url="/photoPortfolio/concerts/IMG_0422.jpg"
-	aspect="vertical"
-/>
-</div>
+<CarouselPage>
+		<Photo url="/photoPortfolio/concerts/IMG_0267.jpg" />
+</CarouselPage>
 
-<div className="md:h-2/3 md:self-end h-full">
-<PhotoComponent
-	url="/photoPortfolio/concerts/IMG_0068.jpg"
-	aspect="vertical"
-/>
-</div>
-</div>
+<CarouselPage>
+		<Photo url="/photoPortfolio/concerts/IMG_0088.jpg" />
+</CarouselPage>
 
-<PhotoComponent 
-	url="/photoPortfolio/concerts/IMG_0461.jpg"
-	aspect="vertical"
-/>
+<CarouselPage>
+		<Photo url="/photoPortfolio/concerts/IMG_0422.jpg" />
+		<Photo url="/photoPortfolio/concerts/IMG_0068.jpg" />
+</CarouselPage>
+
+<CarouselPage>
+		<Photo url="/photoPortfolio/concerts/IMG_0461.jpg" />
+</CarouselPage>

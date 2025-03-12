@@ -1,4 +1,4 @@
-import { Post } from "@/.contentlayer/generated";
+import { Post } from "content-collections";
 import { TextProcessor } from "./textProcessor";
 import { TfIdfVector, TermFrequencyMap } from "./types";
 
@@ -17,7 +17,7 @@ export class VectorBuilder {
 
   constructor(
     textProcessor: TextProcessor,
-    weights: ContentWeights = { title: 3, excerpt: 2, tags: 1, body: 1 }
+    weights: ContentWeights = { title: 3, excerpt: 2, tags: 1, body: 1 },
   ) {
     this.textProcessor = textProcessor;
     this.weights = weights;
@@ -39,7 +39,7 @@ export class VectorBuilder {
           term,
           (this.documentFrequency.get(term) || 0) + 1,
         );
-      })
+      });
     }
 
     return this.documentFrequency;
@@ -77,19 +77,14 @@ export class VectorBuilder {
    */
   private getWeightedPostContent(post: Post): string {
     // Repeat elements based on their weights to influence term frequency
-    const titleParts = Array(this.weights.title).fill(post.title || '');
-    const excerptParts = Array(this.weights.excerpt).fill(post.excerpt || '');
+    const titleParts = Array(this.weights.title).fill(post.title || "");
+    const excerptParts = Array(this.weights.excerpt).fill(post.excerpt || "");
     const tagParts = Array.isArray(post.tags)
-      ? post.tags.join(' ').repeat(this.weights.tags)
-      : '';
-    const bodyParts = (post.body?.raw || '').repeat(this.weights.body);
+      ? post.tags.join(" ").repeat(this.weights.tags)
+      : "";
+    const bodyParts = (post.content || "").repeat(this.weights.body);
 
-    return [
-      ...titleParts,
-      ...excerptParts,
-      tagParts,
-      bodyParts
-    ].join(' ');
+    return [...titleParts, ...excerptParts, tagParts, bodyParts].join(" ");
   }
 
   /**

@@ -2,38 +2,26 @@
 title: Portraits
 thumbnail: /photoPortfolio/portraits/TABITHA-CANON-DAY-2023-3.jpg
 ---
-<section className="intro">
-# Portraits
-Shaping light.
-</section>
+<div className="snap-start min-h-full min-w-md flex flex-row align-middle justify-center items-center">
+		<div className="prose relative p-4">
+				# Portraits
+				Shaping light.  
 
-<div className="font-serif self-end">
-Tabitha.
-[@tabithamrchn](https://www.instagram.com/tabithamrchn/)
+				Tabitha.
+				[@tabithamrchn](https://www.instagram.com/tabithamrchn/)
+		</div>
 </div>
 
-<PhotoComponent 
-	url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-3.jpg"
-	aspect="horizontal"
-/>
 
-<div className="min-w-full h-full md:gap-8 gap-4 flex md:flex-row flex-col md:p-8">
-	<div className="w-full">
-<PhotoComponent 
-	url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-2.jpg"
-	aspect="horizontal"
-/>
-	</div>
+<CarouselPage>
+<Photo url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-3.jpg" />
+</CarouselPage>
 
-	<div className="w-full">
-<PhotoComponent 
-	url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-1.jpg"
-	aspect="horizontal"
-/>
-	</div>
-</div>
+<CarouselPage>
+		<Photo url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-2.jpg" />
+		<Photo url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-1.jpg" />
+</CarouselPage>
 
-<PhotoComponent 
-	url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-5.jpg"
-	aspect="horizontal"
-/>
+<CarouselPage>
+		<Photo url="/photoPortfolio/portraits/TABITHA-CANON-DAY-2023-5.jpg" />
+</CarouselPage>
