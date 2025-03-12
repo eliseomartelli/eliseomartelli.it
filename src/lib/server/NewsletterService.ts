@@ -1,13 +1,13 @@
 import { PrismaClient, Subscriber } from "@prisma/client";
-import { getMailTransporter } from "../mail-transporter";
-import { allSortedNewsletter } from "../sortedNewsletter";
+import { getMailTransporter } from "@/lib/mail-transporter";
+import { allSortedNewsletter } from "@/lib/sortedNewsletter";
 
 export class NewsletterService {
   constructor(
     private prisma: PrismaClient,
     private transporter: ReturnType<typeof getMailTransporter>,
     private from: string,
-    private to: string = process.env.SMTP_TEST_TO!,
+    private to: string = process.env.SMTP_TO!,
   ) {}
 
   async getSubscriber(uuid: string): Promise<Subscriber | null> {
