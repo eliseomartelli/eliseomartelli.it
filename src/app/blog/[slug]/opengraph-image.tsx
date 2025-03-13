@@ -9,6 +9,10 @@ export const size = {
   height: 630,
 };
 
+export async function generateStaticParams() {
+  return allPosts.map(({ slug }) => ({ slug }));
+}
+
 export default async function Image({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
@@ -38,7 +42,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <div tw="flex grow"></div>
-      <div tw="fixed flex flex-row items-center justify-end bottom-10 right-0">
+      <div tw="absolute flex flex-row items-center justify-end bottom-10 right-0">
         <h1 tw="text-3xl">Eliseo Martelli</h1>
         <img
           src="https://eliseomartelli.it/icon.png"
