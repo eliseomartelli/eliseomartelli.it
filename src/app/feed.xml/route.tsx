@@ -2,10 +2,6 @@ import { allSortedPosts } from "@/lib/sortedPosts";
 import { CustomMdx } from "@/components/mdx-custom/mdx";
 import RSS from "rss";
 
-export async function generateStaticParams() {
-  return [];
-}
-
 export async function GET() {
   const feed = new RSS({
     title: "Eliseo Martelli",
