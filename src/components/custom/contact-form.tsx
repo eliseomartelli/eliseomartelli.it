@@ -15,6 +15,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../ui/textarea";
 import { Contact, ContactType } from "@/types/contact";
 import { Input } from "../ui/input";
+import { ContactClient } from "@/lib/client/ContactClient";
+import { toast } from "sonner";
 
 export const ContactForm = () => {
   const form = useForm<ContactType>({
@@ -27,7 +29,21 @@ export const ContactForm = () => {
   });
 
   const onSubmit = async (values: ContactType) => {
-    // TODO: Implement
+    const client = new ContactClient();
+    try {
+      await client.sendContact(values);
+      form.reset();
+      toast("Feedback sent!", {
+        description: "Thank you for sending the message!",
+      });
+    } catch (error) {
+      const message =
+        (error as Partial<Error>).message ||
+        "An error occurred. Please try again.";
+      toast("Error Sending Message", {
+        description: message,
+      });
+    }
   };
 
   return (

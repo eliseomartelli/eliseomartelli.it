@@ -14,19 +14,33 @@ import { Feedback, FeedbackType } from "@/types/feedback";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../ui/textarea";
+import { ContactClient } from "@/lib/client/ContactClient";
+import { toast } from "sonner";
 
 export const FeedbackForm = () => {
   const form = useForm<FeedbackType>({
     resolver: zodResolver(Feedback),
     defaultValues: {
       message: "",
-      email: "",
-      message: "",
     },
   });
 
   const onSubmit = async (values: FeedbackType) => {
-    // TODO: Implement
+    const client = new ContactClient();
+    try {
+      await client.sendFeedback(values);
+      form.reset();
+      toast("Feedback sent!", {
+        description: "Thank you for sending the message!",
+      });
+    } catch (error) {
+      const message =
+        (error as Partial<Error>).message ||
+        "An error occurred. Please try again.";
+      toast("Error Sending Message", {
+        description: message,
+      });
+    }
   };
 
   return (
