@@ -7,6 +7,8 @@ import { Timeline, TimelineItem } from "@/components/mdx-custom/timeline";
 import { YouTube } from "./YouTube";
 import { CarouselPage } from "./photos";
 import { Photo } from "./Photo";
+import { Product } from "./product";
+import { AffiliateDisclosure } from "./affiliate-disclosure";
 
 type Props = MDXContentProps & {
   code: string;
@@ -31,6 +33,8 @@ export const CustomMdx = (props: Props) => {
         TimelineItem,
         CarouselPage,
         Photo,
+        Product,
+        AffiliateDisclosure,
       }}
     />
   );
