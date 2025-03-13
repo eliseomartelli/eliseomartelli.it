@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Button } from "../ui/button";
-import { Link } from "lucide-react";
 import { Card } from "../ui/card";
+import Link from "next/link";
 
 export const Product = ({
   children,
@@ -18,7 +18,7 @@ export const Product = ({
 }) => {
   return (
     <Card>
-      <div className="flex justify-between not-prose items-center">
+      <div className="flex justify-between not-prose items-center px-4">
         <div>
           <h1 className="text-xl font-bold flex items-center gap-2">{title}</h1>
           {variation && (
@@ -31,7 +31,7 @@ export const Product = ({
           </Button>
         )}
       </div>
-      <section className="prose">{children}</section>
+      <section className="prose px-4">{children}</section>
     </Card>
   );
 };
