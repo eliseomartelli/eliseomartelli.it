@@ -8,7 +8,6 @@ import {
 import { allNewsletters } from "content-collections";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { CustomMdx } from "@/components/mdx-custom/mdx";
 
 export async function generateMetadata({
   params,
@@ -63,9 +62,10 @@ export default async function BlogSlugPage({
         </BreadcrumbList>
       </Breadcrumb>
       <hr />
-      <article className="prose w-full mx-auto">
-        <CustomMdx code={post.mdx} />
-      </article>
+      <article
+        className="prose w-full mx-auto"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </>
   );
 }
