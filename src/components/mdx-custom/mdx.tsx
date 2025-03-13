@@ -2,11 +2,11 @@ import React from "react";
 import { MDXContentProps } from "mdx-bundler/client/index.js";
 import { MDXContent } from "@content-collections/mdx/react";
 import dynamic from "next/dynamic";
-import { Toot } from "@/components/mdx-custom/Toot";
+import { Toot } from "./toot";
 import { Timeline, TimelineItem } from "@/components/mdx-custom/timeline";
-import { YouTube } from "./YouTube";
+import { YouTube } from "./youtube";
 import { CarouselPage } from "./photos";
-import { Photo } from "./Photo";
+import { Photo } from "./photo";
 import { Product } from "./product";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
 
@@ -15,7 +15,7 @@ type Props = MDXContentProps & {
 };
 
 const BaseToot = dynamic(() =>
-  import("@/components/mdx-custom/Toot").then((mod) => mod.BaseToot),
+  import("@/components/mdx-custom/toot").then((mod) => mod.BaseToot),
 );
 
 const BaseComponents = {
