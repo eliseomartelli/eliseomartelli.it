@@ -4,6 +4,8 @@ import { calculateTimeToRead } from "./time-to-read";
 import { pluralize } from "./pluralize";
 import { colorClassFromPostTag } from "./color-from-tag";
 import { dateFormatter } from "./date-formatter";
+import remarkGfm from "remark-gfm";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const formatMinutesToRead = (minutes: number): string =>
   pluralize(minutes, ["%d minute to read", "%d minutes to read"]);
@@ -20,7 +22,10 @@ export const posts = defineCollection({
   }),
 
   transform: async (document, context) => {
-    const mdx = await compileMDX(context, document);
+    const mdx = await compileMDX(context, document, {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypePrettyCode],
+    });
     const slug = document._meta.fileName.split(".")[0];
     const minutesToRead = calculateTimeToRead(document.content);
     const timeToRead = formatMinutesToRead(minutesToRead);

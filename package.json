@@ -36,6 +36,7 @@
     "@content-collections/mdx": "^0.2.2",
     "@content-collections/next": "^0.2.6",
     "@eslint/eslintrc": "^3",
+    "@shikijs/rehype": "^3.2.1",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
@@ -45,6 +46,9 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
     "prisma": "^6.5.0",
+    "rehype-pretty-code": "^0.14.0",
+    "remark-gfm": "^4.0.1",
+    "shiki": "^2.2.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
