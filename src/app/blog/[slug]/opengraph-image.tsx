@@ -42,7 +42,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <div tw="flex grow"></div>
-      <div tw="absolute flex flex-row items-center justify-end bottom-10 right-0">
+      <div tw="absolute flex flex-row items-center justify-end bottom-10 right-10">
         <h1 tw="text-3xl">Eliseo Martelli</h1>
         <img
           src="https://eliseomartelli.it/icon.png"
