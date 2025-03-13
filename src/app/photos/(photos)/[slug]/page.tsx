@@ -18,13 +18,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
-  const { title } = allPhotos.find((post) => post.slug === slug)!;
+  const { title, thumbnail } = allPhotos.find((post) => post.slug === slug)!;
 
   return {
     title,
     metadataBase: new URL(process.env.URL || "https://eliseomartelli.it/"),
     openGraph: {
       title,
+      images: [
+        `${process.env.URL || "https://eliseomartelli.it"}/${thumbnail}`,
+      ],
     },
   };
 }
