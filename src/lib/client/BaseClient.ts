@@ -2,7 +2,7 @@ export abstract class BaseService {
   async handleRequest<T>(url: string, init?: RequestInit): Promise<T> {
     const response = await fetch(url, init);
     if (!response.ok) {
-      let errorData: any;
+      let errorData: unknown;
       try {
         errorData = (await response.json()) as Partial<Error>;
       } catch {
