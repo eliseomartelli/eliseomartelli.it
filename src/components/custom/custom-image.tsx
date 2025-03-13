@@ -30,6 +30,7 @@ export const CustomImage = ({
         src={src}
         alt={alt || "Image"}
         fill
+        loading="lazy"
         className={cn(
           "rounded-md shadow-md",
           objectFit === "cover" ? "object-cover" : "object-contain",
