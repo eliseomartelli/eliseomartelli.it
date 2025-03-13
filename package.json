@@ -37,9 +37,9 @@
     "@content-collections/next": "^0.2.6",
     "@eslint/eslintrc": "^3",
     "@shikijs/rehype": "^3.2.1",
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.0.13",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^20",
+    "@types/node": "^22.13.10",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "class-variance-authority": "^0.7.1",
@@ -49,7 +49,7 @@
     "rehype-pretty-code": "^0.14.0",
     "remark-gfm": "^4.0.1",
     "shiki": "^2.2.1",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.0.13",
     "typescript": "^5"
   }
 }
