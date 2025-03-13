@@ -6,8 +6,6 @@ tags:
   - Network
 ---
 
-![](https://cdn.spacetelescope.org/archives/images/screen/opo9544b.jpg)
-
 VPNs are one of the preferred ways to tie-up multiple servers (and clients) together, but their nature becomes a **bottleneck** when the infrastructure to _link_ becomes larger.\
 A solution to this problem comes in the form of a software defined network **(SDN)**.
 
