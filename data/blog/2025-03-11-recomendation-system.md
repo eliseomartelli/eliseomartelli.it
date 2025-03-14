@@ -4,6 +4,7 @@ date: 2025-03-11 15:15
 excerpt: Sometimes, a little bit of math is all you need
 tags:
   - Misc
+  - Programming
 ---
 
 Creating a personalized recommendation system for a blog doesn't require
