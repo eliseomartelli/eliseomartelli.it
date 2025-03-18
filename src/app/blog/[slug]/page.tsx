@@ -89,7 +89,7 @@ export default async function BlogSlugPage({
       <hr />
       <section className="flex justify-end flex-row">
         <Button variant="secondary" asChild>
-          <Link href="./reply">
+          <Link href={`/blog/${post.slug}/reply`}>
             <>
               <span>
                 <ReplyIcon />
