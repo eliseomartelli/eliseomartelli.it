@@ -15,7 +15,7 @@ import { CustomMdx } from "@/components/mdx-custom/mdx";
 import { PostList } from "@/components/custom/post-list";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { MailIcon } from "lucide-react";
+import { MailIcon, ReplyIcon } from "lucide-react";
 
 export async function generateMetadata({
   params,
@@ -86,6 +86,19 @@ export default async function BlogSlugPage({
       <article className="prose w-full mx-auto">
         <CustomMdx code={post.mdx} />
       </article>
+      <hr />
+      <section className="flex justify-end flex-row">
+        <Button variant="secondary" asChild>
+          <Link href="./reply">
+            <>
+              <span>
+                <ReplyIcon />
+              </span>
+              Reply
+            </>
+          </Link>
+        </Button>
+      </section>
       <hr />
       <section className="space-y-8">
         <div className="space-y-2">
