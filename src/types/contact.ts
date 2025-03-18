@@ -7,3 +7,7 @@ export const Contact = z.object({
 });
 
 export type ContactType = z.infer<typeof Contact>;
+
+export const Reply = Contact.extend({ postTitle: z.string() });
+
+export type ReplyType = z.infer<typeof Reply>;
