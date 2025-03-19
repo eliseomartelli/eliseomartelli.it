@@ -20,19 +20,14 @@ export default async function sitemap() {
   }));
 
   const routes = [
-    "",
+    "/",
     "/about",
     "/blog",
     "/contact",
     "/feed.xml",
     "/feedback",
-    "/photos",
-    "/recipes",
-    "/snippets",
-    "/ssh",
-    "/uses",
-    "/wallpapers",
     "/newsletter",
+    "/photos",
   ].map((route) => ({
     url: `https://eliseomartelli.it${route}`,
     lastModified: new Date().toISOString().split("T")[0],
