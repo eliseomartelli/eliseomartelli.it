@@ -19,7 +19,23 @@ export async function GET() {
       url: `https://eliseomartelli.it/blog/${post.slug}`,
       date: post.date,
       description: ReactDOMServer.renderToStaticMarkup(
-        <CustomMdx code={post.mdx} />,
+        <>
+          <i>
+            Posted on:{" "}
+            {post.tags.map((tag, index) => {
+              const tagLink = `https://eliseomartelli.it/blog/tags/${tag.toLowerCase()}`;
+              return (
+                <span key={tag}>
+                  <a href={tagLink}>{tag}</a>
+                  {index < post.tags.length - 1 ? ", " : "."}
+                </span>
+              );
+            })}
+          </i>
+          <p>Tagline: {post.excerpt}</p>
+          <hr />
+          <CustomMdx code={post.mdx} />,
+        </>,
       ),
       categories: post.tags,
     });
