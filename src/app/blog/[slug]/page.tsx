@@ -87,7 +87,8 @@ export default async function BlogSlugPage({
         <CustomMdx code={post.mdx} />
       </article>
       <hr />
-      <section className="flex justify-end flex-row">
+      <section className="flex justify-between items-center">
+        <p className="text-sm">You just read {post.wordCount} words.</p>
         <Button variant="secondary" asChild>
           <Link href={`/blog/${post.slug}/reply`}>
             <>

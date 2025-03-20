@@ -36,6 +36,15 @@ export const posts = defineCollection({
         colorClassName: colorClassFromPostTag(tag),
       };
     });
-    return { ...document, mdx, slug, timeToRead, formattedDate, postTags };
+    const wordCount = (document.content.match(/[\w\d\’\'-]+/gi) || []).length;
+    return {
+      ...document,
+      mdx,
+      slug,
+      timeToRead,
+      formattedDate,
+      postTags,
+      wordCount,
+    };
   },
 });
