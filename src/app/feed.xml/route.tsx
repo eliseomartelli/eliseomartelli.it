@@ -34,7 +34,7 @@ export async function GET() {
           </i>
           <p>Tagline: {post.excerpt}</p>
           <hr />
-          <CustomMdx code={post.mdx} />,
+          <CustomMdx code={post.mdx} />
         </>,
       ),
       categories: post.tags,

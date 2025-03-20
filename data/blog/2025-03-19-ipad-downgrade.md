@@ -9,7 +9,7 @@ tags:
 
 We often assume newer is always better when it comes to technology. The
 marketing, the launch events, and the constant stream of upgrades all reinforce
-this notion. But is it always true? 
+this notion. But is it always true?
 
 For the last week, I decided to challenge this assumption by taking a step back
 in time. I downgraded from my 2024 iPad Air M2 to an iPad 6th Generation from
@@ -25,7 +25,7 @@ awkwardly into the Lightning port feels precarious.
 
 One of the most immediately noticeable differences is the non-laminated display
 on the iPad 6th gen. This creates a visible gap between the glass and the
-screen that makes the Apple Pencil feel less precise. 
+screen that makes the Apple Pencil feel less precise.
 
 This fuels a disconnected sensation when writing that wasn't present with the
 newer model's display.
