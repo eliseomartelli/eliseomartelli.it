@@ -1,5 +1,5 @@
 ---
-title: "Digital Downgrade: One Week with an iPad 6th Gen"
+title: "One Week with an iPad 6th Gen"
 date: "2025-03-19 13:45:00"
 excerpt: New isn’t always thousands times better
 tags:
