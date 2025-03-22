@@ -6,14 +6,13 @@ import { allPosts, Post } from "content-collections";
 
 export class BlogEmbeddingSystem {
   private posts: Post[] = [];
-  private postVectors: Map<string, TfIdfVector> = new Map();
+  private readonly postVectors: Map<string, TfIdfVector> = new Map();
   private isInitialized = false;
   private readonly config: Required<EmbeddingSystemConfig>;
 
-  // Core components
-  private textProcessor: TextProcessor;
-  private vectorBuilder: VectorBuilder;
-  private vectorSimilarity: VectorSimilarity;
+  private readonly textProcessor: TextProcessor;
+  private readonly vectorBuilder: VectorBuilder;
+  private readonly vectorSimilarity: VectorSimilarity;
 
   constructor(config: EmbeddingSystemConfig = {}) {
     this.config = {
@@ -46,7 +45,7 @@ export class BlogEmbeddingSystem {
   }
 
   /**
-   * Initialize the embedding system with a collection of posts
+   * Initializes the embedding system with a collection of posts.
    */
   public initialize(posts: Post[]): void {
     if (!posts || posts.length === 0) {
@@ -60,11 +59,12 @@ export class BlogEmbeddingSystem {
     this.vectorBuilder.buildVocabulary(this.posts);
 
     for (const post of this.posts) {
-      if (!post.slug) continue;
-      this.postVectors.set(
-        post.slug,
-        this.vectorBuilder.createPostVector(post),
-      );
+      if (post.slug) {
+        this.postVectors.set(
+          post.slug,
+          this.vectorBuilder.createPostVector(post),
+        );
+      }
     }
 
     this.isInitialized = true;
@@ -77,7 +77,7 @@ export class BlogEmbeddingSystem {
   }
 
   /**
-   * Find similar posts to the given post ID
+   * Finds similar posts to the given post ID.
    */
   public getSimilarPosts(postId: string, count = 3): ScoredPost[] {
     this.ensureInitialized();
@@ -101,7 +101,7 @@ export class BlogEmbeddingSystem {
   }
 
   /**
-   * Find posts similar to a text query
+   * Finds posts similar to a text query.
    */
   public searchSimilarPosts(query: string, count = 3): ScoredPost[] {
     this.ensureInitialized();
@@ -125,7 +125,7 @@ export class BlogEmbeddingSystem {
   }
 
   /**
-   * Ensure the embedding system is initialized
+   * Ensures the embedding system is initialized.
    */
   private ensureInitialized(): void {
     if (!this.isInitialized) {

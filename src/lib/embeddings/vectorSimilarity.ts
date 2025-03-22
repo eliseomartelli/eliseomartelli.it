@@ -2,7 +2,7 @@ import { TfIdfVector } from "./types";
 
 export class VectorSimilarity {
   /**
-   * Calculate cosine similarity between two TF-IDF vectors
+   * Calculate cosine similarity between two TF-IDF vectors.
    */
   public calculateCosineSimilarity(
     vectorA: TfIdfVector,
@@ -14,28 +14,24 @@ export class VectorSimilarity {
     let magnitudeA = 0;
     let magnitudeB = 0;
 
-    // Calculate dot product and magnitude of vector A
-    for (const [term, valueA] of Object.entries(vectorA)) {
-      const valueB = vectorB[term] || 0;
-      dotProduct += valueA * valueB;
-      magnitudeA += valueA * valueA;
+    for (const term in vectorA) {
+      if (Object.prototype.hasOwnProperty.call(vectorA, term)) {
+        const valueA = vectorA[term];
+        const valueB = vectorB[term] || 0;
+        dotProduct += valueA * valueB;
+        magnitudeA += valueA * valueA;
+      }
     }
 
-    // Calculate magnitude of vector B (for terms not in A)
-    for (const [term, valueB] of Object.entries(vectorB)) {
-      if (!(term in vectorA)) {
-        magnitudeB += valueB * valueB;
-      } else {
-        // Terms already in A were calculated above
+    for (const term in vectorB) {
+      if (Object.prototype.hasOwnProperty.call(vectorB, term)) {
+        const valueB = vectorB[term];
         magnitudeB += valueB * valueB;
       }
     }
 
     const magnitude = Math.sqrt(magnitudeA) * Math.sqrt(magnitudeB);
 
-    // Handle zero vectors
-    if (magnitude === 0) return 0;
-
-    return dotProduct / magnitude;
+    return magnitude === 0 ? 0 : dotProduct / magnitude;
   }
 }

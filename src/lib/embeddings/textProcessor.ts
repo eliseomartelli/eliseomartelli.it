@@ -17,28 +17,29 @@ export class TextProcessor {
   }
 
   /**
-   * Extract and normalize terms from text
+   * Extracts and normalizes terms from text.
    */
   public extractTerms(text: string): string[] {
-    if (!text) return [];
+    if (!text) {
+      return [];
+    }
 
-    // Safety limit for text size
-    const limitedText = text.slice(0, this.maxTextLength);
-
-    return limitedText
+    const normalizedText = text
+      .slice(0, this.maxTextLength)
       .toLowerCase()
-      .replace(/[^\w\s]/g, " ") // Replace punctuation with spaces
-      .split(/\s+/) // Split on whitespace
+      .replace(/[^\w\s]/g, " ")
+      .split(/\s+/);
+
+    return normalizedText
       .filter(
         (term) =>
-          term.length >= this.minTermLength && // Remove short terms
-          !this.stopWords.has(term), // Remove stop words
+          term.length >= this.minTermLength && !this.stopWords.has(term),
       )
-      .slice(0, this.maxTermsPerDocument); // Limit number of terms
+      .slice(0, this.maxTermsPerDocument);
   }
 
   /**
-   * Get unique terms from a text
+   * Gets unique terms from a text.
    */
   public getUniqueTerms(text: string): Set<string> {
     return new Set(this.extractTerms(text));
