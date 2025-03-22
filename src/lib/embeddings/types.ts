@@ -31,3 +31,10 @@ export interface TermFrequencyMap {
 export interface TfIdfVector {
   [term: string]: number;
 }
+
+export interface ContentWeights {
+  title: number;
+  excerpt: number;
+  tags: number;
+  body: number;
+}

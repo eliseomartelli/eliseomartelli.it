@@ -1,7 +1,12 @@
 import { TextProcessor } from "./textProcessor";
-import { VectorBuilder, ContentWeights } from "./vectorBuilder";
+import { VectorBuilder } from "./vectorBuilder";
 import { VectorSimilarity } from "./vectorSimilarity";
-import { ScoredPost, EmbeddingSystemConfig, TfIdfVector } from "./types";
+import {
+  ScoredPost,
+  EmbeddingSystemConfig,
+  TfIdfVector,
+  ContentWeights,
+} from "./types";
 import { allPosts, Post } from "content-collections";
 
 export class BlogEmbeddingSystem {

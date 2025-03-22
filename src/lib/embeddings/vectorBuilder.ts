@@ -1,13 +1,6 @@
 import { Post } from "content-collections";
 import { TextProcessor } from "./textProcessor";
-import { TfIdfVector, TermFrequencyMap } from "./types";
-
-export interface ContentWeights {
-  title: number;
-  excerpt: number;
-  tags: number;
-  body: number;
-}
+import { TfIdfVector, TermFrequencyMap, ContentWeights } from "./types";
 
 export class VectorBuilder {
   private readonly textProcessor: TextProcessor;
