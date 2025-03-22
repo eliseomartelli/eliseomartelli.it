@@ -60,9 +60,7 @@ export default async function BlogSlugPage({
     notFound();
   }
 
-  const similarPosts = embeddingSystem
-    .getSimilarPosts(post.slug, 3)
-    .map(({ post }) => post);
+  const similarPosts = embeddingSystem.getSimilarPosts(post.slug, 3);
 
   return (
     <>
