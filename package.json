@@ -16,6 +16,7 @@
     "@radix-ui/react-slot": "^1.1.2",
     "@types/nodemailer": "^6.4.17",
     "@types/rss": "^0.0.32",
+    "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.483.0",

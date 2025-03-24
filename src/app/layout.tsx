@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toolbar } from "@/components/custom/toolbar";
 import { Footer } from "@/components/custom/footer";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({
         </main>
         <Toaster />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
