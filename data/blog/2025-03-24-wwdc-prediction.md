@@ -19,9 +19,9 @@ slightly each year and required a ticket.
 
 After checking out [this
 post](https://mastodon.social/@_Davidsmith/114218113961193279) where David
-Smith compiled a list of WWDC dates for past years, I thought:  
+Smith compiled a list of WWDC dates for past years, I thought:
 
-> *"Why not use machine learning to predict the next one?"*  
+> Why not use machine learning to predict the next one?
 
 So, I casually imported half the Python data science ecosystem and started
 working on this *marvelous* task.
