@@ -60,7 +60,7 @@ Since WWDC keynotes always happen on Mondays, I adjusted my predictions to
 prevent ridiculous results like “Sunday WWDC”, which would make Apple fans
 faint.
 
-```
+```py
 weekday_diff = (target_weekday - temp_date.weekday()) % 7
 if weekday_diff != 0:
     temp_date += timedelta(days=weekday_diff)
