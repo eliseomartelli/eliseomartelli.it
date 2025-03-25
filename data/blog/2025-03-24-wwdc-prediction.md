@@ -7,6 +7,16 @@ tags:
   - Misc
 ---
 
+## Update: March 25, 2025
+
+Guess what? Apple just dropped the news about the conference! Check it out:
+[Apple actually announced the
+conference!](https://www.apple.com/newsroom/2025/03/apples-worldwide-developers-conference-returns-the-week-of-june-9/)
+
+Oh, and by the way, the predicted announcement date was off by a week.
+
+---
+
 Hello my fellow Apple nerds, or, as Tim Cook would've said: "Good Morning."
 
 Today, I'm proud to present my completely unnecessary and unasked-for adventure
