@@ -99,6 +99,9 @@ Eliseo`,
         from: this.from,
         to: e.email,
         subject: title,
+        headers: {
+          "List-Unsubscribe": `<https://eliseomartelli.it/newsletter/unsub/${e.unsub}>`,
+        },
         html: `${html}
 <br />
 <a href="https://eliseomartelli.it/newsletter/unsub/${e.unsub}">unsubscribe</a>`,
