@@ -4,6 +4,7 @@ import Image from "next/image";
 import { LinkIcon } from "lucide-react";
 import { dateFormatter } from "@/lib/date-formatter";
 import { Card } from "../ui/card";
+import { CustomImage } from "../custom/custom-image";
 
 export function BaseToot({
   fallbackUrl,
@@ -50,7 +51,14 @@ export async function Toot({
             </div>
           </div>
         </Link>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="prose" dangerouslySetInnerHTML={{ __html: content }} />
+        {(media_attachments as { url: string; description: string }[]).map(
+          ({ url, description }, i) => (
+            <div key={i} className="w-full aspect-video">
+              <CustomImage src={url} alt={description} />
+            </div>
+          ),
+        )}
         <Link href={url}>
           <div className="flex justify-between items-center">
             <div>
