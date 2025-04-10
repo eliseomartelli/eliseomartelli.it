@@ -13,6 +13,10 @@ export async function generateStaticParams() {
   return allPosts.map(({ slug }) => ({ slug }));
 }
 
+const getRandomHex = (): string => {
+  return "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
+};
+
 export default async function Image({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
@@ -28,18 +32,17 @@ export default async function Image({ params }: { params: { slug: string } }) {
       tw="flex flex-col w-full h-full p-24 bg-stone-100 text-white"
       style={{
         background: `
-        linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        linear-gradient(to top left,${"#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)},${"#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)}),
-`,
+        linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
+        linear-gradient(to top left, ${getRandomHex()}, ${getRandomHex()}, ${getRandomHex()}, ${getRandomHex()})`,
       }}
     >
       <div tw="flex flex-col">
         <p tw="mt-0 text-2xl">{post.formattedDate}</p>
-        <h2 tw="text-6xl font-bold text-left tracking-tight max-w-2/3">
-          {post.title}
-        </h2>
-        <p tw="text-2xl max-w-1/2">{post.excerpt}</p>
-        <div tw="flex mt-8">
+        <h2 tw="text-7xl text-left tracking-tight">{post.title}</h2>
+        <p tw="text-3xl">{post.excerpt}</p>
+      </div>
+      <div tw="absolute bottom-0 flex flex-row items-center w-full justify-between ml-24 mb-12">
+        <div tw="flex">
           {post.tags.map((tag, i) => (
             <span
               key={i}
@@ -49,15 +52,14 @@ export default async function Image({ params }: { params: { slug: string } }) {
             </span>
           ))}
         </div>
-      </div>
-      <div tw="flex grow"></div>
-      <div tw="absolute flex flex-row items-center justify-end bottom-10 right-10">
-        <h1 tw="text-3xl mr-4 font-bold">Eliseo Martelli</h1>
-        <img
-          src="https://eliseomartelli.it/icon.png"
-          tw="w-24 ml-4"
-          alt="Logo"
-        />
+        <span tw="flex items-center">
+          <h1 tw="text-3xl mr-4 font-mono">Eliseo Martelli</h1>
+          <img
+            src="https://eliseomartelli.it/icon.png"
+            tw="w-18 ml-4"
+            alt="Logo"
+          />
+        </span>
       </div>
     </div>
   );
