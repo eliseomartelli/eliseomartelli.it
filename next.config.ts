@@ -24,7 +24,8 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "files.mastodon.social",
         port: "",
-        pathname: "*",
+        pathname: "**",
+        search: "",
       },
       {
         protocol: "https",
