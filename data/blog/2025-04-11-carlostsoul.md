@@ -23,8 +23,9 @@ an era.
 
 Today, during a conversation with my friend Roberto, I realized that I might
 not purchase another car if electric vehicles (EVs) become the sole option
-available. Over the past 15 years, EVs have gained significant traction on
-Italian roads, transforming the automotive landscape in Italy.
+available. Over the past 15 years, EVs, SUVs and crossovers have gained
+significant traction on Italian roads, transforming the automotive landscape in
+Italy.
 
 One notable shift is the decline of traditional car ownership. Instead,
 short-term leasing and subscription models have become more prevalent. This
