@@ -18,7 +18,7 @@ blog that truly resonates with me:
 > A blog in 2025 should be a destination. They don't just distribute — they
 > accumulate. They hold time, build presence, and concretise.
 
-This resonates with me at an opportune moment, as I’ve been writing more
+This resonates with me at an opportune moment, as I've been writing more
 frequently and gradually overcoming my fear of expressing my thoughts in
 public.
 
