@@ -56,7 +56,7 @@ room for the sovereigns and the Savoy court. The frescoes in the room symbolize
 the three essential elements required for the functioning of a steam engine:
 fire, water, and coal.
 
-To close off the week, yesterday I went to take a beer with
+To wrap up the week, yesterday I went to take a beer with
 [Francesco](https://nomnp.com), and we watched the compilation of a C++
 codebase. I also tried "Punt e Mes" for the first time, and I swear I taste
 sour cherries in it.
