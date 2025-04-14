@@ -22,7 +22,6 @@ This resonates with me at an opportune moment, as I've been writing more
 frequently and gradually overcoming my fear of expressing my thoughts in
 public.
 
-
 Cesare Nai — a friend of mine currently working on
 [Miraggio](https://miraggiomag.substack.com), a blog/newsletter
 built around interviews with photographers — and I had a conversation last
@@ -45,8 +44,8 @@ I finished reading Tamara Shopsin's "LaserWriter II", and I'm collecting some
 highlights from the book to write about it (it helps me to be mindful when
 reading).
 
-I also bought a new photo book in a street market titled "IL FOTOGIORNALISMO IN
-ITALIA - LINEE DI TENDENZA E PERCORSI."
+I also bought a new photo book in a street market titled "Il Fotogiornalismo in
+Italia - Linee di Tendenza e Percorsi."
 
 ![A picture of Sala Gonin](/posts/2025-04-14-updates-from-last-week/gonin.jpeg)
 
@@ -56,7 +55,18 @@ room for the sovereigns and the Savoy court. The frescoes in the room symbolize
 the three essential elements required for the functioning of a steam engine:
 fire, water, and coal.
 
+I also watched the F1 race this Sunday. I particularly enjoyed the duel between
+Charles Leclerc and Lando Norris. Penny is the reason I've been getting back
+into Formula 1. This was only the second race I’ve watched this season. The
+spark was reignited last September, on my birthday, during the 2024 Italian
+Grand Prix. As an Italian, I'm contractually obligated to be a Ferrari fan.
+
 To wrap up the week, yesterday I went to take a beer with
 [Francesco](https://nomnp.com), and we watched the compilation of a C++
-codebase. I also tried "Punt e Mes" for the first time, and I swear I taste
-sour cherries in it.
+codebase (yes, really). I also tried "Punt e Mes" for the first time, and I
+swear I taste sour cherries in it.
+
+Here are some reflections from the past week:
+- [Are we loosing the ability to do research?](/blog/2025-04-09-llms)
+- [I think I need to be bored](/blog/2025-04-10-wantboredom);
+- [Cars are extremely boring now](/blog/2025-04-11-carlostsoul).
