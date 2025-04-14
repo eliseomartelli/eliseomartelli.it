@@ -35,11 +35,8 @@ apps. Not because I'm unwilling to try — but mostly because I'm "me". I have m
 quirks, and I'm not convinced six pictures and three prompts are enough to
 convey them. That's probably why those platforms don't really work for me.
 
-While talking to my friend Elisa, I observed that I find it difficult to use
-dating sites, not because I’m not willing to try, but mostly because I’m "me".
-I have my quirks, and 6 pictures and 3 prompts surely don't help "selling" what
-I truly am.  
-Hence why, I think that the mechanics of those platforms are not for me.
+Still, I'm in a phase where I want to meet more people, so I'm leaving that
+door open for now.
 
 I don't know if I will close this experiment soon, since I'm currently in the
 mood to meet more people.
