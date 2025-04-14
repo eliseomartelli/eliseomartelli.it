@@ -15,7 +15,7 @@ Today, I came across this excerpt from
 [thejaymo.net](https://thejaymo.net/2025/04/10/marking-the-occasion-100425/)'s
 blog that truly resonates with me:
 
-> A blog in 2025 should be a destination. They don’t just distribute — they
+> A blog in 2025 should be a destination. They don't just distribute — they
 > accumulate. They hold time, build presence, and concretise.
 
 This resonates with me at an opportune moment, as I’ve been writing more
