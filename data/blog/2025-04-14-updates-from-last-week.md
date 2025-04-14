@@ -12,7 +12,7 @@ I've found myself reading more and more articles and subscribing to more RSS
 feeds, this also makes me feel more connected to the indie web.
 
 Today, I came across this excerpt from
-[thejaymo.net](https://thejaymo.net/2025/04/10/marking-the-occasion-100425/)’s
+[thejaymo.net](https://thejaymo.net/2025/04/10/marking-the-occasion-100425/)'s
 blog that truly resonates with me:
 
 > A blog in 2025 should be a destination. They don’t just distribute — they
