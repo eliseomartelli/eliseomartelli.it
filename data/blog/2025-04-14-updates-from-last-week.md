@@ -50,7 +50,7 @@ ITALIA - LINEE DI TENDENZA E PERCORSI."
 
 ![A picture of Sala Gonin](/posts/2025-04-14-updates-from-last-week/gonin.jpeg)
 
-During the weekend, I visited Sala Gonin, a Baroque architectural room located
+Over the weekend, I visited Sala Gonin, a Baroque architectural room located
 on the ground floor of the Torino Porta Nuova station. Once used as a waiting
 room for the sovereigns and the Savoy court. The frescoes in the room symbolize
 the three essential elements required for the functioning of a steam engine:
