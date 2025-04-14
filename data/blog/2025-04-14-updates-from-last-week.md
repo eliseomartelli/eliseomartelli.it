@@ -45,7 +45,7 @@ I finished reading Tamara Shopsin's "LaserWriter II", and I'm collecting some
 highlights from the book to write about it (it helps me to be mindful when
 reading).
 
-I bought a new photo book in a street market titled "IL FOTOGIORNALISMO IN
+I also bought a new photo book in a street market titled "IL FOTOGIORNALISMO IN
 ITALIA - LINEE DI TENDENZA E PERCORSI."
 
 ![A picture of Sala Gonin](/posts/2025-04-14-updates-from-last-week/gonin.jpeg)
