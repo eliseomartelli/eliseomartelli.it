@@ -23,9 +23,17 @@ frequently and gradually overcoming my fear of expressing my thoughts in
 public.
 
 
-We both simultaneously realized, at a distance of about 100 kilometers, that
-our pursuit of perfection in every aspect of our lives has unfortunately
-diminished our enjoyment of doing things.
+Cesare Nai — a friend of mine currently working on
+[Miraggio](https://miraggiomag.substack.com), a blog/newsletter
+built around interviews with photographers — and I had a conversation last
+Saturday. Despite the 100 kilometers between us, we simultaneously realized
+that our pursuit of perfection in every area of life has been chipping away at
+the joy of simply doing things.
+
+While talking with my friend Elisa, I admitted that I struggle with dating
+apps. Not because I'm unwilling to try — but mostly because I'm "me". I have my
+quirks, and I'm not convinced six pictures and three prompts are enough to
+convey them. That's probably why those platforms don't really work for me.
 
 While talking to my friend Elisa, I observed that I find it difficult to use
 dating sites, not because I’m not willing to try, but mostly because I’m "me".
