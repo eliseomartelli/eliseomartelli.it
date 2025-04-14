@@ -22,9 +22,6 @@ This resonates with me at an opportune moment, as I've been writing more
 frequently and gradually overcoming my fear of expressing my thoughts in
 public.
 
-Last Saturday, I had a pleasant conversation with a friend of mine, Cesare Nai,
-who is currently working on [Miraggio](https://miraggiomag.substack.com), a
-blog/newsletter created through a series of interviews with photographers.
 
 We both simultaneously realized, at a distance of about 100 kilometers, that
 our pursuit of perfection in every aspect of our lives has unfortunately
