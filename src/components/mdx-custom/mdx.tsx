@@ -9,7 +9,7 @@ import { CarouselPage, HorizontalCarousel } from "./photos";
 import { Photo } from "./photo";
 import { Product } from "./product";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
-import { Image } from "next/image";
+import Image from "next/image";
 
 type Props = MDXContentProps & {
   code: string;
