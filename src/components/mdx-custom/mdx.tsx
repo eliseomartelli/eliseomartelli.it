@@ -6,10 +6,9 @@ import { Toot } from "./toot";
 import { Timeline, TimelineItem } from "@/components/mdx-custom/timeline";
 import { YouTube } from "./youtube";
 import { CarouselPage, HorizontalCarousel } from "./photos";
-import { Photo } from "./photo";
-import { Product } from "./product";
+import { BasePhoto } from "./photo";
+import { BaseProduct } from "./product";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
-import Image from "next/image";
 
 type Props = MDXContentProps & {
   code: string;
@@ -20,6 +19,8 @@ const BaseToot = dynamic(() =>
 );
 
 const BaseComponents = {
+  Photo: BasePhoto,
+  Product: BaseProduct,
   Toot: BaseToot,
   YouTube,
 };
@@ -32,9 +33,6 @@ export const CustomMdx = (props: Props) => {
         AffiliateDisclosure,
         CarouselPage,
         HorizontalCarousel,
-        Image,
-        Photo,
-        Product,
         Timeline,
         TimelineItem,
         Toot,
