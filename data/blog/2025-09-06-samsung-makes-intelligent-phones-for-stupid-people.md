@@ -27,7 +27,7 @@ creativity is, in my opinion, harmful.
 I think that Samsung should focus more on their core experiences, and less on
 bulking up their phones with features no one asked for.
 
-One example of their core interactions that went bad? Sharing a contact to
+One example of their core interactions that went bad? Sharing a contact to
 WhatsApp.
 
 I open the Phone app, select the contact I want to share, and tap on
