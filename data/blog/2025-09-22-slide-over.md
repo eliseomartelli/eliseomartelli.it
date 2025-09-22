@@ -19,7 +19,7 @@ Apple’s replacement is a full-blown windowing system. Apps now live inside res
 
 It’s undeniable that today’s system is more flexible. The iPad can now approximate a laptop experience. But this flexibility comes at a cost.
 
-Slide Over. It wasn’t a fundamental experience of many that used the iPad.  It enabled fast, temporary multitasking, apps lived on the edge of the display, allowing us to peek, act and then dismiss.
+Slide Over. It was a fundamental experience of many that used the iPad.  It enabled fast, temporary multitasking, apps lived on the edge of the display, allowing us to peek, act and then dismiss.
 
 That workflow was instant, that simplicity was at home on a touchscreen device.
 
