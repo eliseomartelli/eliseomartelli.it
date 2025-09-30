@@ -28,6 +28,7 @@ export class TextProcessor {
       .slice(0, this.maxTextLength)
       .toLowerCase()
       .replace(/[^\w\s]/g, " ")
+      .replace(/\d+/g, " ")
       .split(/\s+/);
 
     return normalizedText
