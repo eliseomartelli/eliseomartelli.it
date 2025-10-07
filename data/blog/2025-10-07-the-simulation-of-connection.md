@@ -35,7 +35,7 @@ were to eliminate the experience of living itself. Friction is treated as an
 obstacle to be optimized away. But friction is also what gives texture to
 experience. The effort, the waiting, these are not bugs in the human condition.
 They're _THE_ features.
-O
+
 When platforms like Spotify talk about "connecting fans with artists," they're
 not selling music. They're selling *the feeling of intimacy*. The same way
 social media sells the *feeling of community* or dating apps sell the *feeling
