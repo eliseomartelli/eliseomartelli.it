@@ -4,9 +4,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <article className="prose">
-      <div className="w-full h-96">
-        <CustomImage src="/me.jpeg" alt="A picture of Eliseo Martelli" />
-      </div>
       <p>
         I&apos;m <b>Eliseo Martelli</b>, a Software Developer & Visual Artist
         based in Turin, Italy.
