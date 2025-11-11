@@ -1,8 +1,9 @@
 import { NewsletterEntry } from "@/types/newsletterentry";
 import { NextResponse } from "next/server";
 import { newsletterService } from "../common";
+import { withApiGuard } from "@/lib/api-guard";
 
-export async function POST(req: Request) {
+export const POST = withApiGuard(async function POST(req: Request) {
   try {
     const body = await req.json();
     const parsed = NewsletterEntry.parse(body);
@@ -17,4 +18,4 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
-}
+});

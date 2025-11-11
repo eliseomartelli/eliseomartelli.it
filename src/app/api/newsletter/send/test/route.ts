@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { newsletterService } from "../../common";
+import { withApiGuard } from "@/lib/api-guard";
 
-export async function GET(request: Request) {
+export const GET = withApiGuard(async function GET(request: Request) {
   const authHeader = request.headers.get("authorization");
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
     return new Response("Unauthorized", {
@@ -20,4 +21,4 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
-}
+});

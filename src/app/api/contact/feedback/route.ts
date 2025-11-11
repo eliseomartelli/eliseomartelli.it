@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { contactService } from "@/app/api/contact/common";
 import { Feedback } from "@/types/feedback";
+import { withApiGuard } from "@/lib/api-guard";
 
-export async function POST(req: Request) {
+export const POST = withApiGuard(async function POST(req: Request) {
   try {
     const body = await req.json();
     const parsed = Feedback.parse(body);
@@ -17,4 +18,4 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
-}
+});
