@@ -9,6 +9,7 @@ import { CarouselPage, HorizontalCarousel } from "./photos";
 import { BasePhoto } from "./photo";
 import { BaseProduct } from "./product";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
+import { InlineFilmCalculator } from "./film-calculator";
 
 type Props = MDXContentProps & {
   code: string;
@@ -23,6 +24,7 @@ const BaseComponents = {
   Product: BaseProduct,
   Toot: BaseToot,
   YouTube,
+  FilmCalculator: InlineFilmCalculator,
 };
 export const CustomMdx = (props: Props) => {
   return (

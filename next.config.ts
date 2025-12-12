@@ -4,6 +4,7 @@ const isDocker = process.env.IS_DOCKER === "true";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  transpilePackages: ["next-mdx-remote"],
   output: isDocker ? "standalone" : undefined,
   images: {
     remotePatterns: [

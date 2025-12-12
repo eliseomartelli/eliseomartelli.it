@@ -4,6 +4,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { calculateFilmTime } from "@/lib/film";
 import { minutesToHHMMSS } from "@/lib/time";
 import { useMemo, useState } from "react";
 
@@ -18,15 +19,13 @@ export function FilmCalculator() {
   const calculatedTime = useMemo(() => {
     const baseTimeSeconds = initialMinutes * 60 + initialSeconds;
 
-    const tempDiff = initialTemp - newTemp;
-    const tempFactor = Math.pow(1.1, tempDiff);
-
-    const pushPullFactor = Math.pow(1.5, pushPull);
-
-    const agitationFactor = constantAgitation ? 0.9 : 1.0;
-
-    const finalTimeSeconds =
-      baseTimeSeconds * tempFactor * pushPullFactor * agitationFactor;
+    const finalTimeSeconds = calculateFilmTime(
+      baseTimeSeconds,
+      initialTemp,
+      newTemp,
+      pushPull,
+      constantAgitation,
+    );
 
     return minutesToHHMMSS(finalTimeSeconds / 60);
   }, [
