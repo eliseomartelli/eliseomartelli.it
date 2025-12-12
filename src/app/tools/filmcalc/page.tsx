@@ -7,6 +7,12 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
+export const metadata = {
+  title: "Film Development Calculator",
+  description:
+    "Calculate development times with push/pull and temperature adjustments.",
+};
+
 export default function FilmCalc() {
   return (
     <div>
@@ -37,4 +43,3 @@ export default function FilmCalc() {
     </div>
   );
 }
-

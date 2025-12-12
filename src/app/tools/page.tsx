@@ -7,6 +7,11 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Tools",
+  description: "Useful tools.",
+};
+
 export default function Tools() {
   return (
     <div>

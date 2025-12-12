@@ -23,7 +23,7 @@ export function FilmCalculator() {
 
     const pushPullFactor = Math.pow(1.5, pushPull);
 
-    const agitationFactor = constantAgitation ? 0.95 : 1.0;
+    const agitationFactor = constantAgitation ? 0.9 : 1.0;
 
     const finalTimeSeconds =
       baseTimeSeconds * tempFactor * pushPullFactor * agitationFactor;
@@ -167,7 +167,7 @@ export function FilmCalculator() {
       </section>
       <p className="text-sm text-center text-gray-500 mt-4">
         Temperature compensation uses the Ilford factor (~10% per °C). Push/pull
-        adjusts time by 50% per stop. Constant agitation reduces time by 5%.
+        adjusts time by 50% per stop. Constant agitation reduces time by 10%.
       </p>
     </div>
   );
