@@ -26,6 +26,9 @@ export const Footer = () => {
         <Button variant="link" asChild className="basis-1/2 justify-start">
           <Link href="/contact">Contact</Link>
         </Button>
+        <Button variant="link" asChild className="basis-1/2 justify-start">
+          <Link href="/tools">Tools</Link>
+        </Button>
       </div>
       <div className="w-full max-w-prose mx-auto px-4">
         © 2015 - {new Date().getFullYear()} - Eliseo Martelli

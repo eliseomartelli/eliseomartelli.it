@@ -48,7 +48,7 @@ export function InlineFilmCalculator({
 
   return (
     <div className="my-8 rounded-lg border bg-card text-card-foreground shadow-sm p-6 space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 -mt-4 -mb-2">
         <div>
           <h3 className="font-semibold leading-none tracking-tight">
             {name || "Development Time"}
@@ -79,7 +79,7 @@ export function InlineFilmCalculator({
       </div>
 
       {showControls && (
-        <div className="space-y-4 pt-4 border-t">
+        <div className="space-y-4 pt-4 border-t mt-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="measured-temp">Measured Temp (°C)</Label>
@@ -134,3 +134,4 @@ export function InlineFilmCalculator({
     </div>
   );
 }
+
