@@ -1,4 +1,3 @@
-import { CustomImage } from "@/components/custom/custom-image";
 import Link from "next/link";
 
 export default function Home() {
