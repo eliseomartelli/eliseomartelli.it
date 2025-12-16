@@ -1,11 +1,12 @@
 ---
-title: Apple, how is this legible?
+title: "Apple, how is this legible?"
 date: "2025-10-09 09:39:00"
-excerpt: ""
+excerpt: "Today I was using Apple Podcasts on my iPhone, and I noticed something that made me do a double take. The text in the player, in the section where you ca..."
 tags:
   - Apple
   - Short
 ---
+
 
 Today I was using Apple Podcasts on my iPhone, and I noticed something that
 made me do a double take. The text in the player, in the section where you ca 

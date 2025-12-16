@@ -1,10 +1,11 @@
 ---
 title: "Built and deployed a newsletter in an afternoon"
-date: 2023-12-02 00:00
-excerpt: ""
+date: "2023-12-02 00:00"
+excerpt: "If you are a long-time reader of this blog, you might remember I already had a newsletter. It was built upon Revue. Revue was a platform that allowed users to..."
 tags:
   - Programming
 ---
+
 
 If you are a long-time reader of this blog, you might remember I already had
 a newsletter. It was built upon Revue.
