@@ -15,7 +15,18 @@ export interface NavigationLinkProps {
 
 const NavigationLink = React.forwardRef<HTMLAnchorElement, NavigationLinkProps>(
   ({ className, toUnderline = true, ...props }, ref) => {
-    const underline = usePathname() === props.href && toUnderline;
+    const pathname = usePathname();
+    let underline = false;
+
+    if (props.href === "/") {
+      underline = pathname === "/";
+    } else {
+      underline =
+        pathname.startsWith(props.href) &&
+        (pathname.length === props.href.length ||
+          pathname.charAt(props.href.length) === "/");
+    }
+    underline = underline && toUnderline;
     return (
       <Button asChild variant="ghost">
         <Link
