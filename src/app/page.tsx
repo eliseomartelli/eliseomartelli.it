@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <article className="prose">
       <p>
-        I&apos;m <b>Eliseo Martelli</b>, a Software Developer & Visual Artist
+        I&apos;m <b>Eliseo Martelli</b>, a Software Developer & Photographer
         based in Turin, Italy.
       </p>
       <p>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: "Eliseo Martelli",
     template: "%s | Eliseo Martelli",
   },
-  description: "Software Developer & Visual Artist based in Turin, Italy.",
+  description: "Software Developer & Photographer based in Turin, Italy.",
 };
 
 export default function RootLayout({
