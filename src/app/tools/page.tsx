@@ -38,6 +38,13 @@ export default function Tools() {
                 adjustments.
               </span>
             </li>
+            <li>
+              <Link href="/tools/dilution">Dilution Calculator</Link>
+              <br />
+              <span className="text-muted-foreground">
+                Calculate chemical and water volumes for photographic solutions.
+              </span>
+            </li>
           </ul>
         </article>
       </section>
