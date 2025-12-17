@@ -6,7 +6,7 @@ import { Toot } from "./toot";
 import { Timeline, TimelineItem } from "@/components/mdx-custom/timeline";
 import { YouTube } from "./youtube";
 import { CarouselPage, HorizontalCarousel } from "./photos";
-import { BasePhoto } from "./photo";
+import { Photo } from "./photo";
 import { BaseProduct } from "./product";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { InlineFilmCalculator } from "./film-calculator";
@@ -20,7 +20,7 @@ const BaseToot = dynamic(() =>
 );
 
 const BaseComponents = {
-  Photo: BasePhoto,
+  Photo: Photo,
   Product: BaseProduct,
   Toot: BaseToot,
   YouTube,
