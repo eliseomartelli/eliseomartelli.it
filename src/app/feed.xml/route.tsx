@@ -34,7 +34,23 @@ export async function GET() {
           </i>
           <p>Tagline: {post.excerpt}</p>
           <hr />
-          <CustomMdx code={post.mdx} />
+          <CustomMdx
+            code={post.mdx}
+            components={{
+              FilmCalculator: (props: {
+                step?: string;
+                time?: string;
+                temp?: number;
+              }) => (
+                <div>
+                  <h3>{props.step}</h3>
+                  <p>
+                    {props.time} @ {props.temp ?? 20}°C
+                  </p>
+                </div>
+              ),
+            }}
+          />
         </>,
       ),
       categories: post.tags,

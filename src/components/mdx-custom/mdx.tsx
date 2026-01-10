@@ -26,6 +26,7 @@ const BaseComponents = {
   YouTube,
   FilmCalculator: InlineFilmCalculator,
 };
+
 export const CustomMdx = (props: Props) => {
   return (
     <MDXContent
@@ -38,6 +39,7 @@ export const CustomMdx = (props: Props) => {
         Timeline,
         TimelineItem,
         Toot,
+        ...(props.components || {}),
       }}
     />
   );
