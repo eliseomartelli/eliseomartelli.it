@@ -1,5 +1,6 @@
 import { allSortedPosts } from "@/lib/sortedPosts";
 import { CustomMdx } from "@/components/mdx-custom/mdx";
+import { StaticFilmCalculator } from "@/components/mdx-custom/static-film-calculator";
 import RSS from "rss";
 
 export async function GET() {
@@ -37,18 +38,7 @@ export async function GET() {
           <CustomMdx
             code={post.mdx}
             components={{
-              FilmCalculator: (props: {
-                step?: string;
-                time?: string;
-                temp?: number;
-              }) => (
-                <div>
-                  <h3>{props.step}</h3>
-                  <p>
-                    {props.time} @ {props.temp ?? 20}°C
-                  </p>
-                </div>
-              ),
+              FilmCalculator: StaticFilmCalculator,
             }}
           />
         </>,
