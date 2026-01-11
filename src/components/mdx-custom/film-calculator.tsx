@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateFilmTime } from "@/lib/film";
-import { minutesToHHMMSS } from "@/lib/time";
+import { minutesToHHMMSS, parseTime } from "@/lib/time";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LinkIcon, ChevronDown, ChevronUp } from "lucide-react";
@@ -32,9 +32,7 @@ export function InlineFilmCalculator({
   agitation,
 }: InlineFilmCalculatorProps) {
   const [baseMinutes, baseSeconds] = useMemo(() => {
-    if (typeof time === "number") return [time, 0];
-    const [m, s] = time.split(":").map(Number);
-    return [m, s || 0];
+    return parseTime(time);
   }, [time]);
 
   const [measuredTemp, setMeasuredTemp] = useState<number>(temp);

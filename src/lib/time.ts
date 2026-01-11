@@ -13,3 +13,9 @@ export const minutesToHHMMSS = (totalMinutes: number) => {
 
   return `${hh}:${mm}:${ss}`;
 };
+
+export const parseTime = (time: string | number): [number, number] => {
+  if (typeof time === "number") return [time, 0];
+  const [m, s] = time.split(":").map(Number);
+  return [m, s || 0];
+};
