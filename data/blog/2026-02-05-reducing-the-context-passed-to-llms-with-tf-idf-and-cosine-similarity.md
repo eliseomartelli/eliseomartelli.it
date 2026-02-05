@@ -14,9 +14,9 @@ is hiding, but finding it is a chore.
 
 At work, we've been building `AI-Harness` (part of the broader `Rebel`
 ecosystem), a tool designed to autonomously fix these build failures. While
-`Rebel` acts as a reproducible environment manager for bioinformatics—handling
-the mess of `apt`, `conda`, and `pip` dependencies—`AI-Harness` is the "self-healing" 
-layer. 
+`Rebel` acts as a reproducible environment manager for bioinformatics, handling
+the mess of `apt`, `conda`, and `pip` dependencies—, AI-Harness` is the
+"self-healing" layer. 
 
 Our immediate goal was to seed a database of missing dependencies: essentially
 mapping specific compiler or linker error messages to the exact system packages
