@@ -51,5 +51,5 @@ when I push a tag, the workflow creates a GitHub Release with the PDF attached.
 This setup ensures that I always have a "production-ready" version of my CV
 available at a stable URL. No more "CV_final_v2_new.pdf" files floating around.
 
-If you're looking for a developer who treats everything—even his resume—with
+If you're looking for a developer who treats everything, even his resume, with
 the rigor of a production system, [let's talk](mailto:me@eliseomartelli.it).
