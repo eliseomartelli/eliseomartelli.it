@@ -30,7 +30,7 @@ clock. It's a Dieter Rams masterpiece. It follows the "Less, but better"
 philosophy that modern tech seems to have forgotten. It does one thing, and it
 does it with absolute clarity.
 
-So, I wrote [bc03](https://github.com/eliseomartelli/bc03).
+So, I wrote [bc03-r36s](https://github.com/eliseomartelli/bc03-r36s).
 
 When I started building this, the obvious path was to use PNGs for the face and
 the hands. But that felt like cheating. A Braun-inspired tool should be
@@ -87,3 +87,5 @@ hand moves as the seconds pass.
 
 The project has four themes (Stealth, Classic, Contrast, and Nightstand), all
 keeping the iconic yellow second hand.
+
+Download the latest release from the [GitHub repo](https://github.com/eliseomartelli/bc03-r36s/releases).
