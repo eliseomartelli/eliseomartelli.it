@@ -10,6 +10,7 @@ import { Photo } from "./photo";
 import { BaseProduct } from "./product";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { InlineFilmCalculator } from "./film-calculator";
+import { ClickableImage } from "./image-lightbox";
 
 type Props = MDXContentProps & {
   code: string;
@@ -39,6 +40,7 @@ export const CustomMdx = (props: Props) => {
         Timeline,
         TimelineItem,
         Toot,
+        img: (props) => <ClickableImage src={props.src!} alt={props.alt || ""} />,
         ...(props.components || {}),
       }}
     />
