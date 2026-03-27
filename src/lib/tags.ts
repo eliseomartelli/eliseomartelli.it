@@ -3,6 +3,7 @@ export const PostTags = {
   ansible: "Ansible",
   apple: "Apple",
   automation: "Automation",
+  gear: "Gear",
   iot: "IoT",
   misc: "Misc",
   music: "Music",

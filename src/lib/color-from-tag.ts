@@ -18,6 +18,8 @@ export const colorClassFromPostTag = (tagString: string): string => {
         return "bg-orange-50 border-orange-300 text-orange-800 hover:bg-orange-100!";
       case "Automation":
         return "bg-green-50 border-green-300 text-green-800 hover:bg-green-100!";
+      case "Gear":
+        return "bg-zinc-50 border-zinc-300 text-zinc-800 hover:bg-zinc-100!";
       case "Photography":
         return "bg-indigo-50 border-indigo-300 text-indigo-800 hover:bg-indigo-100!";
       case "Programming":

@@ -11,6 +11,9 @@ import { BaseProduct } from "./product";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { InlineFilmCalculator } from "./film-calculator";
 import { ClickableImage } from "./image-lightbox";
+import { LensSpec } from "./lens-spec";
+import { RatingBar } from "./rating-bar";
+import { ProsCons } from "./pros-cons";
 
 type Props = MDXContentProps & {
   code: string;
@@ -26,6 +29,9 @@ const BaseComponents = {
   Toot: BaseToot,
   YouTube,
   FilmCalculator: InlineFilmCalculator,
+  LensSpec,
+  RatingBar,
+  ProsCons,
 };
 
 export const CustomMdx = (props: Props) => {
