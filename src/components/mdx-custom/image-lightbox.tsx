@@ -16,9 +16,22 @@ export const Lightbox = ({ src, alt, onClose }: LightboxProps) => {
   const dragging = useRef(false);
   const dragStart = useRef({ x: 0, y: 0 });
   const panStart = useRef({ x: 0, y: 0 });
+  const pinchStartDistance = useRef<number | null>(null);
+  const pinchStartZoom = useRef(1);
+  const panRef = useRef(pan);
+  const zoomRef = useRef(zoom);
   const overlayRef = useRef<HTMLDivElement>(null);
 
+  panRef.current = pan;
+  zoomRef.current = zoom;
+
   const clampZoom = (val: number) => Math.min(4, Math.max(0.5, val));
+
+  const getTouchDistance = (t1: Touch, t2: Touch) => {
+    const dx = t1.clientX - t2.clientX;
+    const dy = t1.clientY - t2.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  };
 
   useEffect(() => {
     const el = overlayRef.current;
@@ -30,6 +43,58 @@ export const Lightbox = ({ src, alt, onClose }: LightboxProps) => {
     el.addEventListener("wheel", handler, { passive: false });
     return () => el.removeEventListener("wheel", handler);
   }, []);
+
+  useEffect(() => {
+    const el = overlayRef.current;
+    if (!el) return;
+
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length === 1) {
+        dragging.current = true;
+        dragStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        panStart.current = panRef.current;
+        pinchStartDistance.current = null;
+      } else if (e.touches.length === 2) {
+        dragging.current = false;
+        pinchStartDistance.current = getTouchDistance(e.touches[0], e.touches[1]);
+        pinchStartZoom.current = zoomRef.current;
+      }
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      if (e.touches.length === 1 && dragging.current) {
+        setPan({
+          x: panStart.current.x + (e.touches[0].clientX - dragStart.current.x),
+          y: panStart.current.y + (e.touches[0].clientY - dragStart.current.y),
+        });
+      } else if (e.touches.length === 2 && pinchStartDistance.current !== null) {
+        const newDist = getTouchDistance(e.touches[0], e.touches[1]);
+        setZoom(clampZoom(pinchStartZoom.current * (newDist / pinchStartDistance.current)));
+      }
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      if (e.touches.length === 0 && e.changedTouches.length > 0) {
+        const dx = Math.abs(e.changedTouches[0].clientX - dragStart.current.x);
+        const dy = Math.abs(e.changedTouches[0].clientY - dragStart.current.y);
+        if (dragging.current && dx < 8 && dy < 8 && e.target === overlayRef.current) {
+          onClose();
+        }
+        dragging.current = false;
+        pinchStartDistance.current = null;
+      }
+    };
+
+    el.addEventListener("touchstart", onTouchStart, { passive: false });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd, { passive: false });
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [onClose]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
