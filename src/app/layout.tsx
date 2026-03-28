@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased flex flex-col min-h-screen w-full overflow-x-hidden">
         <Toolbar />
-        <main className="max-w-prose w-full mx-auto p-4 flex-1 space-y-6 mb-8">
+        <main className="max-w-prose w-full mx-auto p-4 flex-1 space-y-6 mb-8 pt-20">
           {children}
         </main>
         <Toaster />

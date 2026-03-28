@@ -28,9 +28,9 @@ const NavigationLink = React.forwardRef<HTMLAnchorElement, NavigationLinkProps>(
     }
     underline = underline && toUnderline;
     return (
-      <Button asChild variant="ghost">
+      <Button asChild variant="ghost" className="rounded-full">
         <Link
-          className={cn(className, underline && "underline", "rounded")}
+          className={cn(className, underline && "underline", "rounded-full")}
           {...props}
           ref={ref}
         ></Link>
