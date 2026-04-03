@@ -1,6 +1,17 @@
 import { allSortedPosts } from "@/lib/sortedPosts";
 import { CustomMdx } from "@/components/mdx-custom/mdx";
 import { StaticFilmCalculator } from "@/components/mdx-custom/static-film-calculator";
+import { StaticImage } from "@/components/mdx-custom/static-image";
+import { StaticPhoto } from "@/components/mdx-custom/static-photo";
+import { YouTube } from "@/components/mdx-custom/youtube";
+import { BaseToot } from "@/components/mdx-custom/toot";
+import { Timeline, TimelineItem } from "@/components/mdx-custom/timeline";
+import { BaseProduct } from "@/components/mdx-custom/product";
+import { AffiliateDisclosure } from "@/components/mdx-custom/affiliate-disclosure";
+import { CarouselPage, HorizontalCarousel } from "@/components/mdx-custom/photos";
+import { LensSpec } from "@/components/mdx-custom/lens-spec";
+import { RatingBar } from "@/components/mdx-custom/rating-bar";
+import { ProsCons } from "@/components/mdx-custom/pros-cons";
 import RSS from "rss";
 
 export async function GET() {
@@ -38,7 +49,26 @@ export async function GET() {
           <CustomMdx
             code={post.mdx}
             components={{
+              Photo: StaticPhoto,
+              Product: BaseProduct,
+              Toot: BaseToot,
+              YouTube,
               FilmCalculator: StaticFilmCalculator,
+              LensSpec,
+              RatingBar,
+              ProsCons,
+              AffiliateDisclosure,
+              CarouselPage,
+              HorizontalCarousel,
+              Timeline,
+              TimelineItem,
+              img: (props) => (
+                <StaticImage
+                  src={props.src!}
+                  alt={props.alt || ""}
+                  className={props.className}
+                />
+              ),
             }}
           />
         </>,
