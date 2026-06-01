@@ -1,0 +1,25 @@
+[
+  {
+    "title": "RCE Foto",
+    "url": "https://www.rcefoto.com",
+    "description": "5% off",
+    "coupon": "Martelli5"
+  },
+  {
+    "title": "Thypoch",
+    "url": "https://store.thypoch.com/?ref=eliseomartelli",
+    "description": "5% off",
+    "coupon": "ELISEOMARTELLI"
+  },
+  {
+    "title": "Light Lens Lab",
+    "url": "https://lightlenslab.com/discount/ELISEOMARTELLI?ref=eliseomartelli",
+    "description": "5% off",
+    "coupon": "ELISEOMARTELLI"
+  },
+  {
+    "title": "Mandler",
+    "url": "https://mandler.shop/eliseomartelli",
+    "description": "5% off"
+  }
+]
