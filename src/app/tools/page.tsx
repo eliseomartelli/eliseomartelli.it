@@ -45,6 +45,16 @@ export default function Tools() {
                 Calculate chemical and water volumes for photographic solutions.
               </span>
             </li>
+            <li>
+              <Link href="/tools/print-layout">
+                Darkroom Print Layout Generator
+              </Link>
+              <br />
+              <span className="text-muted-foreground">
+                Calculate the geometric layout for darkroom prints and export a
+                1:1 scaled PDF.
+              </span>
+            </li>
           </ul>
         </article>
       </section>
