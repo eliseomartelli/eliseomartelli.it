@@ -25,7 +25,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Download, Settings2, Info, AlertTriangle } from "lucide-react";
+import { Download, Settings2, Info, AlertTriangle, ArrowRightLeft } from "lucide-react";
 import jsPDF from "jspdf";
 
 const PAPER_SIZES = {
@@ -49,6 +49,194 @@ const convertToMm = (value: number, unit: Unit): number => {
       return value;
   }
 };
+
+interface ParamsFormProps {
+  layout: {
+    tW: number;
+    tH: number;
+    pW: number;
+    pH: number;
+    imgW: number;
+    imgH: number;
+    warnings: string[];
+  };
+  targetSize: PaperSize;
+  setTargetSize: (size: PaperSize) => void;
+  customTarget: { width: number; height: number };
+  setCustomTarget: (target: { width: number; height: number }) => void;
+  targetOrientation: "portrait" | "landscape";
+  setTargetOrientation: (o: "portrait" | "landscape") => void;
+  printSheet: { width: number; height: number; unit: Unit };
+  setPrintSheet: (s: { width: number; height: number; unit: Unit }) => void;
+  printOrientation: "portrait" | "landscape";
+  setPrintOrientation: (o: "portrait" | "landscape") => void;
+  imageRatio: { width: number; height: number };
+  setImageRatio: (r: { width: number; height: number }) => void;
+  margin: number;
+  setMargin: (m: number) => void;
+  handleExportPdf: () => void;
+}
+
+const ParamsForm = ({
+  layout,
+  targetSize,
+  setTargetSize,
+  customTarget,
+  setCustomTarget,
+  targetOrientation,
+  setTargetOrientation,
+  printSheet,
+  setPrintSheet,
+  printOrientation,
+  setPrintOrientation,
+  imageRatio,
+  setImageRatio,
+  margin,
+  setMargin,
+  handleExportPdf,
+}: ParamsFormProps) => (
+  <div className="space-y-6">
+    <div className="space-y-4">
+      <div className="flex items-center justify-between border-b pb-1">
+        <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Target Output Sheet</h3>
+        <button
+          className="h-6 w-6 inline-flex items-center justify-center rounded-md hover:bg-muted transition-colors"
+          onClick={() => {
+            if (targetSize === "Custom") {
+              setCustomTarget({ width: customTarget.height, height: customTarget.width });
+            }
+            setTargetOrientation(targetOrientation === "portrait" ? "landscape" : "portrait");
+          }}
+        >
+          <ArrowRightLeft className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="grid gap-4">
+        <div className="space-y-2">
+          <Label>Size</Label>
+          <Select value={targetSize} onValueChange={(v: PaperSize) => setTargetSize(v)}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.keys(PAPER_SIZES).map((size) => (
+                <SelectItem key={size} value={size}>{size}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <Button variant={targetOrientation === "portrait" ? "default" : "outline"} size="sm" onClick={() => setTargetOrientation("portrait")}>Portrait</Button>
+          <Button variant={targetOrientation === "landscape" ? "default" : "outline"} size="sm" onClick={() => setTargetOrientation("landscape")}>Landscape</Button>
+        </div>
+        {targetSize === "Custom" && (
+          <div className="grid grid-cols-2 gap-2">
+            <div className="space-y-1">
+              <Label className="text-xs">Width (mm)</Label>
+              <Input type="number" value={customTarget.width} onChange={(e) => setCustomTarget({ ...customTarget, width: Number(e.target.value) })} />
+            </div>
+            <div className="space-y-1">
+              <Label className="text-xs">Height (mm)</Label>
+              <Input type="number" value={customTarget.height} onChange={(e) => setCustomTarget({ ...customTarget, height: Number(e.target.value) })} />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <div className="space-y-4">
+      <div className="flex items-center justify-between border-b pb-1">
+        <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Printing Sheet</h3>
+        <button
+          className="h-6 w-6 inline-flex items-center justify-center rounded-md hover:bg-muted transition-colors"
+          onClick={() => {
+            setPrintSheet({ ...printSheet, width: printSheet.height, height: printSheet.width });
+            setPrintOrientation(printOrientation === "portrait" ? "landscape" : "portrait");
+          }}
+        >
+          <ArrowRightLeft className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="grid gap-4">
+        <div className="grid grid-cols-3 gap-2">
+          <div className="space-y-1 col-span-1">
+            <Label className="text-xs">Width</Label>
+            <Input type="number" value={printSheet.width} onChange={(e) => setPrintSheet({ ...printSheet, width: Number(e.target.value) })} />
+          </div>
+          <div className="space-y-1 col-span-1">
+            <Label className="text-xs">Height</Label>
+            <Input type="number" value={printSheet.height} onChange={(e) => setPrintSheet({ ...printSheet, height: Number(e.target.value) })} />
+          </div>
+          <div className="space-y-1 col-span-1">
+            <Label className="text-xs">Unit</Label>
+            <Select value={printSheet.unit} onValueChange={(v: Unit) => setPrintSheet({ ...printSheet, unit: v })}>
+              <SelectTrigger><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="mm">mm</SelectItem>
+                <SelectItem value="cm">cm</SelectItem>
+                <SelectItem value="in">in</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <Button variant={printOrientation === "portrait" ? "default" : "outline"} size="sm" onClick={() => setPrintOrientation("portrait")}>Portrait</Button>
+          <Button variant={printOrientation === "landscape" ? "default" : "outline"} size="sm" onClick={() => setPrintOrientation("landscape")}>Landscape</Button>
+        </div>
+      </div>
+    </div>
+
+    <div className="space-y-4">
+      <div className="flex items-center justify-between border-b pb-1">
+        <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">Image & Margins</h3>
+        <button
+          className="h-6 w-6 inline-flex items-center justify-center rounded-md hover:bg-muted transition-colors"
+          onClick={() => setImageRatio({ width: imageRatio.height, height: imageRatio.width })}
+        >
+          <ArrowRightLeft className="h-3 w-3" />
+        </button>
+      </div>
+      <div className="grid gap-4">
+        <div className="grid grid-cols-2 gap-2">
+          <div className="space-y-1">
+            <Label className="text-xs">Ratio W</Label>
+            <Input
+              type="number"
+              value={imageRatio.width}
+              onChange={(e) => setImageRatio({ ...imageRatio, width: Number(e.target.value) })}
+            />
+          </div>
+          <div className="space-y-1">
+            <Label className="text-xs">Ratio H</Label>
+            <Input
+              type="number"
+              value={imageRatio.height}
+              onChange={(e) => setImageRatio({ ...imageRatio, height: Number(e.target.value) })}
+            />
+          </div>
+        </div>
+        <div className="space-y-1">
+          <Label className="text-xs">Margin (mm)</Label>
+          <Input type="number" value={margin} onChange={(e) => setMargin(Number(e.target.value))} />
+        </div>
+      </div>
+    </div>
+
+    <Button className="w-full mt-4" size="lg" onClick={handleExportPdf}>
+      <Download className="mr-2 h-4 w-4" /> Export PDF
+    </Button>
+
+    <div className="rounded-lg border bg-muted/30 p-4 text-[11px] leading-tight text-muted-foreground space-y-2">
+      <div className="flex items-center gap-2 font-medium text-foreground"><Info className="h-3 w-3" /> Layout Stats</div>
+      <div className="grid grid-cols-2 gap-y-1">
+        <span>Target Size:</span> <span className="text-right font-mono">{layout.tW.toFixed(1)}x{layout.tH.toFixed(1)}mm</span>
+        <span>Paper Size:</span> <span className="text-right font-mono">{layout.pW.toFixed(1)}x{layout.pH.toFixed(1)}mm</span>
+        <span>Image Size:</span> <span className="text-right font-mono">{layout.imgW.toFixed(1)}x{layout.imgH.toFixed(1)}mm</span>
+        <span>Actual Margin:</span> <span className="text-right font-mono">{((layout.pW - layout.imgW) / 2).toFixed(1)}mm</span>
+      </div>
+    </div>
+  </div>
+);
 
 export default function PrintLayoutPage() {
   const [targetSize, setTargetSize] = useState<PaperSize>("A4");
@@ -225,155 +413,61 @@ export default function PrintLayoutPage() {
     doc.save("darkroom-print-layout.pdf");
   };
 
-  const ParamsForm = () => (
-    <div className="space-y-6">
-      {layout.warnings.length > 0 && (
-        <div className="space-y-2">
-          {layout.warnings.map((w, i) => (
-            <div key={i} className="flex items-start gap-2 rounded-md bg-destructive/10 p-3 text-xs text-destructive">
-              <AlertTriangle className="h-4 w-4 shrink-0" />
-              <span>{w}</span>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <div className="space-y-4">
-        <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground border-b pb-1">Target Output Sheet</h3>
-        <div className="grid gap-4">
-          <div className="space-y-2">
-            <Label>Size</Label>
-            <Select value={targetSize} onValueChange={(v: PaperSize) => setTargetSize(v)}>
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {Object.keys(PAPER_SIZES).map((size) => (
-                  <SelectItem key={size} value={size}>{size}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            <Button variant={targetOrientation === "portrait" ? "default" : "outline"} size="sm" onClick={() => setTargetOrientation("portrait")}>Portrait</Button>
-            <Button variant={targetOrientation === "landscape" ? "default" : "outline"} size="sm" onClick={() => setTargetOrientation("landscape")}>Landscape</Button>
-          </div>
-          {targetSize === "Custom" && (
-            <div className="grid grid-cols-2 gap-2">
-              <div className="space-y-1">
-                <Label className="text-xs">Width (mm)</Label>
-                <Input type="number" value={customTarget.width} onChange={(e) => setCustomTarget({ ...customTarget, width: Number(e.target.value) })} />
-              </div>
-              <div className="space-y-1">
-                <Label className="text-xs">Height (mm)</Label>
-                <Input type="number" value={customTarget.height} onChange={(e) => setCustomTarget({ ...customTarget, height: Number(e.target.value) })} />
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground border-b pb-1">Printing Sheet</h3>
-        <div className="grid gap-4">
-          <div className="grid grid-cols-3 gap-2">
-            <div className="space-y-1 col-span-1">
-              <Label className="text-xs">W</Label>
-              <Input type="number" value={printSheet.width} onChange={(e) => setPrintSheet({ ...printSheet, width: Number(e.target.value) })} />
-            </div>
-            <div className="space-y-1 col-span-1">
-              <Label className="text-xs">H</Label>
-              <Input type="number" value={printSheet.height} onChange={(e) => setPrintSheet({ ...printSheet, height: Number(e.target.value) })} />
-            </div>
-            <div className="space-y-1 col-span-1">
-              <Label className="text-xs">Unit</Label>
-              <Select value={printSheet.unit} onValueChange={(v: Unit) => setPrintSheet({ ...printSheet, unit: v })}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="mm">mm</SelectItem>
-                  <SelectItem value="cm">cm</SelectItem>
-                  <SelectItem value="in">in</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            <Button variant={printOrientation === "portrait" ? "default" : "outline"} size="sm" onClick={() => setPrintOrientation("portrait")}>Portrait</Button>
-            <Button variant={printOrientation === "landscape" ? "default" : "outline"} size="sm" onClick={() => setPrintOrientation("landscape")}>Landscape</Button>
-          </div>
-        </div>
-      </div>
-
-      <div className="space-y-4">
-        <h3 className="text-sm font-medium uppercase tracking-wider text-muted-foreground border-b pb-1">Image & Margins</h3>
-        <div className="grid gap-4">
-          <div className="grid grid-cols-2 gap-2">
-            <div className="space-y-1">
-              <Label className="text-xs">Ratio W</Label>
-              <Input type="number" value={imageRatio.width} onChange={(e) => setImageRatio({ ...imageRatio, width: Number(e.target.value) })} />
-            </div>
-            <div className="space-y-1">
-              <Label className="text-xs">Ratio H</Label>
-              <Input type="number" value={imageRatio.height} onChange={(e) => setImageRatio({ ...imageRatio, height: Number(e.target.value) })} />
-            </div>
-          </div>
-          <div className="space-y-1">
-            <Label className="text-xs">Margin (mm)</Label>
-            <Input type="number" value={margin} onChange={(e) => setMargin(Number(e.target.value))} />
-          </div>
-        </div>
-      </div>
-
-      <Button className="w-full mt-4" size="lg" onClick={handleExportPdf}>
-        <Download className="mr-2 h-4 w-4" /> Export PDF
-      </Button>
-
-      <div className="rounded-lg border bg-muted/30 p-4 text-[11px] leading-tight text-muted-foreground space-y-2">
-        <div className="flex items-center gap-2 font-medium text-foreground"><Info className="h-3 w-3" /> Layout Stats</div>
-        <div className="grid grid-cols-2 gap-y-1">
-          <span>Target Size:</span> <span className="text-right font-mono">{layout.tW.toFixed(1)}x{layout.tH.toFixed(1)}mm</span>
-          <span>Paper Size:</span> <span className="text-right font-mono">{layout.pW.toFixed(1)}x{layout.pH.toFixed(1)}mm</span>
-          <span>Image Size:</span> <span className="text-right font-mono">{layout.imgW.toFixed(1)}x{layout.imgH.toFixed(1)}mm</span>
-          <span>Actual Margin:</span> <span className="text-right font-mono">{((layout.pW - layout.imgW) / 2).toFixed(1)}mm</span>
-        </div>
-      </div>
-    </div>
-  );
+  const sharedProps = {
+    layout,
+    targetSize,
+    setTargetSize,
+    customTarget,
+    setCustomTarget,
+    targetOrientation,
+    setTargetOrientation,
+    printSheet,
+    setPrintSheet,
+    printOrientation,
+    setPrintOrientation,
+    imageRatio,
+    setImageRatio,
+    margin,
+    setMargin,
+    handleExportPdf,
+  };
 
   return (
-    <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-background">
-      <div className="flex flex-col border-y bg-background lg:flex-row h-[calc(100vh-160px)] min-h-[600px]">
+    <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-background -mb-12 mt-4">
+      <div className="flex flex-col border-y bg-background lg:flex-row h-[calc(100vh-6rem)] min-h-[700px] shadow-sm">
         {/* Sidebar - Desktop */}
-        <aside className="hidden w-80 flex-col border-r bg-card lg:flex">
-          <div className="border-b p-4">
-            <Breadcrumb className="mb-2">
+        <aside className="hidden w-80 flex-col border-r bg-muted/5 lg:flex">
+          <div className="border-b p-6 bg-background/50 backdrop-blur-sm">
+            <Breadcrumb className="mb-3">
               <BreadcrumbList>
-                <BreadcrumbItem><BreadcrumbLink href="/tools" className="text-xs">Tools</BreadcrumbLink></BreadcrumbItem>
+                <BreadcrumbItem><BreadcrumbLink href="/tools" className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground hover:text-foreground transition-colors">Tools</BreadcrumbLink></BreadcrumbItem>
                 <BreadcrumbSeparator />
-                <BreadcrumbItem><BreadcrumbLink href="/tools/print-layout" className="text-xs">Layout</BreadcrumbLink></BreadcrumbItem>
+                <BreadcrumbItem><BreadcrumbLink href="/tools/print-layout" className="text-[10px] uppercase tracking-wider font-bold text-foreground">Print Layout</BreadcrumbLink></BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
-            <h1 className="font-serif text-xl font-bold">Print Layout</h1>
+            <h1 className="font-serif text-2xl font-bold tracking-tight">Print Layout</h1>
           </div>
-          <div className="flex-1 overflow-y-auto p-6 scrollbar-hide">
-            <ParamsForm />
+          <div className="flex-1 overflow-y-auto p-6 scrollbar-hide space-y-8">
+            <ParamsForm {...sharedProps} />
           </div>
         </aside>
 
         {/* Main Preview Area */}
-        <main className="relative flex-1 flex flex-col bg-muted/40 overflow-hidden">
+        <main className="relative flex-1 flex flex-col bg-muted/30 overflow-hidden">
           {/* Mobile Header */}
-          <div className="flex items-center justify-between border-b bg-background p-4 lg:hidden">
+          <div className="flex items-center justify-between border-b bg-background/80 backdrop-blur-md p-4 lg:hidden">
             <h1 className="font-serif text-lg font-bold">Print Layout</h1>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon"><Settings2 className="h-4 w-4" /></Button>
+                <Button variant="outline" size="icon" className="rounded-full shadow-sm"><Settings2 className="h-4 w-4" /></Button>
               </SheetTrigger>
-              <SheetContent side="bottom" className="h-[80vh] overflow-y-auto">
-                <SheetHeader className="mb-4">
-                  <SheetTitle>Parameters</SheetTitle>
+              <SheetContent side="bottom" className="h-[85vh] overflow-y-auto rounded-t-[2rem] border-t-0 shadow-2xl">
+                <SheetHeader className="mb-6">
+                  <SheetTitle className="text-center font-serif text-2xl">Parameters</SheetTitle>
                 </SheetHeader>
-                <ParamsForm />
+                <div className="pb-12">
+                  <ParamsForm {...sharedProps} />
+                </div>
               </SheetContent>
             </Sheet>
           </div>
@@ -383,11 +477,33 @@ export default function PrintLayoutPage() {
             <canvas ref={canvasRef} />
           </div>
 
+          {/* Warnings Overlay */}
+          {layout.warnings.length > 0 && (
+            <div className="absolute top-6 left-6 right-6 lg:right-auto lg:w-80 space-y-2 pointer-events-none z-10">
+              {layout.warnings.map((w: string, i: number) => (
+                <div key={i} className="flex items-center gap-2 rounded-lg border border-destructive/20 bg-destructive/10 px-4 py-3 text-xs font-medium text-destructive backdrop-blur-md shadow-lg ring-1 ring-destructive/10 animate-in fade-in slide-in-from-top-2 duration-300">
+                  <AlertTriangle className="h-4 w-4 shrink-0" />
+                  <span>{w}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
           {/* Legend Overlay */}
-          <div className="absolute bottom-4 right-4 flex gap-4 rounded-full border bg-background/80 px-4 py-2 text-[10px] font-medium backdrop-blur-sm shadow-sm">
-            <div className="flex items-center gap-1.5"><div className="h-2 w-2 border border-black" /> Photo Paper</div>
-            <div className="flex items-center gap-1.5"><div className="h-2 w-2 border border-dashed border-blue-500" /> Image Area</div>
-            <div className="flex items-center gap-1.5"><div className="h-2 w-2 bg-red-400/40" /> Center Cross</div>
+          <div className="absolute bottom-6 right-6 flex flex-wrap justify-end gap-3 pointer-events-none">
+            <div className="flex items-center gap-2 rounded-full border bg-background/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-tight backdrop-blur-md shadow-sm ring-1 ring-black/5">
+              <div className="h-2 w-2 border border-black" /> 
+              <span>Photo Paper</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-full border bg-background/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-tight backdrop-blur-md shadow-sm ring-1 ring-black/5">
+              <div className="h-2 w-2 border border-dashed border-blue-500" /> 
+              <span>Image Area</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-full border bg-background/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-tight backdrop-blur-md shadow-sm ring-1 ring-black/5">
+              <div className="h-2.5 w-0.5 bg-red-400/60" />
+              <div className="h-0.5 w-2.5 bg-red-400/60 -ml-2.5" />
+              <span>Center</span>
+            </div>
           </div>
         </main>
       </div>
