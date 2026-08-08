@@ -94,3 +94,6 @@ __pycache__/
 
 .vercel
 .env*
+
+### Generated OG Images ###
+static/og/
