@@ -70,13 +70,15 @@ def process_single_post(args):
     draw = ImageDraw.Draw(img)
 
     try:
-        font_path = "/System/Library/Fonts/Helvetica.ttc"
+        font_path = "static/fonts/Arial.ttf"
+        font_bold = "static/fonts/Arial-Bold.ttf"
         font_date = ImageFont.truetype(font_path, 28)
-        font_title = ImageFont.truetype(font_path, 60)
+        font_title = ImageFont.truetype(font_bold, 60)
         font_excerpt = ImageFont.truetype(font_path, 30)
         font_tags = ImageFont.truetype(font_path, 22)
-        font_brand = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 30)
-    except Exception:
+        font_brand = ImageFont.truetype(font_path, 30)
+    except Exception as e:
+        print(f"[Warning] Failed loading Arial fonts: {e}. Falling back to default font.")
         font_date = font_title = font_excerpt = font_tags = font_brand = (
             ImageFont.load_default()
         )
