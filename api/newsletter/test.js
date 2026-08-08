@@ -1,4 +1,4 @@
-import { pool, sendEmail, setCors } from "../_utils.js";
+import { pool, sendEmail, setCors, getLatestNewsletterIssue } from "../_utils.js";
 
 export default async function handler(req, res) {
   setCors(res);
@@ -20,10 +20,12 @@ export default async function handler(req, res) {
     const dbRes = await pool.query('SELECT unsub FROM "Subscriber" WHERE email = $1', [recipient]);
     const unsubUUID = dbRes.rows[0]?.unsub || "test-unsub-uuid";
 
+    const { title, html } = await getLatestNewsletterIssue();
+
     await sendEmail({
       to: recipient,
-      subject: "[TEST] Latest Newsletter Issue",
-      html: `Hi!<br/>Check out the latest newsletter issue at <a href="https://eliseomartelli.it/newsletter/">https://eliseomartelli.it/newsletter/</a>.`,
+      subject: `[TEST] ${title}`,
+      html: html,
       unsubUUID,
     });
 
