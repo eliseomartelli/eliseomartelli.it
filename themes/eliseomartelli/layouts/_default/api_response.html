@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div style="text-align: center; margin-top: 2rem;">
+  <h2>{{ .Title }}</h2>
+  <p>{{ .Params.message | default "Your request has been processed." }}</p>
+  <p><a href="/">&larr; Return to Home</a></p>
+</div>
+{{ end }}

@@ -1,0 +1,16 @@
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}" />
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Params.excerpt }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Plain | truncate 160 }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}{{ end }}" />
+<meta name="keywords" content="{{ if .IsPage}}{{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}{{ else }}{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}{{ end }}{{ end }}" />
+
+<!-- Open Graph / Facebook -->
+{{ if .IsPage }}
+<meta property="og:image" content="{{ .Site.BaseURL }}og/{{ .File.ContentBaseName }}.png" />
+{{ end }}
+{{ template "_internal/opengraph.html" . }}
+
+<!-- Twitter -->
+{{ template "_internal/twitter_cards.html" . }}
+
+<!-- Microdata -->
+{{ template "_internal/schema.html" . }}

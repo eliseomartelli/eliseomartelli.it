@@ -1,0 +1,80 @@
+baseURL = 'https://eliseomartelli.it/'
+locale = 'en-us'
+title = 'Eliseo Martelli'
+theme = 'eliseomartelli'
+
+[params]
+  author = 'Eliseo Martelli'
+  description = 'Personal website and blog'
+  enablePostNavigator = true
+  dateFormat = "02 Jan, 2006"
+
+[related]
+  includeNewer = true
+  threshold = 0
+  toLower = true
+
+  [[related.indices]]
+    name = 'tags'
+    weight = 100
+
+  [[related.indices]]
+    name = 'title'
+    type = 'basic'
+    weight = 60
+
+  [[related.indices]]
+    name = 'description'
+    type = 'basic'
+    weight = 40
+
+  [[related.indices]]
+    name = 'excerpt'
+    type = 'basic'
+    weight = 40
+
+  [[related.indices]]
+    name = 'date'
+    weight = 10
+
+
+
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 1
+
+[[menu.main]]
+  name = "Photos"
+  url = "/photos/"
+  weight = 2
+
+[[menu.main]]
+  name = "Newsletter"
+  url = "/newsletter/"
+  weight = 3
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'friendly'
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
+
+[outputFormats.RSS]
+  baseName = 'feed'
+  isPlainText = false
+  mediaType = 'application/rss+xml'
+
+[outputs]
+  home = ['HTML', 'RSS', 'SITEMAP']
+  section = ['HTML', 'RSS']

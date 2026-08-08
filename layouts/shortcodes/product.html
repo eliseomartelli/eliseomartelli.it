@@ -1,0 +1,13 @@
+<div class="product-card" style="border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.75rem;">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+    <h4 style="margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+      {{ .Get "title" | safeHTML }}
+    </h4>
+    <a href="{{ .Get "link" }}" class="btn-primary" target="_blank" rel="noopener" style="padding: 0.4rem 0.8rem; border-radius: 4px; background: var(--link-color, #a81d27); color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+      {{ default "Buy / View" (.Get "linkText") }}
+    </a>
+  </div>
+  <div style="font-size: 0.95rem; opacity: 0.9; line-height: 1.4;">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

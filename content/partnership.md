@@ -1,0 +1,60 @@
+---
+title: "Brand Partnerships"
+---
+
+I recently started accepting provided gear and setting up affiliate links for products I use, have used or I genuinely trust.
+
+I want to be upfront about exactly what it means.
+
+If you've been following this work for a while, you know I don't soften things.
+That same standard applies to the gear I talk about.
+
+My kit revolves around cameras that get out of the way of the shot. Any product
+I agree to test has to meet that bar. If it disrupts the workflow, adds
+friction where there should be none, or doesn't represent the reality of a
+scene, it doesn't stay in the bag, and it doesn't get recommended here.
+
+Sending me gear buys a thorough field test. Not a positive review.
+
+I keep full control over what gets published. If something earns its place on
+the street, I'll say so. If it doesn't, I'll say that too. And if a brand tries
+to alter, soften, or veto a negative verdict, that relationship ends
+immediately. The review still goes out, along with a public note about why the
+collaboration is over. I'll happily pack the gear back up rather than publish
+something I don't stand behind.
+
+There's no shame in a partnership. There is shame in not being upfront about
+one.
+
+## Labeling Standards
+
+Whenever I talk about gear, the relationship will be clearly labeled:
+
+- **Affiliate/Referral**: I earn a small cut if you use a link or code. I only set
+  these up for things I actually respect.
+
+- **Provided**: A brand sent it for free to test. No money changed hands, and I
+  send it back when I'm done.
+
+- **Gifted**: A brand sent it for free, and I get to keep it.
+
+- **Sponsored**: I was paid to create content featuring the product.
+
+If something isn't labeled, I paid for it myself.
+
+A photograph is a permanent record of a decision. Putting my name on a piece of
+gear carries the same weight.
+
+## Current Collaborations
+
+- **RCE Foto**: Affiliate/Referral + Provided gear
+- **Thypoch**: Affiliate/Referral
+- **Light Lens Lab**: Affiliate/Referral + Provided gear
+
+This list will be updated as things change.
+
+I'll get things wrong occasionally. If you think I've missed a flaw, let a bias
+slip through, or been unfair in either direction, call it out. I'd rather be
+corrected by this community than protect a verdict that doesn't hold up.
+
+[View all referral & discount links](/brandpartnership-links/)

@@ -1,0 +1,9 @@
+<div class="rating-bar" style="margin: 0.75rem 0; font-family: inherit;">
+  <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.25rem; font-weight: {{ if .Get "featured" }}bold{{ else }}normal{{ end }};">
+    <span>{{ .Get "label" }}</span>
+    <span style="color: var(--link-color, #a81d27);">{{ .Get "value" }}/10</span>
+  </div>
+  <div style="background: #eee; height: 8px; border-radius: 4px; overflow: hidden; width: 100%;">
+    <div style="background: var(--link-color, #a81d27); height: 100%; width: {{ mul (float (.Get "value")) 10 }}%;"></div>
+  </div>
+</div>

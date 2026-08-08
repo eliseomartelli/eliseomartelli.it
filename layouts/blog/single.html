@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "blog/post_header.html" . }}
+<hr />
+
+<div class="post-content">
+  {{ .Content }}
+</div>
+
+<p style="margin-top: 1.5rem;">
+  <a href="/reply/?title={{ .Title | urlquery }}" class="btn-secondary">Reply to this post</a>
+</p>
+
+<hr />
+
+{{ if (.Param "enablePostNavigator") }}
+{{ partial "post_navigator.html" . }}
+{{ end }}
+
+
+{{ partial "blog/related_posts.html" . }}
+
+<hr />
+
+<section>
+  <h3>Newsletter</h3>
+  {{ partial "newsletter_signup.html" . }}
+  <a href="/newsletter/">Browse Past Issues</a>
+</section>
+
+{{ end }}

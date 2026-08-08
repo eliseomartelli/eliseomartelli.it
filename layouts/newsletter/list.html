@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section>
+  {{ .Content }}
+
+  {{ partial "newsletter_signup.html" . }}
+
+  <hr />
+  <h3>Archive</h3>
+  <ul class="blog-posts">
+    {{ range .Pages }}
+    <li>
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan, 2006" $.Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>No issues yet</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

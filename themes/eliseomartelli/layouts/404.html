@@ -1,0 +1,37 @@
+{{ define "title" }}404 Not Found | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section>
+  <h1>Uh, oh ʕノ•ᴥ•ʔノ ︵ ┻━┻</h1>
+  <p>I couldn't find that page...</p>
+  <iframe
+    allow="autoplay *; encrypted-media *;"
+    height="150"
+    style="width: 100%; border: none; border-radius: 8px; margin-top: 1rem; margin-bottom: 1.5rem;"
+    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+    src="https://embed.music.apple.com/it/album/i-still-havent-found-what-im-looking-for/1442950015?i=1442950019&l=en"
+  ></iframe>
+
+  <p>
+    <a href="/" class="btn-secondary">Go home</a>
+  </p>
+
+  <hr style="margin-top: 2rem; margin-bottom: 2rem;" />
+
+  <h3>Recent Posts</h3>
+  <ul class="blog-posts">
+    {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+    <li>
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan, 2006" $.Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

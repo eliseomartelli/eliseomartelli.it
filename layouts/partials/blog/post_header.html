@@ -1,0 +1,21 @@
+<h1>{{ .Title }}</h1>
+{{ with .Params.excerpt }}
+<p><i>{{ . }}</i></p>
+{{ end }}
+{{ if not .Date.IsZero }}
+<p>
+  <time datetime='{{ .Date.Format "2006-01-02" }}'>
+    {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+  </time>
+  <i>
+    &nbsp;·&nbsp;&nbsp;{{ .ReadingTime }} min read
+  </i>
+</p>
+{{ end }}
+{{ with .GetTerms "tags" }}
+<p>
+  {{ range . }}
+  <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;
+  {{ end }}
+</p>
+{{ end }}

@@ -1,0 +1,20 @@
+[tools]
+hugo = "latest"
+vercel = { version = "latest", allow_builds = ["esbuild"], trust_policy_excludes = ["undici"] }
+
+[tasks.server]
+description = "Run Hugo development server"
+run = "hugo server -D --port 1313"
+
+[tasks.dev]
+description = "Run Vercel local dev server (Hugo + Serverless API)"
+run = "vercel dev"
+
+[tasks.og]
+description = "Generate OpenGraph images"
+run = "uv run --with pillow python3 scripts/generate-og-images.py"
+
+[tasks.build]
+description = "Build the production site"
+depends = ["og"]
+run = "hugo --minify"

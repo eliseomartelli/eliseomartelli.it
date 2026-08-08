@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS subscribers (
+    email TEXT PRIMARY KEY,
+    unsub TEXT UNIQUE NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+

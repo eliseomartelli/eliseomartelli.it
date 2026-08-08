@@ -1,0 +1,36 @@
+<div class="film-calculator-card" style="border: 1px solid #ccc; border-radius: 8px; margin: 1.5rem 0; overflow: hidden; font-family: inherit; max-width: 500px;">
+  <div style="background: var(--card-header-bg, #f5f5f5); padding: 0.75rem 1rem; border-bottom: 1px solid #ccc; display: flex; align-items: center; justify-content: space-between;">
+    <span style="font-weight: bold; font-size: 1.05rem; color: var(--text-color, #111);">{{ .Get "name" }}</span>
+    <span style="font-size: 0.9rem; opacity: 0.85; font-style: italic;">{{ .Get "step" }}</span>
+  </div>
+  <div style="padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
+    {{ if .Get "dilution" }}
+    <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 0.25rem;">
+      <span style="font-weight: 600; opacity: 0.8;">Dilution</span>
+      <span>{{ .Get "dilution" }}</span>
+    </div>
+    {{ end }}
+    
+    <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 0.25rem;">
+      <span style="font-weight: 600; opacity: 0.8;">Time</span>
+      <span style="font-weight: bold; color: var(--link-color, #a81d27);">{{ .Get "time" }}</span>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 0.25rem;">
+      <span style="font-weight: 600; opacity: 0.8;">Temperature</span>
+      <span>{{ .Get "temp" }}°C</span>
+    </div>
+    
+    {{ if .Get "push" }}
+    <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 0.25rem;">
+      <span style="font-weight: 600; opacity: 0.8;">Push</span>
+      <span style="font-weight: bold;">+{{ .Get "push" }} stops</span>
+    </div>
+    {{ end }}
+    
+    <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+      <span style="font-weight: 600; opacity: 0.8; font-size: 0.9rem;">Agitation</span>
+      <span style="font-size: 0.9rem; opacity: 0.95;">{{ .Get "agitation" }}</span>
+    </div>
+  </div>
+</div>

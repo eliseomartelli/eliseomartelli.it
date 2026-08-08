@@ -1,0 +1,70 @@
+.photos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .photos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 180px);
+  }
+  .photo-card-hero {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+  .photo-card-sub {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+.photo-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  background: #111;
+  min-height: 200px;
+}
+
+@media (min-width: 768px) {
+  .photo-card {
+    min-height: 0;
+  }
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.photo-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: background 0.2s ease;
+}
+
+.photo-card:hover .photo-card-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.photo-card-overlay h3 {
+  color: #fff !important;
+  margin: 0;
+  font-size: 1.35em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}

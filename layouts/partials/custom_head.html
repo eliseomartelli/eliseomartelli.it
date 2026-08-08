@@ -1,0 +1,7 @@
+{{ if eq .Section "tools" }}
+<link rel="stylesheet" href="/css/tools.css" />
+{{ end }}
+
+{{ if and (eq .Section "photos") .IsSection }}
+<link rel="stylesheet" href="/css/photos-section.css" />
+{{ end }}

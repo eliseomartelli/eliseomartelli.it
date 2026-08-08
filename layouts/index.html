@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div style="width: 160px; height: 160px; margin-bottom: 1.5rem; margin-top: 1.5rem; overflow: hidden;">
+  <canvas id="splat-canvas" width="330" height="330" style="width: 100%; height: 100%; display: block;"></canvas>
+</div>
+
+{{ .Content }}
+
+<script src="/js/home-splat.js" defer></script>
+{{ end }}

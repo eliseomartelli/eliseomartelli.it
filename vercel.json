@@ -1,0 +1,7 @@
+{
+  "framework": "hugo",
+  "buildCommand": "uv venv && uv pip install -r requirements.txt && .venv/bin/python3 scripts/generate-og-images.py && hugo --minify",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": true
+}
