@@ -10,20 +10,30 @@
 {{- if and $img (ne $img.MediaType.SubType "svg") -}}
   {{- /* Convert and resize processable images to WebP */ -}}
   {{- $webp := $img.Resize "1000x webp" -}}
-  <img src="{{ $webp.RelPermalink }}" 
-       alt="{{ .Text }}" 
-       title="{{ .Title }}" 
-       loading="lazy" 
-       decoding="async" 
-       width="{{ $webp.Width }}" 
-       height="{{ $webp.Height }}"
-       style="max-width: 100%; height: auto; border-radius: 8px;" />
+  <p>
+    <img src="{{ $webp.RelPermalink }}" 
+         alt="{{ .Text }}" 
+         title="{{ .Title }}" 
+         loading="lazy" 
+         decoding="async" 
+         width="{{ $webp.Width }}" 
+         height="{{ $webp.Height }}"
+         style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" />
+    {{- with .Text }}
+      <small style="display:block;width:100%;text-align:center;color:var(--text-color);opacity:0.7;margin-top:0.5rem;">{{ . }}</small>
+    {{- end }}
+  </p>
 {{- else -}}
   {{- /* Fallback for SVGs, external URLs, or files not resolved */ -}}
-  <img src="{{ .Destination | safeURL }}" 
-       alt="{{ .Text }}" 
-       title="{{ .Title }}" 
-       loading="lazy" 
-       decoding="async" 
-       style="max-width: 100%; height: auto; border-radius: 8px;" />
+  <p>
+    <img src="{{ .Destination | safeURL }}" 
+         alt="{{ .Text }}" 
+         title="{{ .Title }}" 
+         loading="lazy" 
+         decoding="async" 
+         style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" />
+    {{- with .Text }}
+      <small style="display:block;width:100%;text-align:center;color:var(--text-color);opacity:0.7;margin-top:0.5rem;">{{ . }}</small>
+    {{- end }}
+  </p>
 {{- end -}}
