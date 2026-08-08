@@ -78,3 +78,21 @@ theme = 'eliseomartelli'
 [outputs]
   home = ['HTML', 'RSS', 'SITEMAP']
   section = ['HTML', 'RSS']
+
+# Mount static image folders as assets for processing
+[[module.mounts]]
+  source = "assets"
+  target = "assets"
+
+[[module.mounts]]
+  source = "static/posts"
+  target = "assets/posts"
+
+[[module.mounts]]
+  source = "static/photoPortfolio"
+  target = "assets/photoPortfolio"
+
+[[module.mounts]]
+  source = "static/assets/static/posts"
+  target = "assets/assets/static/posts"
+

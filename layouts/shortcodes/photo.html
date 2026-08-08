@@ -1,3 +1,27 @@
 <div class="carousel-slide" style="flex: 0 0 80%; scroll-snap-align: start; max-width: 500px;">
-  <img src="{{ .Get "url" }}" alt="{{ default "Carousel Image" (.Get "alt") }}" style="width: 100%; border-radius: 8px; object-fit: cover; display: block;" />
+  {{- $url := .Get "url" -}}
+  {{- $alt := default "Carousel Image" (.Get "alt") -}}
+  {{- $img := "" -}}
+  
+  {{- if not (urls.Parse $url).IsAbs -}}
+    {{- $path := strings.TrimPrefix "/" $url -}}
+    {{- $img = resources.Get $path -}}
+  {{- end -}}
+
+  {{- if and $img (ne $img.MediaType.SubType "svg") -}}
+    {{- $webp := $img.Resize "600x webp" -}}
+    <img src="{{ $webp.RelPermalink }}" 
+         alt="{{ $alt }}" 
+         loading="lazy" 
+         decoding="async" 
+         width="{{ $webp.Width }}" 
+         height="{{ $webp.Height }}"
+         style="width: 100%; border-radius: 8px; object-fit: cover; display: block;" />
+  {{- else -}}
+    <img src="{{ $url | safeURL }}" 
+         alt="{{ $alt }}" 
+         loading="lazy" 
+         decoding="async" 
+         style="width: 100%; border-radius: 8px; object-fit: cover; display: block;" />
+  {{- end -}}
 </div>

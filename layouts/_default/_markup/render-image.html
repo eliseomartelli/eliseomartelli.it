@@ -1,0 +1,29 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $img := "" -}}
+
+{{- /* Resolve the image relative to assets */ -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "/" .Destination -}}
+  {{- $img = resources.Get $path -}}
+{{- end -}}
+
+{{- if and $img (ne $img.MediaType.SubType "svg") -}}
+  {{- /* Convert and resize processable images to WebP */ -}}
+  {{- $webp := $img.Resize "1000x webp" -}}
+  <img src="{{ $webp.RelPermalink }}" 
+       alt="{{ .Text }}" 
+       title="{{ .Title }}" 
+       loading="lazy" 
+       decoding="async" 
+       width="{{ $webp.Width }}" 
+       height="{{ $webp.Height }}"
+       style="max-width: 100%; height: auto; border-radius: 8px;" />
+{{- else -}}
+  {{- /* Fallback for SVGs, external URLs, or files not resolved */ -}}
+  <img src="{{ .Destination | safeURL }}" 
+       alt="{{ .Text }}" 
+       title="{{ .Title }}" 
+       loading="lazy" 
+       decoding="async" 
+       style="max-width: 100%; height: auto; border-radius: 8px;" />
+{{- end -}}
