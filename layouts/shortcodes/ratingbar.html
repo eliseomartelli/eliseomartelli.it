@@ -3,7 +3,7 @@
     <span>{{ .Get "label" }}</span>
     <span style="color: var(--link-color, #a81d27);">{{ .Get "value" }}/10</span>
   </div>
-  <div style="background: #eee; height: 8px; border-radius: 4px; overflow: hidden; width: 100%;">
+  <div style="background: rgba(128,128,128,0.2); height: 8px; border-radius: 4px; overflow: hidden; width: 100%;">
     <div style="background: var(--link-color, #a81d27); height: 100%; width: {{ mul (float (.Get "value")) 10 }}%;"></div>
   </div>
 </div>
