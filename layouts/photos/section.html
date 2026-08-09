@@ -4,7 +4,26 @@
     {{ range $index, $page := sort .Pages "Title" "asc" }}
     <a href="{{ $page.RelPermalink }}" class="photo-card {{ if eq $index 0 }}photo-card-hero{{ else }}photo-card-sub{{ end }}">
       {{ with $page.Params.thumbnail }}
-      <img src="{{ . }}" alt="{{ $page.Title }}" />
+        {{- $img := "" -}}
+        {{- if not (urls.Parse .).IsAbs -}}
+          {{- $path := strings.TrimPrefix "/" . -}}
+          {{- $img = resources.Get $path -}}
+        {{- end -}}
+        
+        {{- if and $img (ne $img.MediaType.SubType "svg") -}}
+          {{- $webp := $img.Resize "600x webp" -}}
+          <img src="{{ $webp.RelPermalink }}" 
+               alt="{{ $page.Title }}" 
+               loading="lazy" 
+               decoding="async" 
+               width="{{ $webp.Width }}" 
+               height="{{ $webp.Height }}" />
+        {{- else -}}
+          <img src="{{ . | safeURL }}" 
+               alt="{{ $page.Title }}" 
+               loading="lazy" 
+               decoding="async" />
+        {{- end -}}
       {{ end }}
       <div class="photo-card-overlay">
         <h3>{{ $page.Title }}</h3>
