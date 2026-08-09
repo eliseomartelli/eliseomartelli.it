@@ -9,7 +9,7 @@ Just fill out the contact form below or send me an [email](mailto:info@eliseomar
 <form action="/api/contact/" method="POST" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
   <label style="display: flex; flex-direction: column; gap: 0.25rem;">
     <strong>Email</strong>
-    <input type="email" name="email" placeholder="john@doe.com" required style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem;" />
+    <input type="email" name="email" placeholder="john.doe@example.com" required style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem;" />
   </label>
   
   <label style="display: flex; flex-direction: column; gap: 0.25rem;">
