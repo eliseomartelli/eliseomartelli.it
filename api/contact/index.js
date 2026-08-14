@@ -12,6 +12,10 @@ export default async function handler(req, res) {
     return res.redirect(303, "/msg-error/");
   }
 
+  if (payload.website) {
+    return res.redirect(303, "/msg-sent/");
+  }
+
   const subject = payload.post_title
     ? `Reply to ${payload.post_title} from ${payload.name}`
     : `New message from ${payload.name}`;

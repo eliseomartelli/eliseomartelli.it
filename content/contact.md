@@ -7,6 +7,7 @@ I'd love to hear from you and learn more about how we can work together. Let's s
 Just fill out the contact form below or send me an [email](mailto:info@eliseomartelli.it), and I'll get back to you as soon as possible.
 
 <form action="/api/contact/" method="POST" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+  <input type="url" name="website" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true" />
   <label style="display: flex; flex-direction: column; gap: 0.25rem;">
     <strong>Email</strong>
     <input type="email" name="email" placeholder="john.doe@example.com" required style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem;" />
