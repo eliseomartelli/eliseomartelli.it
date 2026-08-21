@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     return res.redirect(303, "/msg-error/");
   }
 
-  if (payload.website) {
+  if (payload.email) {
     return res.redirect(303, "/msg-sent/");
   }
 

@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     return res.redirect(303, "/msg-error/");
   }
 
-  if (payload.website) {
+  if (payload.email) {
     return res.redirect(303, "/msg-sent/");
   }
 
@@ -21,14 +21,14 @@ export default async function handler(req, res) {
     : `New message from ${payload.name}`;
 
   const textBody = payload.post_title
-    ? `RE: ${payload.post_title}\nSender: ${payload.name} - ${payload.email}\n\n${payload.message}`
-    : `Sender: ${payload.name} - ${payload.email}\n\n${payload.message}`;
+    ? `RE: ${payload.post_title}\nSender: ${payload.name} - ${payload.user_contact_email}\n\n${payload.message}`
+    : `Sender: ${payload.name} - ${payload.user_contact_email}\n\n${payload.message}`;
 
   try {
     await sendEmail({
       subject,
       text: textBody,
-      replyTo: payload.email,
+      replyTo: payload.user_contact_email,
     });
     return res.redirect(303, "/msg-sent/");
   } catch (err) {

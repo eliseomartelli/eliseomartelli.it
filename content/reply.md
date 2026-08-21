@@ -3,7 +3,7 @@ title: "Reply to Post"
 ---
 
 <form action="/api/contact/" method="POST" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; margin-bottom: 2rem; max-width: 500px;">
-  <input type="url" name="website" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true" />
+  <input type="email" name="email" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true" />
   <label style="display: flex; flex-direction: column; gap: 0.25rem;">
     <strong>Replying to:</strong>
     <input type="text" id="reply-post-title" name="post_title" readonly style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; background: rgba(0,0,0,0.05); color: inherit;" />
@@ -16,7 +16,7 @@ title: "Reply to Post"
 
   <label style="display: flex; flex-direction: column; gap: 0.25rem;">
     <strong>Email</strong>
-    <input type="email" name="email" placeholder="john@doe.com" required style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; background: transparent; color: inherit;" />
+    <input type="email" name="user_contact_email" placeholder="john@doe.com" required style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; background: transparent; color: inherit;" />
   </label>
 
   <label style="display: flex; flex-direction: column; gap: 0.25rem;">

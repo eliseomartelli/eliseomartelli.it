@@ -6,18 +6,25 @@ export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).send("Method Not Allowed");
 
   const payload = req.body || {};
-  if (!payload.email) {
+  
+  if (payload.email) {
+    return res.redirect(303, "/msg-sent/");
+  }
+
+  if (!payload.user_contact_email) {
     return res.redirect(303, "/msg-error/");
   }
 
+  const emailToSubscribe = payload.user_contact_email;
+
   try {
-    const checkRes = await pool.query('SELECT email FROM "Subscriber" WHERE email = $1', [payload.email]);
+    const checkRes = await pool.query('SELECT email FROM "Subscriber" WHERE email = $1', [emailToSubscribe]);
     if (checkRes.rows.length > 0) {
       return res.redirect(303, "/msg-error/");
     }
 
     const unsubUUID = crypto.randomUUID();
-    await pool.query('INSERT INTO "Subscriber" (email, unsub) VALUES ($1, $2)', [payload.email, unsubUUID]);
+    await pool.query('INSERT INTO "Subscriber" (email, unsub) VALUES ($1, $2)', [emailToSubscribe, unsubUUID]);
 
     const welcomeHTML = `Hi!<br/>
 Welcome to my newsletter. You can <a href="https://eliseomartelli.it/newsletter-unsub/?uuid=${unsubUUID}">unsubscribe</a> at any time. Here I will share some of the things I'm working on.
@@ -27,7 +34,7 @@ See you soon!<br/>
 Eliseo`;
 
     await sendEmail({
-      to: payload.email,
+      to: emailToSubscribe,
       subject: "Welcome to the newsletter!",
       html: welcomeHTML,
       unsubUUID,

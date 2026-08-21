@@ -1,5 +1,6 @@
 <form action="/api/newsletter/subscribe/" method="POST" style="display: flex; gap: 0.5rem; margin: 1rem 0;">
-  <input type="email" name="email" placeholder="john.doe@example.com" required aria-label="Email address" style="flex-grow: 1; padding: 0.5rem; border: 1px solid #999; border-radius: 4px; font-size: 1rem; background: transparent; color: inherit;" />
+  <input type="email" name="email" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true" />
+  <input type="email" name="user_contact_email" placeholder="john.doe@example.com" required aria-label="Email address" style="flex-grow: 1; padding: 0.5rem; border: 1px solid #999; border-radius: 4px; font-size: 1rem; background: transparent; color: inherit;" />
   <button type="submit" style="padding: 0.5rem 1rem; border-radius: 4px; background: var(--link-color, #a81d27); color: #fff; border: none; font-weight: bold; cursor: pointer;">
     Subscribe
   </button>

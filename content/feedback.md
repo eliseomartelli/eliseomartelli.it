@@ -5,7 +5,7 @@ title: "Feedback"
 # Feedback
 
 <form action="/api/contact/feedback/" method="POST" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
-  <input type="url" name="website" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true" />
+  <input type="email" name="email" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true" />
   <label style="display: flex; flex-direction: column; gap: 0.25rem;">
     <strong>Message</strong>
     <textarea name="message" rows="5" placeholder="Your message..." required style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;"></textarea>
