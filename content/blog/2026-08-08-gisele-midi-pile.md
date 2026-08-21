@@ -11,6 +11,29 @@ tags:
 description: "The new move of the music industry"
 ---
 
+## Update: August 21, 2026
+
+Things moved since I wrote this.
+
+On August 2 the EU AI Act transparency deadline
+[kicked in](https://www.fimi.it/blog/brani-ai-arriva-stretta-streaming-classifiche/).
+Article 50 now requires machine-readable labels on AI-generated content.
+
+On August 13, [FIMI and the three majors (Sony, Universal,
+Warner)](https://www.rainews.it/articoli/2026/08/fimi-stabilisce-nuove-regole-sullia-rtl-1025-esclude-dai-palinsesti-il-brano-di-gisele-5659c397-e732-4706-9536-bb866b268140.html)
+published their principles for the Top of the Music charts.
+
+NiQ/FIMI suspended "Dimanche Midi Pile"
+from the charts, and RTL 102.5, Radio Zeta and Radiofreccia pulled it from
+rotation the same day. Suraci, RTL's president, made it pretty clear that he
+wants this stuff out of every radio rotation.
+
+[Streaming is catching up](https://www.hollywoodreporter.com/music/music-industry-news/apple-music-to-launch-labels-on-ai-tracks-1236677791/).
+Apple Music will put AI labels on tracks "later this year", and providers
+will have to tag anything "materially generated" with AI.
+
+---
+
 Last Thursday, my brother and I were driving and decided to put on the FM
 radio.
 
