@@ -3,7 +3,7 @@
 
 
 title: "84 Emails in One Night"
-date: "2026-08-21 13:30:00"
+date: "2026-08-21 13:30:00+02:00"
 excerpt: "My honeypot failed, so my site mailed me all night. Here is the postmortem."
 tags:
   - Programming
@@ -57,7 +57,7 @@ never fired.
 So each submission produced one real email through my own relay. SPF passed.
 DMARC passed. Of course they passed. The mail came from my infrastructure, and
 my infrastructure is a legitimate sender. iCloud delivered the messages to the
-inbox, flagged but alive. My Mac made its little sound each time.
+inbox. My Mac made its little sound each time.
 
 The content was boring. The bodies advertised a traffic service,
 `boost-traffic.netlify.app`. Every message carried a different `Reply-To`
