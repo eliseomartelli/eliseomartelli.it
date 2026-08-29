@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Notes from a week of presence"
 date: "2025-04-14 09:50:00"
 excerpt: "A mindful week of writing, reflection, connection, and small discoveries."
@@ -71,6 +68,7 @@ codebase (yes, really). I also tried "Punt e Mes" for the first time, and I
 swear I taste sour cherries in it.
 
 Here are some reflections from the past week:
+
 - [Are we loosing the ability to do research?](/blog/2025-04-09-llms/)
 - [I think I need to be bored](/blog/2025-04-10-wantboredom/);
 - [Cars are extremely boring now](/blog/2025-04-11-carlostsoul/).

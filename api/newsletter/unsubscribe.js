@@ -8,7 +8,9 @@ export default async function handler(req, res) {
   const payload = req.body || {};
   if (payload.uuid) {
     try {
-      await pool.query('DELETE FROM "Subscriber" WHERE unsub = $1', [payload.uuid]);
+      await pool.query('DELETE FROM "Subscriber" WHERE unsub = $1', [
+        payload.uuid,
+      ]);
     } catch (err) {
       console.error(err);
     }

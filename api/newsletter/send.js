@@ -1,4 +1,9 @@
-import { pool, sendEmail, setCors, getLatestNewsletterIssue } from "../_utils.js";
+import {
+  pool,
+  sendEmail,
+  setCors,
+  getLatestNewsletterIssue,
+} from "../_utils.js";
 
 export default async function handler(req, res) {
   setCors(res);

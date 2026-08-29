@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Samsung makes intelligent phones for stupid people"
 date: "2025-09-06 10:30:00"
 excerpt: "Not a bicycle for the mind."
@@ -14,7 +11,7 @@ I wonder what's up with the marketing team at Samsung. Lately I've seen some of
 their ads popup on YouTube, I think they just released some phones, I don't
 closely pay attention to them as a company since I think their phones are
 unusable, as of my recent experience with a Samsung Galaxy S25 Ultra, an A56
-and an S24 Ultra. 
+and an S24 Ultra.
 
 {{< youtube KsQSrP0Rzn4 >}}
 {{< youtube rh7LhYT3jiI >}}
@@ -23,7 +20,7 @@ and an S24 Ultra.
 I don't know what is the appeal for this kind of product, a product that
 "probabilistically" gives you options from the real world, a product that
 actively cuts you from human interaction, and a product that removes from you
-spontaneous choices. 
+spontaneous choices.
 
 Advertising a product that cuts you the reading, the thinking and ultimately
 creativity is, in my opinion, harmful.
@@ -40,7 +37,7 @@ Share.
 A prompt appears asking if I want to share as a VCF or as text, this should not
 be on final software that goes in the hands of millions of users, I know what
 VCF is because I’m a technical person, but imagine your grandma trying to
-understand what VCF is. 
+understand what VCF is.
 
 I choose VCF, and it takes me to another activity where I can select the fields
 to include in the VCF. This activity isn't part of the Phone/Contacts app.

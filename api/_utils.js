@@ -10,7 +10,15 @@ export const pool = new Pool({
   },
 });
 
-export async function sendEmail({ from, to, subject, html, text, replyTo, unsubUUID }) {
+export async function sendEmail({
+  from,
+  to,
+  subject,
+  html,
+  text,
+  replyTo,
+  unsubUUID,
+}) {
   const host = process.env.SMTP_HOST;
   const port = parseInt(process.env.SMTP_PORT || "587", 10);
   const user = process.env.SMTP_USERNAME;
@@ -34,7 +42,8 @@ export async function sendEmail({ from, to, subject, html, text, replyTo, unsubU
 
   const headers = {};
   if (unsubUUID) {
-    headers["List-Unsubscribe"] = `<https://eliseomartelli.it/newsletter-unsub/?uuid=${unsubUUID}>`;
+    headers["List-Unsubscribe"] =
+      `<https://eliseomartelli.it/newsletter-unsub/?uuid=${unsubUUID}>`;
   }
 
   let finalHtml = html;
@@ -80,7 +89,12 @@ export async function getLatestNewsletterIssue() {
 
     // Read locally during development to avoid loopback fetches
     if (process.env.NODE_ENV === "development" || !process.env.VERCEL) {
-      const localPath = path.join(process.cwd(), "public", "newsletter", "feed.xml");
+      const localPath = path.join(
+        process.cwd(),
+        "public",
+        "newsletter",
+        "feed.xml",
+      );
       xml = await fs.readFile(localPath, "utf-8");
     } else {
       const siteHost = process.env.SITE_HOST || "https://eliseomartelli.it";
@@ -96,7 +110,9 @@ export async function getLatestNewsletterIssue() {
 
     // extract title and description
     const titleMatch = itemContent.match(/<title>([\s\S]*?)<\/title>/);
-    const descMatch = itemContent.match(/<description>([\s\S]*?)<\/description>/);
+    const descMatch = itemContent.match(
+      /<description>([\s\S]*?)<\/description>/,
+    );
 
     const unescapeHtml = (str) => {
       return str
@@ -108,8 +124,12 @@ export async function getLatestNewsletterIssue() {
         .replace(/&apos;/g, "'");
     };
 
-    const title = titleMatch ? unescapeHtml(titleMatch[1].trim()) : "Latest Newsletter Issue";
-    let bodyHtml = descMatch ? unescapeHtml(descMatch[1].trim()) : "Check out the latest issue at https://eliseomartelli.it/newsletter/";
+    const title = titleMatch
+      ? unescapeHtml(titleMatch[1].trim())
+      : "Latest Newsletter Issue";
+    let bodyHtml = descMatch
+      ? unescapeHtml(descMatch[1].trim())
+      : "Check out the latest issue at https://eliseomartelli.it/newsletter/";
 
     const html = `<h2 style="margin-top: 0; color: #111;">${title}</h2>\n${bodyHtml}`;
 
@@ -118,8 +138,7 @@ export async function getLatestNewsletterIssue() {
     console.error("Failed to parse latest newsletter issue:", err);
     return {
       title: "Latest Newsletter Issue",
-      html: `<p>Check out the latest issue of my newsletter here: <a href="https://eliseomartelli.it/newsletter/">https://eliseomartelli.it/newsletter/</a></p>`
+      html: `<p>Check out the latest issue of my newsletter here: <a href="https://eliseomartelli.it/newsletter/">https://eliseomartelli.it/newsletter/</a></p>`,
     };
   }
 }
-

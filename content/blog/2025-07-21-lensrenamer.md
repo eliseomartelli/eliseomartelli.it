@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "LensRenamer"
 date: "2025-07-21 15:09:00"
 excerpt: "First world problems, solved."
@@ -37,4 +34,4 @@ hole.
 ## Get It
 
 - Download: [Latest
-Release](https://github.com/eliseomartelli/LensRenamer/releases)
+  Release](https://github.com/eliseomartelli/LensRenamer/releases)

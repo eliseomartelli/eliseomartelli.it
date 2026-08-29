@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "A Gaussian Splat Portrait on the Homepage"
 date: "2026-03-28 12:00:00"
 excerpt: "Rendering a 3D portrait from a single photo using Gaussian Splatting, Canvas 2D, and zero dependencies."
@@ -32,7 +29,7 @@ Canvas 2D and some math.
 
 Some months ago, I was playing around with Apple's
 [ml-sharp](https://github.com/apple/ml-sharp), which can
-reconstruct a 3D point cloud from a single photo. 
+reconstruct a 3D point cloud from a single photo.
 
 At that time, I didn't have a use for it, but it seemed like the perfect tool
 for this project.
@@ -80,7 +77,6 @@ dt = np.dtype([("x", "<u2"), ("y", "<u2"), ("z", "<u2"), ("a", "u1"), ("b", "u1"
 
 Five fields per point, no JSON, no headers.
 
-
 To view it, I wrote a single TypeScript component, no dependencies. Each frame
 it rotates the points around Y then X, depth-sorts them furthest-first, draws
 each one as a 3×3 square into an `ImageData` buffer with alpha blending, and
@@ -89,13 +85,13 @@ flushes with `putImageData`.
 The projection is just perspective division:
 
 ```typescript
-const rx  =  x[i] * cosY + z[i] * sinY;
-const rz  = -x[i] * sinY + z[i] * cosY;
-const ry2 =  y[i] * cosX - rz * sinX;
-const rz2 =  y[i] * sinX + rz * cosX;
-const d   = rz2 - CAM_Z;
-const sx  = (W * 0.5 + (FOCAL * rx)  / d + 0.5) | 0;
-const sy  = (H * 0.5 + (FOCAL * ry2) / d + 0.5) | 0;
+const rx = x[i] * cosY + z[i] * sinY;
+const rz = -x[i] * sinY + z[i] * cosY;
+const ry2 = y[i] * cosX - rz * sinX;
+const rz2 = y[i] * sinX + rz * cosX;
+const d = rz2 - CAM_Z;
+const sx = (W * 0.5 + (FOCAL * rx) / d + 0.5) | 0;
+const sy = (H * 0.5 + (FOCAL * ry2) / d + 0.5) | 0;
 ```
 
 Mouse gives ±4° rotation. Touch drives a sinusoidal pan that coasts a little

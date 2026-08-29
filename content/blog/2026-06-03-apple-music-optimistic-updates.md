@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Apple's lesson in how NOT to do optimistic updates"
 date: "2026-06-03 10:20:00"
 excerpt: "The favorite button in Apple Music on macOS feels broken af."
@@ -20,13 +17,13 @@ This is the current state of Apple Music (Version 1.6.5.10) on macOS 26.5.1.
 
 Most apps use "optimistic updates." When you like a post or star a song, the UI
 changes immediately. The app assumes the server request will work. If it fails,
-the UI just reverts later. 
+the UI just reverts later.
 
 This makes everything feel fast. You shouldn't have to wait for a server
 response just to see a star change color.
 
 Apple Music does the opposite. It waits for the server to confirm the change
-before updating the UI. 
+before updating the UI.
 
 In this video, you can see the lag. I click the star, and it stays empty for
 five seconds before finally filling in.
@@ -39,7 +36,7 @@ lose confidence in the app. You end up double-checking your own actions.
 It bums me out. I've bought so many Apple products and services over the years,
 most recently the AirPods Max 2, and it's discouraging to see such a clunky
 experience in a core app. For a company that markets "fluidity," this is a
-basic failure. 
+basic failure.
 
 It's another sign of [declining software quality](/blog/2025-03-02-apple-quality/).
 If a tiny startup can make a button feel instant, Apple can too.

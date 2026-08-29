@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Music streaming sucks, long live music streaming."
 date: "2022-11-24 21:30:00"
 excerpt: "DRM & bass."

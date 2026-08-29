@@ -14,28 +14,28 @@ public-facing pages.
 ### Work
 
 - **Backend Developer** (2026 - Ongoing)  
-  *Zucchetti Hospitality, Italy*
+  _Zucchetti Hospitality, Italy_
 - **Researcher & Software Developer** (2024 - 2026)  
-  *Consortium GARR, Rome, Italy*
+  _Consortium GARR, Rome, Italy_
 - **Software Developer** (2024)  
-  *Federazione Gomma Plastica, Milan, Italy*
+  _Federazione Gomma Plastica, Milan, Italy_
 - **Network Technician** (2017 - 2018)  
-  *Dedalonet S.r.l, Lanciano, Italy*
+  _Dedalonet S.r.l, Lanciano, Italy_
 - **Android Developer** (2013 - 2019)  
-  *~1M downloads on Google Play Store*
+  _~1M downloads on Google Play Store_
 - **Freelance Software Developer** (2011 - Ongoing)  
-  *Client projects ranging from websites to hardware devices*
+  _Client projects ranging from websites to hardware devices_
 - **Open Source Software Contributor** (2011 - Ongoing)  
-  *Projects spanning from home automation to libraries*
+  _Projects spanning from home automation to libraries_
 
 ### Studies
 
 - **Computer Science Master Degree** (2023 - Ongoing)  
-  *Università degli Studi di Torino, Turin, Italy*
+  _Università degli Studi di Torino, Turin, Italy_
 - **Computer Science Bachelor Degree** (2019 - 2023)  
-  *Università degli Studi di Torino, Turin, Italy*
+  _Università degli Studi di Torino, Turin, Italy_
 - **Telecomunications and Computer Science Degree** (2012 - 2017)  
-  *IIS Da Vinci-De Giorgio, Lanciano, Italy*
+  _IIS Da Vinci-De Giorgio, Lanciano, Italy_
 
 ## Socials and Contacts
 

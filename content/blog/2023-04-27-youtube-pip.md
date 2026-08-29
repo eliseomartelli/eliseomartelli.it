@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "YouTube's PiP but with ⌥+P"
 date: "2023-04-27 22:00:00"
 excerpt: "I don't want to right click on videos."

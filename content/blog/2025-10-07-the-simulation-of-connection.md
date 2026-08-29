@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "The Simulation of Connection: Spotify"
 date: "2025-10-07 15:47:00"
 excerpt: "Are we only trading depth for immediacy?"
@@ -15,7 +12,7 @@ description: "Are we only trading depth for immediacy?"
 > Spotify's vision has always been to be everywhere you are. By bringing
 > Spotify into ChatGPT, we're creating a powerful new way for fans to connect
 > with the artists and creators they love conversationally, whenever
-> inspiration strikes.  
+> inspiration strikes.
 >
 > Sten Garmark, Spotify's SVP of Global Head of Consumer Experience.
 
@@ -32,18 +29,18 @@ Some examples?
 - We eat frozen food instead of cooking.
 - We buy fast-fashion instead of clothes that last.
 - We scroll through infinite feeds instead of engaging with a single work
-deeply.
+  deeply.
 
-Each of these substitutions promises to *save time*, as if the goal of life
+Each of these substitutions promises to _save time_, as if the goal of life
 were to eliminate the experience of living itself. Friction is treated as an
 obstacle to be optimized away. But friction is also what gives texture to
 experience. The effort, the waiting, these are not bugs in the human condition.
 They're _THE_ features.
 
 When platforms like Spotify talk about "connecting fans with artists," they're
-not selling music. They're selling *the feeling of intimacy*. The same way
-social media sells the *feeling of community* or dating apps sell the *feeling
-of romantic possibility*, or casinos the feeling of winning.
+not selling music. They're selling _the feeling of intimacy_. The same way
+social media sells the _feeling of community_ or dating apps sell the _feeling
+of romantic possibility_, or casinos the feeling of winning.
 
 It's a form of emotional outsourcing. We no longer engage with music as an act
 of discovery or empathy; we engage with it as a consumer interface designed to

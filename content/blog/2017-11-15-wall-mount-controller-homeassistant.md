@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "My Cheap Smart Home Setup - Wall Mounted Controller"
 date: "2017-11-15"
 excerpt: "Smart Homes (or bedrooms) are a great conversation starters, that's true only if you're the one that controls them. When your guests aren't able to..."
@@ -12,16 +9,13 @@ tags:
 description: "Smart Homes (or bedrooms) are a great conversation starters, that's true only if you're the one that controls them. When your guests aren't able to..."
 ---
 
-
 **Smart Homes** (or bedrooms) are a **great conversation starters**, that's true only if **you're the one that controls them.**
 When your **guests** aren't able to use your smart home setup **it ain't fun for them.**
 The **solution**-route I decided to take is the one that includes a **_Wall Mounted Panel._**
 
-
-
 <img src="https://i.imgur.com/Z06ipnW.jpg?1" style={{ maxWidth: '400px' }} alt="Wall Mounted Panel" />
 
-___
+---
 
 ### Guide
 
@@ -55,7 +49,7 @@ Here're the steps to install AppDaemon:
   ```
   $ sudo pip3 install appdaemon
   ```
-- Now we need to **create a file** called _appdaemon.yaml_  somewhere.  
+- Now we need to **create a file** called _appdaemon.yaml_ somewhere.  
   I decided to put it in my Home Assistant Configuration directory.
   ```
   cd /path/to/homeassistant/dir
@@ -63,10 +57,10 @@ Here're the steps to install AppDaemon:
   cd appdaemon
   touch appdaemon.yaml
   ```
-- Then we need to **edit** the appdaemon **configuration file**.  
+- Then we need to **edit** the appdaemon **configuration file**.
   ```
   nano appdaemon.yaml
-  ```  
+  ```
   The **minimal** configuration is something like that:
   ```
   AppDaemon:
@@ -114,12 +108,12 @@ To daemonize it you need to:
 To install it you need to:
 
 - **Edit** the _appdaemon.yaml_ configuration file.
-   Open it with the text editor of your choice.  
-   Now we need to **append** to that file the HADashboard configuration.
-   ```
-   HADashboard:
-     dash_url: http://YOUR_HA_IP:5050
-   ```
+  Open it with the text editor of your choice.  
+  Now we need to **append** to that file the HADashboard configuration.
+  ```
+  HADashboard:
+    dash_url: http://YOUR_HA_IP:5050
+  ```
 - Now you've to **create some folders** inside the configuration directory.
   ```
   mkdir compiled
@@ -141,7 +135,6 @@ You're all set! Now we have to **build our dashboards**. To learn how, follow th
 
 #### Creation of the wall mount
 
-
   <iframe 
     src='https://www.youtube.com/embed/fgMB4wWaEBU' 
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
@@ -162,10 +155,10 @@ Here're the **last steps!**
 You're **all set!**  
 You've a **great** wall mounted house controller and your **friends and family will love it!**
 
-___
+---
 
 **I'll** surely **post more** guides like this one when I'll get my hands on more **awesome devices.**
 
-___
+---
 
 _Let me know what you think_ of this dashboard and this article using the **comments** below or by hitting me up on [**Twitter**](http://twitter.com/eliseomartelli).

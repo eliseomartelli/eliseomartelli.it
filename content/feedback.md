@@ -10,7 +10,7 @@ title: "Feedback"
     <strong>Message</strong>
     <textarea name="message" rows="5" placeholder="Your message..." required style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; font-family: inherit;"></textarea>
   </label>
-  
+
   <button type="submit" style="padding: 0.75rem; border-radius: 4px; background: var(--link-color, #a81d27); color: #fff; border: none; font-weight: bold; cursor: pointer;">
     Send
   </button>

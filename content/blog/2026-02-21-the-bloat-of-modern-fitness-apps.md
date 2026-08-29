@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "The Bloat of Modern Fitness Apps"
 date: "2026-02-21 10:00:00"
 excerpt: "Starting from 49.99/year, and your data."

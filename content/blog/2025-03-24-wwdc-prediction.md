@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "ML model to guess WWDC dates"
 date: "2025-03-24 17:30:00"
 excerpt: "Guesssing the date of an event that Apple schedules with a calendar"
@@ -24,12 +21,12 @@ Oh, and by the way, the predicted announcement date was off by a week.
 Hello my fellow Apple nerds, or, as Tim Cook would've said: "Good Morning."
 
 Today, I'm proud to present my completely unnecessary and unasked-for adventure
-into predicting Apple's WWDC dates using machine learning.  Because nothing
-says *"I have free time"* like building a RandomForest model to guess when Tim
+into predicting Apple's WWDC dates using machine learning. Because nothing
+says _"I have free time"_ like building a RandomForest model to guess when Tim
 Cook will send out an email invitation.
 
 Apple's WWDC is like Christmas for developers—if Christmas moved around
-slightly each year and required a ticket.  
+slightly each year and required a ticket.
 
 After checking out [this
 post](https://mastodon.social/@_Davidsmith/114218113961193279) where David
@@ -38,7 +35,7 @@ Smith compiled a list of WWDC dates for past years, I thought:
 > Why not use machine learning to predict the next one?
 
 So, I casually imported half the Python data science ecosystem and started
-working on this *marvelous* task.
+working on this _marvelous_ task.
 
 ```py
 import pandas as pd

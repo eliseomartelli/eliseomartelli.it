@@ -1,8 +1,6 @@
 {{ define "main" }}
 <section>
-  {{ .Content }}
-
-  {{ partial "newsletter_signup.html" . }}
+  {{ .Content }} {{ partial "newsletter_signup.html" . }}
 
   <hr />
   <h3>Archive</h3>

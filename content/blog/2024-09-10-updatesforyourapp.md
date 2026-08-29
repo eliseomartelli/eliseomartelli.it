@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Updates for you macOS app"
 date: "2024-10-09 19:40:00"
 excerpt: "Nag your users, but just a little bit"

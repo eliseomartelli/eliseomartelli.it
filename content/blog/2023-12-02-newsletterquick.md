@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Built and deployed a newsletter in an afternoon"
 date: "2023-12-02 00:00:00"
 excerpt: "If you are a long-time reader of this blog, you might remember I already had a newsletter. It was built upon Revue. Revue was a platform that allow..."
@@ -9,7 +6,6 @@ tags:
   - Programming
 description: "If you are a long-time reader of this blog, you might remember I already had a newsletter. It was built upon Revue. Revue was a platform that allow..."
 ---
-
 
 If you are a long-time reader of this blog, you might remember I already had
 a newsletter. It was built upon Revue.
@@ -19,7 +15,7 @@ had a user-friendly UI and, as a great plus, it offered an API, so you could
 build custom interfaces and integrate them with your site.
 
 Revue was later acquired by Twitter on January 26, 2021. After Elon Musk
-~destroyed~ bought Twitter for the meme, and he decided to close it down.
+~~destroyed~~ bought Twitter for the meme, and he decided to close it down.
 
 Subsequently, I tried to find an alternative to my rather modest newsletter
 needs, but couldn't find any that satisfied all my points.

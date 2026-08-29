@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Goodbye. Hello."
 date: "2024-12-31 17:00:00"
 excerpt: "Some reflections on 2024"

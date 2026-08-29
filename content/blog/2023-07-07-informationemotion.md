@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Ingredients for a great picture"
 date: "2023-07-07 19:40:00"
 excerpt: "Beyond light and time"

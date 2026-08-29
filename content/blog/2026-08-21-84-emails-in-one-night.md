@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "84 Emails in One Night"
 date: "2026-08-21 13:30:00+02:00"
 excerpt: "My honeypot failed, so my site mailed me all night. Here is the postmortem."
@@ -17,14 +14,14 @@ same: "New message from Test". Again. And again. Eighty-four times.
 This is the postmortem. All times are CEST. Quotes come from the saved emails
 and from commit `4c9c425`.
 
-| Time | Event |
-| ---- | ----- |
-| Wed 19, 19:52 | One probe message arrives. The name is "Victorina Cable". |
-| Thu 20, 21:26 | The flood starts. |
-| Fri 21, 01:54 | Seventy-seven messages later, the wave stops. |
-| Fri 21, 02:01–02:21 | Six more messages slip through. |
-| Fri 21, 02:46 | I push the fix, `chore: update honeypot`. |
-| Fri 21, 03:15 | I go back to bed. |
+| Time                | Event                                                     |
+| ------------------- | --------------------------------------------------------- |
+| Wed 19, 19:52       | One probe message arrives. The name is "Victorina Cable". |
+| Thu 20, 21:26       | The flood starts.                                         |
+| Fri 21, 01:54       | Seventy-seven messages later, the wave stops.             |
+| Fri 21, 02:01–02:21 | Six more messages slip through.                           |
+| Fri 21, 02:46       | I push the fix, `chore: update honeypot`.                 |
+| Fri 21, 03:15       | I go back to bed.                                         |
 
 This site is a static Hugo build on Vercel. Three forms POST to serverless
 functions: `/api/contact/`, `/api/contact/feedback/`, and
@@ -34,8 +31,14 @@ functions: `/api/contact/`, `/api/contact/feedback/`, and
 The only defense was a honeypot field:
 
 ```html
-<input type="url" name="website" tabindex="-1" autocomplete="off"
-  style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true" />
+<input
+  type="url"
+  name="website"
+  tabindex="-1"
+  autocomplete="off"
+  style="position: absolute; left: -9999px; opacity: 0;"
+  aria-hidden="true"
+/>
 ```
 
 Human visitors do not see the field. Bots see it and fill it. Or that was the

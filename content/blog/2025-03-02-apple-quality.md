@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Apple's Software Quality Crisis: When Premium Hardware Meets Subpar Software"
 date: "2025-03-02 19:15:00"
 excerpt: "Tim, I think we are not cooking"

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "I want to be bored"
 date: "2025-04-10 12:30:00"
 excerpt: "Am I living in autopilot?"

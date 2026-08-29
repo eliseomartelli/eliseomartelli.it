@@ -1,6 +1,4 @@
 ---
-
-
 title: "AirPods Max 2: an infuriating love letter"
 date: "2026-04-02 00:00:00"
 excerpt: "A brutally honest review of Apple's premium headphones"
@@ -57,18 +55,21 @@ We get "Adaptive EQ" that allegedly tailors to your ear shape. For €579, I wan
 to tweak the frequency response myself. Is that really too much to ask in 2026?
 
 {{< proscons >}}
+
 ### Pros
+
 - Bass response is clean and present without bleeding into mids
 - Soundstage is wider than expected for Bluetooth headphones
 - Lossless audio over USB-C when wired
 - Adaptive Audio works well for handling sudden loud noises
 
 ### Cons
+
 - No user-adjustable multi-band EQ
 - Feels heavy, especially when doing activities / chores around the house
 - That stupid 'bra' case offers zero real protection
 - Transparency mode feels metallic
-{{< /proscons >}}
+  {{< /proscons >}}
 
 ## The H2 Features
 
@@ -83,7 +84,7 @@ sudden loud noises (sirens, car horns) while keeping you aware of your
 surroundings.
 
 Lossless via USB-C: The USB-C port supports ultra-low latency lossless audio
-when wired. 
+when wired.
 
 ## The Disappointments
 
@@ -141,6 +142,7 @@ I put these through my usual testing playlist to see how the these headphones
 handle different extremes:
 
 ### La Sera Dei Miracoli - Lucio Dalla
+
 Dalla's classic is a sprawling, messy arrangement. I use this to see how well
 headphones handle chaos, the piano, the backing vocals, and his soaring voice
 all fighting for space.
@@ -154,6 +156,7 @@ all fighting for space.
 ></iframe>
 
 ### Figli Delle Stelle - Alan Sorrenti
+
 I hate that I love this disco track. It’s perfect for testing high-end treble.
 If the headphones are too sharp, the hi-hats and falsetto will pierce your
 eardrums. Here, they sparkle nicely.
@@ -167,6 +170,7 @@ eardrums. Here, they sparkle nicely.
 ></iframe>
 
 ### Oh my god - Adele
+
 A solid pop track for testing vocal presence. The AirPods Max 2 put Adele right
 in the center of the room, isolating her voice cleanly from the heavy bass
 drops without muddying either.
@@ -180,6 +184,7 @@ drops without muddying either.
 ></iframe>
 
 ### Bury a Friend - Billie Eilish
+
 Eilish's production is absurdly bass-heavy with ASMR-style vocal whispers. If
 the sub-bass is too muddy, the track becomes unlistenable. The low-end
 surprisingly tight here.
@@ -193,6 +198,7 @@ surprisingly tight here.
 ></iframe>
 
 ### Shape of My Heart - Sting
+
 Yes, it's cliché, but that acoustic guitar riff and the delicate snare hits are
 great for checking instrument separation. You can actually hear the fingers
 sliding on the strings.

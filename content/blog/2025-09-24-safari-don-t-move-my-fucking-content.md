@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Safari, don't move my fucking content"
 date: "2025-09-24 17:15:00"
 excerpt: "Every day our suffering gets greater and greater"

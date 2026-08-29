@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "The joy of photography in the age of social media"
 date: "2022-12-07 21:30:00"
 excerpt: "The value of taking pictures for yourself, and the importance of sharing them intentionally"

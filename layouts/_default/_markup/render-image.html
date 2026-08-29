@@ -1,44 +1,70 @@
-{{- $u := urls.Parse .Destination -}}
-{{- $img := "" -}}
-
-{{- /* Resolve the image relative to assets */ -}}
-{{- if not $u.IsAbs -}}
-  {{- $path := strings.TrimPrefix "/" .Destination -}}
-  {{- $img = resources.Get $path -}}
-{{- end -}}
-
-{{- if and $img (ne $img.MediaType.SubType "svg") -}}
-  {{- /* Convert and resize processable images to WebP */ -}}
-  {{- $webp := $img.Resize "1000x webp" -}}
-  {{- $placeholder := $img.Resize "3x webp" -}}
-  {{- $base64 := $placeholder.Content | base64Encode -}}
-  <p>
-    <span style="display: block; position: relative; overflow: hidden; background: url('data:image/webp;base64,{{ $base64 }}') no-repeat center/cover; max-width: 100%; margin: 0 auto; aspect-ratio: {{ $webp.Width }} / {{ $webp.Height }};">
-      <img src="{{ $webp.RelPermalink }}" 
-           alt="{{ .Text }}" 
-           title="{{ .Title }}" 
-           loading="lazy" 
-           decoding="async" 
-           width="{{ $webp.Width }}" 
-           height="{{ $webp.Height }}"
-           style="display: block; width: 100%; height: auto; max-width: 100%; opacity: 0; transition: opacity 0.4s ease-out, filter 0.4s ease-out;" 
-           onload="this.style.opacity='1';" />
-    </span>
-    {{- with .Text }}
-      <small style="display:block;width:100%;text-align:center;color:var(--text-color);margin-top:0.5rem;">{{ . }}</small>
-    {{- end }}
-  </p>
-{{- else -}}
-  {{- /* Fallback for SVGs, external URLs, or files not resolved */ -}}
-  <p>
-    <img src="{{ .Destination | safeURL }}" 
-         alt="{{ .Text }}" 
-         title="{{ .Title }}" 
-         loading="lazy" 
-         decoding="async" 
-         style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
-    {{- with .Text }}
-      <small style="display:block;width:100%;text-align:center;color:var(--text-color);margin-top:0.5rem;">{{ . }}</small>
-    {{- end }}
-  </p>
+{{- $u := urls.Parse .Destination -}} {{- $img := "" -}} {{- /* Resolve the
+image relative to assets */ -}} {{- if not $u.IsAbs -}} {{- $path :=
+strings.TrimPrefix "/" .Destination -}} {{- $img = resources.Get $path -}} {{-
+end -}} {{- if and $img (ne $img.MediaType.SubType "svg") -}} {{- /* Convert and
+resize processable images to WebP */ -}} {{- $webp := $img.Resize "1000x webp"
+-}} {{- $placeholder := $img.Resize "3x webp" -}} {{- $base64 :=
+$placeholder.Content | base64Encode -}}
+<p>
+  <span
+    style="display: block; position: relative; overflow: hidden; background: url('data:image/webp;base64,{{ $base64 }}') no-repeat center/cover; max-width: 100%; margin: 0 auto; aspect-ratio: {{ $webp.Width }} / {{ $webp.Height }};"
+  >
+    <img
+      src="{{ $webp.RelPermalink }}"
+      alt="{{ .Text }}"
+      title="{{ .Title }}"
+      loading="lazy"
+      decoding="async"
+      width="{{ $webp.Width }}"
+      height="{{ $webp.Height }}"
+      style="
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        opacity: 0;
+        transition:
+          opacity 0.4s ease-out,
+          filter 0.4s ease-out;
+      "
+      onload="this.style.opacity = '1'"
+    />
+  </span>
+  {{- with .Text }}
+  <small
+    style="
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: var(--text-color);
+      margin-top: 0.5rem;
+    "
+    >{{ . }}</small
+  >
+  {{- end }}
+</p>
+{{- else -}} {{- /* Fallback for SVGs, external URLs, or files not resolved */
+-}}
+<p>
+  <img
+    src="{{ .Destination | safeURL }}"
+    alt="{{ .Text }}"
+    title="{{ .Title }}"
+    loading="lazy"
+    decoding="async"
+    style="max-width: 100%; height: auto; display: block; margin: 0 auto"
+  />
+  {{- with .Text }}
+  <small
+    style="
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: var(--text-color);
+      margin-top: 0.5rem;
+    "
+    >{{ . }}</small
+  >
+  {{- end }}
+</p>
 {{- end -}}

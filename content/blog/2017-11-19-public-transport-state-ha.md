@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "My Cheap Smart Home Setup - How do I get the public transport status?"
 date: "2017-11-19 00:00:00"
 excerpt: "Turin is a great city and I'm enjoying it. The only problem is that I use public transport for almost anything. Finding out that there's an unexpec..."
@@ -9,8 +6,6 @@ tags:
   - IoT
 description: "Turin is a great city and I'm enjoying it. The only problem is that I use public transport for almost anything. Finding out that there's an unexpec..."
 ---
-
-
 
 Turin is a **great city** and I'm enjoying it.  
 The only problem is that **I use public transport** for almost anything.  
@@ -25,7 +20,7 @@ Since I'm working on my Smart Home project, I decided to **include "strike data"
 ### The Route
 
 **Public transportation in Turin** is mainly managed by [**GTT** (Gruppo Torinese Trasporti)](http://www.gtt.to.it/cms/) and they've a nice [page](http://www.gtt.to.it/cms/avvisi-e-informazioni-di-servizio) where they publish line changes, news and strikes.  
-They also offer an **RSS feed** of this page [here](http://www.gtt.to.it/cms/avvisi-e-informazioni-di-servizio?format=feed&amp;type=rss).
+They also offer an **RSS feed** of this page [here](http://www.gtt.to.it/cms/avvisi-e-informazioni-di-servizio?format=feed&type=rss).
 
 Now we need to decide **how to get the data** to our Home Assistant instance.  
 I decided to take the **IFTTT way.**
@@ -47,22 +42,16 @@ _You should be registered to IFTTT to continue_
 2. **Click** on your account name on the top right and choose "New Applet";
 3. **Click** on the "this" button;
 
-  ![Imgur](https://i.imgur.com/oKNJoCD.png)
-4. **Click** the "RSS Feed" tile;
-5. **Click** the "New feed item matches" tile;
-6. **Set** the keyword to the one used by your public transit company (in my case I use: "sciopero");
-7. **Set** the Feed URL to the one your company publishes the info on;
-8. **Click** on "Create trigger";
-9. **Click** on the "that" link;
-10. **Click** on the "Webhooks" tile;
-11. **Click** on the "Make a web request" tile;
-12. **Set** the URL to your Home Assistant API endpoint:
+![Imgur](https://i.imgur.com/oKNJoCD.png) 4. **Click** the "RSS Feed" tile; 5. **Click** the "New feed item matches" tile; 6. **Set** the keyword to the one used by your public transit company (in my case I use: "sciopero"); 7. **Set** the Feed URL to the one your company publishes the info on; 8. **Click** on "Create trigger"; 9. **Click** on the "that" link; 10. **Click** on the "Webhooks" tile; 11. **Click** on the "Make a web request" tile; 12. **Set** the URL to your Home Assistant API endpoint:
+
 ```
 http://<YOUR HOMEASSISTANT IP>:8123/api/states/sensor.<YOUR SENSOR NAME>?api_password=<YOUR HOMEASSISTANT PASSWORD>
 ```
+
 13. **Set** the method to "POST";
 14. **Set** the Content Type to "application/json";
 15. **Set** the body to:
+
 ```
     {
       "state": "{% raw %}{{EntryTitle}}{% endraw %}",
@@ -72,6 +61,7 @@ http://<YOUR HOMEASSISTANT IP>:8123/api/states/sensor.<YOUR SENSOR NAME>?api_pas
       }
     }
 ```
+
 16. **Click** the "Create action" button;
 17. You're **ready** to go!
 
@@ -86,6 +76,6 @@ These two platforms can bring us **endless possibilities.**
 
 You can **check** my Home Assistant configuration **files** [here](https://github.com/eliseomartelli/HomeAssistant-Config).
 
-___
+---
 
 _Let me know what you think_ of this project and this article using the **comments** below or by hitting me up on [**Twitter**](http://twitter.com/eliseomartelli).

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Contact and Newsletter temporarily offline"
 date: "2025-11-11 17:06:00"
 excerpt: "We can't have nice things."

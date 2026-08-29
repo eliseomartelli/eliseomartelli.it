@@ -5,141 +5,362 @@
     <hr />
 
     {{ if eq .File.ContentBaseName "filmcalc" }}
-      <div id="filmcalc-tool">
-        <div class="tool-block">
-          <h2 style="text-align:center; font-size: 0.9rem; text-transform: uppercase;">Development Parameters</h2>
-          <label class="tool-label" for="film-time-minutes">Recommended Time</label>
-          <div class="tool-grid-2">
-            <input id="film-time-minutes" class="tool-input" type="number" value="8" min="0" />
-            <input id="film-time-seconds" class="tool-input" type="number" value="0" min="0" />
-          </div>
-          <div class="tool-grid-2" style="margin-top: 0.75rem;">
-            <div>
-              <label class="tool-label" for="film-temp-initial">Initial Temp (°C)</label>
-              <input id="film-temp-initial" class="tool-input" type="number" value="20" step="0.1" />
-            </div>
-            <div>
-              <label class="tool-label" for="film-temp-target">Target Temp (°C)</label>
-              <input id="film-temp-target" class="tool-input" type="number" value="20" step="0.1" />
-            </div>
-          </div>
-          <label class="tool-label" style="margin-top: 0.75rem;">
-            <input id="film-constant-agitation" type="checkbox" />
-            Constant Agitation
-          </label>
-          <label class="tool-label" for="film-pushpull">Push/Pull (<span id="film-pushpull-value">0</span> stops)</label>
-          <input id="film-pushpull" class="tool-input" type="range" min="-3" max="3" step="1" value="0" />
+    <div id="filmcalc-tool">
+      <div class="tool-block">
+        <h2
+          style="
+            text-align: center;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+          "
+        >
+          Development Parameters
+        </h2>
+        <label class="tool-label" for="film-time-minutes"
+          >Recommended Time</label
+        >
+        <div class="tool-grid-2">
+          <input
+            id="film-time-minutes"
+            class="tool-input"
+            type="number"
+            value="8"
+            min="0"
+          />
+          <input
+            id="film-time-seconds"
+            class="tool-input"
+            type="number"
+            value="0"
+            min="0"
+          />
         </div>
-
-        <div class="tool-block">
-          <h2 style="text-align:center; font-size: 0.9rem; text-transform: uppercase;">Adjusted Development Time</h2>
-          <p id="film-result-time" class="tool-kpi">08:00</p>
-          <hr />
-          <div class="tool-kpi-row">
-            <div><p>Temp Δ</p><p id="film-result-tempdelta"><strong>0.0°C</strong></p></div>
-            <div><p>Push/Pull</p><p id="film-result-pushpull"><strong>0</strong></p></div>
-            <div><p>Agitation</p><p id="film-result-agitation"><strong>Std</strong></p></div>
+        <div class="tool-grid-2" style="margin-top: 0.75rem">
+          <div>
+            <label class="tool-label" for="film-temp-initial"
+              >Initial Temp (°C)</label
+            >
+            <input
+              id="film-temp-initial"
+              class="tool-input"
+              type="number"
+              value="20"
+              step="0.1"
+            />
+          </div>
+          <div>
+            <label class="tool-label" for="film-temp-target"
+              >Target Temp (°C)</label
+            >
+            <input
+              id="film-temp-target"
+              class="tool-input"
+              type="number"
+              value="20"
+              step="0.1"
+            />
           </div>
         </div>
-
-        <p class="tool-note">Temperature compensation uses the Ilford factor (~10% per °C). Push/pull adjusts time by 50% per stop. Constant agitation reduces time by 10%.</p>
+        <label class="tool-label" style="margin-top: 0.75rem">
+          <input id="film-constant-agitation" type="checkbox" />
+          Constant Agitation
+        </label>
+        <label class="tool-label" for="film-pushpull"
+          >Push/Pull (<span id="film-pushpull-value">0</span> stops)</label
+        >
+        <input
+          id="film-pushpull"
+          class="tool-input"
+          type="range"
+          min="-3"
+          max="3"
+          step="1"
+          value="0"
+        />
       </div>
+
+      <div class="tool-block">
+        <h2
+          style="
+            text-align: center;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+          "
+        >
+          Adjusted Development Time
+        </h2>
+        <p id="film-result-time" class="tool-kpi">08:00</p>
+        <hr />
+        <div class="tool-kpi-row">
+          <div>
+            <p>Temp Δ</p>
+            <p id="film-result-tempdelta"><strong>0.0°C</strong></p>
+          </div>
+          <div>
+            <p>Push/Pull</p>
+            <p id="film-result-pushpull"><strong>0</strong></p>
+          </div>
+          <div>
+            <p>Agitation</p>
+            <p id="film-result-agitation"><strong>Std</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <p class="tool-note">
+        Temperature compensation uses the Ilford factor (~10% per °C). Push/pull
+        adjusts time by 50% per stop. Constant agitation reduces time by 10%.
+      </p>
+    </div>
     {{ else if eq .File.ContentBaseName "dilution" }}
-      <div id="dilution-tool">
-        <div class="tool-block">
-          <h2 style="text-align:center; font-size: 0.9rem; text-transform: uppercase;">Solution Parameters</h2>
-          <label class="tool-label" for="dilution-total-volume">Total Target Volume (ml)</label>
-          <input id="dilution-total-volume" class="tool-input" type="number" value="300" min="0" />
-          <label class="tool-label" style="margin-top: 0.75rem;">Dilution Ratio (Parts Chemical + Parts Water)</label>
-          <div class="tool-grid-3">
-            <input id="dilution-part-a" class="tool-input" type="number" value="1" step="0.1" min="0" />
-            <div style="display:flex; align-items:center; justify-content:center; font-size:1.3rem; font-weight:700;">+</div>
-            <input id="dilution-part-b" class="tool-input" type="number" value="9" step="0.1" min="0" />
+    <div id="dilution-tool">
+      <div class="tool-block">
+        <h2
+          style="
+            text-align: center;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+          "
+        >
+          Solution Parameters
+        </h2>
+        <label class="tool-label" for="dilution-total-volume"
+          >Total Target Volume (ml)</label
+        >
+        <input
+          id="dilution-total-volume"
+          class="tool-input"
+          type="number"
+          value="300"
+          min="0"
+        />
+        <label class="tool-label" style="margin-top: 0.75rem"
+          >Dilution Ratio (Parts Chemical + Parts Water)</label
+        >
+        <div class="tool-grid-3">
+          <input
+            id="dilution-part-a"
+            class="tool-input"
+            type="number"
+            value="1"
+            step="0.1"
+            min="0"
+          />
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.3rem;
+              font-weight: 700;
+            "
+          >
+            +
           </div>
+          <input
+            id="dilution-part-b"
+            class="tool-input"
+            type="number"
+            value="9"
+            step="0.1"
+            min="0"
+          />
         </div>
-
-        <div class="tool-block">
-          <div class="tool-grid-2">
-            <div style="text-align:center;">
-              <p style="text-transform:uppercase; font-size:0.85rem; margin-bottom:0.3rem;">Chemical</p>
-              <p id="dilution-result-a" class="tool-kpi" style="font-size: clamp(1.8rem, 5vw, 3rem);">30ml</p>
-            </div>
-            <div style="text-align:center;">
-              <p style="text-transform:uppercase; font-size:0.85rem; margin-bottom:0.3rem;">Water</p>
-              <p id="dilution-result-b" class="tool-kpi" style="font-size: clamp(1.8rem, 5vw, 3rem); color: inherit;">270ml</p>
-            </div>
-          </div>
-        </div>
-
-        <p class="tool-note">Standard photographic dilution notation (1+X) where 1 part chemical is added to X parts water.</p>
       </div>
+
+      <div class="tool-block">
+        <div class="tool-grid-2">
+          <div style="text-align: center">
+            <p
+              style="
+                text-transform: uppercase;
+                font-size: 0.85rem;
+                margin-bottom: 0.3rem;
+              "
+            >
+              Chemical
+            </p>
+            <p
+              id="dilution-result-a"
+              class="tool-kpi"
+              style="font-size: clamp(1.8rem, 5vw, 3rem)"
+            >
+              30ml
+            </p>
+          </div>
+          <div style="text-align: center">
+            <p
+              style="
+                text-transform: uppercase;
+                font-size: 0.85rem;
+                margin-bottom: 0.3rem;
+              "
+            >
+              Water
+            </p>
+            <p
+              id="dilution-result-b"
+              class="tool-kpi"
+              style="font-size: clamp(1.8rem, 5vw, 3rem); color: inherit"
+            >
+              270ml
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="tool-note">
+        Standard photographic dilution notation (1+X) where 1 part chemical is
+        added to X parts water.
+      </p>
+    </div>
     {{ else if eq .File.ContentBaseName "print-layout" }}
-      <div id="print-layout-tool">
-        <div class="tool-block">
-          <div class="tool-grid-2">
-            <div>
-              <label class="tool-label" for="pl-target-size">Target Output Sheet</label>
-              <select id="pl-target-size" class="tool-select">
-                <option value="A4">A4</option>
-                <option value="A3">A3</option>
-                <option value="US Letter">US Letter</option>
-                <option value="US Legal">US Legal</option>
-                <option value="Custom">Custom</option>
+    <div id="print-layout-tool">
+      <div class="tool-block">
+        <div class="tool-grid-2">
+          <div>
+            <label class="tool-label" for="pl-target-size"
+              >Target Output Sheet</label
+            >
+            <select id="pl-target-size" class="tool-select">
+              <option value="A4">A4</option>
+              <option value="A3">A3</option>
+              <option value="US Letter">US Letter</option>
+              <option value="US Legal">US Legal</option>
+              <option value="Custom">Custom</option>
+            </select>
+            <div class="tool-grid-2" style="margin-top: 0.5rem">
+              <button
+                id="pl-target-portrait"
+                type="button"
+                class="tool-button active"
+              >
+                Portrait
+              </button>
+              <button
+                id="pl-target-landscape"
+                type="button"
+                class="tool-button"
+              >
+                Landscape
+              </button>
+            </div>
+            <div
+              id="pl-target-custom"
+              class="tool-grid-2"
+              style="margin-top: 0.5rem; display: none"
+            >
+              <input
+                id="pl-target-custom-width"
+                class="tool-input"
+                type="number"
+                value="210"
+                min="1"
+              />
+              <input
+                id="pl-target-custom-height"
+                class="tool-input"
+                type="number"
+                value="297"
+                min="1"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="tool-label">Printing Sheet</label>
+            <div class="tool-grid-3">
+              <input
+                id="pl-print-width"
+                class="tool-input"
+                type="number"
+                value="178"
+                min="1"
+              />
+              <input
+                id="pl-print-height"
+                class="tool-input"
+                type="number"
+                value="240"
+                min="1"
+              />
+              <select id="pl-print-unit" class="tool-select">
+                <option value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="in">in</option>
               </select>
-              <div class="tool-grid-2" style="margin-top:0.5rem;">
-                <button id="pl-target-portrait" type="button" class="tool-button active">Portrait</button>
-                <button id="pl-target-landscape" type="button" class="tool-button">Landscape</button>
-              </div>
-              <div id="pl-target-custom" class="tool-grid-2" style="margin-top:0.5rem; display:none;">
-                <input id="pl-target-custom-width" class="tool-input" type="number" value="210" min="1" />
-                <input id="pl-target-custom-height" class="tool-input" type="number" value="297" min="1" />
-              </div>
             </div>
-
-            <div>
-              <label class="tool-label">Printing Sheet</label>
-              <div class="tool-grid-3">
-                <input id="pl-print-width" class="tool-input" type="number" value="178" min="1" />
-                <input id="pl-print-height" class="tool-input" type="number" value="240" min="1" />
-                <select id="pl-print-unit" class="tool-select">
-                  <option value="mm">mm</option>
-                  <option value="cm">cm</option>
-                  <option value="in">in</option>
-                </select>
-              </div>
-              <div class="tool-grid-2" style="margin-top:0.5rem;">
-                <button id="pl-print-portrait" type="button" class="tool-button active">Portrait</button>
-                <button id="pl-print-landscape" type="button" class="tool-button">Landscape</button>
-              </div>
+            <div class="tool-grid-2" style="margin-top: 0.5rem">
+              <button
+                id="pl-print-portrait"
+                type="button"
+                class="tool-button active"
+              >
+                Portrait
+              </button>
+              <button id="pl-print-landscape" type="button" class="tool-button">
+                Landscape
+              </button>
             </div>
-          </div>
-
-          <div class="tool-grid-2" style="margin-top: 0.75rem;">
-            <div>
-              <label class="tool-label">Image Ratio (W:H)</label>
-              <div class="tool-grid-2">
-                <input id="pl-ratio-width" class="tool-input" type="number" value="3" min="0.1" step="0.1" />
-                <input id="pl-ratio-height" class="tool-input" type="number" value="2" min="0.1" step="0.1" />
-              </div>
-            </div>
-            <div>
-              <label class="tool-label" for="pl-margin">Margin (mm)</label>
-              <input id="pl-margin" class="tool-input" type="number" value="10" min="0" step="0.1" />
-            </div>
-          </div>
-          <button id="pl-export-pdf" type="button" class="tool-button" style="margin-top: 0.75rem;">Export PDF</button>
-          <div id="pl-warning-box"></div>
-          <div class="tool-stats">
-            <div><span>Target Size</span><span id="pl-stat-target">-</span></div>
-            <div><span>Paper Size</span><span id="pl-stat-paper">-</span></div>
-            <div><span>Image Size</span><span id="pl-stat-image">-</span></div>
-            <div><span>Actual Margin</span><span id="pl-stat-margin">-</span></div>
           </div>
         </div>
-        <div class="tool-canvas-wrap">
-          <canvas id="print-layout-canvas"></canvas>
+
+        <div class="tool-grid-2" style="margin-top: 0.75rem">
+          <div>
+            <label class="tool-label">Image Ratio (W:H)</label>
+            <div class="tool-grid-2">
+              <input
+                id="pl-ratio-width"
+                class="tool-input"
+                type="number"
+                value="3"
+                min="0.1"
+                step="0.1"
+              />
+              <input
+                id="pl-ratio-height"
+                class="tool-input"
+                type="number"
+                value="2"
+                min="0.1"
+                step="0.1"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="tool-label" for="pl-margin">Margin (mm)</label>
+            <input
+              id="pl-margin"
+              class="tool-input"
+              type="number"
+              value="10"
+              min="0"
+              step="0.1"
+            />
+          </div>
+        </div>
+        <button
+          id="pl-export-pdf"
+          type="button"
+          class="tool-button"
+          style="margin-top: 0.75rem"
+        >
+          Export PDF
+        </button>
+        <div id="pl-warning-box"></div>
+        <div class="tool-stats">
+          <div><span>Target Size</span><span id="pl-stat-target">-</span></div>
+          <div><span>Paper Size</span><span id="pl-stat-paper">-</span></div>
+          <div><span>Image Size</span><span id="pl-stat-image">-</span></div>
+          <div>
+            <span>Actual Margin</span><span id="pl-stat-margin">-</span>
+          </div>
         </div>
       </div>
+      <div class="tool-canvas-wrap">
+        <canvas id="print-layout-canvas"></canvas>
+      </div>
+    </div>
     {{ end }}
   </section>
 </div>

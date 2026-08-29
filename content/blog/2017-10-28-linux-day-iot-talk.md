@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Linux Day IoT Talk"
 date: "2017-10-18 14:37:00"
 excerpt: "Notes from the IoT talk at Linux Day 2017 in Turin"
@@ -10,15 +7,16 @@ tags:
 description: "Notes from the IoT talk at Linux Day 2017 in Turin"
 ---
 
-This was my first [**Linux Day**](http://linuxdaytorino.org/2017/) in Turin, and I was _late_, like _very late_ (as always 😂  ).
+This was my first [**Linux Day**](http://linuxdaytorino.org/2017/) in Turin, and I was _late_, like _very late_ (as always 😂 ).
 
-I decided to attend the __IoT__ talk 'cause I'm interested about this topic.
+I decided to attend the **IoT** talk 'cause I'm interested about this topic.
 
 The speaker, [@cesco_78](https://twitter.com/cesco_78), talked about how the tech companies are deploying a lot of devices, rapidly and they haven't so much worries about security and stuffs like that.
 
 You can find the notes here:
 
 ### IoT
+
 - It's a network of talking devices
 - IoT devices are:
   - Sensors
@@ -30,12 +28,15 @@ You can find the notes here:
 - They aren't secure
 
 ### There're a lot of IoT devices
+
 #### Problems
+
 - IPv4 addresses aren't infinite.
 - A lot of them are in mobility so 4G cells are full
 - The range is a big problem
 
 #### Solution
+
 - SigFox
 - LoRa
 
@@ -48,6 +49,7 @@ LPWAN aren't Internet backed.
 So a cluster of sensors is connected to a gateway. The gateway is then connected to internet.
 
 #### SigFox
+
 Less data and slow.
 
 - Packets (Upstream) are of 12 bytes.
@@ -61,15 +63,18 @@ The price is big and it's billed "per-device".
 Western Europe is fully covered.
 
 #### The advantages are:
+
 - Low energy required;
 - Free Roaming;
 - Easy to use.
 
 #### Compatible devices:
+
 - MkrFox1200;
 - Nettrotter BIB.
 
 #### LoRa
+
 - It's like SigFox for the tech specifications.
 - It has unlimited data rates.
 - It's an open standard.
@@ -81,9 +86,11 @@ The decision has to be taken "per-project".
 <hr />
 
 ### Alternatives
+
 If you have a network (WiFi/3G/4G) and if you want to transfer data without using a lot of bandwidth you can use:
 
 #### MQTT
+
 Message Queue Telemetry Transport
 
 - It has a little overhead;

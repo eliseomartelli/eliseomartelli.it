@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "A lens on the ground"
 date: "2025-11-22 13:19:00"
 excerpt: "Shit happens. Lenses fall. But that's okay."
@@ -15,7 +12,7 @@ I found a copy at New Old Camera in Milan for €650, a steal, frankly. The
 catch? A "non-original red dot" with a bit of excess glue. A cosmetic
 imperfection that shaved €500 off the normal price. Perfect for me.
 
-It arrived yesterday. I unboxed it, then 10 hours later I dropped it. 
+It arrived yesterday. I unboxed it, then 10 hours later I dropped it.
 
 There is a specific kind of silence that fills a room when a piece of precision
 German engineering hits the floor. It’s heavy. It’s expensive.
@@ -36,7 +33,7 @@ I checked the glass. Intact.
 I checked the aperture. Clicky and precise.
 
 The lens took a bullet for me. Before the drop, it was just an asset with a
-resale value. Now, it is unequivocally mine. It has a story. 
+resale value. Now, it is unequivocally mine. It has a story.
 
 Cameras and lenses are meant to be meat, not idols. They are tools for
 capturing reality, and reality is messy, imperfect, and sometimes hits the

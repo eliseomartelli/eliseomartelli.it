@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "The API of a Camera and the Unix manifesto"
 date: "2025-11-17 12:16:00"
 excerpt: "What Edsger W. Dijkstra can teach us about photography and the tools we use?"
@@ -27,7 +24,7 @@ The unix philosophy is pretty simple:
    input.
 3. Design and build software, even operating systems, to be tried early,
    ideally within weeks. Don't hesitate to throw away the clumsy parts and
-rebuild them.
+   rebuild them.
 4. Use tools in preference to unskilled help to lighten a programming task,
    even if you have to detour to build the tools and expect to throw some of
    them out after you've finished using them.
@@ -55,14 +52,14 @@ It brings to mind the profound words of Edsger W. Dijkstra:
 This quote encapsulates why the simplicity of a Leica M influences creativity.
 You stop thinking about how to operate the camera and start thinking about how
 to see the light, compose the frame, and capture the moment. The camera becomes
-an extension of intent. 
+an extension of intent.
 
 In contrast, many modern cameras, while technically astounding, present an
 overwhelming "API surface." With countless buttons, custom modes, and nested
 menus, they introduce a cognitive load that can pull the photographer away from
 the art itself. It's exactly like the difference between a well-designed
 command-line tool that does one thing well, and a GUI mega-application monolith
-that tries to do everything, clumsily. 
+that tries to do everything, clumsily.
 
 Another great quote from Dijkstra speaks about emotion:
 

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "A Little Hack For Android Dimensions"
 date: "2016-05-26 14:35:00"
 excerpt: "match_parent and wrap_content in Android Dimension Resources"
@@ -46,6 +43,7 @@ At this point you can **try putting -1px in place of match_parent** in one of
 your layouts and it will work as expected!
 
 Observing this we can say that:
+
 - MATCH_PARENT equals to -1px,
 - WRAP_CONTENT equals to -2px. Nice, uh?
 

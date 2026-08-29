@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Using Home Assistant to control computers through SSH"
 date: "2018-10-14"
 excerpt: "Home Assistant is starting to take a nice shape here in my college bedroom and I'm trying to add even more commodities to it. The last one? Opening..."
@@ -11,8 +8,6 @@ tags:
   - diy
 description: "Home Assistant is starting to take a nice shape here in my college bedroom and I'm trying to add even more commodities to it. The last one? Opening..."
 ---
-
-
 
 ![](https://image.ibb.co/gispJp/Screenshot-2018-10-14-at-12-06-28.png)
 

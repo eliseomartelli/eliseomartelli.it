@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "They put AI on the radio"
 date: "2026-08-08 12:00:00"
 excerpt: "The new move of the music industry"

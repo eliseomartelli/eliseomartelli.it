@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "My AirPods Pro Case is Dead"
 date: "2026-06-16 14:30:00"
 excerpt: "Five years later, the lithium-ion reality sets in."
@@ -16,7 +13,7 @@ five years, which, in the world of tiny lithium-ion batteries, is basically
 ancient history.
 
 Now, the case has finally given up. It doesn't work unless it's plugged into a
-charger. The moment I pull the cable, it's a brick. 
+charger. The moment I pull the cable, it's a brick.
 
 It’s the classic symptom of a completely exhausted battery. If you’re in the
 same boat, there are a few things you can try before declared it dead, though I
@@ -37,7 +34,7 @@ microphone issue. They still hold a decent charge and sound fine. But because
 the case is dead, the whole set is essentially unusable.
 
 Apple doesn't replace these batteries. They just sell you a new case for
-€100-€120, or tell you to buy the new model. 
+€100-€120, or tell you to buy the new model.
 
 It’s a distinct sting: holding a perfectly functional piece of engineering that
 has been rendered a paperweight because of a tiny, non-replaceable pouch of
@@ -46,13 +43,13 @@ paired with built-in expiration dates.
 
 I just bought the [AirPods Max 2 in
 April](/blog/2026-04-02-airpods-max-2-review/). Knowing that they also have
-non user-replaceable batteries is... not encouraging. 
+non user-replaceable batteries is... not encouraging.
 
 However, there’s a small silver lining. The Max houses a much larger,
 traditional headphone battery. It undergoes far fewer charge cycles to deliver
 the same amount of listening time compared to the tiny cells in the Pro case,
 which are subjected to aggressive micro-discharging every single time you put
-them away. 
+them away.
 
 The Max should, theoretically, last much longer. But it doesn't change the
 underlying problem. We’re still buying products with a ticking clock inside.

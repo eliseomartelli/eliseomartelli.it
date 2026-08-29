@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "A short review of the new iPhones (2025)"
 date: "2025-09-19 19:59:00"
 excerpt: "Orange is the new black."
@@ -35,7 +32,7 @@ colors, that loook like they were chosen because they were out of the paints
 leftover from last year.
 
 Othen than that, the iPhone 17 is a solid phone, basically last year's iPhone
-but with better cameras, better screen (now with ProMotion) and the same 
+but with better cameras, better screen (now with ProMotion) and the same
 pricetag as last year.
 
 I think this is the only new iPhone that is worth considering.
@@ -68,7 +65,7 @@ The polished titanium rails are a fingerprint magnet, but they look
 incredible when clean.
 The light blue one is my favorite.
 
-The iPhone 17 Air is a beauty, but is full of compromises, like zero stereo 
+The iPhone 17 Air is a beauty, but is full of compromises, like zero stereo
 imaging, a smaller battery, and a single camera.
 
 ## Apple Watch Series 11
@@ -90,7 +87,7 @@ They sound great, but the case materials and the case’s lid that has a lot of
 play (compared to my AirPods Pro (1st generation)) don’t convince me.
 
 In conclusion, I think this year Apple has made some questionable choices,
-both in terms of design and materials, and in the way they are distributing 
+both in terms of design and materials, and in the way they are distributing
 features across the lineup.
 
 This year I decided to not get any of the new iPhones, and I will stick

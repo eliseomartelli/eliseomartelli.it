@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "I'm now 25."
 date: "2023-09-01 00:00:00"
 excerpt: "A reflection for my future self"
@@ -37,13 +34,6 @@ I had to make profound self-reflection to reshape the landscape of my emotions a
 
 I’m now 25.
 
-
-
-
 <img src="/posts/25/b.jpg" alt="" class="shadow-md"/>
 
-
 <img src="/posts/25/c.jpg" alt="" class="shadow-md"/>
-
-
-

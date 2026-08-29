@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Darkroom: Silver Gelatin Print at Spazio Gnu"
 date: "2026-03-09 09:54:00"
 excerpt: "Where's the undo button?"
@@ -20,7 +17,7 @@ programming, photo editing, and video editing), stepping into a space
 where there are no "undo" buttons or history states was a refreshing shift.
 
 For this session, I used a DURST M700 enlarger, along with a box of FOMA
-Fomaspeed Variant 311 High Gloss RC paper (8x10 inches), some rolls of 
+Fomaspeed Variant 311 High Gloss RC paper (8x10 inches), some rolls of
 [home developed
 film](/blog/2026-01-06-developing-kodak-tri-x-400-at-1600-iso-in-bellini-euro-hc/),
 a pack of Ilford Multigrade filters, and a few trays of chemicals.
@@ -31,9 +28,9 @@ for a first attempt at silver gelatin printing.
 Spazio Gnu's darkroom is organized into two (and an half) areas:
 
 - A dry area, where you have the enlargers and the workbench to handle the
-negatives and the paper.
+  negatives and the paper.
 - A wet island at the center of the room where you have water and trays to
-develop the prints. 
+  develop the prints.
 - A drying area with a roller dryer to speed up the drying process.
 
 The process of making a print requires a lot of patience and attention to
@@ -44,9 +41,9 @@ Chemicals used in the darkroom are typically divided into three categories:
 developer, stop bath, and fixer.
 
 - Developer: This chemical makes the latent image appear on the paper. I used
-ILFORD MULTIGRADE developer, mixed at a standard ratio of 1+9 with water. 
+  ILFORD MULTIGRADE developer, mixed at a standard ratio of 1+9 with water.
 - Stop Bath: This abruptly brings the development to an end and prevents
-contamination of the next bath. I used ILFORD ILFOSTOP at a 1+19 dilution.
+  contamination of the next bath. I used ILFORD ILFOSTOP at a 1+19 dilution.
 - Fixer: Makes the image permanent. ILFORD RAPID FIXER, mixed at 1+4.
 
 Before committing to a full sheet of paper, I made a test print to find the

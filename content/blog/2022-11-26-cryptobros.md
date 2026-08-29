@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Web3 isn't for me"
 date: "2022-11-26 19:40:00"
 excerpt: "You wouldn't funge a token"

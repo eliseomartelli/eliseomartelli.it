@@ -1,16 +1,12 @@
-{{ define "main" }}
-{{ partial "blog/post_header.html" . }}
+{{ define "main" }} {{ partial "blog/post_header.html" . }}
 <hr />
 
-<div class="post-content">
-  {{ .Content }}
-</div>
+<div class="post-content">{{ .Content }}</div>
 
 <hr />
 
-{{ if (.Param "enablePostNavigator") }}
-{{ partial "post_navigator.html" . }}
-{{ end }}
+{{ if (.Param "enablePostNavigator") }} {{ partial "post_navigator.html" . }} {{
+end }}
 
 <section>
   <h3>Newsletter</h3>

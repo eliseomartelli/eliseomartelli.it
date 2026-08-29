@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Reverse Engineering the Cinema: Bypassing Seat Adjacency Rules with DevTools"
 date: "2025-12-27 14:33:00"
 excerpt: "Don't tell me where to sit!"
@@ -50,22 +47,24 @@ led me backwards to a specific validation function in the JavaScript bundle:
 
 ```javascript
 // Original function snippet with added comments.
-scope.ic.checkJacketSeat = function(seatIds) {
+scope.ic.checkJacketSeat = function (seatIds) {
   // ...omitted code...
   var prevFree = false;
   var fromLeft = true;
 
   // Sort the row to scan usually
-  row.sort(function (a, b) { return a.colonna - b.colonna; });
-  
+  row.sort(function (a, b) {
+    return a.colonna - b.colonna;
+  });
+
   for (var i = 0; i < row.length; i++) {
-      // If we hit a selected seat, and the previous seat was "free" (a gap)
-      // Then we are not anchored to the left.
-      if (selectionIds[row[i].idposto] && prevFree) {
-          fromLeft = false;
-      }
-      // "prevFree" is true if the seat is neither selected nor busy
-      prevFree = !selectionIds[row[i].idposto] && !row[i].busy;
+    // If we hit a selected seat, and the previous seat was "free" (a gap)
+    // Then we are not anchored to the left.
+    if (selectionIds[row[i].idposto] && prevFree) {
+      fromLeft = false;
+    }
+    // "prevFree" is true if the seat is neither selected nor busy
+    prevFree = !selectionIds[row[i].idposto] && !row[i].busy;
   }
 
   // ... (The code then repeats this logic for the Right side)
@@ -73,7 +72,7 @@ scope.ic.checkJacketSeat = function(seatIds) {
   // If we have gaps on BOTH sides, block the purchase.
   // THIS IS THE KEY CHECK WE WANT TO BYPASS!
   if (!fromRight && !fromLeft) {
-      return false;
+    return false;
   }
 
   return true;

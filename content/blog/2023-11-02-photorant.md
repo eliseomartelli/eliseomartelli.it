@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "RANT: Photography Influencers Should Be Stopped."
 date: "2023-11-09 00:00:00"
 excerpt: "Unexistent magic formulas"

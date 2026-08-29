@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Using Ansible to deploy IoT devices"
 date: "2020-03-10 00:00:00"
 excerpt: "Blending two automation platforms to bring some sanity to the IoT world."

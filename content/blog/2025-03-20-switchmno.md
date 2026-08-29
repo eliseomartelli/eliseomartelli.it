@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "I’m Regretting Switching MNO"
 date: "2025-03-20 13:00:00"
 excerpt: "I miss my old provider :("

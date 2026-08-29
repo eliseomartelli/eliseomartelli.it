@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "OCLP on my parent's Mac mini: a failure story"
 date: "2025-04-17 17:00:00"
 excerpt: "Please, don't make dumb decisions during holidays"

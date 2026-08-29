@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Things happen"
 date: "2023-11-25 00:00:00"
 excerpt: "Dreams, journey, gratitude, discovery."

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Developing Kodak Tri-X 400 at 1600 ISO in Bellini Euro HC"
 date: "2026-01-06 09:20:00"
 excerpt: "Breaking Bad in the Darkroom"
@@ -10,8 +7,8 @@ tags:
 description: "Breaking Bad in the Darkroom"
 ---
 
-Many of you might know that I've recently started shooting more film, and I've 
-fallen in countless deep rabbit holes, like [scanning](/blog/2025-11-12-scanning-workflow/). 
+Many of you might know that I've recently started shooting more film, and I've
+fallen in countless deep rabbit holes, like [scanning](/blog/2025-11-12-scanning-workflow/).
 But one of the most exciting aspect of film photography, for me, is the darkroom
 process itself.
 
@@ -41,7 +38,7 @@ development time.
 
 {{< filmcalculator name="Development" step="Bellini Euro HC" dilution="1+31 - Dilution B" time="6:20" temp="20" push="2" agitation="Continuous rotation" >}}
 
-*The mix: **10ml** Euro HC + **290ml** Water. Need help with the ratios? Check the [dilution tool](/tools/dilution).*
+_The mix: **10ml** Euro HC + **290ml** Water. Need help with the ratios? Check the [dilution tool](/tools/dilution)._
 
 For the stop bath, I keep it simple. Water. 3 cycles of rotation to ensure the
 development is fully halted across the entire roll.
@@ -54,7 +51,7 @@ fast and reliable.
 
 {{< filmcalculator name="Fixer" step="Bellini FX-100" dilution="1+4" time="3:00" temp="20" agitation="Continuous rotation" >}}
 
-*The mix: **60ml** Fixer + **240ml** Water.*
+_The mix: **60ml** Fixer + **240ml** Water._
 
 Washing in a Lab-Box can be water-intensive if you aren't careful. I use the
 "Ilford Method," adapted for rotation. It’s efficient and ensures archival
@@ -68,7 +65,7 @@ Stab](https://www.bellinifoto.it/wp-content/uploads/2020/03/BWSTAB1-1.pdf).
 
 {{< filmcalculator name="Wetting Agent" step="Bellini Stab" dilution="1+299" time="2:00" temp="20" agitation="Gentle rotation" >}}
 
-*The mix: **1ml** Stab + **300ml** Water.*
+_The mix: **1ml** Stab + **300ml** Water._
 
 ### The Results
 

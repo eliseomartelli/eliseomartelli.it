@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "My scanning workflow with the Plustek OpticFilm 8100 and VueScan"
 date: "2025-11-12 12:54:00"
 excerpt: "Oh no, another side quest?"
@@ -49,27 +46,27 @@ With every scan, the scanner gives me two files: 
 
 - Graded Positive (DNG): Inverted, 16 bit grayscale or 48 bit RGB image.
 - Raw Negative (DNG): Archival master, 48-bit DNG, unaltered linear data from
-the scanner’s sensor.
+  the scanner’s sensor.
 
 ## Scan Settings
 
 After some nights of tinkering, I’ve settled on a few key settings for the
-optimal balance of quality and efficiency. The core settings are:   
+optimal balance of quality and efficiency. The core settings are: 
 
 - Resolution: 3600 dpi. The 8100 claims a maximum of [7200
-dpi](https://plustek.com/us/products/film-photo-scanners/opticfilm-8100/spec.php),
-but this is largely coming from oversampling. The effective optical resolution
-is closer to 3600-3900 dpi (observed by
-[others](https://tommyraught.medium.com/scanning-35mm-film-with-the-plustek-opticfilm-8100-73efe117a152)).
-I’ve settled on 3600 dpi because it provides a good balance of quality and scan
-speed. I can always rescan a specific frame at a higher resolution if I truly
-need a massive print.
+  dpi](https://plustek.com/us/products/film-photo-scanners/opticfilm-8100/spec.php),
+  but this is largely coming from oversampling. The effective optical resolution
+  is closer to 3600-3900 dpi (observed by
+  [others](https://tommyraught.medium.com/scanning-35mm-film-with-the-plustek-opticfilm-8100-73efe117a152)).
+  I’ve settled on 3600 dpi because it provides a good balance of quality and scan
+  speed. I can always rescan a specific frame at a higher resolution if I truly
+  need a massive print.
 - Bit-depth: 48-bit RGB. This captures the maximum tonal data from the
-negative, essential for post processing.
+  negative, essential for post processing.
 - Multi-Exposure: 2 passes. I’ve enabled 2-pass multi exposure, it doubles the
-scan time, but provides a significant reduction in noise, especially in the
-shadow areas. VueScan reads the entire scan area multiple times (in your case,
-twice) and then averages the data.
+  scan time, but provides a significant reduction in noise, especially in the
+  shadow areas. VueScan reads the entire scan area multiple times (in your case,
+  twice) and then averages the data.
 
 To get this dual output, I simply checked both `Output | Raw file` and `Output |
 TIFF file` in VueScan and enabled the DNG format for both.

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "What I’m up to?"
 date: "2025-04-08 12:30:00"
 excerpt: "A little recap of the first week of April 2025"

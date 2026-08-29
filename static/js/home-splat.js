@@ -1,5 +1,8 @@
-(function() {
-  const W = 330, H = 330, FOCAL = 850, CAM_Z = -0.9;
+(function () {
+  const W = 330,
+    H = 330,
+    FOCAL = 850,
+    CAM_Z = -0.9;
   const BG32 = 0x00f0f0f0;
   const MAX_ANGLE = (Math.PI / 90) * 1.5;
   const LERP = 0.08;
@@ -9,13 +12,20 @@
   function parseSplats(buf) {
     const v = new DataView(buf);
     let o = 0;
-    const count = v.getUint32(o, true); o += 4;
-    const minX = v.getFloat32(o, true); o += 4;
-    const minY = v.getFloat32(o, true); o += 4;
-    const minZ = v.getFloat32(o, true); o += 4;
-    const maxX = v.getFloat32(o, true); o += 4;
-    const maxY = v.getFloat32(o, true); o += 4;
-    const maxZ = v.getFloat32(o, true); o += 4;
+    const count = v.getUint32(o, true);
+    o += 4;
+    const minX = v.getFloat32(o, true);
+    o += 4;
+    const minY = v.getFloat32(o, true);
+    o += 4;
+    const minZ = v.getFloat32(o, true);
+    o += 4;
+    const maxX = v.getFloat32(o, true);
+    o += 4;
+    const maxY = v.getFloat32(o, true);
+    o += 4;
+    const maxZ = v.getFloat32(o, true);
+    o += 4;
 
     const x = new Float32Array(count);
     const y = new Float32Array(count);
@@ -24,11 +34,16 @@
     const bright = new Uint8Array(count);
     const alphaF = new Float32Array(count);
 
-    const rx = maxX - minX, ry = maxY - minY, rz = maxZ - minZ;
+    const rx = maxX - minX,
+      ry = maxY - minY,
+      rz = maxZ - minZ;
     for (let i = 0; i < count; i++) {
-      x[i] = minX + (v.getUint16(o, true) / 65535) * rx; o += 2;
-      y[i] = minY + (v.getUint16(o, true) / 65535) * ry; o += 2;
-      z[i] = minZ + (v.getUint16(o, true) / 65535) * rz; o += 2;
+      x[i] = minX + (v.getUint16(o, true) / 65535) * rx;
+      o += 2;
+      y[i] = minY + (v.getUint16(o, true) / 65535) * ry;
+      o += 2;
+      z[i] = minZ + (v.getUint16(o, true) / 65535) * rz;
+      o += 2;
       alpha[i] = v.getUint8(o++);
       bright[i] = v.getUint8(o++);
       alphaF[i] = alpha[i] / 255;
@@ -41,8 +56,14 @@
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
-  let targetY = 0, targetX = 0, curY = 0, curX = 0;
-  let lastSortY = NaN, lastSortX = NaN, lastRenderY = NaN, lastRenderX = NaN;
+  let targetY = 0,
+    targetX = 0,
+    curY = 0,
+    curX = 0;
+  let lastSortY = NaN,
+    lastSortX = NaN,
+    lastRenderY = NaN,
+    lastRenderX = NaN;
 
   const isTouch = window.matchMedia("(pointer: coarse)").matches;
   if (!isTouch) {
@@ -52,7 +73,11 @@
     });
   }
 
-  let rafId = 0, paused = false, splats = null, sortIdx = null, depths = null;
+  let rafId = 0,
+    paused = false,
+    splats = null,
+    sortIdx = null,
+    depths = null;
   const img = ctx.createImageData(W, H);
   const pix32 = new Uint32Array(img.data.buffer);
   const PT = 3;
@@ -60,17 +85,22 @@
   function render() {
     if (!splats || !sortIdx || !depths) return;
     const { count, x, y, z, alpha, bright, alphaF } = splats;
-    const cosY = Math.cos(curY), sinY = Math.sin(curY);
-    const cosX = Math.cos(curX), sinX = Math.sin(curX);
+    const cosY = Math.cos(curY),
+      sinY = Math.sin(curY);
+    const cosX = Math.cos(curX),
+      sinX = Math.sin(curX);
 
-    const needSort = Math.abs(curY - lastSortY) > SORT_THRESHOLD || Math.abs(curX - lastSortX) > SORT_THRESHOLD;
+    const needSort =
+      Math.abs(curY - lastSortY) > SORT_THRESHOLD ||
+      Math.abs(curX - lastSortX) > SORT_THRESHOLD;
     if (needSort) {
       for (let i = 0; i < count; i++) {
         const rz = -x[i] * sinY + z[i] * cosY;
         depths[i] = y[i] * sinX + rz * cosX;
       }
       sortIdx.sort((p, q) => depths[q] - depths[p]);
-      lastSortY = curY; lastSortX = curX;
+      lastSortY = curY;
+      lastSortX = curX;
     }
 
     pix32.fill(BG32);
@@ -80,7 +110,9 @@
       const a = alpha[i];
       if (a < 4) continue;
 
-      const xi = x[i], yi = y[i], zi = z[i];
+      const xi = x[i],
+        yi = y[i],
+        zi = z[i];
       const rx = xi * cosY + zi * sinY;
       const rz = -xi * sinY + zi * cosY;
       const ry2 = yi * cosX - rz * sinX;
@@ -91,7 +123,9 @@
 
       const sx = (W * 0.5 + (FOCAL * rx) / d + 0.5) | 0;
       const sy = (H * 0.5 + (FOCAL * ry2) / d + 14.5) | 0;
-      const af = alphaF[i], br = bright[i], oma = 1 - af;
+      const af = alphaF[i],
+        br = bright[i],
+        oma = 1 - af;
 
       if (sx >= 0 && sx + PT <= W && sy >= 0 && sy + PT <= H) {
         for (let dy = 0; dy < PT; dy++) {
@@ -118,7 +152,8 @@
     }
 
     ctx.putImageData(img, 0, 0);
-    lastRenderY = curY; lastRenderX = curX;
+    lastRenderY = curY;
+    lastRenderX = curX;
   }
 
   function frame(ts) {
@@ -133,11 +168,17 @@
     curY += (targetY - curY) * LERP;
     curX += (targetX - curX) * LERP;
 
-    if (Math.abs(curY - lastRenderY) < RENDER_THRESHOLD && Math.abs(curX - lastRenderX) < RENDER_THRESHOLD) return;
+    if (
+      Math.abs(curY - lastRenderY) < RENDER_THRESHOLD &&
+      Math.abs(curX - lastRenderX) < RENDER_THRESHOLD
+    )
+      return;
     render();
   }
 
-  const observer = new IntersectionObserver(([e]) => { paused = !e.isIntersecting; });
+  const observer = new IntersectionObserver(([e]) => {
+    paused = !e.isIntersecting;
+  });
   observer.observe(canvas);
 
   pix32.fill(BG32);

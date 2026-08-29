@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "We are a blip."
 date: "2026-07-28 15:14:54"
 excerpt: "What's insignificant?"
@@ -30,7 +27,7 @@ If someone offers you two lunches, one with your favorite food and one
 with something disgusting, you won't be indifferent. You'll pick the better one
 immediately.
 
-That tells you everything: your life has value because it's *lived*.
+That tells you everything: your life has value because it's _lived_.
 
 Not because other people care. Because you do.
 

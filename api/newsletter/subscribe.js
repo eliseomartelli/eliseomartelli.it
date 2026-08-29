@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).send("Method Not Allowed");
 
   const payload = req.body || {};
-  
+
   if (payload.email) {
     return res.redirect(303, "/msg-sent/");
   }
@@ -18,13 +18,19 @@ export default async function handler(req, res) {
   const emailToSubscribe = payload.user_contact_email;
 
   try {
-    const checkRes = await pool.query('SELECT email FROM "Subscriber" WHERE email = $1', [emailToSubscribe]);
+    const checkRes = await pool.query(
+      'SELECT email FROM "Subscriber" WHERE email = $1',
+      [emailToSubscribe],
+    );
     if (checkRes.rows.length > 0) {
       return res.redirect(303, "/msg-error/");
     }
 
     const unsubUUID = crypto.randomUUID();
-    await pool.query('INSERT INTO "Subscriber" (email, unsub) VALUES ($1, $2)', [emailToSubscribe, unsubUUID]);
+    await pool.query(
+      'INSERT INTO "Subscriber" (email, unsub) VALUES ($1, $2)',
+      [emailToSubscribe, unsubUUID],
+    );
 
     const welcomeHTML = `Hi!<br/>
 Welcome to my newsletter. You can <a href="https://eliseomartelli.it/newsletter-unsub/?uuid=${unsubUUID}">unsubscribe</a> at any time. Here I will share some of the things I'm working on.

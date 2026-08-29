@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Tagging film scans"
 date: "2025-11-16 12:38:00"
 excerpt: "Adding proper metadata to scanned photos using ExifTool"
@@ -41,7 +38,7 @@ exiftool -overwrite_original -r -ext dng \
 `-overwrite_original` is an important flag. By default, ExifTool creates a
 backup copy of your original file (e.g., `file.dng_original`) before writing
 changes. This flag prevents that, modifying the file in-place.  
-This is a destructive action. I recommend running the command on *copies* of
+This is a destructive action. I recommend running the command on _copies_ of
 your files first until you are confident in the results.
 
 The above command is a "master template". I keep a

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Apple, how is this legible?"
 date: "2025-10-09 09:39:00"
 excerpt: "Today I was using Apple Podcasts on my iPhone, and I noticed something that made me do a double take. The text in the player, in the section where ..."
@@ -11,9 +8,8 @@ tags:
 description: "Today I was using Apple Podcasts on my iPhone, and I noticed something that made me do a double take. The text in the player, in the section where ..."
 ---
 
-
 Today I was using Apple Podcasts on my iPhone, and I noticed something that
-made me do a double take. The text in the player, in the section where you ca 
+made me do a double take. The text in the player, in the section where you ca
 change the playback speed, was rendered in a light gray color on a slightly
 less light gray background. It was so faint that it was nearly impossible to
 read.

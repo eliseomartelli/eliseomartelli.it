@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Photography Today: Has It Become Too Accessible?"
 date: "2024-09-17 00:00:00"
 excerpt: "An exploration of what photography means today"

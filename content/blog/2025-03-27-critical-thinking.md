@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "The Death of Critical Thinking"
 date: "2025-03-27 17:30:00"
 excerpt: "Struggling with superficial conversations"

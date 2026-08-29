@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Finding the needle in the logstack: Reducing LLM context with TF-IDF"
 date: "2026-02-05 20:51:00"
 excerpt: "How we doubled the success rate of automated dependency remediation by being selective."
@@ -20,7 +17,7 @@ At work, we've been building `AI-Harness` (part of the broader `Rebel`
 ecosystem), a tool designed to autonomously fix these build failures. While
 `Rebel` acts as a reproducible environment manager for bioinformatics, handling
 the mess of `apt`, `conda`, and `pip` dependencies—, AI-Harness` is the
-"self-healing" layer. 
+"self-healing" layer.
 
 Our immediate goal was to seed a database of missing dependencies: essentially
 mapping specific compiler or linker error messages to the exact system packages
@@ -57,9 +54,9 @@ The logic is essentially a mini-search engine:
 3. **Cosine Similarity**: We compare each chunk against a targeted query:
    `"error failure exception traceback"`.
 
-Instead of giving the LLM the entire log, we give it the top K=10 chunks 
-that mathematically look most like an actual failure. We arrived at this number 
-after running a series of experiments to find the "elbow" of the success rate 
+Instead of giving the LLM the entire log, we give it the top K=10 chunks
+that mathematically look most like an actual failure. We arrived at this number
+after running a series of experiments to find the "elbow" of the success rate
 curve—at 10 chunks, we maximize signal without overwhelming the context window.
 
 ![Success rate vs K](/posts/2026-02-05-reducing-the-context-passed-to-llms-with-tf-idf-and-cosine-similarity/experiment_k.png)
@@ -70,9 +67,9 @@ We tested this against a dataset of 245 failed dependency installations from
 the CRAN (R) ecosystem. The results were pretty stark:
 
 | Configuration | Success Rate |
-| --- | --- |
-| Raw Log | 38.0% |
-| TF-IDF | **74.3%** |
+| ------------- | ------------ |
+| Raw Log       | 38.0%        |
+| TF-IDF        | **74.3%**    |
 
 By being selective about what we show the model, we effectively doubled the
 success rate. It turns out that even for "intelligent" models, less is often

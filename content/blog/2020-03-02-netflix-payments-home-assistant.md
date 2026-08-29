@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Netflix Payments reminder with the help of Home Assistant"
 date: "2020-03-02 00:00:00"
 excerpt: "Aren't you tired of being the only one to pay for Netflix?"
@@ -44,7 +41,7 @@ counter:
 ## Scheduling counter's increments
 
 In a _nutshell_, Home Assistant makes things happen through automations.
-Automations are *pieces of code* that will run when something triggers it and/or some conditions are met.  
+Automations are _pieces of code_ that will run when something triggers it and/or some conditions are met.  
 In a home automation system, they are the glue that can tie all of our devices together.  
 Today we’ll use them to create a recurring task dedicated to incrementing our newly added counters.
 

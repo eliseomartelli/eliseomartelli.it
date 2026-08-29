@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Some notes on Polaroid Batteries"
 date: "2023-12-01 00:00:00"
 excerpt: "Just some notes, nothing too serious."

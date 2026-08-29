@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "iPadOS 26 should've retained Slide Over and Split View"
 date: "2025-09-22 11:59:00"
 excerpt: "Apple, can you please leave the windowing system alone?"

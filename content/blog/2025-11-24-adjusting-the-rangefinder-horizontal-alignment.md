@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Adjusting the Rangefinder Horizontal Alignment"
 date: "2025-11-24 00:38:00"
 excerpt: "Accurate focus?"
@@ -27,7 +24,7 @@ is to:
 
 1. Pick a target with high contrast details, such as a newspaper or a brick
    wall at a focus distance you feel comfortable working with (e.g., 1-3
-meters).
+   meters).
 2. Focus the lens and check the patch. The image should be sharp and the two
    images should align perfectly.
 3. Take a test shot and review it. If the image is not sharp, it may indicate a
@@ -50,7 +47,7 @@ distance, your camera is front-focusing.
 What you will need:
 
 - 2mm Hex Key (Allen Wrench): High quality is essential. A cheap one may strip
-the screw.
+  the screw.
 - A high contrast target for focusing.
 - Patience and a steady hand.
 - A lens that you are comfortable working with.
@@ -63,14 +60,14 @@ Pictured: Leica M (typ 240).
 Steps:
 
 - Start by putting yourself at 2 meters from the target, straight on, and
-focus the lens carefully on that target, using the rangefinder patch.
+  focus the lens carefully on that target, using the rangefinder patch.
 - Take a test shot and review it.
 - Remove the lens from the camera body.
 - Locate the rangefinder adjustment screw. The screw on the roller is for
-horizontal alignment.
+  horizontal alignment.
 - Using the 2mm hex key, make small adjustments to the screw.
 - After each adjustment, reattach the lens, focus on the target again, and take
-a test shot.
+  a test shot.
 - Review the test shot to see if the focus has improved.
 - Repeat the adjustment process until the focus is sharp.
 

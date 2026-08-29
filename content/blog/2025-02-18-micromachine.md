@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Introducing: Micromachine"
 date: "2025-02-18 17:00:00"
 excerpt: "Thread-safe, flexible, and generic state management for Go"

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "One Week with an iPad 6th Gen"
 date: "2025-03-19 13:45:00"
 excerpt: "New isn’t always thousands times better"
@@ -16,8 +13,7 @@ marketing, the launch events, and the constant stream of upgrades all reinforce
 this notion. But is it always true?
 
 For the last week, I decided to challenge this assumption by taking a step back
-in time. I downgraded from my 2024 iPad Air M2 to an iPad 6th Generation from
-2018. This is my assessment of how it feels to take this step backward.
+in time. I downgraded from my 2024 iPad Air M2 to an iPad 6th Generation from 2018. This is my assessment of how it feels to take this step backward.
 
 The Apple Pencil squeeze and double-tap features had become part of my workflow
 on the newer iPad. These gestures enhanced my productivity and allowed me to

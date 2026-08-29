@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Book Review: LaserWriter II"
 date: "2025-04-16 20:50:00"
 excerpt: "A pixelated love letter to the late 80s Apple"

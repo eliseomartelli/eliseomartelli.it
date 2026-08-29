@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Building The New Recommendation System"
 date: "2025-03-11 15:15:00"
 excerpt: "Sometimes, a little bit of math is all you need"

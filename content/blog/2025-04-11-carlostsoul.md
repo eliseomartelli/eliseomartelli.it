@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "I can't fall in love with cars anymore"
 date: "2025-04-11 15:15:00"
 excerpt: "The modern vehicle has lost its soul"

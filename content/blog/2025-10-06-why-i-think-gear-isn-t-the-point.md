@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Why I think gear isn't the point"
 date: "2025-10-06 11:49:00"
 excerpt: "Authorship is more meaningful than template"
@@ -16,14 +13,14 @@ for every artist who brings genuine artistic weight and perspective, there's a
 flood of unauthentic work, that often feels copy-pasted.  
 You get the same compositions, same edits, same color gradings, same gear, and
 so on. Maybe beautiful, but, using Roland Barthes's terms, that beauty that
-only allows the viewer to celebrate the *Operator* and a little bit of the
-*Studium.* But, in my opinion, missing the *Punctum.*
+only allows the viewer to celebrate the _Operator_ and a little bit of the
+_Studium._ But, in my opinion, missing the _Punctum._
 
 The main problem is not people that take photos, that's never the problem. The
 problem is who curates them, and the aesthetic they decide to elevate.  Too
 often I see curators having the "Instagram taste": perfect symmetry, beautiful
 painted-like skies, reflection so sharp they look AI generated. It's
-algorithmic pop. Polished and efficient, but completely empty. 
+algorithmic pop. Polished and efficient, but completely empty.
 
 Last Saturday I went to see World Press Photo exhibition here in Turin, and I'm
 afraid it didn't hit me as hard as I hoped. Even though in theory it's closer
@@ -55,7 +52,7 @@ and gear together passes the message that you need specific gear to create
 similar work, and I think that's a big trap.
 
 Her counter argument is that removing technical context can also strip the
-human element, but I think that *the human element* is in the result, not the
+human element, but I think that _the human element_ is in the result, not the
 medium, and not in the relationship the artist has with the camera, the lens,
 or any other gear.
 
@@ -69,11 +66,12 @@ rigs, or with traps. The production quality is insane, sure, but where is the
 story? Where's the tension?
 
 She wasn't having it.
+
 > Go lie in the snow twelve hours a day for two weeks
 > to photograph an animal that appears twice a year, then talk to me about
 > skill.
 
-She's absolutely right, patience *is* a skill. Maybe I undervalue that because
+She's absolutely right, patience _is_ a skill. Maybe I undervalue that because
 I'm drawn more to narrative and emotion than to natural beauty for its own
 sake.
 

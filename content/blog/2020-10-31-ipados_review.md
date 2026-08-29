@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "iPadOS, a year-long review"
 date: "2020-10-31 00:00:00"
 excerpt: "Looking at iPadOS from a content creation perspective"

@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Freedom to Handcraft Software"
 date: "2026-08-26 08:00:00+02:00"
 excerpt: "Software development is not less than any other art form. Why don't we have the same freedom as artists?"

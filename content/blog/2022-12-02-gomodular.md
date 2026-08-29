@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Modular applications in go"
 date: "2022-12-02 21:30:00"
 excerpt: "Plugins, plugins, plugins."

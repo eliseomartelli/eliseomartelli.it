@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "Far out: what's new in Apple hardware?"
 date: "2022-09-07"
 excerpt: "Discover what's new in Apple hardware after the September 2022 event"
@@ -10,8 +7,6 @@ tags:
 previewImgUrl: https://eliseomartelli.it/posts/apple-event-september2022/cover.jpg
 description: "Discover what's new in Apple hardware after the September 2022 event"
 ---
-
-
 
 ![Apple Far Out event cover](/posts/apple-event-september2022/cover.jpg)
 
@@ -88,9 +83,7 @@ Apple brought out some minor and major improvements across their whole lineup, w
 
 I'm amazed by the satellite connectivity for emergency services and the whole UX around that feature. Moreover Apple's design expertise is truly showing through Dynamic Island.
 
-
 <blockquote class="twitter-tweet mx-auto" data-dnt="true"><p lang="en" dir="ltr">Ok, this dynamic island looks so smooth!!!<br/><br/>That alone might be a good reason to get an iPhone 14 Pro!<a href="https://twitter.com/hashtag/AppleEvent?src=hash&amp;ref_src=twsrc%5Etfw">#AppleEvent</a> <a href="https://twitter.com/hashtag/iPhone14Pro?src=hash&amp;ref_src=twsrc%5Etfw">#iPhone14Pro</a> <br/><br/> <a href="https://t.co/QXcPiJHZzi">pic.twitter.com/QXcPiJHZzi</a></p>&mdash; Sergio The One ♪ (@Sergio_TheOne) <a href="https://twitter.com/Sergio_TheOne/status/1567578200418418688?ref_src=twsrc%5Etfw">September 7, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
 However, I'm less amazed by the iPhone 14 base model since it doesn't bring anything substantially new to the table and maybe the formula of "if it ain't broke don't fix it" should not be followed for 3 years in a row.
 The same thing can also be said about AirPods Pro.

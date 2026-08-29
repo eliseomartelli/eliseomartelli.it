@@ -53,16 +53,27 @@
       var tempFactor = Math.pow(1.1, tempDiff);
       var pushPullFactor = Math.pow(1.5, pushPull);
       var agitationFactor = constantAgitation ? 0.9 : 1.0;
-      var finalTimeSeconds = baseTimeSeconds * tempFactor * pushPullFactor * agitationFactor;
+      var finalTimeSeconds =
+        baseTimeSeconds * tempFactor * pushPullFactor * agitationFactor;
 
       pushPullValue.textContent = formatSigned(pushPull);
       resultTime.textContent = formatTimeFromMinutes(finalTimeSeconds / 60);
-      resultTempDelta.innerHTML = "<strong>" + (initialTemp - targetTemp).toFixed(1) + "°C</strong>";
-      resultPushPull.innerHTML = "<strong>" + formatSigned(pushPull) + "</strong>";
-      resultAgitation.innerHTML = "<strong>" + (constantAgitation ? "Cont" : "Std") + "</strong>";
+      resultTempDelta.innerHTML =
+        "<strong>" + (initialTemp - targetTemp).toFixed(1) + "°C</strong>";
+      resultPushPull.innerHTML =
+        "<strong>" + formatSigned(pushPull) + "</strong>";
+      resultAgitation.innerHTML =
+        "<strong>" + (constantAgitation ? "Cont" : "Std") + "</strong>";
     }
 
-    [minutesInput, secondsInput, initialTempInput, targetTempInput, pushPullInput, constantInput].forEach(function (el) {
+    [
+      minutesInput,
+      secondsInput,
+      initialTempInput,
+      targetTempInput,
+      pushPullInput,
+      constantInput,
+    ].forEach(function (el) {
       el.addEventListener("input", recalc);
       el.addEventListener("change", recalc);
     });
@@ -81,9 +92,12 @@
     var resultB = document.getElementById("dilution-result-b");
     var params = new URLSearchParams(window.location.search);
 
-    if (params.has("volume")) totalVolumeInput.value = String(toNumber(params.get("volume"), 300));
-    if (params.has("a")) partAInput.value = String(toNumber(params.get("a"), 1));
-    if (params.has("b")) partBInput.value = String(toNumber(params.get("b"), 9));
+    if (params.has("volume"))
+      totalVolumeInput.value = String(toNumber(params.get("volume"), 300));
+    if (params.has("a"))
+      partAInput.value = String(toNumber(params.get("a"), 1));
+    if (params.has("b"))
+      partBInput.value = String(toNumber(params.get("b"), 9));
 
     function recalc() {
       var totalVolume = Math.max(0, toNumber(totalVolumeInput.value, 0));
@@ -120,7 +134,7 @@
       A3: { width: 297, height: 420 },
       "US Letter": { width: 215.9, height: 279.4 },
       "US Legal": { width: 215.9, height: 355.6 },
-      Custom: { width: 210, height: 297 }
+      Custom: { width: 210, height: 297 },
     };
 
     var targetSizeSelect = document.getElementById("pl-target-size");
@@ -151,7 +165,7 @@
 
     var state = {
       targetOrientation: "portrait",
-      printOrientation: "portrait"
+      printOrientation: "portrait",
     };
 
     function convertToMm(value, unit) {
@@ -169,9 +183,10 @@
       var targetSize = targetSizeSelect.value;
       var customTarget = {
         width: Math.max(1, toNumber(targetCustomWidth.value, 210)),
-        height: Math.max(1, toNumber(targetCustomHeight.value, 297))
+        height: Math.max(1, toNumber(targetCustomHeight.value, 297)),
       };
-      var target = targetSize === "Custom" ? customTarget : paperSizes[targetSize];
+      var target =
+        targetSize === "Custom" ? customTarget : paperSizes[targetSize];
       var tW = target.width;
       var tH = target.height;
 
@@ -187,8 +202,14 @@
         tH = portraitMax;
       }
 
-      var pW = convertToMm(Math.max(1, toNumber(printWidthInput.value, 178)), printUnitSelect.value);
-      var pH = convertToMm(Math.max(1, toNumber(printHeightInput.value, 240)), printUnitSelect.value);
+      var pW = convertToMm(
+        Math.max(1, toNumber(printWidthInput.value, 178)),
+        printUnitSelect.value,
+      );
+      var pH = convertToMm(
+        Math.max(1, toNumber(printHeightInput.value, 240)),
+        printUnitSelect.value,
+      );
       if (state.printOrientation === "landscape") {
         var pMax = Math.max(pW, pH);
         var pMin = Math.min(pW, pH);
@@ -226,8 +247,10 @@
       var imgY = pY + (pH - imgH) / 2;
 
       var warnings = [];
-      if (pW > tW || pH > tH) warnings.push("Photo paper is larger than output sheet.");
-      if (printableW <= 0 || printableH <= 0) warnings.push("Margin is too large for the photo paper.");
+      if (pW > tW || pH > tH)
+        warnings.push("Photo paper is larger than output sheet.");
+      if (printableW <= 0 || printableH <= 0)
+        warnings.push("Margin is too large for the photo paper.");
 
       return {
         targetSize: targetSize,
@@ -241,7 +264,7 @@
         imgH: imgH,
         imgX: imgX,
         imgY: imgY,
-        warnings: warnings
+        warnings: warnings,
       };
     }
 
@@ -259,7 +282,10 @@
       ctx.clearRect(0, 0, rect.width, rect.height);
 
       var padding = 40;
-      var scale = Math.min((rect.width - padding) / layout.tW, (rect.height - padding) / layout.tH);
+      var scale = Math.min(
+        (rect.width - padding) / layout.tW,
+        (rect.height - padding) / layout.tH,
+      );
       var offsetX = (rect.width - layout.tW * scale) / 2;
       var offsetY = (rect.height - layout.tH * scale) / 2;
 
@@ -271,13 +297,23 @@
 
       ctx.strokeStyle = "#111";
       ctx.lineWidth = 2;
-      ctx.strokeRect(offsetX + layout.pX * scale, offsetY + layout.pY * scale, layout.pW * scale, layout.pH * scale);
+      ctx.strokeRect(
+        offsetX + layout.pX * scale,
+        offsetY + layout.pY * scale,
+        layout.pW * scale,
+        layout.pH * scale,
+      );
 
       if (layout.imgW > 0 && layout.imgH > 0) {
         ctx.setLineDash([6, 4]);
         ctx.lineWidth = 1.5;
         ctx.strokeStyle = "#2563eb";
-        ctx.strokeRect(offsetX + layout.imgX * scale, offsetY + layout.imgY * scale, layout.imgW * scale, layout.imgH * scale);
+        ctx.strokeRect(
+          offsetX + layout.imgX * scale,
+          offsetY + layout.imgY * scale,
+          layout.imgW * scale,
+          layout.imgH * scale,
+        );
         ctx.setLineDash([]);
       }
 
@@ -285,11 +321,17 @@
       ctx.lineWidth = 0.8;
       ctx.beginPath();
       ctx.moveTo(offsetX, offsetY + (layout.tH * scale) / 2);
-      ctx.lineTo(offsetX + layout.tW * scale, offsetY + (layout.tH * scale) / 2);
+      ctx.lineTo(
+        offsetX + layout.tW * scale,
+        offsetY + (layout.tH * scale) / 2,
+      );
       ctx.stroke();
       ctx.beginPath();
       ctx.moveTo(offsetX + (layout.tW * scale) / 2, offsetY);
-      ctx.lineTo(offsetX + (layout.tW * scale) / 2, offsetY + layout.tH * scale);
+      ctx.lineTo(
+        offsetX + (layout.tW * scale) / 2,
+        offsetY + layout.tH * scale,
+      );
       ctx.stroke();
     }
 
@@ -306,16 +348,31 @@
     }
 
     function renderStats(layout) {
-      statTarget.textContent = layout.tW.toFixed(1) + "x" + layout.tH.toFixed(1) + "mm";
-      statPaper.textContent = layout.pW.toFixed(1) + "x" + layout.pH.toFixed(1) + "mm";
-      statImage.textContent = layout.imgW.toFixed(1) + "x" + layout.imgH.toFixed(1) + "mm";
-      statMargin.textContent = ((layout.pW - layout.imgW) / 2).toFixed(1) + "mm";
+      statTarget.textContent =
+        layout.tW.toFixed(1) + "x" + layout.tH.toFixed(1) + "mm";
+      statPaper.textContent =
+        layout.pW.toFixed(1) + "x" + layout.pH.toFixed(1) + "mm";
+      statImage.textContent =
+        layout.imgW.toFixed(1) + "x" + layout.imgH.toFixed(1) + "mm";
+      statMargin.textContent =
+        ((layout.pW - layout.imgW) / 2).toFixed(1) + "mm";
     }
 
     function update() {
-      targetCustomWrap.style.display = targetSizeSelect.value === "Custom" ? "grid" : "none";
-      setActive(targetPortraitBtn, targetLandscapeBtn, state.targetOrientation, "portrait");
-      setActive(printPortraitBtn, printLandscapeBtn, state.printOrientation, "portrait");
+      targetCustomWrap.style.display =
+        targetSizeSelect.value === "Custom" ? "grid" : "none";
+      setActive(
+        targetPortraitBtn,
+        targetLandscapeBtn,
+        state.targetOrientation,
+        "portrait",
+      );
+      setActive(
+        printPortraitBtn,
+        printLandscapeBtn,
+        state.printOrientation,
+        "portrait",
+      );
       var layout = calculateLayout();
       renderWarnings(layout);
       renderStats(layout);
@@ -340,7 +397,17 @@
       update();
     });
 
-    [targetSizeSelect, targetCustomWidth, targetCustomHeight, printWidthInput, printHeightInput, printUnitSelect, ratioWidthInput, ratioHeightInput, marginInput].forEach(function (el) {
+    [
+      targetSizeSelect,
+      targetCustomWidth,
+      targetCustomHeight,
+      printWidthInput,
+      printHeightInput,
+      printUnitSelect,
+      ratioWidthInput,
+      ratioHeightInput,
+      marginInput,
+    ].forEach(function (el) {
       el.addEventListener("input", update);
       el.addEventListener("change", update);
     });
@@ -349,42 +416,53 @@
       if (window.jspdf?.jsPDF) return Promise.resolve(window.jspdf.jsPDF);
       return new Promise(function (resolve, reject) {
         var script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js";
-        script.onload = function () { window.jspdf?.jsPDF ? resolve(window.jspdf.jsPDF) : reject(new Error("jsPDF unavailable")); };
-        script.onerror = function () { reject(new Error("Failed to load jsPDF")); };
+        script.src =
+          "https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js";
+        script.onload = function () {
+          window.jspdf?.jsPDF
+            ? resolve(window.jspdf.jsPDF)
+            : reject(new Error("jsPDF unavailable"));
+        };
+        script.onerror = function () {
+          reject(new Error("Failed to load jsPDF"));
+        };
         document.head.appendChild(script);
       });
     }
 
     exportBtn.addEventListener("click", function () {
       var layout = update();
-      loadJsPdf().then(function (jsPDF) {
-        var format = layout.targetSize;
-        if (format === "US Letter") format = "letter";
-        if (format === "US Legal") format = "legal";
-        if (format === "A4" || format === "A3") format = format.toLowerCase();
+      loadJsPdf()
+        .then(function (jsPDF) {
+          var format = layout.targetSize;
+          if (format === "US Letter") format = "letter";
+          if (format === "US Legal") format = "legal";
+          if (format === "A4" || format === "A3") format = format.toLowerCase();
 
-        var doc = new jsPDF({
-          orientation: state.targetOrientation,
-          unit: "mm",
-          format: layout.targetSize === "Custom" ? [layout.tW, layout.tH] : format
+          var doc = new jsPDF({
+            orientation: state.targetOrientation,
+            unit: "mm",
+            format:
+              layout.targetSize === "Custom" ? [layout.tW, layout.tH] : format,
+          });
+
+          doc.setDrawColor(0, 0, 0);
+          doc.setLineWidth(0.2);
+          doc.rect(layout.pX, layout.pY, layout.pW, layout.pH);
+          doc.setDrawColor(37, 99, 235);
+          doc.setLineDashPattern([2, 2], 0);
+          doc.rect(layout.imgX, layout.imgY, layout.imgW, layout.imgH);
+          doc.setLineDashPattern([], 0);
+          doc.setDrawColor(197, 91, 76);
+          doc.setLineWidth(0.1);
+          doc.line(0, layout.tH / 2, layout.tW, layout.tH / 2);
+          doc.line(layout.tW / 2, 0, layout.tW / 2, layout.tH);
+          doc.save("darkroom-print-layout.pdf");
+        })
+        .catch(function (error) {
+          warningBox.innerHTML =
+            '<div class="tool-warning">' + error.message + "</div>";
         });
-
-        doc.setDrawColor(0, 0, 0);
-        doc.setLineWidth(0.2);
-        doc.rect(layout.pX, layout.pY, layout.pW, layout.pH);
-        doc.setDrawColor(37, 99, 235);
-        doc.setLineDashPattern([2, 2], 0);
-        doc.rect(layout.imgX, layout.imgY, layout.imgW, layout.imgH);
-        doc.setLineDashPattern([], 0);
-        doc.setDrawColor(197, 91, 76);
-        doc.setLineWidth(0.1);
-        doc.line(0, layout.tH / 2, layout.tW, layout.tH / 2);
-        doc.line(layout.tW / 2, 0, layout.tW / 2, layout.tH);
-        doc.save("darkroom-print-layout.pdf");
-      }).catch(function (error) {
-        warningBox.innerHTML = '<div class="tool-warning">' + error.message + "</div>";
-      });
     });
 
     window.addEventListener("resize", update);

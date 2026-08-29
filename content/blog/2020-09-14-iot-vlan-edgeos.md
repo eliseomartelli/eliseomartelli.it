@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "IoT device segregation on EdgeOS"
 date: "2020-09-14 00:00:00"
 excerpt: "VLANs? VLANs. Get to know how to segregate chatty IoT devices on your network"

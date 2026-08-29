@@ -1,7 +1,4 @@
 ---
-
-
-
 title: "A Braun clock for a $30 handheld"
 date: "2026-02-17 14:45:00"
 excerpt: "Homaging a Dieter Rams masterpiece on a $30 handheld."
