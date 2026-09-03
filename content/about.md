@@ -1,6 +1,8 @@
-Hey, I'm Eliseo. A computer science student passionate about networking and
-high performance computing.  
-I'm also interested in art, photography, design and music.
+Hey, I'm Eliseo. I build backend systems and make photographs.
+
+Based in Turin, I work as a software engineer at Zucchetti, focusing on microservices and distributed architecture, alongside independent open-source projects. I'm curious about HPC, networking, and home automation.
+
+Away from the screen, my focus shifts to authorial street photography, shooting film, and traditional darkroom printing.
 
 You can find my cv
 [here](http://github.com/eliseomartelli/cv/releases/latest/download/cv.pdf).
