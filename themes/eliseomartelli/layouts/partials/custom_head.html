@@ -1,3 +1,15 @@
-<!-- A partial to be overwritten by the user.
-  Simply place a custom_head.html into
-  your local /layouts/partials-directory -->
+{{ if eq .Section "tools" }}
+<link rel="stylesheet" href="/css/tools.css" />
+{{ end }} {{ if and (eq .Section "photos") .IsSection }}
+<link rel="stylesheet" href="/css/photos-section.css" />
+{{ end }}
+
+<!-- Vercel Analytics -->
+<script>
+  window.va =
+    window.va ||
+    function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
