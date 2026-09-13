@@ -3,7 +3,7 @@
 
 
 title: "iMacs Old Enough to Drive"
-date: "2026-09-03 10:00:00+02:00"
+date: "2026-09-13 10:00:00+02:00"
 excerpt: "We have a serious hardware hoarding problem."
 tags:
   - Apple
